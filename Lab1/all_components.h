@@ -1,0 +1,13 @@
+#pragma once
+#include"meshRenderer.h"
+#include"pointRenderer.h"
+#include"transform.h"
+#include"pointCollection.h"
+#include"bezierCurve.h"
+#include"splineGenerator.h"
+#include"bezierInterpolator.h"
+#include"vPointCollection.h"
+#include"bicubicSurface.h"
+#include"bicubicSegment.h"
+#include"folder.h"
+#include"gregoryPatch.h"

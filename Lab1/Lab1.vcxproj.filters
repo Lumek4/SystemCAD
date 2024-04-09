@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\imgui">
+      <UniqueIdentifier>{11b49722-da29-41e1-92fa-4c3b84298b2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dx">
+      <UniqueIdentifier>{f62706a0-2381-4793-a1a4-65adf35d3717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dx">
+      <UniqueIdentifier>{1492b3fc-20cd-42bf-86ac-c7d4cb03e694}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ecs">
+      <UniqueIdentifier>{d9a493dd-9853-4be6-9fe3-d0d01faa7abb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ecs\components">
+      <UniqueIdentifier>{b0585313-01ab-49a0-8638-ca33d0832c4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ecs">
+      <UniqueIdentifier>{16a96053-00f9-48db-89ef-4df12b9c8750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imgui">
+      <UniqueIdentifier>{ec6df9dd-6092-4bc0-ab42-73fdb7059137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ecs\interfaces">
+      <UniqueIdentifier>{d4a65e1f-e797-497c-81de-c8758741bd4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\serializer">
+      <UniqueIdentifier>{a0fa626c-bd36-468d-91bc-c949a6dafe7f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx11.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="myMat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dxApplication.h">
+      <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="dxDevice.h">
+      <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="dxptr.h">
+      <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="dxStructures.h">
+      <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions.h">
+      <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="window.h">
+      <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="windowApplication.h">
+      <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="catalogue.hpp">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="all_components.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.hpp">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="meshRenderer.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="pointRenderer.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="vecmath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="myGui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneCursor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="colorPaletteh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="entityPresets.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="pointCollection.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="event.hpp">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="splineGenerator.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="vPointCollection.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="bezierInterpolator.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Header Files\ecs\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="bezierCurve.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="pointSource.h">
+      <Filter>Header Files\ecs\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="cadApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bicubicSurface.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="bicubicSegment.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="entityCollection.hpp">
+      <Filter>Header Files\ecs\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="folder.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="gregoryPatch.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="myMat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dxApplication.cpp">
+      <Filter>Source Files\dx</Filter>
+    </ClCompile>
+    <ClCompile Include="dxDevice.cpp">
+      <Filter>Source Files\dx</Filter>
+    </ClCompile>
+    <ClCompile Include="dxStructures.cpp">
+      <Filter>Source Files\dx</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\dx</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Source Files\dx</Filter>
+    </ClCompile>
+    <ClCompile Include="windowApplication.cpp">
+      <Filter>Source Files\dx</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions.cpp">
+      <Filter>Source Files\dx</Filter>
+    </ClCompile>
+    <ClCompile Include="vecmath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="myGui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneCursor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="meshRenderer.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="pointCollection.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="pointRenderer.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="transform.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="vPointCollection.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="splineGenerator.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="entityPresets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="event.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="bezierInterpolator.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="bezierCurve.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="cadApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bicubicSurface.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="folder.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="bicubicSegment.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="entityCollection.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="gregoryPatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="vs.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="ps.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="pointgs.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="curgs.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="wirePS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="bezierDS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="bezierHS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="bezierVS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="bicubicDS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="bicubicHS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="surfPS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="bicubicGridGS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="gregDS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="gregHS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="structs.hlsli">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

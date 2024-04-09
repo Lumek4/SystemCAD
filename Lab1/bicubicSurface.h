@@ -1,0 +1,20 @@
+#pragma once
+#include"mesh.h"
+#include"bicubicSegment.h"
+#include<vector>
+
+
+class BicubicSurface : public Component
+{
+public:
+	BicubicSurface(Entity& owner);
+	const char* Name() const override { return "BicubicSurface"; }
+
+	void SetSegments(const std::vector<Entity*>& segs);
+	std::vector<BicubicSegment*>& GetSegments()
+	{
+		return segments;
+	}
+private:
+	std::vector<BicubicSegment*> segments;
+};

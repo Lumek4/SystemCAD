@@ -27,12 +27,13 @@ public:
 	//  2    +y
 	std::array<Entity*, 4> neighbors;
 	std::array<bool, 4> ccwNeighbor;
-	std::array<DirectX::XMFLOAT3, 8> GetBoundary(int side);
+	std::array<int, 8> GetBoundary(int side);
 	Mesh* GetMesh();
 	Mesh* GetWireMesh();
 	bool drawPolygon = false;
 	bool deBoorMode = false;
 	void SetSource(PointSource*);
+	PointSource* GetSource() { return pointSource; };
 
 	Event<void> onModified;
 private:

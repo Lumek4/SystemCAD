@@ -4,7 +4,7 @@
 using namespace DirectX;
 
 
-const int BicubicSegment::corners[4]{ 0,3,12,15 };
+const int BicubicSegment::corners[4]{ 0,3,15,12 };
 
 BicubicSegment::BicubicSegment(Entity& owner)
 	:Component(ComponentConstructorArgs(BicubicSegment))
@@ -88,6 +88,8 @@ BicubicSegment::BicubicSegment(Entity& owner)
 				continue;
 
 			auto* bs = neighbors[i]->GetComponent<BicubicSegment>();
+			if (bs == nullptr)
+				continue;
 			for (int j = 0; j < bs->neighbors.size(); j++)
 				if (bs->neighbors[j] == &this->owner)
 					bs->neighbors[j] = nullptr;
@@ -112,22 +114,23 @@ BicubicSegment::BicubicSegment(Entity& owner)
 //	this->stride = stride;
 //}
 
-std::array<DirectX::XMFLOAT3, 8> BicubicSegment::GetBoundary(int side)
+std::array<int, 8> BicubicSegment::GetBoundary(int side)
 {
 	const int ind[4][8] =
 	{
-		{15,14,13,12,11,10,9,8},
-		{12,8,4,0,13,9,5,1},
 		{0,1,2,3,4,5,6,7},
-		{3,7,11,15,2,6,10,14}
+		{3,7,11,15,2,6,10,14},
+		{15,14,13,12,11,10,9,8},
+		{12,8,4,0,13,9,5,1}
 	};
-	XMVECTOR p[16];
-	for (int i = 0; i < 16; i++)
-	{
-		auto v = pointSource->GetPoint(indices[i]);
-		p[i] = XMLoadFloat3(&v);
-	}
 	if (deBoorMode)
+		assert(false && "Can't get boundary of C2 segment.");
+
+	std::array<int, 8> ret;
+	for (int i = 0; i < 8; i++)
+		ret[i] = indices[ind[side][i]];
+	return ret;
+	/*if (deBoorMode)
 	{
 		XMVECTOR extBezier[16];
 		for (int y = 0; y < 4; y++)
@@ -159,11 +162,7 @@ std::array<DirectX::XMFLOAT3, 8> BicubicSegment::GetBoundary(int side)
 			p[x + 2 * 4] = extBezier[x + 2 * 4];
 			p[x + 3 * 4] = XMVectorLerp(extBezier[x + 2 * 4], extBezier[x + 3 * 4], 0.5);
 		}
-	}
-	std::array<XMFLOAT3,8> ret;
-	for (int i = 0; i < 8; i++)
-		XMStoreFloat3(&ret[i], p[ind[side][i]]);
-	return ret;
+	}*/
 }
 
 Mesh* BicubicSegment::GetMesh()

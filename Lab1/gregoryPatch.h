@@ -12,6 +12,7 @@ public:
 	const char* Name() const override { return "GregoryPatch"; }
 	std::array<Entity*, 3> neighbors;
 	std::array<int, 3> neighborSide;
+	std::array<bool, 3> neighborReverse;
 	bool drawPolygon = false;
 
 	Mesh* GetMesh();

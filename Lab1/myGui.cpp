@@ -562,10 +562,10 @@ void MyGui::BicubicSurfacePopup(BicubicSurfaceParams& data, bool& modified, bool
 	ImGui::SameLine();
 	modified |= ImGui::Checkbox("C2 Continuity", &data.deBoor);
 
-	modified |= ImGui::SliderInt2(" Dimensions", (int*)&data.division, 1, 16, "%d Segments", ImGuiSliderFlags_AlwaysClamp) |
+	modified |= ImGui::SliderInt2(" Dimensions", (int*)&data.division, 1, 20, "%d Segments", ImGuiSliderFlags_AlwaysClamp) |
 		ImGui::SliderFloat(cylinder?" Radius":" Width", &data.dimensions.x, 0.1f, 40, "%.2f", ImGuiSliderFlags_AlwaysClamp) |
 		ImGui::SliderFloat(cylinder?" Height":" Height", &data.dimensions.y, 0.1f, 40, "%.2f", ImGuiSliderFlags_AlwaysClamp);
-	if (data.deBoor && data.division.x<3)
+	if (data.deBoor && data.division.x && cylinder <3)
 		data.division.x = 3;
 
 	if ((create = ImGui::Button("Create")))

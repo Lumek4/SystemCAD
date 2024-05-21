@@ -246,7 +246,7 @@ void CadApplication::GUI()
 
 void CadApplication::Update() {
 	auto& io = ImGui::GetIO();
-	if (io.MouseDown[2] && !io.WantCaptureMouse)
+	if (io.MouseDown[1] && !io.WantCaptureMouse && io.KeyShift)
 	{
 		if (io.KeyCtrl)
 			Camera::mainCamera->Move({ -io.MouseDelta.x * moveRate, io.MouseDelta.y * moveRate });
@@ -257,7 +257,7 @@ void CadApplication::Update() {
 	{
 		Camera::mainCamera->Zoom(io.MouseWheel * scaleRate);
 	}
-	if (io.MouseClicked[1] && !io.WantCaptureMouse)
+	if (io.MouseClicked[1] && !io.WantCaptureMouse && !io.KeyShift)
 	{
 		auto size = io.DisplaySize;
 		auto screen = io.MousePos;
@@ -518,7 +518,7 @@ void CadApplication::Render() {
 			continue;
 		SetColor(owner);
 		SetModelMatrix(nullptr);
-		XMINT4 mode = { 0, surfDetail - 1,0,0 };
+		XMINT4 mode = { 0, (surfDetail-1) ,0,0 };
 		m_device.SetBuffer(m_cbSurfMode.get(), &mode);
 		auto* pmode = m_cbSurfMode.get();
 		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);

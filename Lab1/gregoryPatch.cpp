@@ -8,7 +8,7 @@ using namespace DirectX;
 
 GregoryPatch::GregoryPatch(Entity& owner)
 	:Component(ComponentConstructorArgs(GregoryPatch)),
-	neighbors(), neighborSide()
+	neighbors(), neighborSide(), neighborReverse()
 {
 	NeighborModified = [this]() {
 		modified = wireModified = true;
@@ -23,11 +23,15 @@ Mesh* GregoryPatch::GetMesh()
 	modified = false;
 
 	std::vector<VertexPosition> vv;
+	std::array<int, 8> ibounds[3];
 	std::array<XMFLOAT3, 8> bounds[3];
 	for (int i = 0; i < 3; i++)
 	{
 		auto* bs = neighbors[i]->GetComponent<BicubicSegment>();
-		bounds[i] = bs->GetBoundary(neighborSide[i]);
+		ibounds[i] = bs->GetBoundary(neighborSide[i]);
+
+		for(int j = 0; j<8; j++)
+			bounds[i][j] = bs->GetSource()->GetPoint(ibounds[i][j]);
 	}
 	XMFLOAT3 P3[3], P2[3], P1[3], P, Q[3], a0[3], b0[3], a3[3], b3[3];
 

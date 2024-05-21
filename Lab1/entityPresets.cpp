@@ -2,6 +2,7 @@
 #include"all_components.h"
 #include<string>
 #include"vecmath.h"
+using namespace DirectX;
 
 Entity* EntityPresets::Model(DirectX::XMFLOAT3 position, Mesh* mesh)
 {
@@ -118,12 +119,34 @@ Entity* EntityPresets::BicubicSurfaceObject(DirectX::XMFLOAT3 position, const Bi
 				0
 			};
 			else
-				offset =
 			{
-				sin(x * DirectX::XM_2PI / w) * params.dimensions.x,
-				(y / (h - 1.0f) - 0.5f) * params.dimensions.y,
-				cos(x * DirectX::XM_2PI / w) * params.dimensions.x
-			};
+				float skew = 0.9;
+				int xnode = ((x+1) / 3) * 3;
+				float sm1 = sin((xnode - skew) * DirectX::XM_2PI / w), cm1 = cos((xnode - skew) * DirectX::XM_2PI / w);
+				float sp1 = sin((xnode + skew) * DirectX::XM_2PI / w), cp1 = cos((xnode + skew) * DirectX::XM_2PI / w);
+				offset = { 0, (y / (h - 1.0f) - 0.5f) * params.dimensions.y , 0 };
+				switch (params.deBoor?-1:(x % 3))
+				{
+				case -1:
+					offset.x = sin((x)*DirectX::XM_2PI / w);
+					offset.z = cos((x)*DirectX::XM_2PI / w);
+					break;
+				case 0:
+					offset.x = (sm1 + sp1) / 2;
+					offset.z = (cm1 + cp1) / 2;
+					break;
+				case 1:
+					offset.x = sp1;
+					offset.z = cp1;
+					break;
+				case 2:
+					offset.x = sm1;
+					offset.z = cm1;
+					break;
+				}
+				offset.x *= params.dimensions.x;
+				offset.z *= params.dimensions.x;
+			}
 			auto* e = Entity::New();
 			e->AddComponent<PointTransform>()
 				->Translate(position + offset);
@@ -202,7 +225,7 @@ void EntityPresets::FillInSurface(Entity::Selection s, std::vector<Entity*>& out
 	for (int i = 0; i < s.size(); i++)
 	{
 		auto* bs = s[i]->GetComponent<BicubicSegment>();
-		if (bs)
+		if (bs && (PointCollection*)bs->GetSource())
 		{
 			bss.push_back(bs);
 			if (bss.size() > 3)
@@ -213,50 +236,126 @@ void EntityPresets::FillInSurface(Entity::Selection s, std::vector<Entity*>& out
 		return;
 
 
-	for (int i = 0; i < 4; i++)
+	std::array<std::array<Entity*, 4>, 3> corners;
+	for (int j = 0; j < 3; j++)
+		for (int i = 0; i < 4; i++)
+			corners[j][i] = ((PointCollection*)bss[j]->GetSource())->entities[bss[j]->indices[BicubicSegment::corners[i]]];
+
+
+
+	for (int startSide = 0; startSide < 4; startSide++)
 	{
-		std::vector<BicubicSegment*> ordered;
-		std::vector<int> sides;
-		if (bss[2]->neighbors[i] != nullptr)
+		if (bss[0]->neighbors[startSide] != nullptr)
 			continue;
 
-		if (bss[2]->neighbors[(i + 1) % 4]->GetComponent<BicubicSegment>() == bss[1])
-			ordered = { bss[2],bss[1],bss[0] };
-		else if (bss[2]->neighbors[(i + 1) % 4]->GetComponent<BicubicSegment>() == bss[0])
-			ordered = { bss[2],bss[0],bss[1] };
-		else
-			continue;
+		std::vector<int> idx = { 0 }, side = { startSide };
+		std::vector<bool> reverse = { false };
 
-		sides = { i };
+		auto boundary = bss[0]->GetBoundary(startSide);
+		Entity* start = ((PointCollection*)bss[0]->GetSource())->entities[boundary[0]];
+		Entity* end = ((PointCollection*)bss[0]->GetSource())->entities[boundary[3]];
 
-		for (int j = 1; j < 3; j++)
+		int pred = -1;
 		{
-			int n = std::find(ordered[j]->neighbors.begin(), ordered[j]->neighbors.end(), &ordered[j-1]->owner)
-				- ordered[j]->neighbors.begin();
-			sides.push_back((n + 4 + (bss[j]->ccwNeighbor[n] ? -1 : 1)) % 4);
+			int corner = -1;
+			for (int i = 0; i < 4; i++)
+				if (corners[1][i] == end)
+				{
+					corner = i;
+					pred = 1;
+				}
+			if (corner == -1)
+				for (int i = 0; i < 4; i++)
+					if (corners[2][i] == end)
+					{
+						corner = i;
+						pred = 2;
+					}
+			if (corner == -1)
+				continue;
+
+			int succ = 3 - pred;
+			auto makePatch = [&]()
+				{
+					auto* e = Entity::New();
+					auto* gp = e->AddComponent<GregoryPatch>();
+					for (int j = 0; j < 3; j++)
+					{
+						gp->neighbors[j] = &bss[idx[2-j]]->owner;
+						gp->neighborSide[j] = side[2-j];
+						gp->neighborReverse[j] = reverse[2-j];
+
+						bss[idx[j]]->neighbors[side[2-j]] = e;
+
+						e->Register(bss[idx[j]]->onModified, gp->NeighborModified);
+					}
+
+					static unsigned patchI = 1;
+					std::string name = "Gregory Patch " + std::to_string(patchI++);
+					e->SetName(name.c_str());
+					outSurfs.push_back(e);
+				};
+
+			auto endPatch = [&]()
+				{
+					int cend = -1;
+					for (int i = 0; i < 4; i++)
+						if (corners[succ][i] == start)
+							cend = i;
+					int cstart = -1;
+					for (int i = 0; i < 4; i++)
+						if (corners[succ][i] == end)
+							cstart = i;
+					if (cend - cstart == 1 || cend - cstart == -3)
+					{
+						side.push_back(cstart);
+						reverse.push_back(false);
+						idx.push_back(succ);
+						makePatch();
+						side.pop_back();
+						reverse.pop_back();
+						idx.pop_back();
+					}
+					if (cend - cstart == -1 || cend - cstart == 3)
+					{
+						side.push_back(cend);
+						reverse.push_back(true);
+						idx.push_back(succ);
+						makePatch();
+						side.pop_back();
+						reverse.pop_back();
+						idx.pop_back();
+					}
+				};
+
+			int edge = corner;
+			if (bss[pred]->neighbors[edge] == nullptr)
+			{
+				side.push_back(edge);
+				reverse.push_back(false);
+				idx.push_back(pred);
+				boundary = bss[pred]->GetBoundary(edge);
+				end = ((PointCollection*)bss[pred]->GetSource())->entities[boundary[3]];
+				endPatch();
+				side.pop_back();
+				reverse.pop_back();
+				idx.pop_back();
+			}
+			edge = (corner + 3) % 4;
+			if (bss[pred]->neighbors[edge] == nullptr)
+			{
+				side.push_back(edge);
+				reverse.push_back(true);
+				idx.push_back(pred);
+				boundary = bss[pred]->GetBoundary(edge);
+				end = ((PointCollection*)bss[pred]->GetSource())->entities[boundary[0]];
+				endPatch();
+				side.pop_back();
+				reverse.pop_back();
+				idx.pop_back();
+			}
 		}
-
-
-		auto* e = Entity::New();
-		auto* gp = e->AddComponent<GregoryPatch>();
-		for (int j = 0; j < 3; j++)
-		{
-			gp->neighbors[j] = &ordered[j]->owner;
-			gp->neighborSide[j] = sides[j];
-			ordered[j]->neighbors[sides[j]] = e;
-
-			e->Register(ordered[j]->onModified, gp->NeighborModified);
-		}
-
-		static unsigned patchI = 1;
-		std::string name = "Gregory Patch " + std::to_string(patchI++);
-		e->SetName(name.c_str());
-		outSurfs.push_back(e);
 	}
-	
-
-
-	//e->Select(true);
 
 	return;
 }

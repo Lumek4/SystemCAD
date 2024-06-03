@@ -6,13 +6,17 @@
 
 using namespace DirectX;
 
+void GregoryPatch::NeighborModifiedFunction(void* arg)
+{
+	auto _this = (GregoryPatch*)arg;
+	_this->modified = _this->wireModified = true;
+}
+
 GregoryPatch::GregoryPatch(Entity& owner)
 	:Component(ComponentConstructorArgs(GregoryPatch)),
-	neighbors(), neighborSide(), neighborReverse()
+	neighbors(), neighborSide(), neighborReverse(),
+	NeighborModified(this, NeighborModifiedFunction)
 {
-	NeighborModified = [this]() {
-		modified = wireModified = true;
-	};
 }
 
 Mesh* GregoryPatch::GetMesh()
@@ -156,7 +160,7 @@ Mesh* GregoryPatch::GetMesh()
 		25,37,46, 36,45
 	};
 
-	m.reset(new Mesh(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_20_CONTROL_POINT_PATCHLIST));
+	m = std::make_unique<Mesh>(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_20_CONTROL_POINT_PATCHLIST);
 
 	wireModified = false;
 	static const std::vector<unsigned> iiw =
@@ -183,7 +187,7 @@ Mesh* GregoryPatch::GetMesh()
 		42,43,44, RESTART_STRIP,
 		45,46,47, RESTART_STRIP
 	};
-	wm.reset(new Mesh(vv, iiw, D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP));
+	wm = std::make_unique<Mesh>(vv, iiw, D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP);
 
 	return m.get();
 }

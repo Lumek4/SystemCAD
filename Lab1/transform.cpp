@@ -5,12 +5,14 @@
 #include"sceneCursor.h"
 using namespace DirectX;
 
-
-Transform::Transform()
+void Transform::AnchorOnSelectionFunction(void* arg, Entity* e)
 {
-	AnchorOnSelection = [this](Entity* e) {
-		parent = e->Selected() ? &SceneTransform::instance : nullptr;
-	};
+	auto _this = (Transform*)arg;
+	_this->parent = e->Selected() ? &SceneTransform::instance : nullptr;
+}
+Transform::Transform()
+	:AnchorOnSelection(this, AnchorOnSelectionFunction)
+{
 }
 
 DirectX::XMFLOAT3 Transform::Position()
@@ -207,17 +209,19 @@ MyMat SceneTransform::GetInverse() const
 		MyMTrans(-origin).Invert();
 }
 
-
+void VPointTransform::AutoDeselectFunction(void* arg)
+{
+	auto _this = (VPointTransform*)arg;
+	_this->owner.Unregister(Entity::preAnySelect, _this->AutoDeselect);
+	_this->owner.Select(false);
+}
 VPointTransform::VPointTransform(Entity& owner)
 	:Component(ComponentConstructorArgs(VPointTransform)),
-	index(-1)
+	index(-1),
+	AutoDeselect(this, AutoDeselectFunction)
 {
 	owner.hideInList = true;
 	owner.onSelect += AnchorOnSelection;
-	AutoDeselect = [this]() {
-		this->owner.Unregister(Entity::preAnySelect, AutoDeselect);
-		this->owner.Select(false);
-	};
 }
 
 MyMat VPointTransform::Get() const

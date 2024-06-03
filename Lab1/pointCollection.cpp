@@ -4,32 +4,39 @@
 #include"all_components.h"
 #include<algorithm>
 
+void PointCollection::ForwardModifiedFunction(void* arg, Transform* t)
+{
+	auto _this = (PointCollection*)arg;
+	auto& l = _this->Get();
+	for (int i = 0; i < l.size(); i++)
+	{
+		auto* et = l[i]->GetComponent<Transform>();
+		if (et == t || (et != nullptr && et->parent == t))
+			_this->onCollectionModified.Notify({ i });
+	}
+}
+void PointCollection::ForwardSelectionFunction(void* arg, Entity* e)
+{
+	auto _this = (PointCollection*)arg;
+	auto& l = _this->Get();
+	auto it = std::find(l.begin(), l.end(), e);
+	int i = (it == l.end()) ? -1 : (it - l.begin());
+	_this->onCollectionModified.Notify({ i });
+}
+void PointCollection::CleanupFunction(void* arg, Entity* e)
+{
+	((PointCollection*)arg)->Clear();
+}
 PointCollection::PointCollection(Entity& owner)
 	:Component(ComponentConstructorArgs(PointCollection)),
-	EntityCollection(*(Component*)this)
+	EntityCollection(*(Component*)this),
+	ForwardModified(this, ForwardModifiedFunction),
+	ForwardSelection(this, ForwardSelectionFunction),
+	Cleanup(this, CleanupFunction)
 {
-	ForwardModified = [this](Transform* t) {
-		auto& l = Get();
-		for (int i = 0; i < l.size(); i++)
-		{
-			auto* et = l[i]->GetComponent<Transform>();
-			if(et == t || (et != nullptr && et->parent == t))
-				onCollectionModified.Notify({ i });
-		}
-	};
-	ForwardSelection = [this](Entity* e) {
-		auto& l = Get();
-		auto it = std::find(l.begin(), l.end(), e);
-		int i = (it == l.end()) ? -1 : (it-l.begin());
-		onCollectionModified.Notify({ i });
-	};
 	owner.Register(SceneTransform::instance.onModified, ForwardModified);
 	//SceneTransform::instance.onModified += ForwardModified;
 
-	Cleanup = [this](Entity*)
-	{
-		Clear();
-	};
 	owner.preDelete += Cleanup;
 	/*Unregister = [this](Entity&) {
 		SceneTransform::instance.onModified -= ForwardModified;

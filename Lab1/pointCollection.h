@@ -28,7 +28,10 @@ public:
 	
 	Event<NeedRedrawEventData> onCollectionModified;
 private:
+	static Event<Transform*>::Reaction::Function ForwardModifiedFunction;
 	Event<Transform*>::Reaction ForwardModified;
+	static Event<Entity*>::Reaction::Function ForwardSelectionFunction;
 	Event<Entity*>::Reaction ForwardSelection;
+	static Event<Entity*>::Reaction::Function CleanupFunction;
 	Event<Entity*>::Reaction Cleanup;
 };

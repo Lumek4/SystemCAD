@@ -26,6 +26,7 @@ public:
 	void Rotate(DirectX::XMFLOAT3 point, DirectX::XMFLOAT3 axis, float angle);
 	void Scale(DirectX::XMFLOAT3 point, float factor);
 protected:
+	static Event<Entity*>::Reaction::Function AnchorOnSelectionFunction;
 	Event<Entity*>::Reaction AnchorOnSelection;
 };
 
@@ -54,6 +55,7 @@ public:
 
 	MyMat Get() const override;
 	MyMat GetInverse() const override;
+	static Event<void>::Reaction::Function AutoDeselectFunction;
 	Event<void>::Reaction AutoDeselect;
 	int index;
 };

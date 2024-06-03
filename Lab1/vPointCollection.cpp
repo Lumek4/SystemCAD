@@ -4,59 +4,67 @@
 #include"all_components.h"
 #include"entityPresets.h"
 
-VPointCollection::VPointCollection(Entity& owner)
-	:Component(ComponentConstructorArgs(VPointCollection))
+void VPointCollection::ForwardModifiedFunction(void* arg, Transform* t)
 {
-	ForwardModified = [this](Transform* t) {
-		int lastModifiedIndex = -1;
-		for (int i = 0; i < points.size(); i++)
-			if (points[i]->GetComponent<Transform>() == t ||
-				dynamic_cast<SceneTransform*>(t) && points[i] == selection)
-			{
-				lastModifiedIndex = i;
-			}
-		onCollectionModified.Notify({lastModifiedIndex});
-	};
-	owner.Register(SceneTransform::instance.onModified, ForwardModified);
-
-	ForwardSelection = [this](Entity* e) {
-		if (e->Selected())
+	auto _this = (VPointCollection*)arg;
+	int lastModifiedIndex = -1;
+	for (int i = 0; i < _this->points.size(); i++)
+		if (_this->points[i]->GetComponent<Transform>() == t ||
+			dynamic_cast<SceneTransform*>(t) && _this->points[i] == _this->selection)
 		{
-			for (int i = Entity::selection.size() - 2; i >= 0; i--)
-				if (Entity::selection[i] != &this->owner)
-				{
-					Entity::selection[i]->Select(false);
-				}
-			e->Register(Entity::preAnySelect, e->GetComponent<VPointTransform>()->AutoDeselect);
+			lastModifiedIndex = i;
 		}
-		else
-		{
-
-			SceneTransform::instance.Reset();
-			int lastModifiedIndex = e->GetComponent<VPointTransform>()->index;
-			onCollectionModified.Notify({lastModifiedIndex});
-		}
-		selection = e->Selected() ? e : nullptr;
-		onCollectionModified.Notify({-1});
-	};
-	PreSelectionSceneTransformPurge = [this](Entity* e) {
-		if (!e->Selected())
-		{
-			SceneTransform::instance.Reset();
-			int lastModifiedIndex = e->GetComponent<VPointTransform>()->index;
-			onCollectionModified.Notify({lastModifiedIndex});
-		}
-	};
-
-
-	DeletePoints = [this](Entity*)
+	_this->onCollectionModified.Notify({ lastModifiedIndex });
+};
+void VPointCollection::ForwardSelectionFunction(void* arg, Entity* e)
+{
+	auto _this = (VPointCollection*)arg;
+	if (e->Selected())
 	{
-		for (int i = 0; i < points.size(); i++)
-		{
-			points[i]->Delete();
-			points[i] = nullptr;
-		}
-	};
+		for (int i = Entity::selection.size() - 2; i >= 0; i--)
+			if (Entity::selection[i] != &_this->owner)
+			{
+				Entity::selection[i]->Select(false);
+			}
+		e->Register(Entity::preAnySelect, e->GetComponent<VPointTransform>()->AutoDeselect);
+	}
+	else
+	{
+
+		SceneTransform::instance.Reset();
+		int lastModifiedIndex = e->GetComponent<VPointTransform>()->index;
+		_this->onCollectionModified.Notify({ lastModifiedIndex });
+	}
+	_this->selection = e->Selected() ? e : nullptr;
+	_this->onCollectionModified.Notify({ -1 });
+}
+void VPointCollection::PreSelectionSceneTransformPurgeFunction(void* arg, Entity* e)
+{
+	auto _this = (VPointCollection*)arg;
+	if (!e->Selected())
+	{
+		SceneTransform::instance.Reset();
+		int lastModifiedIndex = e->GetComponent<VPointTransform>()->index;
+		_this->onCollectionModified.Notify({ lastModifiedIndex });
+	}
+}
+void VPointCollection::DeletePointsFunction(void* arg, Entity*)
+{
+	auto _this = (VPointCollection*)arg;
+	for (int i = 0; i < _this->points.size(); i++)
+	{
+		_this->points[i]->Delete();
+		_this->points[i] = nullptr;
+	}
+}
+VPointCollection::VPointCollection(Entity& owner)
+	:Component(ComponentConstructorArgs(VPointCollection)),
+	ForwardModified(this, ForwardModifiedFunction),
+	ForwardSelection(this, ForwardSelectionFunction),
+	PreSelectionSceneTransformPurge(this, PreSelectionSceneTransformPurgeFunction),
+	DeletePoints(this, DeletePointsFunction)
+{
+	owner.Register(SceneTransform::instance.onModified, ForwardModified);
 	owner.preDelete += DeletePoints;
 }
 

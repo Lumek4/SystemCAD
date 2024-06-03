@@ -348,6 +348,7 @@ void CadApplication::Update() {
 		if (!Entity::selection.empty())
 			for (int i = Entity::selection.size() - 2; i >= 0; i--)
 				Entity::selection[i]->Merge(Entity::selection.back());
+	Entity::FinalizeDeletions();
 }
 
 

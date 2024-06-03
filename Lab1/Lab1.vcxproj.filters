@@ -285,7 +285,7 @@
       <Filter>Source Files\ecs</Filter>
     </ClCompile>
     <ClCompile Include="gregoryPatch.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ecs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

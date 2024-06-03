@@ -27,16 +27,17 @@ public:
 
 	bool Merge(Entity* other);
 private:
-	std::vector<std::tuple<void*, void*, Event<void>::Reaction>> registered;
+	bool currentlyDeleting = false;
+	std::vector<std::tuple<void*, void*, void(*)(void*,void*)>> registered;
 public:
 	template<typename event, typename reaction>
 	void Register(event& e, reaction& r)
 	{
 		e += r;
-		registered.emplace_back(std::make_tuple(&e,&r,
-			[&]() {
-				e -= r;
-			}));
+		registered.emplace_back(std::make_tuple(
+			&e,&r,
+			event::Unregisterer
+			));
 	}
 	template<typename event, typename reaction>
 	void Unregister(event& e, reaction& r)
@@ -48,7 +49,7 @@ public:
 				t._Get_rest()._Myfirst._Val == &r)
 			{
 //#ifndef __INTELLISENSE__ // vs doesn't like this
-				t._Get_rest()._Get_rest()._Myfirst._Val();
+				t._Get_rest()._Get_rest()._Myfirst._Val(&e,&r);
 //#endif
 				registered.erase(it);
 				return;
@@ -100,6 +101,8 @@ public:
 		return components;
 	}
 	static Selection selection;
+public:
+	static void FinalizeDeletions();
 private:
 	static std::vector<std::unique_ptr<Entity>> objects;
 	Entity() = default;

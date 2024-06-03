@@ -17,4 +17,6 @@ public:
 	}
 private:
 	std::vector<BicubicSegment*> segments;
+	static Event<Entity*>::Reaction::Function DeleteChildrenFunction;
+	static Event<Entity*>::Reaction DeleteChildren;
 };

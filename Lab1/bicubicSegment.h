@@ -40,9 +40,13 @@ private:
 	PointSource* pointSource = nullptr;
 	BicubicSurface* surface = nullptr;
 	bool modified = true, wireModified = true;
+	static Event<NeedRedrawEventData>::Reaction::Function NeedsRedraw_PointCollectionFunction;
 	Event<NeedRedrawEventData>::Reaction NeedsRedraw_PointCollection;
+	static Event<int>::Reaction::Function PointDeletedFunction;
 	Event<int>::Reaction PointDeleted;
+	static Event<DirectX::XMINT2>::Reaction::Function TransferRelationFunction;
 	Event<DirectX::XMINT2>::Reaction TransferRelation;
+	static Event<Entity*>::Reaction::Function ReleaseNeighborsFunction;
 	Event<Entity*>::Reaction ReleaseNeighbors;
 
 	std::unique_ptr<Mesh> m;

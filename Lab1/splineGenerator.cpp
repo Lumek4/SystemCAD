@@ -3,31 +3,37 @@
 #include"entity.hpp"
 using namespace DirectX;
 
+void SplineGenerator::NeedsRedraw_PointCollectionFunction(void* arg, NeedRedrawEventData)
+{
+	auto _this = (SplineGenerator*)arg;
+	_this->modified = true;
+	int count = _this->pointCollection.GetCount();
+	int requiredPoints = count >= 4 ? (count - 3) * 3 + 1 : 0;
+	if (requiredPoints != _this->bezierPoints)
+	{
+		_this->bezierPoints = requiredPoints;
+		_this->bCollection.Resize(_this->bezierPoints);
+	}
+	_this->UpdateBezier();
+}
+void SplineGenerator::NeedsRedraw_VPointCollectionFunction(void* arg, NeedRedrawEventData e)
+{
+	auto _this = (SplineGenerator*)arg;
+	if (e.ind != -1)
+	{
+		_this->PropagateFromBezier(e.ind);
+	}
+	else
+		_this->UpdateBezier();
+	_this->modified = true;
+}
 SplineGenerator::SplineGenerator(Entity& owner)
 	:Component(ComponentConstructorArgs(SplineGenerator)),
 	pointCollection(RequireComponent(PointCollection)),
-	bCollection(RequireComponent(VPointCollection))
+	bCollection(RequireComponent(VPointCollection)),
+	NeedsRedraw_PointCollection(this, NeedsRedraw_PointCollectionFunction),
+	NeedsRedraw_VPointCollection(this, NeedsRedraw_VPointCollectionFunction)
 {
-	NeedsRedraw_PointCollection = [this](NeedRedrawEventData) {
-		modified = true;
-		int count = pointCollection.GetCount();
-		int requiredPoints = count >= 4 ? (count - 3) * 3 + 1 : 0;
-		if (requiredPoints != bezierPoints)
-		{
-			bezierPoints = requiredPoints;
-			bCollection.Resize(bezierPoints);
-		}
-		UpdateBezier();
-	};
-	NeedsRedraw_VPointCollection = [this](NeedRedrawEventData e) {
-		if (e.ind != -1)
-		{
-			PropagateFromBezier(e.ind);
-		}
-		else
-			UpdateBezier();
-		modified = true;
-	};
 	owner.Register(pointCollection.onCollectionModified, NeedsRedraw_PointCollection);
 	owner.Register(bCollection.onCollectionModified, NeedsRedraw_VPointCollection);
 
@@ -49,7 +55,7 @@ Mesh* SplineGenerator::GetPolygon()
 		vv.emplace_back(pointCollection.GetPoint(i));
 	}
 
-	m.reset(new Mesh(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP));
+	m = std::make_unique<Mesh>(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP);
 	return m.get();
 }
 

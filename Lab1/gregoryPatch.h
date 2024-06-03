@@ -20,6 +20,7 @@ public:
 
 	Event<void>::Reaction NeighborModified;
 private:
+	static Event<void>::Reaction::Function NeighborModifiedFunction;
 	bool modified = true, wireModified = true;
 
 	std::unique_ptr<Mesh> m;

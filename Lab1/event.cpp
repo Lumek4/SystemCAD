@@ -21,3 +21,9 @@ Event<void>& Event<void>::operator-=(const Reaction& observer)
 		}
 	assert(0 && "Unregistering an observer that wasn't registered");
 }
+void Event<void>::Unregisterer(void* event, void* reaction)
+{
+	auto ev = (Event<void>*)event;
+	auto re = (Event<void>::Reaction*)reaction;
+	*ev -= *re;
+}

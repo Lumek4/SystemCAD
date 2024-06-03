@@ -16,6 +16,7 @@ public:
 private:
 	PointSource* pointSource;
 	bool modified = true;
+	static Event<NeedRedrawEventData>::Reaction::Function NeedsRedraw_PointCollectionFunction;
 	Event<NeedRedrawEventData>::Reaction NeedsRedraw_PointCollection;
 
 	std::unique_ptr<Mesh> m;

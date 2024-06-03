@@ -5,96 +5,103 @@ using namespace DirectX;
 
 
 const int BicubicSegment::corners[4]{ 0,3,15,12 };
-
-BicubicSegment::BicubicSegment(Entity& owner)
-	:Component(ComponentConstructorArgs(BicubicSegment))
+void BicubicSegment::NeedsRedraw_PointCollectionFunction(void* arg, NeedRedrawEventData d)
 {
-	//pointSource = owner.GetComponent<VPointCollection>();
-	//if (!pointSource)
-	//	pointSource = &RequireComponent(PointSource);
-	NeedsRedraw_PointCollection = [this](NeedRedrawEventData d)
+	auto _this = (BicubicSegment*)arg;
+	if (d.ind == -1)
 	{
-		if (d.ind == -1)
-		{
-			wireModified = modified = true;
-		}
-		else
-		{
-			auto it = std::find(indices.begin(), indices.end(), d.ind);
-			if (it != indices.end())
-				wireModified = modified = true;
-		}
-	};
-	PointDeleted = [this](int deleted)
+		_this->wireModified = _this->modified = true;
+	}
+	else
 	{
-		for (int i = 0; i < 16; i++)
+		auto it = std::find(_this->indices.begin(), _this->indices.end(), d.ind);
+		if (it != _this->indices.end())
+			_this->wireModified = _this->modified = true;
+	}
+}
+void BicubicSegment::PointDeletedFunction(void* arg, int deleted)
+{
+	auto _this = (BicubicSegment*)arg;
+	for (int i = 0; i < 16; i++)
+	{
+		if (_this->indices[i] == deleted)
 		{
-			if (indices[i] == deleted)
+			_this->owner.Delete();
+			return;
+		}
+		else if (_this->indices[i] > deleted)
+			_this->indices[i]--;
+	}
+}
+void BicubicSegment::TransferRelationFunction(void* arg, DirectX::XMINT2 xy)
+{
+	auto _this = (BicubicSegment*)arg;
+	int deleted = xy.x, transferred = xy.y;
+	auto& segs = _this->surface->GetSegments();
+	for (int i = 0; i < 4; i++)
+	{
+		if (_this->indices[corners[i]] != deleted ||
+			(_this->neighbors[i] != nullptr && _this->neighbors[(i - 1 + 4) % 4] != nullptr))
+			continue;
+		for (int segInd = 0; segInd < segs.size(); segInd++)
+		{
+			if (segs[segInd] == _this)
+				break;
+			for (int ii = 0; ii < 4; ii++)
 			{
-				this->owner.Delete();
-				return;
-			}
-			else if (indices[i] > deleted)
-				indices[i]--;
-		}
-	};
-	TransferRelation = [this](DirectX::XMINT2 xy)
-	{
-		int deleted = xy.x, transferred = xy.y;
-		auto& segs = surface->GetSegments();
-		for (int i = 0; i < 4; i++)
-		{
-			if (indices[corners[i]]!= deleted ||
-				(neighbors[i] != nullptr && neighbors[(i-1+4)%4] != nullptr))
-				continue;
-			for (int segInd = 0; segInd < segs.size(); segInd++)
-			{
-				if (segs[segInd] == this)
-					break;
-				for (int ii = 0; ii < 4; ii++)
-				{
-					if (deleted != segs[segInd]->indices[corners[ii]])
-						continue;
+				if (deleted != segs[segInd]->indices[corners[ii]])
+					continue;
 
-					for (int j = -1; j <= 1; j += 2)
+				for (int j = -1; j <= 1; j += 2)
 					for (int jj = -1; jj <= 1; jj += 2)
 					{
-						if (indices[corners[(i + j + 4) % 4]] != segs[segInd]->indices[corners[(ii + jj + 4) % 4]])
+						if (_this->indices[corners[(i + j + 4) % 4]] != segs[segInd]->indices[corners[(ii + jj + 4) % 4]])
 							continue;
 						if (segs[segInd]->neighbors[(ii + (jj - 1) / 2 + 4) % 4] != nullptr)
 							continue;
 
-						ccwNeighbor[(i + (j - 1) / 2 + 4) % 4] =
+						_this->ccwNeighbor[(i + (j - 1) / 2 + 4) % 4] =
 							segs[segInd]->ccwNeighbor[(ii + (jj - 1) / 2 + 4) % 4] = j != jj;
-						neighbors[(i + (j - 1) / 2 + 4) % 4] = &segs[segInd]->owner;
-						segs[segInd]->neighbors[(ii + (jj - 1) / 2 + 4) % 4] = &this->owner;
+						_this->neighbors[(i + (j - 1) / 2 + 4) % 4] = &segs[segInd]->owner;
+						segs[segInd]->neighbors[(ii + (jj - 1) / 2 + 4) % 4] = &_this->owner;
 					}
-						
-				}
+
 			}
 		}
+	}
 
-		for (int i = 0; i < 16; i++)
-			if (indices[i] == deleted)
-			{
-				indices[i] = transferred;
-			}
-	};
-	ReleaseNeighbors = [this](Entity* e)
-	{
-		for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 16; i++)
+		if (_this->indices[i] == deleted)
 		{
-			if (neighbors[i] == nullptr)
-				continue;
-
-			auto* bs = neighbors[i]->GetComponent<BicubicSegment>();
-			if (bs == nullptr)
-				continue;
-			for (int j = 0; j < bs->neighbors.size(); j++)
-				if (bs->neighbors[j] == &this->owner)
-					bs->neighbors[j] = nullptr;
+			_this->indices[i] = transferred;
 		}
-	};
+}
+void BicubicSegment::ReleaseNeighborsFunction(void* arg, Entity* e)
+{
+	auto _this = (BicubicSegment*)arg;
+	for (int i = 0; i < 4; i++)
+	{
+		if (_this->neighbors[i] == nullptr)
+			continue;
+
+		auto* bs = _this->neighbors[i]->GetComponent<BicubicSegment>();
+		if (bs == nullptr)
+			continue;
+		for (int j = 0; j < bs->neighbors.size(); j++)
+			if (bs->neighbors[j] == &_this->owner)
+				bs->neighbors[j] = nullptr;
+	}
+}
+BicubicSegment::BicubicSegment(Entity& owner)
+	:Component(ComponentConstructorArgs(BicubicSegment)),
+	NeedsRedraw_PointCollection(this, NeedsRedraw_PointCollectionFunction),
+	PointDeleted(this, PointDeletedFunction),
+	TransferRelation(this, TransferRelationFunction),
+	ReleaseNeighbors(this, ReleaseNeighborsFunction)
+{
+	//pointSource = owner.GetComponent<VPointCollection>();
+	//if (!pointSource)
+	//	pointSource = &RequireComponent(PointSource);
 	owner.preDelete += ReleaseNeighbors;
 	/*DeletePoints = [this](Entity* e)
 	{
@@ -106,13 +113,6 @@ BicubicSegment::BicubicSegment(Entity& owner)
 	};
 	owner.preDelete += DeletePoints;*/
 }
-//
-//void BicubicSegment::Set(DirectX::XMINT2 start, int stride)
-//{
-//	assert(stride != -1 && "Segment already set!");
-//	this->start = start;
-//	this->stride = stride;
-//}
 
 std::array<int, 8> BicubicSegment::GetBoundary(int side)
 {
@@ -181,7 +181,7 @@ Mesh* BicubicSegment::GetMesh()
 	for (int i = 0; i < 16; i++)
 		ii.emplace_back(i);
 
-	m.reset(new Mesh(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_16_CONTROL_POINT_PATCHLIST));
+	m = std::make_unique<Mesh>(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_16_CONTROL_POINT_PATCHLIST);
 	return m.get();
 
 }
@@ -215,7 +215,7 @@ Mesh* BicubicSegment::GetWireMesh()
 		ii.emplace_back(i + 3 * 4);
 	}
 
-	wm.reset(new Mesh(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_LINELIST));
+	wm = std::make_unique<Mesh>(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_LINELIST);
 	return wm.get();
 }
 

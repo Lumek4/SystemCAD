@@ -13,10 +13,16 @@ Entity* Entity::New()
 
 void Entity::Delete()
 {
+	if (currentlyDeleting)
+		return;
+	currentlyDeleting = true;
 	Select(false);
 	for (int i = 0; i < registered.size(); i++)
 	{
-		registered[i]._Get_rest()._Get_rest()._Myfirst._Val();
+		void* e = registered[i]._Myfirst._Val;
+		void* r = registered[i]._Get_rest()._Myfirst._Val;
+
+		registered[i]._Get_rest()._Get_rest()._Myfirst._Val(e,r);
 	}
 	for (int i = containingCollections.size() - 1; i >= 0; i--)
 	{
@@ -26,14 +32,25 @@ void Entity::Delete()
 			containingCollections[i]->Remove(this);
 	}
 	preDelete.Notify(this);
-	for (auto it = objects.begin(); it < objects.end(); it++)
-		if ((*it).get() == this)
-		{
-			objects.erase(it);
-			return;
-		}
-	assert(0 && "Deleting a non-existent entity.");
+	//assert(0 && "Deleting a non-existent entity.");
 
+}
+void Entity::FinalizeDeletions()
+{
+	bool finished = false;
+	while (!finished)
+	{
+		auto end = objects.end();
+		auto it = objects.begin();
+		for (; it < end; it++)
+			if ((*it).get()->currentlyDeleting)
+			{
+				objects.erase(it);
+				break;
+			}
+		if (it == end)
+			finished = true;
+	}
 }
 bool Entity::Merge(Entity* other)
 {
@@ -75,6 +92,7 @@ std::string_view Entity::GetName()
 {
 	return std::string_view(name);
 }
+
 
 void Entity::SetName(std::string_view name)
 {

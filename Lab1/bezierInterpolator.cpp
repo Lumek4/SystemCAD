@@ -4,25 +4,27 @@
 #include"vecmath.h"
 using namespace DirectX;
 
+void BezierInterpolator::NeedsRedraw_PointCollectionFunction(void* arg, NeedRedrawEventData)
+{
+	auto _this = (BezierInterpolator*)arg;
+	_this->modified = true;
+	int count = _this->pointCollection.GetCount();
+	int segments = count - 1;
+	int requiredPoints = count >= 4 ? (segments) * 3 + 1 : 0;
+	if (requiredPoints != _this->bezierPoints)
+	{
+		_this->bezierPoints = requiredPoints;
+		_this->bCollection.Resize(_this->bezierPoints);
+		_this->onPointLengthChanged.Notify();
+	}
+	_this->UpdateBezier();
+}
 BezierInterpolator::BezierInterpolator(Entity& owner)
 	:Component(ComponentConstructorArgs(BezierInterpolator)),
 	pointCollection(RequireComponent(PointCollection)),
-	bCollection(RequireComponent(VPointCollection))
+	bCollection(RequireComponent(VPointCollection)),
+	NeedsRedraw_PointCollection(this, NeedsRedraw_PointCollectionFunction)
 {
-
-	NeedsRedraw_PointCollection = [this](NeedRedrawEventData) {
-		modified = true;
-		int count = pointCollection.GetCount();
-		int segments = count - 1;
-		int requiredPoints = count >= 4 ? (segments) * 3 + 1 : 0;
-		if (requiredPoints != bezierPoints)
-		{
-			bezierPoints = requiredPoints;
-			bCollection.Resize(bezierPoints);
-			onPointLengthChanged.Notify();
-		}
-		UpdateBezier();
-	};
 	owner.Register(pointCollection.onCollectionModified, NeedsRedraw_PointCollection);
 	NeedsRedraw_PointCollection({ -1 });
 }

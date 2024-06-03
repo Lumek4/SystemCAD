@@ -4,16 +4,18 @@
 #include"vPointCollection.h"
 #include"vecmath.h"
 
+void BezierCurve::NeedsRedraw_PointCollectionFunction(void* arg, NeedRedrawEventData)
+{
+	((BezierCurve*)arg)->modified = true;
+}
 BezierCurve::BezierCurve(Entity& owner)
-	:Component(ComponentConstructorArgs(BezierCurve))
+	:Component(ComponentConstructorArgs(BezierCurve)),
+	NeedsRedraw_PointCollection(this, NeedsRedraw_PointCollectionFunction)
 {
 	pointSource = owner.GetComponent<VPointCollection>();
 	if(!pointSource)
 		pointSource = &RequireComponent(PointSource);
-	NeedsRedraw_PointCollection = [this](NeedRedrawEventData)
-	{
-		modified = true;
-	};
+
 	owner.Register(pointSource->NeedRedrawEvent(), NeedsRedraw_PointCollection);
 }
 
@@ -36,7 +38,7 @@ Mesh* BezierCurve::GetMesh()
 	}
 	swap(vv.back(), vv[count - 1]);
 
-	m.reset(new Mesh(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_4_CONTROL_POINT_PATCHLIST));
+	m = std::make_unique<Mesh>(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_4_CONTROL_POINT_PATCHLIST);
 	return m.get();
 
 }

@@ -8,7 +8,7 @@ class CatalogueBase;
 class Component
 {
 public:
-	~Component();
+	virtual ~Component();
 	Entity& owner;
 protected:
 	Component(Entity& owner, CatalogueBase& catalogue);

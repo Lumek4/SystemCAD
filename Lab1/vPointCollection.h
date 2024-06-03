@@ -32,9 +32,13 @@ private:
 	bool showVirtualPoints = true;
 
 	//bool selected;
+	static Event<Entity*>::Reaction::Function DeletePointsFunction;
 	Event<Entity*>::Reaction DeletePoints;
+	static Event<Transform*>::Reaction::Function ForwardModifiedFunction;
 	Event<Transform*>::Reaction ForwardModified;
+	static Event<Entity*>::Reaction::Function ForwardSelectionFunction;
 	Event<Entity*>::Reaction ForwardSelection;
+	static Event<Entity*>::Reaction::Function PreSelectionSceneTransformPurgeFunction;
 	Event<Entity*>::Reaction PreSelectionSceneTransformPurge;
 	std::vector<std::unique_ptr<Event<Entity*>::Reaction>> ElementDeletion;
 };

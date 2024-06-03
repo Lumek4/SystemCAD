@@ -21,6 +21,7 @@ public:
 private:
 	int bezierPoints = 0;
 	bool modified = true, moved = false;
+	static Event<NeedRedrawEventData>::Reaction::Function NeedsRedraw_PointCollectionFunction;
 	Event<NeedRedrawEventData>::Reaction NeedsRedraw_PointCollection;
 
 	void SetPoint(DirectX::XMFLOAT3 p, int i);

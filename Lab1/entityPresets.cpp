@@ -211,10 +211,10 @@ Entity* EntityPresets::BicubicSurfaceObject(DirectX::XMFLOAT3 position, const Bi
 		}
 	}
 
-	surfI++;
 	collective->SetSegments(outSegments);
 	std::string name = "Bicubic Surface " + std::to_string(surfI);
 	surf->SetName(name.c_str());
+	surfI++;
 	return surf;
 }
 

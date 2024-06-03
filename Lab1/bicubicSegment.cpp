@@ -1,5 +1,6 @@
 #include "bicubicSegment.h"
 #include "bicubicSurface.h"
+#include "gregoryPatch.h"
 #include<algorithm>
 using namespace DirectX;
 
@@ -83,6 +84,13 @@ void BicubicSegment::ReleaseNeighborsFunction(void* arg, Entity* e)
 	{
 		if (_this->neighbors[i] == nullptr)
 			continue;
+
+		auto* gp = _this->neighbors[i]->GetComponent<GregoryPatch>();
+		if (gp != nullptr)
+		{
+			gp->owner.Delete();
+			continue;
+		}
 
 		auto* bs = _this->neighbors[i]->GetComponent<BicubicSegment>();
 		if (bs == nullptr)

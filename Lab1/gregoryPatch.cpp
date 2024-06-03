@@ -11,12 +11,30 @@ void GregoryPatch::NeighborModifiedFunction(void* arg)
 	auto _this = (GregoryPatch*)arg;
 	_this->modified = _this->wireModified = true;
 }
+void GregoryPatch::ReleaseNeighborsFunction(void* arg, Entity* e)
+{
+	auto _this = (GregoryPatch*)arg;
+	for (int i = 0; i < 3; i++)
+	{
+		if (_this->neighbors[i] == nullptr)
+			continue;
+
+		auto* bs = _this->neighbors[i]->GetComponent<BicubicSegment>();
+		if (bs == nullptr)
+			continue;
+		for (int j = 0; j < bs->neighbors.size(); j++)
+			if (bs->neighbors[j] == &_this->owner)
+				bs->neighbors[j] = nullptr;
+	}
+}
 
 GregoryPatch::GregoryPatch(Entity& owner)
 	:Component(ComponentConstructorArgs(GregoryPatch)),
 	neighbors(), neighborSide(), neighborReverse(),
-	NeighborModified(this, NeighborModifiedFunction)
+	NeighborModified(this, NeighborModifiedFunction),
+	ReleaseNeighbors(this, ReleaseNeighborsFunction)
 {
+	owner.preDelete += ReleaseNeighbors;
 }
 
 Mesh* GregoryPatch::GetMesh()
@@ -66,19 +84,35 @@ Mesh* GregoryPatch::GetMesh()
 
 		P2[i] = 2*P3[i] - cd3;
 
+		if (neighborReverse[i])
+		{
+			vv.push_back(bounds[i][0]);
+			vv.push_back(c1[0]);
+			vv.push_back(c2[0]);
+			vv.push_back(2 * c2[0] - cd2[0]);
+			vv.push_back(2 * c1[0] - cd1[0]);
 
-		vv.push_back(bounds[i][3]);
-		vv.push_back(c1[2]);
-		vv.push_back(c2[1]);
-		vv.push_back(2*c1[2] - cd1[2]);
-		vv.push_back(2*c2[1] - cd2[1]);
+			vv.push_back(P3[i]);
+			vv.push_back(c2[1]);
+			vv.push_back(c1[2]);
+			vv.push_back(2 * c2[1] - cd2[1]);
+			vv.push_back(2 * c1[2] - cd1[2]);
+		}
+		else
+		{
+			vv.push_back(bounds[i][3]);
+			vv.push_back(c1[2]);
+			vv.push_back(c2[1]);
+			vv.push_back(2 * c1[2] - cd1[2]);
+			vv.push_back(2 * c2[1] - cd2[1]);
 
 
-		vv.push_back(P3[i]);
-		vv.push_back(c2[0]);
-		vv.push_back(c1[0]);
-		vv.push_back(2*c1[0] - cd1[0]);
-		vv.push_back(2*c2[0] - cd2[0]);
+			vv.push_back(P3[i]);
+			vv.push_back(c2[0]);
+			vv.push_back(c1[0]);
+			vv.push_back(2 * c1[0] - cd1[0]);
+			vv.push_back(2 * c2[0] - cd2[0]);
+		}
 
 	}
 	// vv.size() == 30

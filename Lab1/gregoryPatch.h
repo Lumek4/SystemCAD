@@ -19,8 +19,10 @@ public:
 	Mesh* GetWireMesh();
 
 	Event<void>::Reaction NeighborModified;
+	Event<Entity*>::Reaction ReleaseNeighbors;
 private:
 	static Event<void>::Reaction::Function NeighborModifiedFunction;
+	static Event<Entity*>::Reaction::Function ReleaseNeighborsFunction;
 	bool modified = true, wireModified = true;
 
 	std::unique_ptr<Mesh> m;

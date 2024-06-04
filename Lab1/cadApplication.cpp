@@ -105,7 +105,7 @@ void CadApplication::GUI()
 
 	ImGui::Begin("Options");
 	MyGui::Options();
-	ImGui::SliderInt("Detail Level of Surfaces", &surfDetail, 1, 127);
+	ImGui::SliderInt("Detail Level of Surfaces", &surfDetail, 1, 255);
 	ImGui::End(); // Options
 
 	ImGui::Begin("Torus model data");
@@ -160,7 +160,7 @@ void CadApplication::GUI()
 
 		if (ImGui::Button("+Bicubic\nSurface", buttonDims))
 			MyGui::ShowBicubicSurfacePopup(bicubic);
-		
+
 		MyGui::BicubicSurfacePopup(bicubic, modify, create);
 		if (create)
 		{
@@ -209,28 +209,80 @@ void CadApplication::GUI()
 	{
 		ImGui::Begin("Virtual Points");
 		auto* last = selectedVirtualCollections.back();
-		bool showing = last->ShowingVirtualPoints();
-		if (ImGui::Checkbox("Show Virtual Points", &showing))
-			last->ShowVirtualPoints(showing);
-		ImGui::LabelText("Count", "%d", last->GetCount());
+		if (!last->owner.GetComponent<BezierInterpolator>())
+		{
+			bool showing = last->ShowingVirtualPoints();
+			if (ImGui::Checkbox("Show Virtual Points", &showing))
+				last->ShowVirtualPoints(showing);
+			ImGui::LabelText("Count", "%d", last->GetCount());
+		}
 		ImGui::End();
 	}
+	{
+		auto selectedBicubicSurfaces = Entity::GetSelected<BicubicSurface>();
+		if (selectedBicubicSurfaces.size() == 1)
+		{
+			ImGui::Begin("Bicubic Surface");
+			auto* last = selectedBicubicSurfaces.back();
+			ImGui::DragInt("Detail Level Offset", &last->surfDetailOffset, 1, -255, 255);
 
-	auto selectedBicubicSegments = Entity::GetSelected<BicubicSegment>();
-	if (selectedBicubicSegments.size() == 1)
-	{
-		ImGui::Begin("Bicubic Segment");
-		auto* last = selectedBicubicSegments.back();
-		ImGui::Checkbox("Draw Grid", &last->drawPolygon);
-		ImGui::End();
+			ImGui::End();
+		}
 	}
-	auto selectedGregs = Entity::GetSelected<GregoryPatch>();
-	if (selectedGregs.size() == 1)
 	{
-		ImGui::Begin("Gregory Patch");
-		auto* last = selectedGregs.back();
-		ImGui::Checkbox("Draw Grid", &last->drawPolygon);
-		ImGui::End();
+		auto selectedBicubicSegments = Entity::GetSelected<BicubicSegment>();
+		if (selectedBicubicSegments.size() > 0)
+		{
+			ImGui::Begin("Bicubic Segment");
+			const int ANY = 0b01;
+			const int ALL = 0b11;
+			int on = 0b10;
+			for (auto it = selectedBicubicSegments.begin(); it < selectedBicubicSegments.end(); it++)
+			{
+				if ((*it)->drawPolygon)
+					on |= 0b01;
+				else
+					on &= 0b01;
+			}
+
+			if (ImGui::CheckboxFlags("Draw Grid", &on, 0b11))
+				if (on == ALL)
+					for (auto it = selectedBicubicSegments.begin(); it < selectedBicubicSegments.end(); it++)
+						(*it)->drawPolygon = true;
+				else
+					for (auto it = selectedBicubicSegments.begin(); it < selectedBicubicSegments.end(); it++)
+						(*it)->drawPolygon = false;
+
+			ImGui::End();
+		}
+	}
+	{
+		auto selectedGregs = Entity::GetSelected<GregoryPatch>();
+		if (selectedGregs.size() > 0)
+		{
+			ImGui::Begin("Gregory Patch");
+			const int ANY = 0b01;
+			const int ALL = 0b11;
+			int on = 0b10;
+			for (auto it = selectedGregs.begin(); it < selectedGregs.end(); it++)
+			{
+				if ((*it)->drawPolygon)
+					on |= 0b01;
+				else
+					on &= 0b01;
+			}
+
+			if (ImGui::CheckboxFlags("Draw Grid", &on, 0b11))
+				if (on == ALL)
+					for (auto it = selectedGregs.begin(); it < selectedGregs.end(); it++)
+						(*it)->drawPolygon = true;
+				else
+					for (auto it = selectedGregs.begin(); it < selectedGregs.end(); it++)
+						(*it)->drawPolygon = false;
+			if (selectedGregs.size() == 1)
+				ImGui::DragInt("Detail Level Offset", &selectedGregs.back()->surfDetailOffset, 1, -255, 255);
+			ImGui::End();
+		}
 	}
 	auto selectedTransforms = Entity::GetSelected<Transform>();
 	if (!selectedTransforms.empty())
@@ -493,7 +545,7 @@ void CadApplication::Render() {
 			continue;
 		SetColor(owner);
 		SetModelMatrix(nullptr);
-		XMINT4 mode = { bbcs[i]->deBoorMode ? 1 : 0, surfDetail-1,0,0 };
+		XMINT4 mode = { bbcs[i]->deBoorMode ? 1 : 0, (surfDetail+bbcs[i]->surface->surfDetailOffset)-1,0,0};
 		m_device.SetBuffer(m_cbSurfMode.get(), &mode);
 		auto* pmode = m_cbSurfMode.get();
 		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);
@@ -519,7 +571,7 @@ void CadApplication::Render() {
 			continue;
 		SetColor(owner);
 		SetModelMatrix(nullptr);
-		XMINT4 mode = { 0, (surfDetail-1) ,0,0 };
+		XMINT4 mode = { 0, (surfDetail + gps[i]->surfDetailOffset) -1 ,0,0};
 		m_device.SetBuffer(m_cbSurfMode.get(), &mode);
 		auto* pmode = m_cbSurfMode.get();
 		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);

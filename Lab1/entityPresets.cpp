@@ -298,11 +298,11 @@ void EntityPresets::FillInSurface(Entity::Selection s, std::vector<Entity*>& out
 
 			auto endPatch = [&]()
 				{
-					int cend = -2;
+					int cend = -99999;
 					for (int i = 0; i < 4; i++)
 						if (corners[succ][i] == start)
 							cend = i;
-					int cstart = -2;
+					int cstart = -99999;
 					for (int i = 0; i < 4; i++)
 						if (corners[succ][i] == end)
 							cstart = i;

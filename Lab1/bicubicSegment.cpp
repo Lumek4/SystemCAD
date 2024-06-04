@@ -80,6 +80,12 @@ void BicubicSegment::TransferRelationFunction(void* arg, DirectX::XMINT2 xy)
 void BicubicSegment::ReleaseNeighborsFunction(void* arg, Entity* e)
 {
 	auto _this = (BicubicSegment*)arg;
+	for (auto it = _this->surface->GetSegments().begin(); it < _this->surface->GetSegments().end(); it++)
+		if (*it == _this)
+		{
+			_this->surface->GetSegments().erase(it);
+			break;
+		}
 	for (int i = 0; i < 4; i++)
 	{
 		if (_this->neighbors[i] == nullptr)
@@ -100,6 +106,7 @@ void BicubicSegment::ReleaseNeighborsFunction(void* arg, Entity* e)
 				bs->neighbors[j] = nullptr;
 	}
 }
+
 BicubicSegment::BicubicSegment(Entity& owner)
 	:Component(ComponentConstructorArgs(BicubicSegment)),
 	NeedsRedraw_PointCollection(this, NeedsRedraw_PointCollectionFunction),

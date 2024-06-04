@@ -38,9 +38,28 @@ void BezierInterpolator::UpdateBezier()
 	if (count < 4)
 		return;
 	int n = count - 1;
+	std::vector<int> skips;
+
+	std::vector<float> d(count-1);
+	{
+		XMFLOAT3 P_i,
+			P_im1 = pointCollection.GetPoint(count - 1);
+		for (int i = count - 2; i > 0; i--)
+		{
+			P_i = P_im1;
+			P_im1 = pointCollection.GetPoint(i - 1);
+			d[i] = len(P_i - P_im1);
+			if (d[i] < EPS)
+			{
+				skips.push_back(i);
+				n--;
+			}
+		}
+	}
+	if (n < 3)
+		return;
 	std::vector<XMFLOAT3> c(n+1);
 	c[0] = c[n] = {};
-	std::vector<float> d(n);
 	{
 		std::vector<XMFLOAT3> R(n - 1);
 		std::vector<float> alpha(n - 1);
@@ -48,25 +67,40 @@ void BezierInterpolator::UpdateBezier()
 		{
 			XMFLOAT3 P_im1,
 				P_i = pointCollection.GetPoint(0),
-				P_ip1 = pointCollection.GetPoint(1);
+				P_ip1;
+			int i = -1;
+
+			while (!skips.empty() && skips.back() == i + 2)
+			{
+				skips.pop_back();
+				i++;
+			}
+			P_ip1 = pointCollection.GetPoint(i + 2);
 
 			d[0] = len(P_i - P_ip1);
-			for (int i = 0; i < n - 1; i++)
+			i++;
+			int ind = 0;
+			for (i; i < count - 2; i++)
 			{
+				if (!skips.empty() && skips.back() == i+2)
+				{
+					continue;
+				}
 				P_im1 = P_i;
 				P_i = P_ip1;
 				P_ip1 = pointCollection.GetPoint(i + 2);
 
-				d[i+1] = len(P_i - P_ip1);
+				d[ind+1] = len(P_i - P_ip1);
 
 
-				alpha[i] = d[i] / (d[i] + d[i + 1]);
-				beta[i] = d[i+1] / (d[i] + d[i + 1]);
+				alpha[ind] = d[ind] / (d[ind] + d[ind + 1]);
+				beta[ind] = d[ind+1] / (d[ind] + d[ind + 1]);
 
-				R[i] =
-					(P_ip1 - P_i) * (3 / d[i + 1] / (d[i] + d[i + 1])) -
-					(P_i - P_im1) * (3 / d[i] / (d[i] + d[i + 1]))
+				R[ind] =
+					(P_ip1 - P_i) * (3 / d[ind + 1] / (d[ind] + d[ind + 1])) -
+					(P_i - P_im1) * (3 / d[ind] / (d[ind] + d[ind + 1]))
 					;
+				ind++;
 			}
 			alpha[0] = beta[n - 2] = 0;
 		}
@@ -117,7 +151,13 @@ void BezierInterpolator::UpdateBezier()
 			SetPoint(bezier[1], i * 3 + 1);
 			SetPoint(bezier[2], i * 3 + 2);
 		}
-		SetPoint(A1, n * 3);
+		for (int i = n; i < count - 1; i++)
+		{
+			SetPoint(A1, i * 3 + 0);
+			SetPoint(A1, i * 3 + 1);
+			SetPoint(A1, i * 3 + 2);
+		}
+		SetPoint(A1, (count-1) * 3);
 	}
 	bCollection.onCollectionModified.Notify({ -1 });
 }

@@ -15,6 +15,7 @@ public:
 	{
 		return segments;
 	}
+	int surfDetailOffset = 0;
 private:
 	std::vector<BicubicSegment*> segments;
 	static Event<Entity*>::Reaction::Function DeleteChildrenFunction;

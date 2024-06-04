@@ -2,6 +2,7 @@
 #include<DirectXMath.h>
 #include<vector>
 
+#define EPS 1e-10
 namespace Quaternion
 {
 	DirectX::XMFLOAT4 Get(DirectX::XMFLOAT3 axis, float angle);

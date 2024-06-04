@@ -29,7 +29,7 @@ namespace mini
 		explicit WindowApplication(HINSTANCE hInstance,
 			int wndWidth = Window::m_defaultWindowWidth,
 			int wndHeight = Window::m_defaultWindowHeight,
-			std::wstring wndTitle = L"Elipsoida");
+			std::wstring wndTitle = L"Generic Universal Rough Prototyper of Surfaces");
 
 		/******************************************************************//*!
 		 * Destroys the window and frees application resources.

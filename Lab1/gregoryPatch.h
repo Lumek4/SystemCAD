@@ -20,6 +20,8 @@ public:
 
 	Event<void>::Reaction NeighborModified;
 	Event<Entity*>::Reaction ReleaseNeighbors;
+
+	int surfDetailOffset = 0;
 private:
 	static Event<void>::Reaction::Function NeighborModifiedFunction;
 	static Event<Entity*>::Reaction::Function ReleaseNeighborsFunction;

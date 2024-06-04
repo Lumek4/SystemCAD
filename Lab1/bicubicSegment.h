@@ -36,9 +36,9 @@ public:
 	PointSource* GetSource() { return pointSource; };
 
 	Event<void> onModified;
+	BicubicSurface* surface = nullptr;
 private:
 	PointSource* pointSource = nullptr;
-	BicubicSurface* surface = nullptr;
 	bool modified = true, wireModified = true;
 	static Event<NeedRedrawEventData>::Reaction::Function NeedsRedraw_PointCollectionFunction;
 	Event<NeedRedrawEventData>::Reaction NeedsRedraw_PointCollection;

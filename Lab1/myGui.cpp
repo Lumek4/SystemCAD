@@ -541,7 +541,7 @@ bool MyGui::SceneTransformWidget(SceneTransform* st)
 	return s_changed || r_changed || t_changed || type_changed;
 }
 
-void MyGui::Options()
+void MyGui::GuiOptions()
 {
 	ImGui::Checkbox("Show transforms", &showTransforms);
 	ImGui::Checkbox("Highlight drag and drop targets", &showDragDropTargets);

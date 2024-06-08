@@ -19,7 +19,7 @@ namespace MyGui
 	bool TransformWidget(Transform* p);
 	bool SceneCursorWidget(SceneCursor* sc);
 	bool SceneTransformWidget(SceneTransform* st);
-	void Options();
+	void GuiOptions();
 	struct TorusMeshData
 	{
 		DirectX::XMINT2 division{ 10,10 };

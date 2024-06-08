@@ -104,7 +104,7 @@ void CadApplication::GUI()
 	auto viewportDock = ImGui::DockSpaceOverViewport(nullptr, ImGuiDockNodeFlags_PassthruCentralNode);
 
 	ImGui::Begin("Options");
-	MyGui::Options();
+	MyGui::GuiOptions();
 	ImGui::SliderInt("Detail Level of Surfaces", &surfDetail, 1, 255);
 	ImGui::End(); // Options
 

@@ -9,6 +9,7 @@
 #include"all_components.h"
 
 
+extern enum class SaveResult;
 class CadApplication : public DxApplication
 {
 public:
@@ -32,7 +33,7 @@ private:
 	const float turnRate = 0.01f;
 	const float scaleRate = 0.05f;
 	const float moveRate = 0.001f;
-	Folder* mainFolder = Entity::New()->AddComponent<Folder>();
+	Folder* mainFolder = nullptr;
 	//std::vector<Entity*> objectList;
 
 	//SceneCursor sceneCursor;
@@ -97,4 +98,7 @@ private:
 
 	mini::dx_ptr<ID3D11Buffer> m_cbSurfMode;
 	mini::dx_ptr<ID3D11Buffer> m_cbgizmos;
+
+	friend SaveResult save(const CadApplication& app, const char* filepath);
+	friend SaveResult load(CadApplication& app, const char* filepath);
 };

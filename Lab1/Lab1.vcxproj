@@ -72,7 +72,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\source\repos\GK2\Scene-Serializer-main\cpp\Serializer\</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\source\repos\GK2\Scene-Serializer-main\cpp\Serializer\;C:\Libraries</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);;C:\Libraries</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);;C:\Libraries</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);;C:\Libraries</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,6 +89,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -95,6 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -156,6 +167,8 @@
     <ClInclude Include="folder.h" />
     <ClInclude Include="gregoryPatch.h" />
     <ClInclude Include="pointSource.h" />
+    <ClInclude Include="saving\saving.h" />
+    <ClInclude Include="saving\serializer.h" />
     <ClInclude Include="splineGenerator.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="colorPaletteh.h" />
@@ -222,6 +235,9 @@
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="pointCollection.cpp" />
     <ClCompile Include="pointRenderer.cpp" />
+    <ClCompile Include="saving\saving.cpp" />
+    <ClCompile Include="saving\serializer.cpp" />
+    <ClCompile Include="saving\validation.cpp" />
     <ClCompile Include="sceneCursor.cpp" />
     <ClCompile Include="splineGenerator.cpp" />
     <ClCompile Include="transform.cpp" />

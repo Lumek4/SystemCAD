@@ -37,7 +37,10 @@
     <Filter Include="Header Files\ecs\interfaces">
       <UniqueIdentifier>{d4a65e1f-e797-497c-81de-c8758741bd4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\serializer">
+    <Filter Include="Header Files\saving">
+      <UniqueIdentifier>{afa1f4e2-0be8-4bbf-8bbc-17878fed4445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\saving">
       <UniqueIdentifier>{a0fa626c-bd36-468d-91bc-c949a6dafe7f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -171,6 +174,12 @@
     <ClInclude Include="gregoryPatch.h">
       <Filter>Header Files\ecs\components</Filter>
     </ClInclude>
+    <ClInclude Include="saving\saving.h">
+      <Filter>Header Files\saving</Filter>
+    </ClInclude>
+    <ClInclude Include="saving\serializer.h">
+      <Filter>Header Files\saving</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui\imgui.cpp">
@@ -286,6 +295,15 @@
     </ClCompile>
     <ClCompile Include="gregoryPatch.cpp">
       <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="saving\saving.cpp">
+      <Filter>Source Files\saving</Filter>
+    </ClCompile>
+    <ClCompile Include="saving\validation.cpp">
+      <Filter>Source Files\saving</Filter>
+    </ClCompile>
+    <ClCompile Include="saving\serializer.cpp">
+      <Filter>Source Files\saving</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

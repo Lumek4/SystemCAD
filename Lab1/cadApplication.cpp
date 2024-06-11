@@ -7,6 +7,7 @@
 #include"myGui.h"
 #include"colorPaletteh.h"
 #include"entityPresets.h"
+#include"saving/saving.h"
 
 using namespace mini;
 using namespace DirectX;
@@ -91,6 +92,7 @@ CadApplication::CadApplication(HINSTANCE hInstance)
 	Camera::mainCamera->Rotate({ 0, 2 * XM_PI / 3 });
 	//shapes.push_back(ImplicitShape::Ellipsoid(radii));
 
+	mainFolder = Entity::New()->AddComponent<Folder>();
 	mainFolder->Add(EntityPresets::Point({}));
 }
 
@@ -102,6 +104,11 @@ CadApplication::~CadApplication()
 void CadApplication::GUI()
 {
 	auto viewportDock = ImGui::DockSpaceOverViewport(nullptr, ImGuiDockNodeFlags_PassthruCentralNode);
+	
+	static SaveResult saveRes = SaveResult::Undefined;
+	if (saveRes == SaveResult::Undefined)
+		//saveRes = load(*this, "../gregory_test_2024.json");
+		saveRes = load(*this, "../referenceScene.json");
 
 	ImGui::Begin("Options");
 	MyGui::GuiOptions();

@@ -14,11 +14,14 @@ bool EntityCollection::Remove(Entity* v)
 		if (it != l.end())
 		{
 			onRemove.Notify(it - l.begin());
-			l.erase(it);
-			return true;
+			it = find(l.begin(), l.end(), v);
+			if (it != l.end())
+			{
+				l.erase(it);
+				return true;
+			}
 		}
-		else
-			return false;
+		return false;
 	}
 }
 bool EntityCollection::Add(Entity* v)

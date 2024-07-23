@@ -1,4 +1,5 @@
 #pragma once
+#include"torusGenerator.h"
 #include"meshRenderer.h"
 #include"pointRenderer.h"
 #include"transform.h"

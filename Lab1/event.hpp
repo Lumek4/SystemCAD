@@ -37,8 +37,11 @@ template<typename T>
 void Event<T>::Notify(T arg)
 {
 	if(enabled)
-	for (int i = observers.size()-1; i >= 0; i--)
-		(*observers[i])(arg);
+		for (int i = observers.size() - 1; i >= 0; i--)
+		{
+			(*observers[i])(arg);
+			i = (i < observers.size()) ? i : observers.size();
+		}
 }
 
 template<typename T>

@@ -1,9 +1,10 @@
 #pragma once
-#include"all_components.h"
+#include"torusGenerator.h"
 #include"entity.hpp"
 #include"mesh.h"
 #include"sceneCursor.h"
 #include"bicubicSurface.h"
+#include <span>
 
 struct BicubicSurfaceParams;
 namespace MyGui
@@ -20,12 +21,9 @@ namespace MyGui
 	bool SceneCursorWidget(SceneCursor* sc);
 	bool SceneTransformWidget(SceneTransform* st);
 	void GuiOptions();
-	struct TorusMeshData
-	{
-		DirectX::XMINT2 division{ 10,10 };
-		DirectX::XMFLOAT2 radii{ 2, 1 };
-	};
-	bool TorusMeshWidget(std::unique_ptr<Mesh>& m, TorusMeshData& data);
+	bool TorusMeshWidget(std::unique_ptr<Mesh>& m, TorusGenerator::MeshData& data);
+	bool SaveLoadWidget(std::span<char> buffer, bool& save, bool& load);
+
 
 	void ShowBicubicSurfacePopup(BicubicSurfaceParams& data);
 	void BicubicSurfacePopup(BicubicSurfaceParams& data, bool& modified, bool& create);

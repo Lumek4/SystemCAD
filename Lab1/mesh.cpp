@@ -1,4 +1,5 @@
 #include "mesh.h"
+#include"vecmath.h"
 using namespace DirectX;
 
 ID3D11InputLayout* VertexPosition::layout = nullptr;
@@ -87,6 +88,7 @@ unsigned Mesh::SetBuffers() const
 
 std::vector<VertexPosition> Mesh::CreateTorusVertices(int major, int minor, float r1, float r2)
 {
+	swap(r1, r2);
 	std::vector<VertexPosition> verts;
 	for (int i = 0; i < major; i++)
 		for (int j = 0; j < minor; j++)
@@ -95,8 +97,8 @@ std::vector<VertexPosition> Mesh::CreateTorusVertices(int major, int minor, floa
 			float v = j * g_XMTwoPi.f[0] / minor - g_XMPi.f[0];
 			verts.push_back(VertexPosition({
 				(r1 + r2 * cosf(v)) * cosf(u),
-				(r1 + r2 * cosf(v)) * sinf(u),
-				r2 * sinf(v)
+				(r1 + r2 * cosf(v))* sinf(u),
+				r2* sinf(v),
 				}));
 		}
 	return verts;

@@ -177,6 +177,15 @@
     <ClInclude Include="saving\saving.h">
       <Filter>Header Files\saving</Filter>
     </ClInclude>
+    <ClInclude Include="saving\deserializer.h">
+      <Filter>Header Files\saving</Filter>
+    </ClInclude>
+    <ClInclude Include="torusGenerator.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="vecmath_internals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="saving\serializer.h">
       <Filter>Header Files\saving</Filter>
     </ClInclude>
@@ -302,8 +311,14 @@
     <ClCompile Include="saving\validation.cpp">
       <Filter>Source Files\saving</Filter>
     </ClCompile>
-    <ClCompile Include="saving\serializer.cpp">
+    <ClCompile Include="saving\deserializer.cpp">
       <Filter>Source Files\saving</Filter>
+    </ClCompile>
+    <ClCompile Include="torusGenerator.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="saving\serializer.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

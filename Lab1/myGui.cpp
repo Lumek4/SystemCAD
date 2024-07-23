@@ -5,6 +5,7 @@
 #include"colorPaletteh.h"
 #include<DirectXMath.h>
 #include"entityPresets.h"
+#include"meshRenderer.h"
 using namespace DirectX;
 using namespace ColorPalette;
 
@@ -393,7 +394,7 @@ bool MyGui::UnitFloat3(const char* name, float* v)
 	return false;
 }
 
-bool MyGui::TorusMeshWidget(std::unique_ptr<Mesh>& m, TorusMeshData& data)
+bool MyGui::TorusMeshWidget(std::unique_ptr<Mesh>& m, TorusGenerator::MeshData& data)
 {
 	if (ImGui::SliderInt2(" Model detail", (int*)&data.division, 3, 500, "%d Segments", ImGuiSliderFlags_AlwaysClamp) |
 		ImGui::SliderFloat(" Major radius", &data.radii.x, data.radii.y, 20, "%.2f", ImGuiSliderFlags_AlwaysClamp) |
@@ -407,6 +408,32 @@ bool MyGui::TorusMeshWidget(std::unique_ptr<Mesh>& m, TorusMeshData& data)
 		m = std::move(newTorus);
 		return true;
 	}
+	return false;
+}
+
+bool MyGui::SaveLoadWidget(std::span<char> buf, bool& save, bool& load)
+{
+	static bool open = true;
+
+	if (ImGui::BeginPopupModal("Choose File", &open))
+	{
+		ImGui::InputText("File name",
+			buf.data(), buf.size());
+		if (ImGui::Button("Save"))
+			save = true;
+		ImGui::SameLine();
+		if (ImGui::Button("Load"))
+			load = true;
+		ImGui::SameLine();
+		if (save || load || ImGui::Button("Cancel"))
+			ImGui::CloseCurrentPopup();
+
+		ImGui::EndPopup();
+	}
+	if(ImGui::IsKeyDown(ImGuiKey_LeftCtrl) && ImGui::IsKeyDown(ImGuiKey_S))
+		ImGui::OpenPopup("Choose File");
+	if (ImGui::Button("Save/Load"))
+		ImGui::OpenPopup("Choose File");
 	return false;
 }
 
@@ -558,7 +585,7 @@ void MyGui::BicubicSurfacePopup(BicubicSurfaceParams& data, bool& modified, bool
 
 	static bool cylinder = false;
 	modified = ImGui::Checkbox("Cylindrical", &cylinder);
-	data.wrapMode = cylinder ? SURFACE_WRAP_U : SURFACE_WRAP_NONE;
+	data.wrapMode = cylinder ? XMINT2{ 1,0 } : XMINT2{ 0,0 };
 	ImGui::SameLine();
 	modified |= ImGui::Checkbox("C2 Continuity", &data.deBoor);
 

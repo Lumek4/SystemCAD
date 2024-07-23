@@ -8,6 +8,8 @@ namespace Quaternion
 	DirectX::XMFLOAT4 Get(DirectX::XMFLOAT3 axis, float angle);
 	DirectX::XMFLOAT3 RotateByQuaternion(const DirectX::XMFLOAT3& v,
 		const DirectX::XMFLOAT4& q);
+
+	DirectX::XMFLOAT3 ToEulerAngles(DirectX::XMFLOAT4 q);
 }
 
 
@@ -17,6 +19,7 @@ DirectX::XMFLOAT3 operator+(const DirectX::XMFLOAT3& l,
 DirectX::XMFLOAT3 operator-(const DirectX::XMFLOAT3& l,
 	const DirectX::XMFLOAT3& r);
 DirectX::XMFLOAT3 operator-(const DirectX::XMFLOAT3& l);
+
 
 
 template<typename T>
@@ -59,3 +62,7 @@ inline DirectX::XMFLOAT3 operator*(float l,
 	const DirectX::XMFLOAT3& r) {
 	return r * l;
 }
+#include "vecmath_internals.h"
+
+__VECEQNEQ2DECL(DirectX::XMINT2)
+__VECEQNEQ2DECL(DirectX::XMFLOAT2)

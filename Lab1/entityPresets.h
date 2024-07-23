@@ -4,18 +4,11 @@
 #include<DirectXMath.h>
 #include<vector>
 
-enum SURFACE_WRAP
-{
-	SURFACE_WRAP_NONE = 0,
-	SURFACE_WRAP_U = 1,
-	SURFACE_WRAP_V = 2,
-	SURFACE_WRAP_UV = SURFACE_WRAP_U | SURFACE_WRAP_V
-};
 struct BicubicSurfaceParams
 {
 	bool deBoor = false;
 	DirectX::XMINT2 division{ 2,2 };
-	SURFACE_WRAP wrapMode{ SURFACE_WRAP_NONE };
+	DirectX::XMINT2 wrapMode{ 0,0 };
 	DirectX::XMFLOAT2 dimensions{ 3,4 };
 };
 namespace EntityPresets

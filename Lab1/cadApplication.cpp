@@ -105,18 +105,31 @@ void CadApplication::GUI()
 {
 	auto viewportDock = ImGui::DockSpaceOverViewport(nullptr, ImGuiDockNodeFlags_PassthruCentralNode);
 	
-	static SaveResult saveRes = SaveResult::Undefined;
-	if (saveRes == SaveResult::Undefined)
-		//saveRes = load(*this, "../gregory_test_2024.json");
-		saveRes = load(*this, "../referenceScene.json");
 
 	ImGui::Begin("Options");
 	MyGui::GuiOptions();
+	{
+		static std::array<char, 256> buf{ "../referenceScene.json" };
+		bool sv = false, ld = false;
+		MyGui::SaveLoadWidget(buf, sv, ld);
+		try
+		{
+			if (sv)
+				save(*this, buf.data());
+			if (ld)
+				load(*this, buf.data());
+
+		}
+		catch (std::exception e)
+		{
+			printf("%s", e.what());
+		}
+	}
 	ImGui::SliderInt("Detail Level of Surfaces", &surfDetail, 1, 255);
 	ImGui::End(); // Options
 
 	ImGui::Begin("Torus model data");
-	static MyGui::TorusMeshData torusCreationData{};
+	static TorusGenerator::MeshData torusCreationData{};
 	MyGui::TorusMeshWidget(torus, torusCreationData);
 	ImGui::End(); // Torus model data
 
@@ -501,8 +514,22 @@ void CadApplication::Render() {
 	for (int i = 0; i < mrs.size(); i++)
 	{
 		const Mesh* mesh = mrs[i]->mesh;
+		if (mesh == nullptr)
+			mesh = torus.get();
 		Transform* t = &mrs[i]->transform;
 		Entity* owner = &mrs[i]->owner;
+		if (!owner->enabled || !mesh)
+			continue;
+		SetColor(owner);
+		SetModelMatrix(t);
+		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
+	}
+	auto tgs = Catalogue<TorusGenerator>::Instance.GetAll();
+	for (int i = 0; i < tgs.size(); i++)
+	{
+		const Mesh* mesh = tgs[i]->GetMesh();
+		Entity* owner = &tgs[i]->owner;
+		Transform* t = owner->GetComponent<Transform>();
 		if (!owner->enabled || !mesh)
 			continue;
 		SetColor(owner);

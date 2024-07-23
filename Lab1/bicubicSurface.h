@@ -10,6 +10,9 @@ public:
 	BicubicSurface(Entity& owner);
 	const char* Name() const override { return "BicubicSurface"; }
 
+	DirectX::XMINT2 division;
+	DirectX::XMINT2 wrapMode;
+
 	void SetSegments(const std::vector<Entity*>& segs);
 	std::vector<BicubicSegment*>& GetSegments()
 	{

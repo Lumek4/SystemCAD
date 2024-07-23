@@ -26,6 +26,11 @@ Mesh* BezierCurve::GetMesh()
 	int count = pointSource->GetCount();
 	int virtualCount = (3 - ((count - 1) % 3)) % 3;
 	modified = false;
+	if (count < 2)
+	{
+		m = nullptr;
+		return nullptr;
+	}
 
 	std::vector<VertexPosition> vv; 
 	std::vector<unsigned> ii;

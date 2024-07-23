@@ -87,9 +87,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_SILENCE_CXX20_CISO646_REMOVED_WARNING</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -103,9 +103,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_SILENCE_CXX20_CISO646_REMOVED_WARNING</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -119,9 +119,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_SILENCE_CXX20_CISO646_REMOVED_WARNING</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -141,9 +141,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_SILENCE_CXX20_CISO646_REMOVED_WARNING</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -168,6 +168,7 @@
     <ClInclude Include="gregoryPatch.h" />
     <ClInclude Include="pointSource.h" />
     <ClInclude Include="saving\saving.h" />
+    <ClInclude Include="saving\deserializer.h" />
     <ClInclude Include="saving\serializer.h" />
     <ClInclude Include="splineGenerator.h" />
     <ClInclude Include="camera.h" />
@@ -197,8 +198,10 @@
     <ClInclude Include="pointCollection.h" />
     <ClInclude Include="pointRenderer.h" />
     <ClInclude Include="sceneCursor.h" />
+    <ClInclude Include="torusGenerator.h" />
     <ClInclude Include="transform.h" />
     <ClInclude Include="vecmath.h" />
+    <ClInclude Include="vecmath_internals.h" />
     <ClInclude Include="vPointCollection.h" />
     <ClInclude Include="window.h" />
     <ClInclude Include="windowApplication.h" />
@@ -236,10 +239,12 @@
     <ClCompile Include="pointCollection.cpp" />
     <ClCompile Include="pointRenderer.cpp" />
     <ClCompile Include="saving\saving.cpp" />
+    <ClCompile Include="saving\deserializer.cpp" />
     <ClCompile Include="saving\serializer.cpp" />
     <ClCompile Include="saving\validation.cpp" />
     <ClCompile Include="sceneCursor.cpp" />
     <ClCompile Include="splineGenerator.cpp" />
+    <ClCompile Include="torusGenerator.cpp" />
     <ClCompile Include="transform.cpp" />
     <ClCompile Include="vecmath.cpp" />
     <ClCompile Include="vPointCollection.cpp" />

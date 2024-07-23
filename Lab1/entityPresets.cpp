@@ -89,14 +89,14 @@ Entity* EntityPresets::BicubicSurfaceObject(DirectX::XMFLOAT3 position, const Bi
 	int w, h;
 	if (params.deBoor)
 	{
-		assert(!(params.wrapMode & SURFACE_WRAP_U) || params.division.x >= 3
+		assert(!(params.wrapMode.x) || params.division.x >= 3
 			&& "Invalid segment count for cylinder");
-		w = params.division.x + ((params.wrapMode & SURFACE_WRAP_U) ? 0 : 3);
+		w = params.division.x + (params.wrapMode.x ? 0 : 3);
 		h = params.division.y + 3;
 	}
 	else
 	{
-		w = params.division.x * 3 + ((params.wrapMode & SURFACE_WRAP_U) ? 0 : 1);
+		w = params.division.x * 3 + (params.wrapMode.x ? 0 : 1);
 		h = params.division.y * 3 + 1;
 	}
 
@@ -104,14 +104,16 @@ Entity* EntityPresets::BicubicSurfaceObject(DirectX::XMFLOAT3 position, const Bi
 
 	auto* surf = Entity::New();
 	auto* pc = surf->AddComponent<PointCollection>();
-	auto collective = surf->AddComponent<BicubicSurface>();
+	auto* collective = surf->AddComponent<BicubicSurface>();
+	collective->division = params.division;
+	collective->wrapMode = params.wrapMode;
 	pc->isMutable = false;
 
 	for (int y = 0; y < h; y++)
 		for (int x = 0; x < w; x++)
 		{
 			DirectX::XMFLOAT3 offset;
-			if (params.wrapMode == SURFACE_WRAP_NONE)
+			if (params.wrapMode == XMINT2{0,0})
 				offset =
 			{
 				(x / (w - 1.0f) - 0.5f) * params.dimensions.x,
@@ -200,7 +202,7 @@ Entity* EntityPresets::BicubicSurfaceObject(DirectX::XMFLOAT3 position, const Bi
 				right->GetComponent<BicubicSegment>()->neighbors[3] = left;
 			}
 		}
-	if (params.wrapMode & SURFACE_WRAP_U)
+	if (params.wrapMode.x)
 	{
 		for (int y = 0; y < params.division.y; y++)
 		{

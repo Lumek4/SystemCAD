@@ -80,7 +80,8 @@ void BicubicSegment::TransferRelationFunction(void* arg, DirectX::XMINT2 xy)
 void BicubicSegment::ReleaseNeighborsFunction(void* arg, Entity* e)
 {
 	auto _this = (BicubicSegment*)arg;
-	for (auto it = _this->surface->GetSegments().begin(); it < _this->surface->GetSegments().end(); it++)
+	_this->surface->owner.Delete();
+	/*for (auto it = _this->surface->GetSegments().begin(); it < _this->surface->GetSegments().end(); it++)
 		if (*it == _this)
 		{
 			_this->surface->GetSegments().erase(it);
@@ -104,7 +105,7 @@ void BicubicSegment::ReleaseNeighborsFunction(void* arg, Entity* e)
 		for (int j = 0; j < bs->neighbors.size(); j++)
 			if (bs->neighbors[j] == &_this->owner)
 				bs->neighbors[j] = nullptr;
-	}
+	}*/
 }
 
 BicubicSegment::BicubicSegment(Entity& owner)

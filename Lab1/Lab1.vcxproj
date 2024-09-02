@@ -166,6 +166,7 @@
     <ClInclude Include="entityCollection.hpp" />
     <ClInclude Include="folder.h" />
     <ClInclude Include="gregoryPatch.h" />
+    <ClInclude Include="intersect.h" />
     <ClInclude Include="pointSource.h" />
     <ClInclude Include="saving\saving.h" />
     <ClInclude Include="saving\deserializer.h" />
@@ -230,6 +231,7 @@
     <ClCompile Include="imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="intersect.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="meshRenderer.cpp" />

@@ -64,3 +64,29 @@ DirectX::XMFLOAT3 operator*(const DirectX::XMFLOAT3& l, float r)
 
 __VECEQNEQ2(DirectX::XMINT2)
 __VECEQNEQ2(DirectX::XMFLOAT2)
+
+float vecmath::clamp01(float v)
+{
+    return v<0?0:(v>1?1:v);
+}
+
+float vecmath::length(DirectX::XMFLOAT3 v)
+{
+    return sqrtf(v.x * v.x + v.y * v.y + v.z * v.z);
+}
+
+float vecmath::lengthSq(DirectX::XMFLOAT3 v)
+{
+    return v.x * v.x + v.y * v.y + v.z * v.z;
+}
+
+DirectX::XMFLOAT3 vecmath::argwiseMul(DirectX::XMFLOAT3 a, DirectX::XMFLOAT3 b)
+{
+    return DirectX::XMFLOAT3(a.x*b.x, a.y*b.y, a.z*b.z);
+}
+
+DirectX::XMFLOAT3& vecmath::get(DirectX::XMFLOAT3X3& m, int k)
+{
+    assert(k < 3 && k >= 0);
+    return ((DirectX::XMFLOAT3*)&m)[k];
+}

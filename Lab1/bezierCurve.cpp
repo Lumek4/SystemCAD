@@ -41,7 +41,7 @@ Mesh* BezierCurve::GetMesh()
 			ii.emplace_back(vv.size());
 		vv.emplace_back(pointSource->GetPoint(i));
 	}
-	swap(vv.back(), vv[count - 1]);
+	std::swap(vv.back(), vv[count - 1]);
 
 	m = std::make_unique<Mesh>(vv, ii, D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_4_CONTROL_POINT_PATCHLIST);
 	return m.get();

@@ -20,15 +20,23 @@ DirectX::XMFLOAT3 operator-(const DirectX::XMFLOAT3& l,
 	const DirectX::XMFLOAT3& r);
 DirectX::XMFLOAT3 operator-(const DirectX::XMFLOAT3& l);
 
-
-
-template<typename T>
-void swap(T& l, T& r)
+namespace vecmath
 {
-	T tmp = l;
-	l = r;
-	r = tmp;
+	float clamp01(float v);
+	float length(DirectX::XMFLOAT3 v);
+	float lengthSq(DirectX::XMFLOAT3 v);
+	DirectX::XMFLOAT3 argwiseMul(DirectX::XMFLOAT3 a, DirectX::XMFLOAT3 b);
+	DirectX::XMFLOAT3& get(DirectX::XMFLOAT3X3& m, int k);
 }
+
+
+//template<typename T>
+//void swap(T& l, T& r)
+//{
+//	T tmp = l;
+//	l = r;
+//	r = tmp;
+//}
 //template<typename T>
 //int defragment(std::vector<T*>& vec)
 //{

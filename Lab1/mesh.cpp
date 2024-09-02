@@ -88,7 +88,7 @@ unsigned Mesh::SetBuffers() const
 
 std::vector<VertexPosition> Mesh::CreateTorusVertices(int major, int minor, float r1, float r2)
 {
-	swap(r1, r2);
+	std::swap(r1, r2);
 	std::vector<VertexPosition> verts;
 	for (int i = 0; i < major; i++)
 		for (int j = 0; j < minor; j++)

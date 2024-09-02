@@ -87,7 +87,14 @@ public:
 		return nullptr;
 	}
 
-	inline static void Clear() { objects.clear(); }
+	inline static void Clear()
+	{
+		for (int i = 0; i < objects.size(); i++)
+		{
+			objects[i]->Delete();
+		}
+		FinalizeDeletions();
+	}
 	template<typename T>
 	static std::vector<T*> GetSelected()
 	{

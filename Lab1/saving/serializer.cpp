@@ -17,7 +17,7 @@ void Serializer::Torus(Entity* e, std::string& name,
 	position = transform->Position();
 	scale = transform->scale;
 	rotation = Quaternion::ToEulerAngles(transform->rotation);
-	swap(rotation.z, rotation.y);
+	std::swap(rotation.z, rotation.y);
 }
 
 void Serializer::Curve(Entity* e, std::string& name,

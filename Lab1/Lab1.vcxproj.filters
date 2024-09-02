@@ -189,6 +189,9 @@
     <ClInclude Include="saving\serializer.h">
       <Filter>Header Files\saving</Filter>
     </ClInclude>
+    <ClInclude Include="intersect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui\imgui.cpp">
@@ -318,6 +321,9 @@
       <Filter>Source Files\ecs</Filter>
     </ClCompile>
     <ClCompile Include="saving\serializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intersect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

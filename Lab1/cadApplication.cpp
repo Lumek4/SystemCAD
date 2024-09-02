@@ -8,6 +8,7 @@
 #include"colorPaletteh.h"
 #include"entityPresets.h"
 #include"saving/saving.h"
+#include"intersect.h"
 
 using namespace mini;
 using namespace DirectX;
@@ -109,7 +110,7 @@ void CadApplication::GUI()
 	ImGui::Begin("Options");
 	MyGui::GuiOptions();
 	{
-		static std::array<char, 256> buf{ "../referenceScene.json" };
+		static std::array<char, 256> buf{ "../testint.json" };
 		bool sv = false, ld = false;
 		MyGui::SaveLoadWidget(buf, sv, ld);
 		try
@@ -202,6 +203,30 @@ void CadApplication::GUI()
 			EntityPresets::FillInSurface(Entity::selection, patches);
 			for (int i = 0; i < patches.size(); i++)
 				mainFolder->Add(patches[i]);
+		}
+	}
+	MyGui::SameLineIfFits(buttonDims.x);
+	{
+		if (ImGui::Button("Intersect", buttonDims))
+		{
+			auto bbcs = Entity::GetSelected<BicubicSegment>();
+			std::vector<DirectX::XMFLOAT3> pts;
+			std::vector<int> ends(1, 0);
+			for (int i = 0; i < bbcs.size(); i++)
+				for (int j = i+1; j < bbcs.size(); j++)
+				{
+					if (intersect(bbcs[i], bbcs[j], pts,
+						SceneCursor::instance.GetWorld()))
+						ends.push_back(pts.size());
+				}
+			for (int i = 0; i < ends.size()-1; i++)
+			{
+				std::vector<Entity*> line{};
+				for (int j = ends[i]; j < ends[i + 1]; j++)
+					line.push_back(EntityPresets::Point(pts[j]));
+				mainFolder->Add(EntityPresets::InterpCurve(line));
+				mainFolder->AddSelection(line);
+			}
 		}
 	}
 	ImGui::End(); // Toolbox
@@ -420,6 +445,10 @@ void CadApplication::Update() {
 		if (!Entity::selection.empty())
 			for (int i = Entity::selection.size() - 2; i >= 0; i--)
 				Entity::selection[i]->Merge(Entity::selection.back());
+	if (ImGui::IsKeyPressed(ImGuiKey_I, false))
+	{
+		//
+	}
 	Entity::FinalizeDeletions();
 }
 
@@ -475,7 +504,6 @@ void CadApplication::OnResize()
 	m_gizmoBuffer.x = ratio;
 	m_device.SetBuffer(m_cbgizmos.get(), &m_gizmoBuffer);
 }
-
 void CadApplication::Render() {
 	const float clearColor[] = { 0.0f, 0.0f, 0.0f };
 

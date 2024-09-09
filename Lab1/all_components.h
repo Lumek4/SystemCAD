@@ -12,3 +12,4 @@
 #include"bicubicSegment.h"
 #include"folder.h"
 #include"gregoryPatch.h"
+#include"intersectionCurve.h"

@@ -83,6 +83,25 @@ Entity* EntityPresets::InterpCurve(const std::vector<Entity*>& selection)
 	return e;
 }
 
+Entity* EntityPresets::IntersCurve(Entity* a, Entity* b, DxDevice& device,
+	std::vector<DirectX::XMFLOAT2>& pointsA,
+	std::vector<DirectX::XMFLOAT2>& pointsB)
+{
+	auto* e = Entity::New();
+	auto* c = e->AddComponent<IntersectionCurve>();
+	c->a = a; c->b = b;
+	c->pointsA = pointsA; c->pointsB = pointsB;
+
+	c->InitTextures(device, 128);
+
+	static unsigned curveI = 1;
+	std::string name = "Intersection Curve " + std::to_string(curveI++);
+	e->SetName(name.c_str());
+	//e->Select(true);
+
+	return e;
+}
+
 Entity* EntityPresets::BicubicSurfaceObject(DirectX::XMFLOAT3 position, const BicubicSurfaceParams& params,
 	std::vector<Entity*>& outPoints, std::vector<Entity*>& outSegments)
 {

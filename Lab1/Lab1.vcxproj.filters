@@ -192,6 +192,9 @@
     <ClInclude Include="intersect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="intersectionCurve.h">
+      <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui\imgui.cpp">
@@ -320,11 +323,14 @@
     <ClCompile Include="torusGenerator.cpp">
       <Filter>Source Files\ecs</Filter>
     </ClCompile>
-    <ClCompile Include="saving\serializer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="intersect.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intersectionCurve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="saving\serializer.cpp">
+      <Filter>Source Files\saving</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

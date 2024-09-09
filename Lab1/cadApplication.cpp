@@ -212,18 +212,31 @@ void CadApplication::GUI()
 			auto bbcs = Entity::GetSelected<BicubicSegment>();
 			std::vector<DirectX::XMFLOAT3> pts;
 			std::vector<int> ends(1, 0);
+			std::vector<bool> loops;
 			for (int i = 0; i < bbcs.size(); i++)
 				for (int j = i+1; j < bbcs.size(); j++)
 				{
-					if (intersect(bbcs[i], bbcs[j], pts,
-						SceneCursor::instance.GetWorld()))
+					std::vector<DirectX::XMFLOAT2> uva;
+					std::vector<DirectX::XMFLOAT2> uvb;
+					bool loop = false;
+					if (intersect(bbcs[i], bbcs[j],
+						SceneCursor::instance.GetWorld(), 0.2f,
+						pts, uva, uvb, loop))
+					{
 						ends.push_back(pts.size());
+						loops.push_back(loop);
+						mainFolder->Add(EntityPresets::IntersCurve(
+							&bbcs[i]->owner, &bbcs[j]->owner, m_device,
+							uva, uvb));
+					}
 				}
 			for (int i = 0; i < ends.size()-1; i++)
 			{
 				std::vector<Entity*> line{};
 				for (int j = ends[i]; j < ends[i + 1]; j++)
 					line.push_back(EntityPresets::Point(pts[j]));
+				if (loops[i])
+					line.push_back(EntityPresets::Point(pts[ends[i]]));
 				mainFolder->Add(EntityPresets::InterpCurve(line));
 				mainFolder->AddSelection(line);
 			}
@@ -235,33 +248,39 @@ void CadApplication::GUI()
 	MyGui::SceneCursorWidget(&SceneCursor::instance);
 	SceneCursor::instance.Correct(m_view, m_proj, m_invview, m_invproj);
 	ImGui::End(); // 3D Cursor
-	auto selectedBeziers = Entity::GetSelected<BezierCurve>();
-	if (selectedBeziers.size() == 1)
 	{
-		ImGui::Begin("Bezier Curve");
-		ImGui::Checkbox("Draw Bezier Polygon", &selectedBeziers.back()->drawPolygon);
-		ImGui::End();
-	}
-	auto selectedSplines = Entity::GetSelected<SplineGenerator>();
-	if (selectedSplines.size() == 1)
-	{
-		ImGui::Begin("Spline Curve");
-		ImGui::Checkbox("Draw DeBoor Polygon", &selectedSplines.back()->drawPolygon);
-		ImGui::End();
-	}
-	auto selectedVirtualCollections = Entity::GetSelected<VPointCollection>();
-	if (selectedVirtualCollections.size() == 1)
-	{
-		ImGui::Begin("Virtual Points");
-		auto* last = selectedVirtualCollections.back();
-		if (!last->owner.GetComponent<BezierInterpolator>())
+		auto selectedBeziers = Entity::GetSelected<BezierCurve>();
+		if (selectedBeziers.size() == 1)
 		{
-			bool showing = last->ShowingVirtualPoints();
-			if (ImGui::Checkbox("Show Virtual Points", &showing))
-				last->ShowVirtualPoints(showing);
-			ImGui::LabelText("Count", "%d", last->GetCount());
+			ImGui::Begin("Bezier Curve");
+			ImGui::Checkbox("Draw Bezier Polygon", &selectedBeziers.back()->drawPolygon);
+			ImGui::End();
 		}
-		ImGui::End();
+	}
+	{
+		auto selectedSplines = Entity::GetSelected<SplineGenerator>();
+		if (selectedSplines.size() == 1)
+		{
+			ImGui::Begin("Spline Curve");
+			ImGui::Checkbox("Draw DeBoor Polygon", &selectedSplines.back()->drawPolygon);
+			ImGui::End();
+		}
+	}
+	{
+		auto selectedVirtualCollections = Entity::GetSelected<VPointCollection>();
+		if (selectedVirtualCollections.size() == 1)
+		{
+			ImGui::Begin("Virtual Points");
+			auto* last = selectedVirtualCollections.back();
+			if (!last->owner.GetComponent<BezierInterpolator>())
+			{
+				bool showing = last->ShowingVirtualPoints();
+				if (ImGui::Checkbox("Show Virtual Points", &showing))
+					last->ShowVirtualPoints(showing);
+				ImGui::LabelText("Count", "%d", last->GetCount());
+			}
+			ImGui::End();
+		}
 	}
 	{
 		auto selectedBicubicSurfaces = Entity::GetSelected<BicubicSurface>();
@@ -329,6 +348,16 @@ void CadApplication::GUI()
 			ImGui::End();
 		}
 	}
+	{
+		auto selectedIntersections = Entity::GetSelected<IntersectionCurve>();
+		if (!selectedIntersections.empty())
+		{
+			ImGui::Begin("Intersection");
+			MyGui::TextureWidget(selectedIntersections.back()->texvA.get());
+			MyGui::TextureWidget(selectedIntersections.back()->texvB.get());
+			ImGui::End(); //Intersection
+		}
+	}
 	auto selectedTransforms = Entity::GetSelected<Transform>();
 	if (!selectedTransforms.empty())
 	{
@@ -343,7 +372,8 @@ void CadApplication::GUI()
 
 void CadApplication::Update() {
 	auto& io = ImGui::GetIO();
-	if (io.MouseDown[1] && !io.WantCaptureMouse && io.KeyShift)
+	if ((io.MouseDown[2] || io.MouseDown[1] && io.KeyShift)
+		&& !io.WantCaptureMouse)
 	{
 		if (io.KeyCtrl)
 			Camera::mainCamera->Move({ -io.MouseDelta.x * moveRate, io.MouseDelta.y * moveRate });
@@ -354,7 +384,7 @@ void CadApplication::Update() {
 	{
 		Camera::mainCamera->Zoom(io.MouseWheel * scaleRate);
 	}
-	if (io.MouseClicked[1] && !io.WantCaptureMouse && !io.KeyShift)
+	if (io.MouseClicked[1] && !io.KeyShift && !io.WantCaptureMouse)
 	{
 		auto size = io.DisplaySize;
 		auto screen = io.MousePos;
@@ -445,10 +475,6 @@ void CadApplication::Update() {
 		if (!Entity::selection.empty())
 			for (int i = Entity::selection.size() - 2; i >= 0; i--)
 				Entity::selection[i]->Merge(Entity::selection.back());
-	if (ImGui::IsKeyPressed(ImGuiKey_I, false))
-	{
-		//
-	}
 	Entity::FinalizeDeletions();
 }
 

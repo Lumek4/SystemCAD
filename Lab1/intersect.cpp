@@ -76,11 +76,12 @@ void bezierPatchPoint(std::vector<XMFLOAT3> pts, float u, float v,
 			dv  = dv + bu[u] * dbv[v] * XMLoadFloat3(&pts[u + v * 4]);
 		}
 }
-XMFLOAT3 bezierPatchPointGrid(std::vector<XMFLOAT3> pts, int u, int v, int max)
+template<int max>
+XMFLOAT3 bezierPatchPointGrid(std::vector<XMFLOAT3> pts, int u, int v)
 {
-	static bool precalc[100] = { false };
-	static float bases[100][4];
-	//static float dbases[100][4];
+	static bool precalc[max] = { false };
+	static float bases[max][4];
+	//static float dbases[max][4];
 	float bu[4], bv[4], db[4];
 
 	if (!precalc[u])
@@ -120,13 +121,13 @@ XMVECTOR nearCursorPoints(
 	const std::vector<XMFLOAT3>& pb,
 	const XMFLOAT3& cursor)
 {
-	constexpr int maxres = 10;
+	constexpr int maxres = 100;
 	float mindista = INFINITY;
 	XMINT2 mincoorda;
 	for (int ua = 0; ua < maxres; ua++)
 		for (int va = 0; va < maxres; va++)
 		{
-			XMFLOAT3 ppa = bezierPatchPointGrid(pa, ua, va, maxres);
+			XMFLOAT3 ppa = bezierPatchPointGrid<maxres>(pa, ua, va);
 			float len = vecmath::lengthSq(ppa - cursor);
 			if (len < mindista)
 			{
@@ -139,7 +140,7 @@ XMVECTOR nearCursorPoints(
 	for (int ub = 0; ub < maxres; ub++)
 		for (int vb = 0; vb < maxres; vb++)
 		{
-			XMFLOAT3 ppb = bezierPatchPointGrid(pb, ub, vb, maxres);
+			XMFLOAT3 ppb = bezierPatchPointGrid<maxres>(pb, ub, vb);
 			float len = vecmath::lengthSq(ppb - cursor);
 			if (len < mindistb)
 			{
@@ -170,7 +171,11 @@ XMVECTOR pullBack(XMVECTOR vector, XMMATRIX j)
 	return XMVector4Transform(vector, XMMatrixTranspose(invA));
 }
 bool intersect(BicubicSegment* a, BicubicSegment* b,
-	std::vector<DirectX::XMFLOAT3>& output, XMFLOAT3 cursor)
+	XMFLOAT3 cursor, float precision,
+	std::vector<DirectX::XMFLOAT3>& output,
+	std::vector<DirectX::XMFLOAT2>& uva,
+	std::vector<DirectX::XMFLOAT2>& uvb,
+	bool& loop)
 {
 	auto pa = std::vector<XMFLOAT3>();
 	auto pb = std::vector<XMFLOAT3>();
@@ -181,7 +186,7 @@ bool intersect(BicubicSegment* a, BicubicSegment* b,
 	}
 	if (!bboxcheck(pa, pb))
 		return false;
-
+	// TEM
 	auto coord = nearCursorPoints(pa, pb, cursor);
 	float dist = INFINITY;
 	XMMATRIX mmb, mma;
@@ -192,7 +197,7 @@ bool intersect(BicubicSegment* a, BicubicSegment* b,
 		pullBack(bpos - apos, { adu, adv, -bdu, -bdv }),
 			{ 0,0,0,0 }, { 1,1,1,1 })
 		)
-	{
+	{ //TEM
 		bezierPatchPoint(pa, XMVectorGetX(coord), XMVectorGetY(coord),
 			apos, adu, adv);
 		bezierPatchPoint(pb, XMVectorGetZ(coord), XMVectorGetW(coord),
@@ -206,24 +211,33 @@ bool intersect(BicubicSegment* a, BicubicSegment* b,
 			return false;
 	}
 
-	output.push_back({});
-	XMStoreFloat3(&output.back(), apos);
-	std::vector <XMFLOAT4> cds;
 	auto initialCoord = coord;
+	auto initialPos = apos;
+	std::vector <XMFLOAT4> cds[2];
+	std::vector <XMFLOAT3> pts[2];
+	cds[0].push_back({});
+	XMStoreFloat4(&cds[0].back(), initialCoord);
+	pts[0].push_back({});
+	XMStoreFloat3(&pts[0].back(), initialPos);
 	for (int sgn = -1; sgn <= 1; sgn += 2)
 	{
-		coord = initialCoord;
+		coord = initialCoord; // TEM
 		bezierPatchPoint(pa, XMVectorGetX(coord), XMVectorGetY(coord),
 			apos, adu, adv);
 		bezierPatchPoint(pb, XMVectorGetZ(coord), XMVectorGetW(coord),
 			bpos, bdu, bdv);
-		for (int it = 1; it < 1000; it++)
+		for (int it = 1; it < 100000; it++)
 		{
 			auto tangent = sgn * XMVector3Normalize(XMVector3Cross(
 				XMVector3Cross(adu, adv),
 				XMVector3Cross(bdu, bdv)
-			)) / 15;
-			coord = coord + pullBack(tangent, { adu, adv, -bdu, -bdv });
+			)) * precision;
+			coord = coord + pullBack(tangent, { adu, adv, bdu, bdv }); // TEM
+			bezierPatchPoint(pa, XMVectorGetX(coord), XMVectorGetY(coord),
+				apos, adu, adv);
+			bezierPatchPoint(pb, XMVectorGetZ(coord), XMVectorGetW(coord),
+				bpos, bdu, bdv);
+			coord = coord + pullBack(bpos-apos, { adu, adv, -bdu, -bdv });
 
 			if (XMVectorGetX(
 				XMVectorSum(
@@ -233,18 +247,50 @@ bool intersect(BicubicSegment* a, BicubicSegment* b,
 					)
 				)
 			))
-				break;
-
+				break; // TEM
 			bezierPatchPoint(pa, XMVectorGetX(coord), XMVectorGetY(coord),
 				apos, adu, adv);
 			bezierPatchPoint(pb, XMVectorGetZ(coord), XMVectorGetW(coord),
 				bpos, bdu, bdv);
-			output.push_back({});
-			XMStoreFloat3(&output.back(), apos);
-			cds.push_back({});
-			XMStoreFloat4(&cds.back(), coord);
+
+			pts[(sgn + 1) / 2].push_back({});
+			XMStoreFloat3(&pts[(sgn + 1) / 2].back(), apos);
+			cds[(sgn + 1) / 2].push_back({});
+			XMStoreFloat4(&cds[(sgn + 1) / 2].back(), coord);
+
+			if (it > 4
+				&& XMVectorGetX(XMVector3Length(
+					apos - XMLoadFloat3(&pts[0][0]))) < precision
+				&& XMVectorGetX(XMVector3Length(
+					apos - XMLoadFloat3(&pts[0][1]))) < precision
+				)
+			{
+				loop = true;
+				sgn = 2;
+				break;
+			}
 		}
 	}
+	for (int i = 0; i < pts[0].size(); i++)
+		output.push_back(pts[0][pts[0].size() - 1 - i]);
+	for (int i = 0; i < pts[1].size(); i++)
+		output.push_back(pts[1][i]);
 
+	for (int i = 0; i < pts[0].size(); i++)
+	{
+		int id = cds[0].size() - 1 - i;
+		uva.push_back({ cds[0][id].x, cds[0][id].y });
+		uvb.push_back({ cds[0][id].z, cds[0][id].w });
+	}
+	for (int i = 0; i < pts[1].size(); i++)
+	{
+		uva.push_back({ cds[1][i].x, cds[1][i].y });
+		uvb.push_back({ cds[1][i].z, cds[1][i].w });
+	}
+	if(loop)
+	{
+		uva.push_back(uva[0]);
+		uvb.push_back(uvb[0]);
+	}
 	return true;
 }

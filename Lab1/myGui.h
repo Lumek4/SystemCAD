@@ -5,6 +5,7 @@
 #include"sceneCursor.h"
 #include"bicubicSurface.h"
 #include <span>
+#include<d3d11.h>
 
 struct BicubicSurfaceParams;
 namespace MyGui
@@ -23,7 +24,7 @@ namespace MyGui
 	void GuiOptions();
 	bool TorusMeshWidget(std::unique_ptr<Mesh>& m, TorusGenerator::MeshData& data);
 	bool SaveLoadWidget(std::span<char> buffer, bool& save, bool& load);
-
+	void TextureWidget(ID3D11ShaderResourceView* tex);
 
 	void ShowBicubicSurfacePopup(BicubicSurfaceParams& data);
 	void BicubicSurfacePopup(BicubicSurfaceParams& data, bool& modified, bool& create);

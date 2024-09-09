@@ -437,6 +437,17 @@ bool MyGui::SaveLoadWidget(std::span<char> buf, bool& save, bool& load)
 	return false;
 }
 
+void MyGui::TextureWidget(ID3D11ShaderResourceView* tex)
+{
+	auto p = ImGui::GetMousePos();
+	auto c = ImGui::GetCursorScreenPos();
+	
+	ImGui::Image(tex, { ImGui::GetWindowWidth(), ImGui::GetWindowWidth() });
+	ImGui::Text("[%f, %f]",
+		(p.x - c.x)/ ImGui::GetWindowWidth()*256,
+		(p.y - c.y)/ ImGui::GetWindowWidth()*256);
+}
+
 bool MyGui::SceneCursorWidget(SceneCursor* sc)
 {
 	auto size = ImGui::GetIO().DisplaySize;

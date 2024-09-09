@@ -18,6 +18,9 @@ namespace EntityPresets
 	Entity* BezierCurveObject(const std::vector<Entity*>& selection);
 	Entity* SplineCurve(const std::vector<Entity*>& selection);
 	Entity* InterpCurve(const std::vector<Entity*>& selection);
+	Entity* IntersCurve(Entity* a, Entity* b, DxDevice& device,
+		std::vector<DirectX::XMFLOAT2>& pointsA,
+		std::vector<DirectX::XMFLOAT2>& pointsB);
 	Entity* BicubicSurfaceObject(DirectX::XMFLOAT3 position, const BicubicSurfaceParams& params,
 		std::vector<Entity*>& outPoints, std::vector<Entity*>& outSegments);
 	void FillInSurface(Entity::Selection s, std::vector<Entity*>& outSurfs);

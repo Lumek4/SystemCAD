@@ -394,18 +394,14 @@ bool MyGui::UnitFloat3(const char* name, float* v)
 	return false;
 }
 
-bool MyGui::TorusMeshWidget(std::unique_ptr<Mesh>& m, TorusGenerator::MeshData& data)
+bool MyGui::TorusMeshWidget(TorusGenerator* torus)
 {
+	auto data = torus->GetData();
 	if (ImGui::SliderInt2(" Model detail", (int*)&data.division, 3, 500, "%d Segments", ImGuiSliderFlags_AlwaysClamp) |
-		ImGui::SliderFloat(" Major radius", &data.radii.x, data.radii.y, 20, "%.2f", ImGuiSliderFlags_AlwaysClamp) |
-		ImGui::SliderFloat(" Minor radius", &data.radii.y, 0.1f, data.radii.x, "%.2f", ImGuiSliderFlags_AlwaysClamp))
+		ImGui::SliderFloat(" Major radius", &data.radii.y, data.radii.x, 20, "%.2f", ImGuiSliderFlags_AlwaysClamp) |
+		ImGui::SliderFloat(" Minor radius", &data.radii.x, 0.1f, data.radii.y, "%.2f", ImGuiSliderFlags_AlwaysClamp))
 	{
-		auto newTorus = Mesh::Torus(data.division.x, data.division.y, data.radii.x, data.radii.y);
-		auto renderers = Catalogue<MeshRenderer>::Instance.GetAll();
-		for (int i = 0; i < renderers.size(); i++)
-			if (renderers[i]->mesh == m.get())
-				renderers[i]->mesh = newTorus.get();
-		m = std::move(newTorus);
+		torus->SetData(data);
 		return true;
 	}
 	return false;

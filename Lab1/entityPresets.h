@@ -13,6 +13,7 @@ struct BicubicSurfaceParams
 };
 namespace EntityPresets
 {
+	Entity* Torus(DirectX::XMFLOAT3 position);
 	Entity* Model(DirectX::XMFLOAT3 position, Mesh* mesh);
 	Entity* Point(DirectX::XMFLOAT3 position);
 	Entity* BezierCurveObject(const std::vector<Entity*>& selection);

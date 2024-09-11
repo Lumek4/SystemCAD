@@ -4,6 +4,22 @@
 #include"vecmath.h"
 using namespace DirectX;
 
+Entity* EntityPresets::Torus(DirectX::XMFLOAT3 position)
+{
+	auto* e = Entity::New();
+	auto& m = *e->AddComponent<TorusGenerator>();
+
+	auto& t = *e->AddComponent<ModelTransform>();
+
+	//e->AddComponent<MeshRenderer>()->mesh = Mesh::Torus(samples.x, samples.y, radii.x, radii.y).get();
+
+	static unsigned modelI = 1;
+	std::string name = "Torus " + std::to_string(modelI++);
+	e->SetName(name.c_str());
+	//e->Select(true);
+	return e;
+}
+
 Entity* EntityPresets::Model(DirectX::XMFLOAT3 position, Mesh* mesh)
 {
 	auto* e = Entity::New();

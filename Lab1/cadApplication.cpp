@@ -129,10 +129,15 @@ void CadApplication::GUI()
 	ImGui::SliderInt("Detail Level of Surfaces", &surfDetail, 1, 255);
 	ImGui::End(); // Options
 
-	ImGui::Begin("Torus model data");
-	static TorusGenerator::MeshData torusCreationData{};
-	MyGui::TorusMeshWidget(torus, torusCreationData);
-	ImGui::End(); // Torus model data
+	{
+		auto trss = Entity::GetSelected<TorusGenerator>();
+		if (!trss.empty())
+		{
+			ImGui::Begin("Torus model data");
+			MyGui::TorusMeshWidget(trss.back());
+			ImGui::End(); // Torus model data
+		}
+	}
 
 	ImGui::Begin("Entities");
 	MyGui::EntityListWidget(mainFolder->Get());
@@ -141,8 +146,8 @@ void CadApplication::GUI()
 	ImGui::Begin("Toolbox");
 	ImVec2 buttonDims(70, 40);
 	if (ImGui::Button("+Torus", buttonDims))
-		mainFolder->Add(EntityPresets::Model(
-			SceneCursor::instance.GetWorld(), torus.get()
+		mainFolder->Add(EntityPresets::Torus(
+			SceneCursor::instance.GetWorld()
 		));
 	MyGui::SameLineIfFits(buttonDims.x);
 	if (ImGui::Button("+(P)oint", buttonDims) || ImGui::IsKeyPressed(ImGuiKey_P, false))
@@ -209,24 +214,43 @@ void CadApplication::GUI()
 	{
 		if (ImGui::Button("Intersect", buttonDims))
 		{
-			auto bbcs = Entity::GetSelected<BicubicSegment>();
+			auto bsg = Entity::GetSelected<BicubicSegment>();
+			auto bsf = Entity::GetSelected<BicubicSurface>();
+			auto tgn = Entity::GetSelected<TorusGenerator>();
 			std::vector<DirectX::XMFLOAT3> pts;
 			std::vector<int> ends(1, 0);
 			std::vector<bool> loops;
-			for (int i = 0; i < bbcs.size(); i++)
-				for (int j = i+1; j < bbcs.size(); j++)
+			for (int i = 0; i < bsg.size(); i++)
+				for (int j = i+1; j < bsg.size(); j++)
 				{
 					std::vector<DirectX::XMFLOAT2> uva;
 					std::vector<DirectX::XMFLOAT2> uvb;
 					bool loop = false;
-					if (intersect(bbcs[i], bbcs[j],
+					if (intersect(bsg[i], bsg[j],
 						SceneCursor::instance.GetWorld(), 0.2f,
 						pts, uva, uvb, loop))
 					{
 						ends.push_back(pts.size());
 						loops.push_back(loop);
 						mainFolder->Add(EntityPresets::IntersCurve(
-							&bbcs[i]->owner, &bbcs[j]->owner, m_device,
+							&bsg[i]->owner, &bsg[j]->owner, m_device,
+							uva, uvb));
+					}
+				}
+			for (int i = 0; i < bsg.size(); i++)
+				for (int j = 0; j < tgn.size(); j++)
+				{
+					std::vector<DirectX::XMFLOAT2> uva;
+					std::vector<DirectX::XMFLOAT2> uvb;
+					bool loop = false;
+					if (intersect(bsg[i], tgn[j],
+						SceneCursor::instance.GetWorld(), 0.2f,
+						pts, uva, uvb, loop))
+					{
+						ends.push_back(pts.size());
+						loops.push_back(loop);
+						mainFolder->Add(EntityPresets::IntersCurve(
+							&bsg[i]->owner, &tgn[j]->owner, m_device,
 							uva, uvb));
 					}
 				}
@@ -460,14 +484,14 @@ void CadApplication::Update() {
 		{
 			for (int i = Entity::selection.size() - 1; i >= 0; i--)
 			{
-				if (i >= Entity::selection.size())
-					i = Entity::selection.size() - 1;
 				for (int j = 0; j < mainFolder->Get().size(); j++)
 					if (mainFolder->Get()[j] == Entity::selection[i])
 					{
 						Entity::selection[i]->Delete();
 						break;
 					}
+				if (i > Entity::selection.size())
+					i = Entity::selection.size();
 			}
 		}
 	//TODO: wondow to choose where the merged point appears

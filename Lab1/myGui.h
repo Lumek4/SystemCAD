@@ -22,7 +22,7 @@ namespace MyGui
 	bool SceneCursorWidget(SceneCursor* sc);
 	bool SceneTransformWidget(SceneTransform* st);
 	void GuiOptions();
-	bool TorusMeshWidget(std::unique_ptr<Mesh>& m, TorusGenerator::MeshData& data);
+	bool TorusMeshWidget(TorusGenerator* torus);
 	bool SaveLoadWidget(std::span<char> buffer, bool& save, bool& load);
 	void TextureWidget(ID3D11ShaderResourceView* tex);
 

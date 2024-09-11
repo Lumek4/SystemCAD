@@ -1,0 +1,67 @@
+{
+ "geometry": [
+  {
+   "id": 2,
+   "largeRadius": 3.0,
+   "name": "Torus 1",
+   "objectType": "torus",
+   "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   },
+   "rotation": {
+    "x": 0.0,
+    "y": -1.0331604016755591e-07,
+    "z": 0.0
+   },
+   "samples": {
+    "x": 147,
+    "y": 211
+   },
+   "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+   },
+   "smallRadius": 2.0
+  },
+  {
+   "id": 3,
+   "largeRadius": 3.140000104904175,
+   "name": "Torus 2",
+   "objectType": "torus",
+   "position": {
+    "x": 5.190000057220459,
+    "y": 2.049999952316284,
+    "z": 0.0
+   },
+   "rotation": {
+    "x": 0.0,
+    "y": -1.0331604016755591e-07,
+    "z": 0.0
+   },
+   "samples": {
+    "x": 163,
+    "y": 211
+   },
+   "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+   },
+   "smallRadius": 1.2100000381469727
+  }
+ ],
+ "points": [
+  {
+   "id": 1,
+   "name": "Point 1",
+   "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   }
+  }
+ ]
+}

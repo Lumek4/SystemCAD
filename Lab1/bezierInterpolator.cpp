@@ -84,6 +84,7 @@ void BezierInterpolator::UpdateBezier()
 			{
 				if (!skips.empty() && skips.back() == i+2)
 				{
+					skips.pop_back();
 					continue;
 				}
 				P_im1 = P_i;

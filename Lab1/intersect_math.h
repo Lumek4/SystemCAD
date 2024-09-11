@@ -1,4 +1,16 @@
 #pragma once
+#include"intersect_interfaces.h"
+#include"vecmath.h"
+#include<DirectXMath.h>
+
+inline bool AABB(const BoundingBox& o1, const BoundingBox& o2)
+{
+	using namespace DirectX;
+	XMVECTOR v1 = XMVectorLessOrEqual(o1.hi, o2.lo);
+	XMVECTOR v2 = XMVectorLessOrEqual(o2.hi, o1.lo);
+	XMVECTOR v3 = XMVector3Dot(XMVectorOrInt(v1, v2), { 1.0f,1.0f,1.0f });
+	return XMVectorGetX(v3) == 0;
+}
 
 inline void bezierBasis(float b3[4], float db3[4], float t)
 {

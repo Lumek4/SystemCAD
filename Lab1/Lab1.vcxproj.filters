@@ -43,6 +43,12 @@
     <Filter Include="Source Files\saving">
       <UniqueIdentifier>{a0fa626c-bd36-468d-91bc-c949a6dafe7f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\intersect">
+      <UniqueIdentifier>{e90a3042-8c89-4249-8eae-e08662235b63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\intersect">
+      <UniqueIdentifier>{9c3a343a-7106-4988-813c-469e332d4306}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgui\imconfig.h">
@@ -189,11 +195,17 @@
     <ClInclude Include="saving\serializer.h">
       <Filter>Header Files\saving</Filter>
     </ClInclude>
-    <ClInclude Include="intersect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="intersectionCurve.h">
       <Filter>Header Files\ecs\components</Filter>
+    </ClInclude>
+    <ClInclude Include="intersect.h">
+      <Filter>Header Files\intersect</Filter>
+    </ClInclude>
+    <ClInclude Include="intersect_interfaces.h">
+      <Filter>Header Files\intersect</Filter>
+    </ClInclude>
+    <ClInclude Include="intersect_math.h">
+      <Filter>Header Files\intersect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -323,14 +335,14 @@
     <ClCompile Include="torusGenerator.cpp">
       <Filter>Source Files\ecs</Filter>
     </ClCompile>
-    <ClCompile Include="intersect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="intersectionCurve.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="saving\serializer.cpp">
       <Filter>Source Files\saving</Filter>
+    </ClCompile>
+    <ClCompile Include="intersectionCurve.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="intersect_interfaces.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

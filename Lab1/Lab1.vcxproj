@@ -168,6 +168,8 @@
     <ClInclude Include="gregoryPatch.h" />
     <ClInclude Include="intersect.h" />
     <ClInclude Include="intersectionCurve.h" />
+    <ClInclude Include="intersect_interfaces.h" />
+    <ClInclude Include="intersect_math.h" />
     <ClInclude Include="pointSource.h" />
     <ClInclude Include="saving\saving.h" />
     <ClInclude Include="saving\deserializer.h" />
@@ -232,8 +234,8 @@
     <ClCompile Include="imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
-    <ClCompile Include="intersect.cpp" />
     <ClCompile Include="intersectionCurve.cpp" />
+    <ClCompile Include="intersect_interfaces.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="meshRenderer.cpp" />

@@ -107,6 +107,19 @@ Entity* EntityPresets::IntersCurve(Entity* a, Entity* b, DxDevice& device,
 	auto* c = e->AddComponent<IntersectionCurve>();
 	c->a = a; c->b = b;
 	c->pointsA = pointsA; c->pointsB = pointsB;
+	if (a->GetComponent<BicubicSegment>())
+		c->wrapModeA = { 0,0 };
+	else if(a->GetComponent<TorusGenerator>())
+		c->wrapModeA = { 1,1 };
+	else 
+		c->wrapModeA = a->GetComponent<BicubicSurface>()->wrapMode;
+
+	if (b->GetComponent<BicubicSegment>())
+		c->wrapModeB = { 0,0 };
+	else if (b->GetComponent<TorusGenerator>())
+		c->wrapModeB = { 1,1 };
+	else
+		c->wrapModeB = b->GetComponent<BicubicSurface>()->wrapMode;
 
 	c->InitTextures(device, 128);
 

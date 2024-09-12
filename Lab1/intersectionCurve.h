@@ -16,6 +16,7 @@ public:
 	std::vector<DirectX::XMFLOAT2> pointsB;
 	Entity* a;
 	Entity* b;
+	DirectX::XMINT2 wrapModeA, wrapModeB;
 	mini::dx_ptr<ID3D11ShaderResourceView> texvA;
 	mini::dx_ptr<ID3D11ShaderResourceView> texvB;
 private:

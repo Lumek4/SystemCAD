@@ -2,6 +2,7 @@
 #include<DirectXMath.h>
 #include<array>
 #include<vector>
+#include "exceptions.h"
 
 template<typename T>
 class IntersectData {};

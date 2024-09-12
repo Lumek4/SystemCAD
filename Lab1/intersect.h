@@ -75,6 +75,7 @@ bool converge(
 		db.GetWrapMode().x ? INFINITY : 1,
 		db.GetWrapMode().y ? INFINITY : 1,
 	};
+	XMVECTOR ones{ 1,1,1,1 };
 	for (int it = 1; ; it++, point +=
 		pullBack(bpos - apos, { adu, adv, -bdu, -bdv }, error)*0.5f
 		)
@@ -89,7 +90,8 @@ bool converge(
 
 		point = XMVectorClamp(point,
 			clampLo, clampHi);
-		point = XMVectorMod(point + XMVECTOR{ 1,1,1,1 }, XMVECTOR{ 1,1,1,1 }*(1+EPS));
+		point = XMVectorSelect(point, point - ones, XMVectorGreater(point, ones));
+		point = XMVectorSelect(point, point + ones, XMVectorLess(point, XMVectorZero()));
 		da.Point({ XMVectorGetX(point), XMVectorGetY(point) },
 			apos, adu, adv);
 		db.Point({ XMVectorGetZ(point), XMVectorGetW(point) },
@@ -185,11 +187,15 @@ bool intersect(TA* a, TB* b,
 			XMStoreFloat4(&cds[(sgn + 1) / 2].back(), coord);
 
 			if (XMVectorGetX(
-				XMVectorSum(
+				XMVector4Dot(XMConvertVectorIntToFloat(
 					XMVectorAdd(
 						XMVectorGreaterOrEqual(coord, XMVectorSplatOne()),
 						XMVectorGreaterOrEqual(XMVectorZero(), coord)
-					)
+					), 0),
+					{
+						da.GetWrapMode().x ? 0.0f : -1.0f, da.GetWrapMode().y ? 0.0f : -1.0f,
+						db.GetWrapMode().x ? 0.0f : -1.0f, db.GetWrapMode().y ? 0.0f : -1.0f
+					}
 				)
 			))
 				break;
@@ -214,6 +220,10 @@ bool intersect(TA* a, TB* b,
 	for (int i = 0; i < pts[1].size(); i++)
 		output.push_back(pts[1][i]);
 
+	//CHECK IF last x - current x ~ 1, then
+	// last x - limit, limit - current x
+	// TO DO, IMPORTANT!!!
+	// (wrapping behavior)
 	for (int i = 0; i < pts[0].size(); i++)
 	{
 		int id = cds[0].size() - 1 - i;
@@ -227,6 +237,7 @@ bool intersect(TA* a, TB* b,
 	}
 	if (loop)
 	{
+		output.push_back(pts[0][0]);
 		uva.push_back(uva[0]);
 		uvb.push_back(uvb[0]);
 	}

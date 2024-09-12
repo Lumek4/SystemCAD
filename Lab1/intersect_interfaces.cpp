@@ -88,11 +88,51 @@ IntersectData<BicubicSurface>::IntersectData(BicubicSurface* object)
 	for (int j = 0; j < segs.size(); j++)
 	{
 		cpoints.push_back({});
+		XMVECTOR p[16];
 		for (int i = 0; i < 16; i++)
 		{
-			cpoints[j][i] = segs[j]->GetSource()->GetPoint(segs[j]->indices[i]);
-			bb.hi = XMVectorMax(bb.hi, XMLoadFloat3(&cpoints[j][i]));
-			bb.lo = XMVectorMin(bb.lo, XMLoadFloat3(&cpoints[j][i]));
+			XMFLOAT3 tmp = segs[j]->GetSource()->GetPoint(segs[j]->indices[i]);
+			p[i] = XMLoadFloat3(&tmp);
+		}
+
+		if (segs[j]->deBoorMode)
+		{
+			XMVECTOR extBezier[16];
+			for (int y = 0; y < 4; y++)
+			{
+				extBezier[0 + y * 4] = XMVectorLerp(p[0 + y * 4], p[1 + y * 4], 2.0 / 3);
+				extBezier[1 + y * 4] = XMVectorLerp(p[1 + y * 4], p[2 + y * 4], 1.0 / 3);
+				extBezier[2 + y * 4] = XMVectorLerp(p[1 + y * 4], p[2 + y * 4], 2.0 / 3);
+				extBezier[3 + y * 4] = XMVectorLerp(p[2 + y * 4], p[3 + y * 4], 1.0 / 3);
+			}
+			for (int x = 0; x < 4; x++)
+			{
+				p[x + 0 * 4] = XMVectorLerp(extBezier[x + 0 * 4], extBezier[x + 1 * 4], 2.0 / 3);
+				p[x + 1 * 4] = XMVectorLerp(extBezier[x + 1 * 4], extBezier[x + 2 * 4], 1.0 / 3);
+				p[x + 2 * 4] = XMVectorLerp(extBezier[x + 1 * 4], extBezier[x + 2 * 4], 2.0 / 3);
+				p[x + 3 * 4] = XMVectorLerp(extBezier[x + 2 * 4], extBezier[x + 3 * 4], 1.0 / 3);
+			}
+
+			for (int y = 0; y < 4; y++)
+			{
+				extBezier[0 + y * 4] = XMVectorLerp(p[0 + y * 4], p[1 + y * 4], 0.5);
+				extBezier[1 + y * 4] = p[1 + y * 4];
+				extBezier[2 + y * 4] = p[2 + y * 4];
+				extBezier[3 + y * 4] = XMVectorLerp(p[2 + y * 4], p[3 + y * 4], 0.5);
+			}
+			for (int x = 0; x < 4; x++)
+			{
+				p[x + 0 * 4] = XMVectorLerp(extBezier[x + 0 * 4], extBezier[x + 1 * 4], 0.5);
+				p[x + 1 * 4] = extBezier[x + 1 * 4];
+				p[x + 2 * 4] = extBezier[x + 2 * 4];
+				p[x + 3 * 4] = XMVectorLerp(extBezier[x + 2 * 4], extBezier[x + 3 * 4], 0.5);
+			}
+		}
+		for (int i = 0; i < 16; i++)
+		{
+			XMStoreFloat3(&cpoints[j][i], p[i]);
+			bb.hi = XMVectorMax(bb.hi, p[i]);
+			bb.lo = XMVectorMin(bb.lo, p[i]);
 		}
 	}
 }
@@ -106,8 +146,8 @@ void IntersectData<BicubicSurface>::Point(DirectX::XMFLOAT2 uv,
 		(int32_t)(uv.x * division.x),
 		(int32_t)(uv.y * division.y)
 	};
-	uv.x = fmodf(uv.x, 1.0f/division.x);
-	uv.y = fmodf(uv.y, 1.0f/division.y);
+	uv.x = fmodf(uv.x*division.x, 1.0f);
+	uv.y = fmodf(uv.y*division.y, 1.0f);
 	if (suv.x == division.x && uv.x == 0)
 	{
 		suv.x -= 1;

@@ -1,4 +1,4 @@
-
+#include"structs.hlsli"
 cbuffer cbView : register(b1)
 {
     matrix viewMatrix;
@@ -12,11 +12,6 @@ cbuffer cbProj : register(b2)
 struct GSIn
 {
     float3 pos : CPOINT;
-};
-
-struct GSOut
-{
-    float4 pos : SV_POSITION;
 };
 
 
@@ -38,12 +33,14 @@ void main(
         for (uint k = 0; k < 4; k++)
         {
             element.pos = tform(input[k + i * 4].pos);
+            element.uv = float2(k/3.0f, i/3.0f);
             output.Append(element);
         }
         output.RestartStrip();
         for (uint l = 0; l < 4; l++)
         {
             element.pos = tform(input[i + l * 4].pos);
+            element.uv = float2(i / 3.0f, l / 3.0f);
             output.Append(element);
         }
         output.RestartStrip();

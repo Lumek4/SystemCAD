@@ -8,7 +8,8 @@ inline bool AABB(const BoundingBox& o1, const BoundingBox& o2)
 	using namespace DirectX;
 	XMVECTOR v1 = XMVectorLessOrEqual(o1.hi, o2.lo);
 	XMVECTOR v2 = XMVectorLessOrEqual(o2.hi, o1.lo);
-	XMVECTOR v3 = XMVector3Dot(XMVectorOrInt(v1, v2), { 1.0f,1.0f,1.0f });
+	XMVECTOR v3 = XMVector3Dot(XMConvertVectorIntToFloat(
+		XMVectorOrInt(v1, v2),0), { 1.0f,1.0f,1.0f });
 	return XMVectorGetX(v3) == 0;
 }
 

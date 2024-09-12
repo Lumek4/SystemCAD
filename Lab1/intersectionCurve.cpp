@@ -20,8 +20,26 @@ bool inAABB(XMVECTOR& p, XMVECTOR& q, XMVECTOR& a, XMVECTOR& b)
 		XMVectorGetX(XMVectorSum(XMVectorLess(maxpq - minab, XMVectorZero())))+
 		XMVectorGetX(XMVectorSum(XMVectorLess(maxab - minpq, XMVectorZero()))) <= 0;
 }
+inline bool collide(XMVECTOR p0, XMVECTOR p1, XMVECTOR p, XMVECTOR pd)
+{
+	if (!inAABB(p, pd, p0, p1))
+		return false;
+	XMVECTOR sg =
+	{
+		XMVectorGetX(XMVector2Cross(p0 - p , p1 - p)),
+		XMVectorGetX(XMVector2Cross(p0 - pd, p1 - pd)),
+		XMVectorGetX(XMVector2Cross(p - p0, pd - p0)),
+		XMVectorGetX(XMVector2Cross(p - p1, pd - p1))
+	};
+	auto more = XMVectorGreater(sg, { EPS,EPS,EPS,EPS });
+	auto less = XMVectorLess(sg, { -EPS,-EPS,-EPS,-EPS });
+	sg = XMVectorSelect(more, { 1,1,1,1 }, less);
+
+	return sg.m128_i32[0] != sg.m128_i32[1] && sg.m128_i32[2] != sg.m128_i32[3];
+	// punkty po roznych stronach linii
+}
 void paint(ID3D11Texture2D* tex,
-	std::vector<XMFLOAT2>& uv, DxDevice& device)
+	std::vector<XMFLOAT2>& uv, DxDevice& device, XMINT2 wrapMode)
 {
 	D3D11_MAPPED_SUBRESOURCE m;
 	device.context()->Map(tex, 0, D3D11_MAP_WRITE_DISCARD, 0, &m);
@@ -54,7 +72,7 @@ void paint(ID3D11Texture2D* tex,
 			flood.push_back({ xx,yy });
 			data[xx * 4 + yy * m.RowPitch] = ++c_region;
 			painted++;
-			if (c_region >= 256)
+			if (c_region >= 128)
 			{
 				yy = maxres; xx = maxres;
 				break;
@@ -67,8 +85,17 @@ void paint(ID3D11Texture2D* tex,
 			for (int j = 0; j < 4; j++)
 			{
 				XMINT2 ipd = { ip.x + i_directions[j].x, ip.y + i_directions[j].y };
-				if (ipd.x < 0 || ipd.x >= maxres || ipd.y < 0 || ipd.y >= maxres)
+				if ((ipd.x < 0 || ipd.x >= maxres) && !wrapMode.x ||
+					(ipd.y < 0 || ipd.y >= maxres) && !wrapMode.y)
 					continue;
+				XMINT2 wrapped = {};
+				if (ipd.x >= maxres) wrapped.x = -maxres;
+				else if (ipd.x < 0) wrapped.x = maxres;
+				if (ipd.y >= maxres) wrapped.y = -maxres;
+				else if (ipd.y < 0) wrapped.y = maxres;
+				ipd.x += wrapped.x;
+				ipd.y += wrapped.y;
+
 				if (data[ipd.x * 4 + ipd.y * m.RowPitch] != 0)
 					continue;
 				XMVECTOR pd = p + directions[j];
@@ -77,24 +104,11 @@ void paint(ID3D11Texture2D* tex,
 				for (int i = 1; i < uv.size(); i++)
 				{
 					p0 = p1; p1 = XMLoadFloat2(&uv[i]);
-					if (!inAABB(p, pd, p0, p1))
-						continue;
-					XMFLOAT4 sg =
+					if (collide(p0, p1, p, pd) || ((wrapped.x || wrapped.y) &&
+						collide(p0,p1,
+							p  + directions[0] * wrapped.x + directions[1] * wrapped.y,
+							pd + directions[0] * wrapped.x + directions[1] * wrapped.y)))
 					{
-						XMVectorGetX(XMVector2Cross(p0 - p , p1 - p )),
-						XMVectorGetX(XMVector2Cross(p0 - pd, p1 - pd)),
-						XMVectorGetX(XMVector2Cross(p  - p0, pd - p0)),
-						XMVectorGetX(XMVector2Cross(p  - p1, pd - p1))
-					};
-					sg = {
-						(sg.x > EPS) ? 1.0f : ((sg.x < -EPS) ? -1.0f : 0.0f),
-						(sg.y > EPS) ? 1.0f : ((sg.y < -EPS) ? -1.0f : 0.0f),
-						(sg.z > EPS) ? 1.0f : ((sg.z < -EPS) ? -1.0f : 0.0f),
-						(sg.w > EPS) ? 1.0f : ((sg.w < -EPS) ? -1.0f : 0.0f)
-					};
-					if ((sg.x != sg.y && sg.z != sg.w) /*||
-						((sg.x == 0 && sg.y == 0) || (sg.z == 0 && sg.w == 0))*/)
-					{ // punkty po roznych stronach linii
 						blocked = true;
 						break;
 					}
@@ -134,7 +148,7 @@ void paint(ID3D11Texture2D* tex,
 		data[(x * 4 + y * m.RowPitch) + 2] = colors[color].z;
 		data[(x * 4 + y * m.RowPitch) + 3] = 255;
 	}
-	for (int i = 1; i < uv.size(); i++)
+	/*for (int i = 1; i < uv.size(); i++)
 	{
 		int x = uv[i-1].x * maxres, xt = uv[i].x * maxres;
 		int y = uv[i-1].y * maxres, yt = uv[i].y * maxres;
@@ -184,7 +198,7 @@ void paint(ID3D11Texture2D* tex,
 				D += 2 * dy;
 			}
 		}
-	}
+	}*/
 	device.context()->Unmap(tex, 0);
 }
 void IntersectionCurve::InitTextures(DxDevice& device, int resolution)
@@ -194,6 +208,6 @@ void IntersectionCurve::InitTextures(DxDevice& device, int resolution)
 	texB = device.CreateTexture(desc);
 	texvA = device.CreateShaderResourceView(texA);
 	texvB = device.CreateShaderResourceView(texB);
-	paint(texA.get(), pointsA, device);
-	paint(texB.get(), pointsB, device);
+	paint(texA.get(), pointsA, device, wrapModeA);
+	paint(texB.get(), pointsB, device, wrapModeB);
 }

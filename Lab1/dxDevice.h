@@ -49,11 +49,11 @@ public:
 		return CreateBuffer(reinterpret_cast<const void*>(
 			indices.data()), desc);
 	}
-	template < typename T>
+	template < typename T, int N = 1>
 	mini::dx_ptr<ID3D11Buffer> CreateConstantBuffer() const
 	{
 		auto desc = BufferDescription::ConstantBufferDescription(
-				sizeof(T));
+				sizeof(T)*N);
 		return CreateBuffer(nullptr, desc);
 	}
 	void SetBuffer(ID3D11Buffer* buf, void* val, size_t size);

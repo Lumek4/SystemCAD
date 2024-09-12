@@ -6,12 +6,13 @@ cbuffer cbDeBoor : register(b3)
 {
     int isDeBoor;
     int detail;
+    int flip;
 };
 
 struct DS_OUTPUT
 {
     float4 vPosition : SV_POSITION;
-    //float3 vNormal : NORMAL;
+    float2 uv : TEXCOORD;
 };
 
 struct HS_OUTPUT
@@ -115,7 +116,7 @@ DS_OUTPUT main(
     
     output.vPosition = float4(pos, 1);
     output.vPosition = mul(projMatrix, output.vPosition);
-    
+    output.uv = flip ? uv.yx : uv.xy;
     //output.vNormal = mul(projMatrix, float4(normalize(cross(dx, dy)), 0)).xyz;
     //output.vNormal = normalize(output.vNormal);
 	

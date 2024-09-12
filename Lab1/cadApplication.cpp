@@ -85,7 +85,7 @@ CadApplication::CadApplication(HINSTANCE hInstance)
 
 	m_cbgizmos = m_device.CreateConstantBuffer<DirectX::XMFLOAT4X4>();
 	m_cbColor = m_device.CreateConstantBuffer<DirectX::XMFLOAT4X4>();
-	m_cbSurfMode = m_device.CreateConstantBuffer<DirectX::XMINT4>();
+	m_cbSurfMode = m_device.CreateConstantBuffer<DirectX::XMINT4, 2>();
 
 	OnResize();
 
@@ -254,13 +254,33 @@ void CadApplication::GUI()
 							uva, uvb));
 					}
 				}
+			for (int i = 0; i < bsg.size(); i++)
+				for (int j = 0; j < bsf.size(); j++)
+				{
+					std::vector<DirectX::XMFLOAT2> uva;
+					std::vector<DirectX::XMFLOAT2> uvb;
+					bool loop = false;
+					if (intersect(bsg[i], bsf[j],
+						SceneCursor::instance.GetWorld(), 0.2f,
+						pts, uva, uvb, loop))
+					{
+						ends.push_back(pts.size());
+						loops.push_back(loop);
+						mainFolder->Add(EntityPresets::IntersCurve(
+							&bsg[i]->owner, &bsf[j]->owner, m_device,
+							uva, uvb));
+					}
+				}
 			for (int i = 0; i < ends.size()-1; i++)
 			{
 				std::vector<Entity*> line{};
 				for (int j = ends[i]; j < ends[i + 1]; j++)
+				{
 					line.push_back(EntityPresets::Point(pts[j]));
-				if (loops[i])
-					line.push_back(EntityPresets::Point(pts[ends[i]]));
+					line.back()->enabled = false;
+				}
+				//if (loops[i])
+				//	line.push_back(EntityPresets::Point(pts[ends[i]]));
 				mainFolder->Add(EntityPresets::InterpCurve(line));
 				mainFolder->AddSelection(line);
 			}
@@ -588,7 +608,7 @@ void CadApplication::Render() {
 	m_device.context()->ClearDepthStencilView(m_depthBuffer.get(),
 		D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
-	auto mrs = Catalogue<MeshRenderer>::Instance.GetAll();
+	auto& mrs = Catalogue<MeshRenderer>::Instance.GetAll();
 	for (int i = 0; i < mrs.size(); i++)
 	{
 		const Mesh* mesh = mrs[i]->mesh;
@@ -602,7 +622,7 @@ void CadApplication::Render() {
 		SetModelMatrix(t);
 		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
 	}
-	auto tgs = Catalogue<TorusGenerator>::Instance.GetAll();
+	auto& tgs = Catalogue<TorusGenerator>::Instance.GetAll();
 	for (int i = 0; i < tgs.size(); i++)
 	{
 		const Mesh* mesh = tgs[i]->GetMesh();
@@ -626,7 +646,7 @@ void CadApplication::Render() {
 	m_device.context()->DSSetConstantBuffers(2, 1, &cbs[2]);
 	m_device.context()->VSSetShader(
 		m_bezierVertexShader.get(), nullptr, 0);
-	auto bcs = Catalogue<BezierCurve>::Instance.GetAll();
+	auto& bcs = Catalogue<BezierCurve>::Instance.GetAll();
 	for (int i = 0; i < bcs.size(); i++)
 	{
 		const Mesh* mesh = bcs[i]->GetMesh();
@@ -648,23 +668,59 @@ void CadApplication::Render() {
 		m_bicubicHullShader.get(), nullptr, 0);
 	m_device.context()->RSSetState(m_rasterizerNoCull.get());
 
-	auto bbcs = Catalogue<BicubicSegment>::Instance.GetAll();
+	auto& bbcs = Catalogue<BicubicSegment>::Instance.GetAll();
+	auto cuts = Entity::GetSelected<IntersectionCurve>();
 	for (int i = 0; i < bbcs.size(); i++)
 	{
 		const Mesh* mesh = bbcs[i]->GetMesh();
 		Entity* owner = &bbcs[i]->owner;
+		Entity* surfOwner = &bbcs[i]->surface->owner;
 		if (!owner->enabled || !mesh)
 			continue;
+
+		ID3D11ShaderResourceView* trim = nullptr;
+		XMINT4 coords{ 0,0,1,1 };
+		for (int j = 0; j < cuts.size(); j++)
+		{
+			if (owner == cuts[j]->a || surfOwner == cuts[j]->a)
+				trim = cuts[j]->texvA.get();
+			else if (owner == cuts[j]->b || surfOwner == cuts[j]->b)
+				trim = cuts[j]->texvB.get();
+			else
+				continue;
+			if (cuts[j]->a == surfOwner ||
+				cuts[j]->b == surfOwner)
+			{
+				coords.z = bbcs[i]->surface->division.x;
+				coords.w = bbcs[i]->surface->division.y;
+				auto& segs = bbcs[i]->surface->GetSegments();
+				for(int y = 0; y<coords.w; y++)
+					for (int x = 0; x < coords.z; x++)
+						if (segs[x + y * coords.z] == bbcs[i])
+						{
+							coords.x = x; coords.y = y;
+							y = coords.w; break;
+						}
+
+			}
+			break;
+		}
+		m_device.context()->PSSetShaderResources(0, 1, &trim);
 		SetColor(owner);
 		SetModelMatrix(nullptr);
-		XMINT4 mode = { bbcs[i]->deBoorMode ? 1 : 0, (surfDetail+bbcs[i]->surface->surfDetailOffset)-1,0,0};
-		m_device.SetBuffer(m_cbSurfMode.get(), &mode);
+		XMINT4 mode[2] = { {bbcs[i]->deBoorMode ? 1 : 0,
+			(surfDetail + bbcs[i]->surface->surfDetailOffset) - 1,
+			0,trim ? 1 : 0 },
+			coords
+		};
+		m_device.SetBuffer(m_cbSurfMode.get(), mode, sizeof(XMINT4)*2);
 		auto* pmode = m_cbSurfMode.get();
+		m_device.context()->PSSetConstantBuffers(3, 1, &pmode);
 		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);
 		m_device.context()->HSSetConstantBuffers(3, 1, &pmode);
 		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
 
-		mode.z = 1;
+		mode[0].z = 1;
 		m_device.SetBuffer(m_cbSurfMode.get(), &mode);
 		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);
 		m_device.context()->HSSetConstantBuffers(3, 1, &pmode);
@@ -674,7 +730,7 @@ void CadApplication::Render() {
 		m_gregDomainShader.get(), nullptr, 0);
 	m_device.context()->HSSetShader(
 		m_gregHullShader.get(), nullptr, 0);
-	auto gps = Catalogue<GregoryPatch>::Instance.GetAll();
+	auto& gps = Catalogue<GregoryPatch>::Instance.GetAll();
 	for (int i = 0; i < gps.size(); i++)
 	{
 		const Mesh* mesh = gps[i]->GetMesh();
@@ -745,7 +801,7 @@ void CadApplication::Render() {
 		m_device.context()->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP);
 		m_device.context()->DrawIndexed(verts, 0, 0);
 	}
-	auto scs = Catalogue<SplineGenerator>::Instance.GetAll();
+	auto& scs = Catalogue<SplineGenerator>::Instance.GetAll();
 	for (int i = 0; i < scs.size(); i++)
 	{
 		if (!scs[i]->drawPolygon)
@@ -769,7 +825,7 @@ void CadApplication::Render() {
 	m_device.SetBuffer(m_cbgizmos.get(), &m_gizmoBuffer);
 	m_device.context()->GSSetConstantBuffers(0, 1, gizmobuffer);
 
-	auto prs = Catalogue<PointRenderer>::Instance.GetAll();
+	auto& prs = Catalogue<PointRenderer>::Instance.GetAll();
 	for (int i = 0; i < prs.size(); i++)
 	{
 		Transform* t = &prs[i]->transform;

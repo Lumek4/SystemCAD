@@ -1,0 +1,442 @@
+{
+ "geometry": [
+  {
+   "id": 33,
+   "name": "Bicubic Surface 3",
+   "objectType": "bezierSurfaceC0",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 1
+      },
+      {
+       "id": 2
+      },
+      {
+       "id": 3
+      },
+      {
+       "id": 4
+      },
+      {
+       "id": 5
+      },
+      {
+       "id": 6
+      },
+      {
+       "id": 7
+      },
+      {
+       "id": 8
+      },
+      {
+       "id": 9
+      },
+      {
+       "id": 10
+      },
+      {
+       "id": 11
+      },
+      {
+       "id": 12
+      },
+      {
+       "id": 13
+      },
+      {
+       "id": 14
+      },
+      {
+       "id": 15
+      },
+      {
+       "id": 16
+      }
+     ],
+     "id": 34,
+     "name": "Bicubic Surface 3 Segment 1",
+     "objectType": "bezierPatchC0",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 1,
+    "y": 1
+   }
+  },
+  {
+   "id": 35,
+   "name": "Bicubic Surface 5",
+   "objectType": "bezierSurfaceC0",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 17
+      },
+      {
+       "id": 18
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 23
+      },
+      {
+       "id": 24
+      },
+      {
+       "id": 25
+      },
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      },
+      {
+       "id": 32
+      }
+     ],
+     "id": 36,
+     "name": "Bicubic Surface 5 Segment 1",
+     "objectType": "bezierPatchC0",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 1,
+    "y": 1
+   }
+  }
+ ],
+ "points": [
+  {
+   "id": 1,
+   "name": "Bicubic Surface 3 Point 1",
+   "position": {
+    "x": 0.5299999713897705,
+    "y": 1.0,
+    "z": 0.630000114440918
+   }
+  },
+  {
+   "id": 2,
+   "name": "Bicubic Surface 3 Point 2",
+   "position": {
+    "x": -0.7199999690055847,
+    "y": 1.0,
+    "z": -1.4700000286102295
+   }
+  },
+  {
+   "id": 3,
+   "name": "Bicubic Surface 3 Point 3",
+   "position": {
+    "x": 1.6800000667572021,
+    "y": 1.0,
+    "z": -1.5
+   }
+  },
+  {
+   "id": 4,
+   "name": "Bicubic Surface 3 Point 4",
+   "position": {
+    "x": -1.6500000953674316,
+    "y": 1.0,
+    "z": -1.5
+   }
+  },
+  {
+   "id": 5,
+   "name": "Bicubic Surface 3 Point 5",
+   "position": {
+    "x": 0.5299999713897705,
+    "y": -2.0,
+    "z": 2.630000114440918
+   }
+  },
+  {
+   "id": 6,
+   "name": "Bicubic Surface 3 Point 6",
+   "position": {
+    "x": -1.4299999475479126,
+    "y": -2.0,
+    "z": 0.5
+   }
+  },
+  {
+   "id": 7,
+   "name": "Bicubic Surface 3 Point 7",
+   "position": {
+    "x": 1.6800000667572021,
+    "y": -2.0,
+    "z": 0.5
+   }
+  },
+  {
+   "id": 8,
+   "name": "Bicubic Surface 3 Point 8",
+   "position": {
+    "x": -1.6500000953674316,
+    "y": -2.0,
+    "z": 0.5
+   }
+  },
+  {
+   "id": 9,
+   "name": "Bicubic Surface 3 Point 9",
+   "position": {
+    "x": 0.5299999713897705,
+    "y": 2.0,
+    "z": 2.630000114440918
+   }
+  },
+  {
+   "id": 10,
+   "name": "Bicubic Surface 3 Point 10",
+   "position": {
+    "x": -0.7199999690055847,
+    "y": 2.0,
+    "z": 0.5299999713897705
+   }
+  },
+  {
+   "id": 11,
+   "name": "Bicubic Surface 3 Point 11",
+   "position": {
+    "x": 1.6800000667572021,
+    "y": 2.0,
+    "z": 0.5
+   }
+  },
+  {
+   "id": 12,
+   "name": "Bicubic Surface 3 Point 12",
+   "position": {
+    "x": -1.6500000953674316,
+    "y": 2.0,
+    "z": 0.5
+   }
+  },
+  {
+   "id": 13,
+   "name": "Bicubic Surface 3 Point 13",
+   "position": {
+    "x": 0.5299999713897705,
+    "y": -1.0,
+    "z": 0.630000114440918
+   }
+  },
+  {
+   "id": 14,
+   "name": "Bicubic Surface 3 Point 14",
+   "position": {
+    "x": -1.4299999475479126,
+    "y": -1.0,
+    "z": -1.5
+   }
+  },
+  {
+   "id": 15,
+   "name": "Bicubic Surface 3 Point 15",
+   "position": {
+    "x": 1.6800000667572021,
+    "y": -1.0,
+    "z": -1.5
+   }
+  },
+  {
+   "id": 16,
+   "name": "Bicubic Surface 3 Point 16",
+   "position": {
+    "x": -1.6500000953674316,
+    "y": -1.0,
+    "z": -1.5
+   }
+  },
+  {
+   "id": 17,
+   "name": "Bicubic Surface 5 Point 1",
+   "position": {
+    "x": 0.07401393353939056,
+    "y": -0.8305468559265137,
+    "z": -0.8275499939918518
+   }
+  },
+  {
+   "id": 18,
+   "name": "Bicubic Surface 5 Point 2",
+   "position": {
+    "x": 0.06340567022562027,
+    "y": -0.2768489122390747,
+    "z": -0.8282938003540039
+   }
+  },
+  {
+   "id": 19,
+   "name": "Bicubic Surface 5 Point 3",
+   "position": {
+    "x": 0.05279738828539848,
+    "y": 0.2768489718437195,
+    "z": -0.829037606716156
+   }
+  },
+  {
+   "id": 20,
+   "name": "Bicubic Surface 5 Point 4",
+   "position": {
+    "x": 0.25041791796684265,
+    "y": 0.8305468559265137,
+    "z": -0.8151814937591553
+   }
+  },
+  {
+   "id": 21,
+   "name": "Bicubic Surface 5 Point 5",
+   "position": {
+    "x": 0.03527957946062088,
+    "y": -0.8305468559265137,
+    "z": -0.27510619163513184
+   }
+  },
+  {
+   "id": 22,
+   "name": "Bicubic Surface 5 Point 6",
+   "position": {
+    "x": 0.024671314284205437,
+    "y": -0.2768489122390747,
+    "z": -0.27584996819496155
+   }
+  },
+  {
+   "id": 23,
+   "name": "Bicubic Surface 5 Point 7",
+   "position": {
+    "x": 0.0140630342066288,
+    "y": 0.2768489718437195,
+    "z": -0.27659374475479126
+   }
+  },
+  {
+   "id": 24,
+   "name": "Bicubic Surface 5 Point 8",
+   "position": {
+    "x": 0.21168357133865356,
+    "y": 0.8305468559265137,
+    "z": -0.2627376914024353
+   }
+  },
+  {
+   "id": 25,
+   "name": "Bicubic Surface 5 Point 9",
+   "position": {
+    "x": -0.003454773221164942,
+    "y": -0.8305468559265137,
+    "z": 0.2773376405239105
+   }
+  },
+  {
+   "id": 26,
+   "name": "Bicubic Surface 5 Point 10",
+   "position": {
+    "x": -0.014063038863241673,
+    "y": -0.2768489122390747,
+    "z": 0.27659380435943604
+   }
+  },
+  {
+   "id": 27,
+   "name": "Bicubic Surface 5 Point 11",
+   "position": {
+    "x": -0.024671319872140884,
+    "y": 0.2768489718437195,
+    "z": 0.2758500277996063
+   }
+  },
+  {
+   "id": 28,
+   "name": "Bicubic Surface 5 Point 12",
+   "position": {
+    "x": 0.17294920980930328,
+    "y": 0.8305468559265137,
+    "z": 0.28970614075660706
+   }
+  },
+  {
+   "id": 29,
+   "name": "Bicubic Surface 5 Point 13",
+   "position": {
+    "x": -0.04218912124633789,
+    "y": -0.8305468559265137,
+    "z": 0.8297813534736633
+   }
+  },
+  {
+   "id": 30,
+   "name": "Bicubic Surface 5 Point 14",
+   "position": {
+    "x": -0.05279738828539848,
+    "y": -0.2768489122390747,
+    "z": 0.829037606716156
+   }
+  },
+  {
+   "id": 31,
+   "name": "Bicubic Surface 5 Point 15",
+   "position": {
+    "x": -0.06340567022562027,
+    "y": 0.2768489718437195,
+    "z": 0.8282938003540039
+   }
+  },
+  {
+   "id": 32,
+   "name": "Bicubic Surface 5 Point 16",
+   "position": {
+    "x": 0.1342148780822754,
+    "y": 0.8305468559265137,
+    "z": 0.8421498537063599
+   }
+  }
+ ]
+}

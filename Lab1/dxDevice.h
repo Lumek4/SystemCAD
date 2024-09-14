@@ -76,6 +76,7 @@ public:
 	mini::dx_ptr<ID3D11HullShader> CreateHullShader(std::vector<BYTE> gsCode) const;
 
 	mini::dx_ptr<ID3D11InputLayout> CreateInputLayout(const std::vector<D3D11_INPUT_ELEMENT_DESC> elements, std::vector<BYTE> vsCode) const;
+	mini::dx_ptr<ID3D11BlendState> CreateBlendState(D3D11_BLEND_DESC& desc) const;
 
 	void ResizeBuffers();
 

@@ -20,24 +20,26 @@ CadApplication::CadApplication(HINSTANCE hInstance)
 
 	
 
-	const auto vsBytes = DxDevice::LoadByteCode(L"vs.cso");
+	const auto vsBytes = DxDevice::LoadByteCode(L"VS_FullTransform.cso");
+	const auto vsUvBytes = DxDevice::LoadByteCode(L"VS_WithUV.cso");
 		{
-		const auto psBytes = DxDevice::LoadByteCode(L"ps.cso");
-		const auto wirePSBytes = DxDevice::LoadByteCode(L"wirePS.cso");
+		const auto psBytes = DxDevice::LoadByteCode(L"PS_Models.cso");
+		const auto wirePSBytes = DxDevice::LoadByteCode(L"PS_Shapes.cso");
 		const auto pointgsBytes = DxDevice::LoadByteCode(L"pointgs.cso");
 		const auto cursorgsBytes = DxDevice::LoadByteCode(L"curgs.cso");
-		m_vertexShader = m_device.CreateVertexShader(vsBytes);
-		m_pixelShader = m_device.CreatePixelShader(psBytes);
-		m_wirePixelShader = m_device.CreatePixelShader(wirePSBytes);
+		m_vs_transform = m_device.CreateVertexShader(vsBytes);
+		m_vs_uvs = m_device.CreateVertexShader(vsUvBytes);
+		m_ps_model = m_device.CreatePixelShader(psBytes);
+		m_ps_shape = m_device.CreatePixelShader(wirePSBytes);
 		m_pointGeometryShader = m_device.CreateGeometryShader(pointgsBytes);
 		m_cursorGeometryShader = m_device.CreateGeometryShader(cursorgsBytes);
 	}
 	{
 
-		const auto bezierVSBytes = DxDevice::LoadByteCode(L"bezierVS.cso");
+		const auto bezierVSBytes = DxDevice::LoadByteCode(L"VS_NoTransform.cso");
 		const auto bezierHSBytes = DxDevice::LoadByteCode(L"bezierHS.cso");
 		const auto bezierDSBytes = DxDevice::LoadByteCode(L"bezierDS.cso");
-		m_bezierVertexShader = m_device.CreateVertexShader(bezierVSBytes);
+		m_vs_noTransform = m_device.CreateVertexShader(bezierVSBytes);
 		m_bezierHullShader = m_device.CreateHullShader(bezierHSBytes);
 		m_bezierDomainShader = m_device.CreateDomainShader(bezierDSBytes);
 	}
@@ -46,10 +48,8 @@ CadApplication::CadApplication(HINSTANCE hInstance)
 		const auto bicubicHSBytes = DxDevice::LoadByteCode(L"bicubicHS.cso");
 		const auto bicubicDSBytes = DxDevice::LoadByteCode(L"bicubicDS.cso");
 		const auto bicubicGridGSBytes = DxDevice::LoadByteCode(L"bicubicGridGS.cso");
-		const auto surfpsBytes = DxDevice::LoadByteCode(L"surfPS.cso");
 		m_bicubicHullShader = m_device.CreateHullShader(bicubicHSBytes);
 		m_bicubicDomainShader = m_device.CreateDomainShader(bicubicDSBytes);
-		m_surfacePixelShader = m_device.CreatePixelShader(surfpsBytes);
 		m_bicubicGridGeometryShader = m_device.CreateGeometryShader(bicubicGridGSBytes);
 	}
 	{
@@ -68,12 +68,26 @@ CadApplication::CadApplication(HINSTANCE hInstance)
 	rstatedesc.FillMode = D3D11_FILL_WIREFRAME;
 	m_rasterizerNoCull = m_device.CreateRasterizerState(rstatedesc);
 
-	std::vector<D3D11_INPUT_ELEMENT_DESC> elements{
-	{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
-	D3D11_INPUT_PER_VERTEX_DATA, 0 }
-	};
-	m_layout.push_back(m_device.CreateInputLayout(elements, vsBytes));
-	VertexPosition::layout = m_layout[m_layout.size() - 1].get();
+	{
+		std::vector<D3D11_INPUT_ELEMENT_DESC> elements{
+		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
+		D3D11_INPUT_PER_VERTEX_DATA, 0 }
+		};
+		m_layout.push_back(m_device.CreateInputLayout(elements, vsBytes));
+		VertexPosition::layout = m_layout[m_layout.size() - 1].get();
+	}
+	{
+		std::vector<D3D11_INPUT_ELEMENT_DESC> elements{
+		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
+		D3D11_INPUT_PER_VERTEX_DATA, 0 },
+		{ "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT,
+		D3D11_INPUT_PER_VERTEX_DATA, 0 }
+		};
+		m_layout.push_back(m_device.CreateInputLayout(elements, vsUvBytes));
+		VertexPositionUV::layout = m_layout[m_layout.size() - 1].get();
+	}
+
+
 	torus = Mesh::Torus(10, 10, 2, 1);
 	point = Mesh::Point();
 	grid = Mesh::Grid(100);
@@ -84,10 +98,12 @@ CadApplication::CadApplication(HINSTANCE hInstance)
 	m_cbproj = m_device.CreateConstantBuffer<DirectX::XMFLOAT4X4>();
 
 	m_cbgizmos = m_device.CreateConstantBuffer<DirectX::XMFLOAT4X4>();
+	m_cbTint = m_device.CreateConstantBuffer<DirectX::XMFLOAT4>();
 	m_cbColor = m_device.CreateConstantBuffer<DirectX::XMFLOAT4X4>();
-	m_cbSurfMode = m_device.CreateConstantBuffer<DirectX::XMINT4, 2>();
+	m_cbSurfMode = m_device.CreateConstantBuffer<DirectX::XMINT4, 3>();
 
-	OnResize();
+	BlendStateDescription bsdesc{};
+	m_blendAdd = m_device.CreateBlendState(bsdesc);
 
 	Camera::mainCamera = std::make_unique<Camera>(m_device);
 	Camera::mainCamera->Rotate({ 0, 2 * XM_PI / 3 });
@@ -95,6 +111,7 @@ CadApplication::CadApplication(HINSTANCE hInstance)
 
 	mainFolder = Entity::New()->AddComponent<Folder>();
 	mainFolder->Add(EntityPresets::Point({}));
+	OnResize();
 }
 
 CadApplication::~CadApplication()
@@ -126,7 +143,14 @@ void CadApplication::GUI()
 			printf("%s", e.what());
 		}
 	}
-	ImGui::SliderInt("Detail Level of Surfaces", &surfDetail, 1, 255);
+	ImGui::SliderInt("Surface Detail", &surfDetail, 1, 64);
+	ImGui::SliderFloat("Show UV", &surfaceUVColoring, 0.0f, 1.0f,
+		"%.1f", ImGuiSliderFlags_AlwaysClamp);
+	ImGui::Checkbox("Anaglyph", &anaglyph);
+	ImGui::SliderFloat("Eye distance", &eyeDistance, 0.001f, 10.0f);
+	ImGui::SliderFloat("Plane distance", &planeDistance, 1.0f, 100.0f);
+	ImGui::ColorEdit3("Left", &leftTint.x);
+	ImGui::ColorEdit3("Right", &rightTint.x);
 	ImGui::End(); // Options
 
 	{
@@ -213,76 +237,36 @@ void CadApplication::GUI()
 	MyGui::SameLineIfFits(buttonDims.x);
 	{
 		if (ImGui::Button("Intersect", buttonDims))
+			MyGui::ShowIntersectPopup();
+		static float detail = 0.2f; bool create = false;
+		static int texResolution = 128;
+		MyGui::IntersectPopup(detail, texResolution, create);
+
+		if(create)
 		{
 			auto bsg = Entity::GetSelected<BicubicSegment>();
 			auto bsf = Entity::GetSelected<BicubicSurface>();
 			auto tgn = Entity::GetSelected<TorusGenerator>();
-			std::vector<DirectX::XMFLOAT3> pts;
-			std::vector<int> ends(1, 0);
-			std::vector<bool> loops;
-			for (int i = 0; i < bsg.size(); i++)
-				for (int j = i+1; j < bsg.size(); j++)
-				{
-					std::vector<DirectX::XMFLOAT2> uva;
-					std::vector<DirectX::XMFLOAT2> uvb;
-					bool loop = false;
-					if (intersect(bsg[i], bsg[j],
-						SceneCursor::instance.GetWorld(), 0.2f,
-						pts, uva, uvb, loop))
-					{
-						ends.push_back(pts.size());
-						loops.push_back(loop);
-						mainFolder->Add(EntityPresets::IntersCurve(
-							&bsg[i]->owner, &bsg[j]->owner, m_device,
-							uva, uvb));
-					}
-				}
-			for (int i = 0; i < bsg.size(); i++)
-				for (int j = 0; j < tgn.size(); j++)
-				{
-					std::vector<DirectX::XMFLOAT2> uva;
-					std::vector<DirectX::XMFLOAT2> uvb;
-					bool loop = false;
-					if (intersect(bsg[i], tgn[j],
-						SceneCursor::instance.GetWorld(), 0.2f,
-						pts, uva, uvb, loop))
-					{
-						ends.push_back(pts.size());
-						loops.push_back(loop);
-						mainFolder->Add(EntityPresets::IntersCurve(
-							&bsg[i]->owner, &tgn[j]->owner, m_device,
-							uva, uvb));
-					}
-				}
-			for (int i = 0; i < bsg.size(); i++)
-				for (int j = 0; j < bsf.size(); j++)
-				{
-					std::vector<DirectX::XMFLOAT2> uva;
-					std::vector<DirectX::XMFLOAT2> uvb;
-					bool loop = false;
-					if (intersect(bsg[i], bsf[j],
-						SceneCursor::instance.GetWorld(), 0.2f,
-						pts, uva, uvb, loop))
-					{
-						ends.push_back(pts.size());
-						loops.push_back(loop);
-						mainFolder->Add(EntityPresets::IntersCurve(
-							&bsg[i]->owner, &bsf[j]->owner, m_device,
-							uva, uvb));
-					}
-				}
-			for (int i = 0; i < ends.size()-1; i++)
+			
+			std::vector<std::vector<DirectX::XMFLOAT3>> pts;
+			std::vector<std::vector<DirectX::XMFLOAT2>> uva;
+			std::vector<std::vector<DirectX::XMFLOAT2>> uvb;
+			std::vector<Entity*> a;
+			std::vector<Entity*> b;
+
+			multiIntersect(bsg, bsg, detail, pts, uva, uvb, a, b);
+			multiIntersect(bsf, bsf, detail, pts, uva, uvb, a, b);
+			multiIntersect(tgn, tgn, detail, pts, uva, uvb, a, b);
+
+			multiIntersect(bsg, bsf, detail, pts, uva, uvb, a, b);
+			multiIntersect(bsg, tgn, detail, pts, uva, uvb, a, b);
+			multiIntersect(bsf, tgn, detail, pts, uva, uvb, a, b);
+
+			for (int i = 0; i < pts.size(); i++)
 			{
-				std::vector<Entity*> line{};
-				for (int j = ends[i]; j < ends[i + 1]; j++)
-				{
-					line.push_back(EntityPresets::Point(pts[j]));
-					line.back()->enabled = false;
-				}
-				//if (loops[i])
-				//	line.push_back(EntityPresets::Point(pts[ends[i]]));
-				mainFolder->Add(EntityPresets::InterpCurve(line));
-				mainFolder->AddSelection(line);
+				mainFolder->Add(EntityPresets::IntersCurve(
+					a[i], b[i],
+					uva[i], uvb[i], pts[i], texResolution));
 			}
 		}
 	}
@@ -396,9 +380,26 @@ void CadApplication::GUI()
 		auto selectedIntersections = Entity::GetSelected<IntersectionCurve>();
 		if (!selectedIntersections.empty())
 		{
+			auto& inters = selectedIntersections.back();
 			ImGui::Begin("Intersection");
-			MyGui::TextureWidget(selectedIntersections.back()->texvA.get());
-			MyGui::TextureWidget(selectedIntersections.back()->texvB.get());
+			MyGui::TextureWidget(inters->texvA.get(), inters->trimListA);
+			MyGui::TextureWidget(inters->texvB.get(), inters->trimListB);
+			if (ImGui::Button("Make interpolated curve"))
+			{
+				std::vector<Entity*> line{};
+				for (int i = 0; i < inters->pointsWorld.size(); i++)
+				{
+					line.push_back(EntityPresets::Point(inters->pointsWorld[i]));
+					line.back()->enabled = false;
+				}
+				/*for (int i = 0; i < inters->pointsWorld.size()&&i<1; i++)
+				{
+					line.push_back(EntityPresets::Point(inters->pointsWorld[i]));
+					line.back()->enabled = false;
+				}*/
+				mainFolder->Add(EntityPresets::InterpCurve(line));
+				mainFolder->AddSelection(line);
+			}
 			ImGui::End(); //Intersection
 		}
 	}
@@ -416,8 +417,7 @@ void CadApplication::GUI()
 
 void CadApplication::Update() {
 	auto& io = ImGui::GetIO();
-	if ((io.MouseDown[2] || io.MouseDown[1] && io.KeyShift)
-		&& !io.WantCaptureMouse)
+	if (io.MouseDown[2] && !io.WantCaptureMouse)
 	{
 		if (io.KeyCtrl)
 			Camera::mainCamera->Move({ -io.MouseDelta.x * moveRate, io.MouseDelta.y * moveRate });
@@ -428,58 +428,177 @@ void CadApplication::Update() {
 	{
 		Camera::mainCamera->Zoom(io.MouseWheel * scaleRate);
 	}
-	if (io.MouseClicked[1] && !io.KeyShift && !io.WantCaptureMouse)
 	{
-		auto size = io.DisplaySize;
-		auto screen = io.MousePos;
-		ImVec2 norm = { 2 * screen.x / size.x - 1, -2 * screen.y / size.y + 1 };
+		static bool translating = false;
+		static bool scaling = false;
+		static bool rotating = false;
+		if (ImGui::IsKeyPressed(ImGuiKey_Q, false))
+		{
+			translating = true;
+			scaling = false;
+			rotating = false;
+		}
+		if (ImGui::IsKeyPressed(ImGuiKey_W, false))
+		{
+			translating = false;
+			scaling = true;
+			rotating = false;
+		}
+		if (ImGui::IsKeyPressed(ImGuiKey_E, false))
+		{
+			translating = false;
+			scaling = false;
+			rotating = true;
+		}
+		auto selectedTransforms = Entity::GetSelected<Transform>();
+		if (selectedTransforms.empty() ||
+			ImGui::IsKeyPressed(ImGuiKey_Escape, false))
+		{
+			translating = scaling = rotating = false;
+		}
+		if (ImGui::IsKeyPressed(ImGuiKey_Enter, false) && io.KeyShift)
+		{
+			translating = scaling = rotating = false;
+			SceneTransform::instance.Apply();
+		}
+		if(translating || scaling || rotating)
+		{
+			auto mou = ImGui::GetMousePos();
+			ImGui::SetNextWindowPos({ mou.x - 15, mou.y - 15 });
+			ImGui::SetNextWindowSize({ 15, 15 });
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, { 8,8 });
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, { 4,1 });
+			ImGui::PushStyleColor(ImGuiCol_Text, ColorPalette::highlightOrange);
+			ImGui::Begin("MouseTransform", nullptr, ImGuiWindowFlags_NoDecoration);
+			if (translating)
+				ImGui::Text("T");
+			if (scaling)
+				ImGui::Text("S");
+			if (rotating)
+				ImGui::Text("R");
+			ImGui::End();
+			ImGui::PopStyleColor();
+			ImGui::PopStyleVar(2);
+		}
+		static bool mouseTransforming = false;
+		static bool mouseTransformingStart = false;
+		if (mouseTransforming)
+		{
+			auto& st = SceneTransform::instance;
+			if (translating)
+			{
+				static XMFLOAT3 pos;
+				if (mouseTransformingStart)
+					pos = st.translation;
+				
+				float c = 2*tan(fov*0.5f) / io.DisplaySize.y;
+				auto delta = ImGui::GetMouseDragDelta();
+				auto v = XMVector4Transform(
+					{
+						 delta.x*c,
+						-delta.y*c,
+						0, 0 },
+					Camera::mainCamera->ReverseTransform());
+				XMStoreFloat3(&st.translation,
+					XMLoadFloat3(&pos)
+					+ v*Camera::mainCamera->GetZoom());
+				st.localPosition = st.translation;
+			}
+			if (scaling)
+			{
+				static float sca;
+				if (mouseTransformingStart)
+					sca = st.scaleFactor;
+
+				auto delta = ImGui::GetMouseDragDelta();
+				XMStoreFloat3(&st.scale, sca *
+					XMVector2Dot({
+						io.MousePos.x - io.DisplaySize.x / 2,
+						io.MousePos.y - io.DisplaySize.y / 2
+						},{
+						io.MousePos.x - io.DisplaySize.x / 2 - delta.x,
+						io.MousePos.y - io.DisplaySize.y / 2 - delta.y})
+						/
+					XMVector2LengthSq({
+						io.MousePos.x - io.DisplaySize.x / 2 - delta.x,
+						io.MousePos.y - io.DisplaySize.y / 2 - delta.y
+						})
+						);
+
+				st.scaleFactor = st.scale.x;
+			}
+			if (rotating)
+			{
+				static float ang;
+				if (mouseTransformingStart)
+					ang = st.rotationAngle;
+
+
+
+				auto delta = ImGui::GetMouseDragDelta();
+
+				auto ax = XMVector4Transform(
+					{0,0,1,0}, Camera::mainCamera->ReverseTransform());
+
+				XMStoreFloat3(&st.axis, ax);
+				st.rotationAngle = ang + atan2f(
+					io.MousePos.y - io.DisplaySize.y / 2,
+					io.MousePos.x - io.DisplaySize.x / 2) -
+					atan2f(
+						io.MousePos.y - io.DisplaySize.y / 2 - delta.y,
+						io.MousePos.x - io.DisplaySize.x / 2 - delta.x
+					);
+
+				st.rotation = Quaternion::Get(st.axis, st.rotationAngle);
+			}
+				
+			SceneTransform::instance.onModified.Notify(&SceneTransform::instance);
+		}
+		mouseTransformingStart = mouseTransforming ^ ImGui::IsMouseDragging(0);
+		mouseTransforming = (translating || scaling || rotating) && !io.WantCaptureMouse &&
+			ImGui::IsMouseDragging(0);
+	}
+
+
+	static bool boxSelect = false;
+	if (!boxSelect &&
+		ImGui::IsMouseReleased(1) && !io.KeyShift && !io.WantCaptureMouse)
+	{
+		XMVECTOR mouse = {
+			2 * io.MousePos.x / io.DisplaySize.x - 1,
+			-2 * io.MousePos.y / io.DisplaySize.y + 1
+		};
+		XMMATRIX viewproj = XMLoadFloat4x4(&m_view) * XMLoadFloat4x4(&m_proj);
+		float size = pointSize / 2 / io.DisplaySize.x * m_window.m_defaultWindowWidth;
+		float aspect = io.DisplaySize.y / io.DisplaySize.x;
 
 		int rekInd = -1;
 		float rekVal = INFINITY;
 		auto& points = Catalogue<PointTransform>::Instance.GetAll();
-		for (int i = 0; i < points.size(); i++)
+		auto& vpoints = Catalogue<VPointTransform>::Instance.GetAll();
+		for (int i = 0; i < points.size()+vpoints.size(); i++)
 		{
-			auto pos = points[i]->Position();
-			XMFLOAT4 v = { pos.x, pos.y, pos.z, 1 };
+			XMFLOAT3 pos;
+			if (i < points.size())
+			{
+				if (!points[i]->owner.enabled)
+					continue;
+				pos = points[i]->Position();
+			}
+			else
+			{
+				if (!vpoints[i - points.size()]->owner.enabled)
+					continue;
+				pos = vpoints[i - points.size()]->Position();
+			}
 
-			XMStoreFloat4(&v,
-				XMVector4Transform(
-					XMVector4Transform(
-						XMLoadFloat4(&v),
-						XMLoadFloat4x4(&m_view)
-					),
-					XMLoadFloat4x4(&m_proj)
-				)
-			);
-			ImVec2 dif = { norm.x - v.x / v.w, (norm.y - v.y / v.w) * size.y / size.x };
-			float dist = sqrtf(dif.x * dif.x + dif.y * dif.y);
-			if (dist < pointSize / 2 && v.z / v.w < rekVal)
+			float depth = vecmath::screenRay({ pos.x,pos.y,pos.z,1 }, mouse,
+				viewproj, size, aspect);
+			
+			if (!isnan(depth) && depth < rekVal)
 			{
 				rekInd = i;
-				rekVal = v.z / v.w;
-			}
-		}
-		auto& vpoints = Catalogue<VPointTransform>::Instance.GetAll();
-		for (int i = 0; i < vpoints.size(); i++)
-		{
-			auto pos = vpoints[i]->Position();
-			XMFLOAT4 v = { pos.x, pos.y, pos.z, 1 };
-
-			XMStoreFloat4(&v,
-				XMVector4Transform(
-					XMVector4Transform(
-						XMLoadFloat4(&v),
-						XMLoadFloat4x4(&m_view)
-					),
-					XMLoadFloat4x4(&m_proj)
-				)
-			);
-			ImVec2 dif = { norm.x - v.x / v.w, (norm.y - v.y / v.w) * size.y / size.x };
-			float dist = sqrtf(dif.x * dif.x + dif.y * dif.y);
-			if (dist < pointSize / 2 && v.z / v.w < rekVal)
-			{
-				rekInd = i + points.size();
-				rekVal = v.z / v.w;
+				rekVal = depth;
 			}
 		}
 		if (rekInd >= 0)
@@ -490,7 +609,91 @@ void CadApplication::Update() {
 			owner.Select(!owner.Selected());
 		}
 	}
-	if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_A, false))
+	if (boxSelect)
+	{
+		auto del = ImGui::GetMouseDragDelta(1);
+		auto mou = ImGui::GetMousePos();
+		ImVec2 mouseMin = { fminf(mou.x - del.x, mou.x),fminf(mou.y - del.y, mou.y) };
+		ImVec2 mouseMax = { fmaxf(mou.x - del.x, mou.x),fmaxf(mou.y - del.y, mou.y) };
+
+		ImGui::SetNextWindowPos(mouseMin);
+		ImGui::SetNextWindowSize({ mouseMax.x - mouseMin.x, mouseMax.y - mouseMin.y });
+		ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, { 1,1 });
+		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, { 4,1 });
+		ImGui::PushStyleColor(ImGuiCol_Border, ColorPalette::highlightOrange);
+		ImGui::PushStyleColor(ImGuiCol_WindowBg, ColorPalette::highlightOrange);
+		ImGui::PushStyleColor(ImGuiCol_Text, ColorPalette::highlightOrange);
+		ImGui::SetNextWindowBgAlpha(0.1f);
+		ImGui::Begin("BoxSelect", nullptr, ImGuiWindowFlags_NoDecoration);
+		bool addToSelection = !io.KeyCtrl && io.KeyShift;
+		if (addToSelection)
+			ImGui::Text("+");
+		bool replaceSelection = !io.KeyCtrl && !io.KeyShift;
+		if (replaceSelection)
+			ImGui::Text("=");
+		bool removeFromSelecion = io.KeyCtrl && !io.KeyShift;
+		if (removeFromSelecion)
+			ImGui::Text("-");
+		bool xorSelection = io.KeyCtrl && io.KeyShift;
+		if (xorSelection)
+			ImGui::Text("*");
+		ImGui::End();
+		ImGui::PopStyleColor(3);
+		ImGui::PopStyleVar(2);
+		if (ImGui::IsMouseReleased(1))
+		{
+			if(replaceSelection)
+				for (int i = Entity::selection.size() - 1; i >= 0; i--)
+					Entity::selection[i]->Select(false);
+
+
+			XMVECTOR mouseLo = {
+				2 * mouseMin.x / io.DisplaySize.x - 1,
+				-2 * mouseMax.y / io.DisplaySize.y + 1
+			};
+			XMVECTOR mouseHi = {
+				2 * mouseMax.x / io.DisplaySize.x - 1,
+				-2 * mouseMin.y / io.DisplaySize.y + 1
+			};
+			XMMATRIX viewproj = XMLoadFloat4x4(&m_view) * XMLoadFloat4x4(&m_proj);
+			//float aspect = io.DisplaySize.y / io.DisplaySize.x;
+
+			auto& points = Catalogue<PointTransform>::Instance.GetAll();
+			for (int i = 0; i < points.size(); i++)
+			{
+				if (!points[i]->owner.enabled)
+					continue;
+				XMFLOAT3 pos = points[i]->Position();
+				if (vecmath::screenBox({ pos.x,pos.y,pos.z,1 },
+					mouseLo, mouseHi, viewproj))
+					if(removeFromSelecion)
+						points[i]->owner.Select(false);
+					else if (xorSelection)
+						points[i]->owner.Select(!points[i]->owner.Selected());
+					else
+						points[i]->owner.Select(true);
+			}
+			auto& vpoints = Catalogue<VPointTransform>::Instance.GetAll();
+			for (int i = 0; i < vpoints.size(); i++)
+			{
+				if (!vpoints[i]->owner.enabled)
+					continue;
+				XMFLOAT3 pos = vpoints[i]->Position();
+				if (vecmath::screenBox({ pos.x,pos.y,pos.z,1 },
+					mouseLo, mouseHi, viewproj))
+					if (removeFromSelecion)
+						points[i]->owner.Select(false);
+					else if (xorSelection)
+						points[i]->owner.Select(!points[i]->owner.Selected());
+					else
+						points[i]->owner.Select(true);
+			}
+		}
+	}
+	boxSelect = ImGui::IsMouseDragging(1);
+
+
+	if (ImGui::IsKeyPressed(ImGuiKey_A, false))
 		if (!Entity::selection.empty())
 			for (int i = Entity::selection.size() - 1; i >= 0; i--)
 				Entity::selection[i]->Select(false);
@@ -499,20 +702,29 @@ void CadApplication::Update() {
 				mainFolder->Get()[i]->Select(true);
 
 
+	if (ImGui::IsKeyPressed(ImGuiKey_H, false))
+		if (!Entity::selection.empty())
+		{
+			auto& s = Entity::selection;
+			bool anyEnabled = false;
+			for (int i = 0; i < s.size(); i++)
+				anyEnabled |= s[i]->enabled;
+
+			if(anyEnabled)
+				for (int i = 0; i < s.size(); i++)
+					s[i]->enabled = false;
+			else
+				for (int i = 0; i < s.size(); i++)
+					s[i]->enabled = true;
+
+		}
+
 	if (ImGui::IsKeyPressed(ImGuiKey_Delete, false))
 		if (!Entity::selection.empty())
 		{
-			for (int i = Entity::selection.size() - 1; i >= 0; i--)
-			{
-				for (int j = 0; j < mainFolder->Get().size(); j++)
-					if (mainFolder->Get()[j] == Entity::selection[i])
-					{
-						Entity::selection[i]->Delete();
-						break;
-					}
-				if (i > Entity::selection.size())
-					i = Entity::selection.size();
-			}
+			Entity::Selection s = Entity::selection;
+			for (int i = 0; i < s.size(); i++)
+				s[i]->Delete();
 		}
 	//TODO: wondow to choose where the merged point appears
 	if (ImGui::IsKeyPressed(ImGuiKey_M, false))
@@ -525,7 +737,6 @@ void CadApplication::Update() {
 
 void CadApplication::SetColor(Entity* object, COLORING c)
 {
-	ID3D11Buffer* colorbuffer[] = { m_cbColor.get() };
 	XMFLOAT4 color;
 	if (c == COLORING::REGULAR)
 	{
@@ -544,84 +755,150 @@ void CadApplication::SetColor(Entity* object, COLORING c)
 		else
 			color = ColorPalette::virtualPurple;
 	}
+	color.w *= 1-surfaceUVColoring;
 	m_device.SetBuffer(m_cbColor.get(), &color);
-	m_device.context()->PSSetConstantBuffers(0, 1, colorbuffer);
 }
 
 void CadApplication::SetModelMatrix(Transform* object)
 {
-	ID3D11Buffer* cbs[] = { m_cbworld.get(), m_cbview.get(), m_cbproj.get() };
 	SceneTransform::instance.localOrigin = object ? object->localPosition : XMFLOAT3();
 	MyMat modelMat = object ? object->Get() : MyMat::Identity();
 	m_device.SetBuffer(m_cbworld.get(), &modelMat);
-
-	m_device.context()->VSSetConstantBuffers(0, 1, &cbs[0]);
 }
 
 void CadApplication::OnResize()
 {
-	SIZE wndSize = m_window.getClientSize();
-	XMStoreFloat4x4(&m_world, MyMat::Identity());
-	auto p = MyMat::Perspective(
-		fov,
-		static_cast<float>(wndSize.cx) / wndSize.cy,
-		n, f);
-	XMStoreFloat4x4(&m_proj, p);
-	XMStoreFloat4x4(&m_invproj, XMMatrixInverse(nullptr, p));
-
-	auto client = m_window.getClientSize();
-	float ratio = client.cx * 1.0f / client.cy;
+	auto wndSize = m_window.getClientSize();
+	float ratio = static_cast<float>(wndSize.cx) / wndSize.cy;
 	m_gizmoBuffer.x = ratio;
 	m_device.SetBuffer(m_cbgizmos.get(), &m_gizmoBuffer);
 }
-void CadApplication::Render() {
-	const float clearColor[] = { 0.0f, 0.0f, 0.0f };
-
-
+void CadApplication::Render()
+{
+	const float clearColor[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 	m_device.context()->ClearRenderTargetView(
 		m_backBuffer.get(), clearColor);
+	SIZE wndSize = m_window.getClientSize();
+
+	if (anaglyph)
+	{
+		m_device.context()->OMSetBlendState(m_blendAdd.get(), nullptr, -1);
+		MyMat p = MyMat::Perspective(
+			fov,
+			static_cast<float>(wndSize.cx) / wndSize.cy,
+			n, f, -eyeDistance/2, planeDistance);
+		XMStoreFloat4x4(&m_proj, p);
+		XMStoreFloat4x4(&m_invproj, XMMatrixInverse(nullptr, p));
+		m_device.SetBuffer(m_cbTint.get(), &leftTint);
+		Camera::mainCamera->Move({ -eyeDistance / 2 / Camera::mainCamera->GetZoom(), 0 });
+		Draw();
 
 
+		p = MyMat::Perspective(
+			fov,
+			static_cast<float>(wndSize.cx) / wndSize.cy,
+			n, f, eyeDistance/2, planeDistance);
+		XMStoreFloat4x4(&m_proj, p);
+		XMStoreFloat4x4(&m_invproj, XMMatrixInverse(nullptr, p));
+		m_device.SetBuffer(m_cbTint.get(), &rightTint);
+		Camera::mainCamera->Move({ eyeDistance / Camera::mainCamera->GetZoom(), 0 });
+		Draw();
 
 
+		p = MyMat::Perspective(
+			fov,
+			static_cast<float>(wndSize.cx) / wndSize.cy,
+			n, f);
+		XMStoreFloat4x4(&m_proj, p);
+		XMStoreFloat4x4(&m_invproj, XMMatrixInverse(nullptr, p));
+		Camera::mainCamera->Move({ -eyeDistance / 2/ Camera::mainCamera->GetZoom(), 0});
+		m_device.context()->OMSetBlendState(nullptr, nullptr, -1);
+	}
+	else
+	{
+		auto p = MyMat::Perspective(
+			fov,
+			static_cast<float>(wndSize.cx) / wndSize.cy,
+			n, f);
+		XMStoreFloat4x4(&m_proj, p);
+		XMStoreFloat4x4(&m_invproj, XMMatrixInverse(nullptr, p));
+		XMFLOAT4 tint = { 1,1,1,1 };
+		m_device.SetBuffer(m_cbTint.get(), &tint);
+		Draw();
+	}
+}
+
+void CadApplication::Draw()
+{
 	m_device.context()->VSSetShader(
-		m_vertexShader.get(), nullptr, 0);
-	m_device.context()->PSSetShader(
-		m_pixelShader.get(), nullptr, 0);
+		nullptr, nullptr, 0);
 	m_device.context()->GSSetShader(
+		nullptr, nullptr, 0);
+	m_device.context()->HSSetShader(
+		nullptr, nullptr, 0);
+	m_device.context()->DSSetShader(
+		nullptr, nullptr, 0);
+	m_device.context()->PSSetShader(
 		nullptr, nullptr, 0);
 
 	ID3D11Buffer* cbs[] = { m_cbworld.get(), m_cbview.get(), m_cbproj.get() };
+	auto* pmode = m_cbSurfMode.get();
+	XMINT4 clearMode[3] = { {}, {0,0,1,1}, {} };
+	ID3D11Buffer* gizmobuffer[] = { m_cbgizmos.get() };
+	ID3D11Buffer* colorbuffer[] = { m_cbColor.get(), m_cbTint.get()};
+
+	m_device.context()->VSSetConstantBuffers(0, 3, &cbs[0]);
+
+	m_device.context()->GSSetConstantBuffers(0, 1, gizmobuffer);
+	m_device.context()->GSSetConstantBuffers(1, 2, &cbs[1]);
+
+	m_device.context()->HSSetConstantBuffers(1, 2, &cbs[1]);
+	m_device.context()->HSSetConstantBuffers(3, 1, &pmode);
+
+	m_device.context()->DSSetConstantBuffers(1, 2, &cbs[1]);
+	m_device.context()->DSSetConstantBuffers(3, 1, &pmode);
+
+	m_device.context()->PSSetConstantBuffers(0, 2, colorbuffer);
+	m_device.context()->PSSetConstantBuffers(3, 1, &pmode);
+
 
 	XMStoreFloat4x4(&m_view, Camera::mainCamera->Transform());
 	XMStoreFloat4x4(&m_invview, Camera::mainCamera->ReverseTransform());
 	m_device.SetBuffer(m_cbview.get(), &m_view);
-	m_device.context()->VSSetConstantBuffers(1, 1, &cbs[1]);
-
 	m_device.SetBuffer(m_cbproj.get(), &m_proj);
-	m_device.context()->VSSetConstantBuffers(2, 1, &cbs[2]);
+
+	m_device.context()->VSSetShader(
+		m_vs_transform.get(), nullptr, 0);
+	m_device.context()->PSSetShader(
+		m_ps_model.get(), nullptr, 0);
+	m_device.context()->ClearDepthStencilView(m_depthBuffer.get(),
+		D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 	DrawGrid();
 
-	m_device.context()->GSSetConstantBuffers(1, 1, &cbs[1]);
-	m_device.context()->GSSetConstantBuffers(2, 1, &cbs[2]);
+
 
 	m_device.context()->ClearDepthStencilView(m_depthBuffer.get(),
 		D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
-	auto& mrs = Catalogue<MeshRenderer>::Instance.GetAll();
-	for (int i = 0; i < mrs.size(); i++)
-	{
-		const Mesh* mesh = mrs[i]->mesh;
-		if (mesh == nullptr)
-			mesh = torus.get();
-		Transform* t = &mrs[i]->transform;
-		Entity* owner = &mrs[i]->owner;
-		if (!owner->enabled || !mesh)
-			continue;
-		SetColor(owner);
-		SetModelMatrix(t);
-		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
-	}
+	//auto& mrs = Catalogue<MeshRenderer>::Instance.GetAll();
+	//for (int i = 0; i < mrs.size(); i++)
+	//{
+	//	const Mesh* mesh = mrs[i]->mesh;
+	//	if (mesh == nullptr)
+	//		mesh = torus.get();
+	//	Transform* t = &mrs[i]->transform;
+	//	Entity* owner = &mrs[i]->owner;
+	//	if (!owner->enabled || !mesh)
+	//		continue;
+	//	SetColor(owner);
+	//	SetModelMatrix(t);
+	//	m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
+	//}
+	m_device.context()->VSSetShader(
+		m_vs_uvs.get(), nullptr, 0);
+	m_device.context()->PSSetShader(
+		m_ps_shape.get(), nullptr, 0);
+	auto cuts = Entity::GetSelected<IntersectionCurve>();
 	auto& tgs = Catalogue<TorusGenerator>::Instance.GetAll();
 	for (int i = 0; i < tgs.size(); i++)
 	{
@@ -630,22 +907,51 @@ void CadApplication::Render() {
 		Transform* t = owner->GetComponent<Transform>();
 		if (!owner->enabled || !mesh)
 			continue;
+
+		ID3D11ShaderResourceView* trim = nullptr;
+		std::vector<bool>* trimAreas = nullptr;
+		for (int j = 0; j < cuts.size(); j++)
+		{
+			if (owner == cuts[j]->a)
+			{
+				trim = cuts[j]->texvA.get();
+				trimAreas = &cuts[j]->trimListA;
+			}
+			else if (owner == cuts[j]->b)
+			{
+				trim = cuts[j]->texvB.get();
+				trimAreas = &cuts[j]->trimListB;
+			}
+			else
+				continue;
+			break;
+		}
+		m_device.context()->PSSetShaderResources(0, 1, &trim);
+
+		XMINT4 mode[3] = { {0,0,0,trim ? 1 : 0 },
+			{0,0,1,1}, {} };
+
+		if (trimAreas)
+			for (int j = 0; j < 32 && j < trimAreas->size(); j++)
+				mode[2].x |= (1 << j) & (trimAreas[0][j] ? -1 : 0);
+
+		m_device.SetBuffer(m_cbSurfMode.get(), mode, sizeof(XMINT4) * 3);
+
 		SetColor(owner);
 		SetModelMatrix(t);
+
+
 		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
 	}
+	m_device.SetBuffer(m_cbSurfMode.get(), clearMode, sizeof(XMINT4) * 3);
+	
 
-	m_device.context()->PSSetShader(
-		m_wirePixelShader.get(), nullptr, 0);
 	m_device.context()->DSSetShader(
 		m_bezierDomainShader.get(), nullptr, 0);
 	m_device.context()->HSSetShader(
 		m_bezierHullShader.get(), nullptr, 0);
-	m_device.context()->HSSetConstantBuffers(1, 1, &cbs[1]);
-	m_device.context()->HSSetConstantBuffers(2, 1, &cbs[2]);
-	m_device.context()->DSSetConstantBuffers(2, 1, &cbs[2]);
 	m_device.context()->VSSetShader(
-		m_bezierVertexShader.get(), nullptr, 0);
+		m_vs_noTransform.get(), nullptr, 0);
 	auto& bcs = Catalogue<BezierCurve>::Instance.GetAll();
 	for (int i = 0; i < bcs.size(); i++)
 	{
@@ -661,7 +967,7 @@ void CadApplication::Render() {
 	/*m_device.context()->PSSetShader(
 		m_surfacePixelShader.get(), nullptr, 0);*/
 	m_device.context()->PSSetShader(
-		m_wirePixelShader.get(), nullptr, 0);
+		m_ps_shape.get(), nullptr, 0);
 	m_device.context()->DSSetShader(
 		m_bicubicDomainShader.get(), nullptr, 0);
 	m_device.context()->HSSetShader(
@@ -669,63 +975,66 @@ void CadApplication::Render() {
 	m_device.context()->RSSetState(m_rasterizerNoCull.get());
 
 	auto& bbcs = Catalogue<BicubicSegment>::Instance.GetAll();
-	auto cuts = Entity::GetSelected<IntersectionCurve>();
 	for (int i = 0; i < bbcs.size(); i++)
 	{
 		const Mesh* mesh = bbcs[i]->GetMesh();
 		Entity* owner = &bbcs[i]->owner;
 		Entity* surfOwner = &bbcs[i]->surface->owner;
-		if (!owner->enabled || !mesh)
+		if (!owner->enabled || !surfOwner->enabled || !mesh)
 			continue;
 
 		ID3D11ShaderResourceView* trim = nullptr;
 		XMINT4 coords{ 0,0,1,1 };
+		{
+			coords.z = bbcs[i]->surface->division.x;
+			coords.w = bbcs[i]->surface->division.y;
+			auto& segs = bbcs[i]->surface->GetSegments();
+			for (int y = 0; y < coords.w; y++)
+				for (int x = 0; x < coords.z; x++)
+					if (segs[x + y * coords.z] == bbcs[i])
+					{
+						coords.x = x; coords.y = y;
+						y = coords.w; break;
+					}
+		}
+		std::vector<bool>* trimAreas = nullptr;
 		for (int j = 0; j < cuts.size(); j++)
 		{
 			if (owner == cuts[j]->a || surfOwner == cuts[j]->a)
+			{
 				trim = cuts[j]->texvA.get();
+				trimAreas = &cuts[j]->trimListA;
+			}
 			else if (owner == cuts[j]->b || surfOwner == cuts[j]->b)
+			{
 				trim = cuts[j]->texvB.get();
+				trimAreas = &cuts[j]->trimListB;
+			}
 			else
 				continue;
-			if (cuts[j]->a == surfOwner ||
-				cuts[j]->b == surfOwner)
-			{
-				coords.z = bbcs[i]->surface->division.x;
-				coords.w = bbcs[i]->surface->division.y;
-				auto& segs = bbcs[i]->surface->GetSegments();
-				for(int y = 0; y<coords.w; y++)
-					for (int x = 0; x < coords.z; x++)
-						if (segs[x + y * coords.z] == bbcs[i])
-						{
-							coords.x = x; coords.y = y;
-							y = coords.w; break;
-						}
-
-			}
 			break;
 		}
 		m_device.context()->PSSetShaderResources(0, 1, &trim);
 		SetColor(owner);
 		SetModelMatrix(nullptr);
-		XMINT4 mode[2] = { {bbcs[i]->deBoorMode ? 1 : 0,
-			(surfDetail + bbcs[i]->surface->surfDetailOffset) - 1,
+		XMINT4 mode[3] = { {bbcs[i]->deBoorMode ? 1 : 0,
+			(surfDetail + bbcs[i]->surface->surfDetailOffset),
 			0,trim ? 1 : 0 },
-			coords
+			coords,
+			{}
 		};
-		m_device.SetBuffer(m_cbSurfMode.get(), mode, sizeof(XMINT4)*2);
-		auto* pmode = m_cbSurfMode.get();
-		m_device.context()->PSSetConstantBuffers(3, 1, &pmode);
-		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);
-		m_device.context()->HSSetConstantBuffers(3, 1, &pmode);
+		if (trimAreas)
+			for (int j = 0; j < 32 && j < trimAreas->size(); j++)
+				mode[2].x |= (1 << j) & (trimAreas[0][j] ? -1 : 0);
+		m_device.SetBuffer(m_cbSurfMode.get(), mode, sizeof(XMINT4) * 3);
 		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
 
 		mode[0].z = 1;
-		m_device.SetBuffer(m_cbSurfMode.get(), &mode);
-		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);
-		m_device.context()->HSSetConstantBuffers(3, 1, &pmode);
+		m_device.SetBuffer(m_cbSurfMode.get(), mode, sizeof(XMINT4) * 3);
 		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
 	}
+	m_device.SetBuffer(m_cbSurfMode.get(), clearMode, sizeof(XMINT4) * 3);
+
 	m_device.context()->DSSetShader(
 		m_gregDomainShader.get(), nullptr, 0);
 	m_device.context()->HSSetShader(
@@ -739,17 +1048,12 @@ void CadApplication::Render() {
 			continue;
 		SetColor(owner);
 		SetModelMatrix(nullptr);
-		XMINT4 mode = { 0, (surfDetail + gps[i]->surfDetailOffset) -1 ,0,0};
+		XMINT4 mode = { 0, (surfDetail + gps[i]->surfDetailOffset) ,0,0 };
 		m_device.SetBuffer(m_cbSurfMode.get(), &mode);
-		auto* pmode = m_cbSurfMode.get();
-		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);
-		m_device.context()->HSSetConstantBuffers(3, 1, &pmode);
 		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
 
 		mode.z = 1;
 		m_device.SetBuffer(m_cbSurfMode.get(), &mode);
-		m_device.context()->DSSetConstantBuffers(3, 1, &pmode);
-		m_device.context()->HSSetConstantBuffers(3, 1, &pmode);
 		m_device.context()->DrawIndexed(mesh->SetBuffers(), 0, 0);
 	}
 
@@ -758,7 +1062,7 @@ void CadApplication::Render() {
 	m_device.context()->HSSetShader(
 		nullptr, nullptr, 0);
 	m_device.context()->VSSetShader(
-		m_vertexShader.get(), nullptr, 0);
+		m_vs_transform.get(), nullptr, 0);
 
 	m_device.context()->RSSetState(nullptr);
 
@@ -819,11 +1123,10 @@ void CadApplication::Render() {
 	m_device.context()->GSSetShader(
 		m_pointGeometryShader.get(), nullptr, 0);
 	m_device.context()->PSSetShader(
-		m_pixelShader.get(), nullptr, 0);
-	ID3D11Buffer* gizmobuffer[] = { m_cbgizmos.get() };
+		m_ps_model.get(), nullptr, 0);
+
 	m_gizmoBuffer.y = pointSize / m_window.getClientSize().cx * m_window.m_defaultWindowWidth;
 	m_device.SetBuffer(m_cbgizmos.get(), &m_gizmoBuffer);
-	m_device.context()->GSSetConstantBuffers(0, 1, gizmobuffer);
 
 	auto& prs = Catalogue<PointRenderer>::Instance.GetAll();
 	for (int i = 0; i < prs.size(); i++)
@@ -863,10 +1166,8 @@ void CadApplication::DrawAxes(DirectX::XMFLOAT3 location, float size)
 	ID3D11Buffer* cbs[] = { m_cbworld.get() };
 	m_device.context()->GSSetShader(
 		m_cursorGeometryShader.get(), nullptr, 0);
-	ID3D11Buffer* gizmobuffer[] = { m_cbgizmos.get() };
 	m_gizmoBuffer.y = size / m_window.getClientSize().cx * m_window.m_defaultWindowWidth;
 	m_device.SetBuffer(m_cbgizmos.get(), &m_gizmoBuffer);
-	m_device.context()->GSSetConstantBuffers(0, 1, gizmobuffer);
 
 	auto mesh = point.get();
 	auto mat = MyMTrans(location);

@@ -346,10 +346,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="vs.hlsl">
+    <FxCompile Include="VS_FullTransform.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
-    <FxCompile Include="ps.hlsl">
+    <FxCompile Include="PS_Models.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
     <FxCompile Include="pointgs.hlsl">
@@ -358,7 +358,7 @@
     <FxCompile Include="curgs.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
-    <FxCompile Include="wirePS.hlsl">
+    <FxCompile Include="PS_Shapes.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
     <FxCompile Include="bezierDS.hlsl">
@@ -367,7 +367,7 @@
     <FxCompile Include="bezierHS.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
-    <FxCompile Include="bezierVS.hlsl">
+    <FxCompile Include="VS_NoTransform.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
     <FxCompile Include="bicubicDS.hlsl">
@@ -386,6 +386,9 @@
       <Filter>Resource Files</Filter>
     </FxCompile>
     <FxCompile Include="gregHS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="VS_WithUV.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
   </ItemGroup>

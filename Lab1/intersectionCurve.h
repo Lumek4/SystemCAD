@@ -14,15 +14,18 @@ public:
 	void InitTextures(DxDevice& device, int resolution);
 	std::vector<DirectX::XMFLOAT2> pointsA;
 	std::vector<DirectX::XMFLOAT2> pointsB;
+	std::vector<DirectX::XMFLOAT3> pointsWorld;
 	Entity* a;
 	Entity* b;
 	DirectX::XMINT2 wrapModeA, wrapModeB;
 	mini::dx_ptr<ID3D11ShaderResourceView> texvA;
 	mini::dx_ptr<ID3D11ShaderResourceView> texvB;
+	std::vector<bool> trimListA;
+	std::vector<bool> trimListB;
 private:
 	bool m_modified = true;
 	mini::dx_ptr<ID3D11Texture2D> texA;
 	mini::dx_ptr<ID3D11Texture2D> texB;
 
-	std::unique_ptr<Mesh> m;
+	//std::unique_ptr<Mesh> m;
 };

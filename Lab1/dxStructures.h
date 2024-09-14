@@ -29,6 +29,11 @@ struct BufferDescription : D3D11_BUFFER_DESC
 
 };
 
+struct BlendStateDescription : D3D11_BLEND_DESC
+{
+	BlendStateDescription();
+};
+
 struct SamplerDescription : D3D11_SAMPLER_DESC
 {
 	SamplerDescription();

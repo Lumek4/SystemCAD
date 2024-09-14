@@ -55,7 +55,10 @@ bool converge(
 	const IntersectData<TA>& da,
 	const IntersectData<TB>& db,
 	DirectX::XMVECTOR& point,
-	bool& error,
+	DirectX::XMVECTOR& position,
+	bool& error, bool self,
+	const DirectX::XMVECTOR& clampLo,
+	const DirectX::XMVECTOR& clampHi,
 	int iterations = 150
 )
 {
@@ -63,21 +66,9 @@ bool converge(
 	XMVECTOR apos, adu, adv;
 	XMVECTOR bpos, bdu, bdv;
 	XMVECTOR pt1{}, pt2{};
-	XMVECTOR clampLo = {
-		da.GetWrapMode().x ? -INFINITY : 0,
-		da.GetWrapMode().y ? -INFINITY : 0,
-		db.GetWrapMode().x ? -INFINITY : 0,
-		db.GetWrapMode().y ? -INFINITY : 0,
-	};
-	XMVECTOR clampHi = {
-		da.GetWrapMode().x ? INFINITY : 1,
-		da.GetWrapMode().y ? INFINITY : 1,
-		db.GetWrapMode().x ? INFINITY : 1,
-		db.GetWrapMode().y ? INFINITY : 1,
-	};
 	XMVECTOR ones{ 1,1,1,1 };
 	for (int it = 1; ; it++, point +=
-		pullBack(bpos - apos, { adu, adv, -bdu, -bdv }, error)*0.5f
+		pullBack(bpos - apos, { adu, adv, -bdu, -bdv }, error)
 		)
 	{
 		if (error)
@@ -90,8 +81,13 @@ bool converge(
 
 		point = XMVectorClamp(point,
 			clampLo, clampHi);
-		point = XMVectorSelect(point, point - ones, XMVectorGreater(point, ones));
-		point = XMVectorSelect(point, point + ones, XMVectorLess(point, XMVectorZero()));
+		
+		point = XMVectorSelect(point,
+			XMVectorMod(point, ones),
+			XMVectorGreater(point, ones));
+		point = XMVectorSelect(point,
+			XMVectorMod(XMVectorMod(point, ones) + ones,ones),
+			XMVectorLess(point, XMVectorZero()));
 		da.Point({ XMVectorGetX(point), XMVectorGetY(point) },
 			apos, adu, adv);
 		db.Point({ XMVectorGetZ(point), XMVectorGetW(point) },
@@ -100,13 +96,21 @@ bool converge(
 
 		float dist = XMVectorGetX(XMVector3Length(bpos - apos));
 		if (dist < 1e-3)
+		{
+			if (self)
+			{
+				float d = uvDist(point, adu, adv);
+				if (d < 1e-3)
+					return false;
+			}
+			position = apos;
 			return true;
+		}
 		else if (it >= iterations)
 			return false;
-		pt2 = pt1;
-		pt1 = point;
 	}
 }
+
 template<typename TA, typename TB>
 bool intersect(TA* a, TB* b,
 	DirectX::XMFLOAT3 cursor, float precision,
@@ -116,32 +120,57 @@ bool intersect(TA* a, TB* b,
 	bool& loop)
 {
 	using namespace DirectX;
+	loop = false;
+	bool self = (void*)a == (void*)b;
 	auto da = IntersectData<TA>(a);
 	auto db = IntersectData<TB>(b);
+	auto wrap = XMConvertVectorFloatToInt(XMVECTOR{
+		-(float)da.GetWrapMode().x, -(float)da.GetWrapMode().y,
+		-(float)db.GetWrapMode().x, -(float)db.GetWrapMode().y
+		},0);
 	if (!AABB(da.GetBB(), db.GetBB()))
 		return false;
 
-	XMVECTOR startCoord;
-	{
-		auto ca = nearCursorPoint<TA, 128>(da, cursor);
-		auto cb = nearCursorPoint<TB, 128>(db, cursor);
-		startCoord = { ca.x, ca.y, cb.x, cb.y };
-	}
+	XMVECTOR clampLo = {
+		da.GetWrapMode().x ? -INFINITY : 0,
+		da.GetWrapMode().y ? -INFINITY : 0,
+		db.GetWrapMode().x ? -INFINITY : 0,
+		db.GetWrapMode().y ? -INFINITY : 0,
+	};
+	XMVECTOR clampHi = {
+		da.GetWrapMode().x ? INFINITY : 1,
+		da.GetWrapMode().y ? INFINITY : 1,
+		db.GetWrapMode().x ? INFINITY : 1,
+		db.GetWrapMode().y ? INFINITY : 1,
+	};
+
 	float dist = INFINITY;
 	int it = 0;
 	bool error = false;
-	while(!converge(da, db, startCoord, error))
+	XMVECTOR vcursor = XMLoadFloat3(&cursor);
+	XMVECTOR pos;
+	XMVECTOR startCoord, coord;
+	for (int i = 0; i < 10000; i++)
 	{
-		it++;
-		if (it > 1000)
-			return false;
-		startCoord = {
-			rand()*1.0f/RAND_MAX,
-			rand()*1.0f/RAND_MAX,
-			rand()*1.0f/RAND_MAX,
-			rand()*1.0f/RAND_MAX
+		coord = {
+			rand() * 1.0f / RAND_MAX,
+			rand() * 1.0f / RAND_MAX,
+			rand() * 1.0f / RAND_MAX,
+			rand() * 1.0f / RAND_MAX
 		};
+		if (converge(da, db, coord, pos, error, self, clampLo, clampHi))
+		{
+			float d = XMVectorGetX(XMVector3Length(pos - vcursor));
+			if (d < dist)
+			{
+				dist = d;
+				startCoord = coord;
+			}
+		}
 	}
+	if(isinf(dist))
+		return false;
+
 
 	XMVECTOR apos, adu, adv;
 	XMVECTOR bpos, bdu, bdv;
@@ -149,7 +178,6 @@ bool intersect(TA* a, TB* b,
 		apos, adu, adv);
 	db.Point({ XMVectorGetZ(startCoord), XMVectorGetW(startCoord) },
 		bpos, bdu, bdv);
-	XMVECTOR coord;
 	XMVECTOR initialPos = apos;
 	std::vector <XMFLOAT4> cds[2];
 	cds[0].push_back({}); XMStoreFloat4(&cds[0].back(), startCoord);
@@ -172,7 +200,8 @@ bool intersect(TA* a, TB* b,
 			coord = coord + pullBack(tangent, { adu, adv, bdu, bdv }, error);
 			if(error)
 				return false;
-			converge(da, db, coord, error, 10);
+			if (!converge(da, db, coord, pos, error, self, clampLo, clampHi, 10))
+				return false;
 			if (error)
 				return false;
 
@@ -182,7 +211,7 @@ bool intersect(TA* a, TB* b,
 				bpos, bdu, bdv);
 
 			pts[(sgn + 1) / 2].push_back({});
-			XMStoreFloat3(&pts[(sgn + 1) / 2].back(), apos);
+			XMStoreFloat3(&pts[(sgn + 1) / 2].back(), pos);
 			cds[(sgn + 1) / 2].push_back({});
 			XMStoreFloat4(&cds[(sgn + 1) / 2].back(), coord);
 
@@ -201,12 +230,12 @@ bool intersect(TA* a, TB* b,
 				break;
 
 			if (it > 2 && sgn == -1
-				&& XMVectorGetX(XMVector3LengthSq(
-					apos - XMLoadFloat3(&pts[0][0])))
-				+ XMVectorGetX(XMVector3LengthSq(
-					apos - XMLoadFloat3(&pts[0][1]))) <
-				XMVectorGetX(XMVector3LengthSq(
-					XMLoadFloat3(&pts[0][0]) - XMLoadFloat3(&pts[0][1])))
+				&& XMVectorGetX(XMVector4LengthSq(
+					coord - XMLoadFloat4(&cds[0][0])))
+				+ XMVectorGetX(XMVector4LengthSq(
+					coord - XMLoadFloat4(&cds[0][1]))) <
+				XMVectorGetX(XMVector4LengthSq(
+					XMLoadFloat4(&cds[0][0]) - XMLoadFloat4(&cds[0][1])))
 				)
 			{
 				loop = true;
@@ -220,26 +249,105 @@ bool intersect(TA* a, TB* b,
 	for (int i = 0; i < pts[1].size(); i++)
 		output.push_back(pts[1][i]);
 
-	//CHECK IF last x - current x ~ 1, then
-	// last x - limit, limit - current x
-	// TO DO, IMPORTANT!!!
-	// (wrapping behavior)
-	for (int i = 0; i < pts[0].size(); i++)
+	uva.push_back({ cds[0][cds[0].size()-1].x, cds[0][cds[0].size()-1].y });
+	uvb.push_back({ cds[0][cds[0].size()-1].z, cds[0][cds[0].size()-1].w });
+	for (int i = 1; i < pts[0].size(); i++)
 	{
 		int id = cds[0].size() - 1 - i;
-		uva.push_back({ cds[0][id].x, cds[0][id].y });
-		uvb.push_back({ cds[0][id].z, cds[0][id].w });
-	}
-	for (int i = 0; i < pts[1].size(); i++)
+		auto& p0 = cds[0][id+1];
+		auto& p1 = cds[0][id+0];
+
+		auto v1 = XMLoadFloat4(&p1);
+		auto v0 = XMLoadFloat4(&p0);
+		XMVECTOR wrapMod =
+			XMVectorSelect({ -1,-1,-1,-1 }, { 0,0,0,0 },
+				XMVectorGreater(v1 - v0, { 0.5f,0.5f,0.5f,0.5f })) +
+			XMVectorSelect({ 1,1,1,1 }, { 0,0,0,0 },
+				XMVectorGreater(v0 - v1, { 0.5f,0.5f,0.5f,0.5f }));
+
+		if (XMVectorGetX(XMVector4Dot(wrapMod, wrapMod)))
+		{
+			v1 -= wrapMod;
+			v0 += wrapMod;
+			uva.push_back({ XMVectorGetX(v1) , XMVectorGetY(v1) });
+			uva.push_back({ XMVectorGetX(v0) , XMVectorGetY(v0) });
+			uvb.push_back({ XMVectorGetZ(v1) , XMVectorGetW(v1) });
+			uvb.push_back({ XMVectorGetZ(v0) , XMVectorGetW(v0) });
+		}
+
+		uva.push_back({ p1.x, p1.y });
+		uvb.push_back({ p1.z, p1.w });
+	}if (!cds[1].empty())
 	{
-		uva.push_back({ cds[1][i].x, cds[1][i].y });
-		uvb.push_back({ cds[1][i].z, cds[1][i].w });
+		uva.push_back({ cds[1][0].x,cds[1][0].y });
+		uvb.push_back({ cds[1][0].z,cds[1][0].w });
+	}
+	for (int i = 1; i < pts[1].size(); i++)
+	{
+		auto& p0 = cds[1][i - 1];
+		auto& p1 = cds[1][i - 0];
+
+		auto v1 = XMLoadFloat4(&p1);
+		auto v0 = XMLoadFloat4(&p0);
+		XMVECTOR wrapMod =
+			XMVectorSelect({ -1,-1,-1,-1 }, { 0,0,0,0 },
+				XMVectorGreater(v1 - v0, { 0.5f,0.5f,0.5f,0.5f })) +
+			XMVectorSelect({ 1,1,1,1 }, { 0,0,0,0 },
+				XMVectorGreater(v0 - v1, { 0.5f,0.5f,0.5f,0.5f }));
+
+		if (XMVectorGetX(XMVector4Dot(wrapMod, wrapMod)))
+		{
+			v1 -= wrapMod;
+			v0 += wrapMod;
+			uva.push_back({ XMVectorGetX(v1) , XMVectorGetY(v1) });
+			uva.push_back({ XMVectorGetX(v0) , XMVectorGetY(v0) });
+			uvb.push_back({ XMVectorGetZ(v1) , XMVectorGetW(v1) });
+			uvb.push_back({ XMVectorGetZ(v0) , XMVectorGetW(v0) });
+		}
+
+		uva.push_back({ p1.x, p1.y });
+		uvb.push_back({ p1.z, p1.w });
 	}
 	if (loop)
 	{
 		output.push_back(pts[0][0]);
-		uva.push_back(uva[0]);
-		uvb.push_back(uvb[0]);
+		uva.push_back({ cds[0][cds[0].size()-1].x, cds[0][cds[0].size()-1].y });
+		uvb.push_back({ cds[0][cds[0].size()-1].z, cds[0][cds[0].size()-1].w });
 	}
 	return true;
+}
+
+
+template<typename TA, typename TB>
+void multiIntersect(
+	std::vector<TA>& as, std::vector<TB>& bs, float precision,
+	std::vector<std::vector<DirectX::XMFLOAT3>>& pts,
+	std::vector<std::vector<DirectX::XMFLOAT2>>& uva,
+	std::vector<std::vector<DirectX::XMFLOAT2>>& uvb,
+	std::vector<Entity*>& a,
+	std::vector<Entity*>& b)
+{
+	using namespace DirectX;
+	bool loop = false;
+	std::vector<DirectX::XMFLOAT3> lpts;
+	std::vector<DirectX::XMFLOAT2> luva;
+	std::vector<DirectX::XMFLOAT2> luvb;
+	int s = ((void*)&as == (void*)&bs) ? 1 : 0;
+	for (int i = 0; i < as.size(); i++)
+		for (int j = i*s; j < bs.size(); j++)
+		{
+			if (intersect(as[i], bs[j],
+				SceneCursor::instance.GetWorld(), precision,
+				lpts, luva, luvb, loop))
+			{
+				a.push_back(&as[i]->owner);
+				b.push_back(&bs[j]->owner);
+				pts.push_back(lpts);
+				uva.push_back(luva);
+				uvb.push_back(luvb);
+			}
+			lpts.clear();
+			luva.clear();
+			luvb.clear();
+		}
 }

@@ -65,6 +65,29 @@ DirectX::XMFLOAT3 operator*(const DirectX::XMFLOAT3& l, float r)
 __VECEQNEQ2(DirectX::XMINT2)
 __VECEQNEQ2(DirectX::XMFLOAT2)
 
+float vecmath::screenRay(DirectX::XMVECTOR point,
+    DirectX::XMVECTOR ray, DirectX::XMMATRIX viewproj,
+    float radius, float aspect)
+{
+    point = XMVector4Transform(
+        point, viewproj
+    );
+    point /= XMVectorGetW(point);
+    if (XMVectorGetX(XMVector2LengthSq((ray - point) * XMVECTOR{ 1, aspect })) <= radius * radius)
+        return XMVectorGetZ(point);
+    else
+        return NAN;
+}
+
+bool vecmath::screenBox(DirectX::XMVECTOR point, DirectX::XMVECTOR lo, DirectX::XMVECTOR hi, DirectX::XMMATRIX viewproj)
+{
+    point = XMVector4Transform(
+        point, viewproj
+    );
+    point /= XMVectorGetW(point);
+    return XMVector2Less(point,hi)  && XMVector2Greater(point,lo);
+}
+
 float vecmath::clamp01(float v)
 {
     return v<0?0:(v>1?1:v);

@@ -11,8 +11,9 @@ public:
 
 
 	static MyMat Identity();
-	static MyMat Perspective(float fov, float aspect, float n, float f);
-	static MyMat InvPerspective(float fov, float aspect, float n, float f);
+	static MyMat Perspective(float fov, float aspect, float n, float f,
+		float skew = 0, float convergence = 1);
+	//static MyMat InvPerspective(float fov, float aspect, float n, float f);
 private:
 	static const float identityInit[16];
 };

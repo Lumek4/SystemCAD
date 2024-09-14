@@ -214,6 +214,16 @@ dx_ptr<ID3D11InputLayout> DxDevice::CreateInputLayout(const vector<D3D11_INPUT_E
 	return result;
 }
 
+mini::dx_ptr<ID3D11BlendState> DxDevice::CreateBlendState(D3D11_BLEND_DESC& desc) const
+{
+	ID3D11BlendState* temp;
+	auto hr = m_device->CreateBlendState(&desc, &temp);
+	dx_ptr<ID3D11BlendState> result(temp);
+	if (FAILED(hr))
+		THROW_WINAPI;
+	return result;
+}
+
 void DxDevice::ResizeBuffers()
 {
 	auto hr = swapChain()->ResizeBuffers(0, 0, 0, DXGI_FORMAT_UNKNOWN, 0);

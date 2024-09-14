@@ -26,4 +26,20 @@ namespace ColorPalette
 	static constexpr DirectX::XMFLOAT4 highlightOrange{ 1, 0.6f, 0.0f, 1 };
 	static constexpr DirectX::XMFLOAT4 vEditMagenta{ 1.0f, 0.0f, 0.9f, 1 };
 	static constexpr DirectX::XMFLOAT4 virtualPurple{ 0.5f, 0.2f, 0.5f, 1 };
+
+	static constexpr DirectX::XMFLOAT4 trims[] = {
+		{0, 0, 0, 1},
+		{1, 0, 0.25f, 1},
+		{0.25f, 1, 0, 1},
+		{0, 0.25f, 1, 1},
+		{0.75f, 0.75f, 0, 1},
+		{0, 0.75f, 0.75f, 1},
+		{0.75f, 0, 0.75f, 1},
+		{1, 0.25f, 0, 1},
+		{0, 1, 0.25f, 1},
+		{0.25f, 0, 1, 1},
+		{0.25f, 0.25f, 0.75f, 1},
+		{0.75f, 0.25f, 0.25f, 1},
+		{0.25f, 0.75f, 0.25f, 1},
+	};
 }

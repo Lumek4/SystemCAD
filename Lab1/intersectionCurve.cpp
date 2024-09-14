@@ -4,6 +4,7 @@
 #include"dxDevice.h"
 #include"dxStructures.h"
 #include"vecmath.h"
+#include"colorPaletteh.h"
 using namespace DirectX;
 IntersectionCurve::IntersectionCurve(Entity& owner)
 	:Component(ComponentConstructorArgs(IntersectionCurve))
@@ -38,19 +39,34 @@ inline bool collide(XMVECTOR p0, XMVECTOR p1, XMVECTOR p, XMVECTOR pd)
 	return sg.m128_i32[0] != sg.m128_i32[1] && sg.m128_i32[2] != sg.m128_i32[3];
 	// punkty po roznych stronach linii
 }
-void paint(ID3D11Texture2D* tex,
-	std::vector<XMFLOAT2>& uv, DxDevice& device, XMINT2 wrapMode)
+int paint(ID3D11Texture2D* tex,
+	std::vector<XMFLOAT2>& uv, DxDevice& device, XMINT2 wrapMode, int resolution)
 {
+	std::vector<XMFLOAT2> uvred{};
+	{
+		XMVECTOR p0 = XMLoadFloat2(&uv[0]), p1;
+		uvred.push_back({});
+		XMStoreFloat2(&uvred.back(), p0);
+
+		for (int i = 1; i < uv.size(); i++)
+		{
+			p1 = XMLoadFloat2(&uv[i]);
+			if (XMVectorGetX(XMVector2Length(p1 - p0)) < 0.25f / resolution)
+				continue;
+			p0 = p1;
+			uvred.push_back({});
+			XMStoreFloat2(&uvred.back(), p1);
+		}
+	}
 	D3D11_MAPPED_SUBRESOURCE m;
 	device.context()->Map(tex, 0, D3D11_MAP_WRITE_DISCARD, 0, &m);
-	constexpr int maxres = 128;
 	auto data = (uint8_t*)m.pData;
 
 	XMVECTOR directions[4] = {
-		{1.0f / maxres, 0},
-		{0, 1.0f / maxres},
-		{-1.0f / maxres, 0},
-		{0, -1.0f / maxres}
+		{1.0f / resolution, 0},
+		{0, 1.0f / resolution},
+		{-1.0f / resolution, 0},
+		{0, -1.0f / resolution}
 	};
 	XMINT2 i_directions[4] = {
 		{1, 0},
@@ -61,11 +77,11 @@ void paint(ID3D11Texture2D* tex,
 	std::vector<XMINT2> flood{};
 	int c_region = 0;
 
-	for (int y = 0; y < maxres; y++) for (int x = 0; x < maxres; x++)
+	for (int y = 0; y < resolution; y++) for (int x = 0; x < resolution; x++)
 		data[x * 4 + y * m.RowPitch] = 0;
 
 	long long painted = 0;
-	for (int yy = 0; yy < maxres; yy++) for (int xx = 0; xx < maxres; xx++)
+	for (int yy = 0; yy < resolution; yy++) for (int xx = 0; xx < resolution; xx++)
 	{
 		if (data[xx * 4 + yy * m.RowPitch] == 0)
 		{
@@ -74,36 +90,39 @@ void paint(ID3D11Texture2D* tex,
 			painted++;
 			if (c_region >= 128)
 			{
-				yy = maxres; xx = maxres;
+				yy = resolution; xx = resolution;
 				break;
 			}
 		}
 		while (!flood.empty()/* && painted < maxres*maxres/4.5*/)
 		{
 			XMINT2 ip = flood.front(); flood.erase(flood.begin());
-			XMVECTOR p = { (0.5f + ip.x) / maxres, (0.5f + ip.y) / maxres };
+			XMVECTOR p = { (0.5f + ip.x) / resolution, (0.5f + ip.y) / resolution };
 			for (int j = 0; j < 4; j++)
 			{
 				XMINT2 ipd = { ip.x + i_directions[j].x, ip.y + i_directions[j].y };
-				if ((ipd.x < 0 || ipd.x >= maxres) && !wrapMode.x ||
-					(ipd.y < 0 || ipd.y >= maxres) && !wrapMode.y)
+				if ((ipd.x < 0 || ipd.x >= resolution) && !wrapMode.x ||
+					(ipd.y < 0 || ipd.y >= resolution) && !wrapMode.y)
 					continue;
 				XMINT2 wrapped = {};
-				if (ipd.x >= maxres) wrapped.x = -maxres;
-				else if (ipd.x < 0) wrapped.x = maxres;
-				if (ipd.y >= maxres) wrapped.y = -maxres;
-				else if (ipd.y < 0) wrapped.y = maxres;
+				if (ipd.x >= resolution) wrapped.x = -resolution;
+				else if (ipd.x < 0) wrapped.x = resolution;
+				if (ipd.y >= resolution) wrapped.y = -resolution;
+				else if (ipd.y < 0) wrapped.y = resolution;
 				ipd.x += wrapped.x;
 				ipd.y += wrapped.y;
 
 				if (data[ipd.x * 4 + ipd.y * m.RowPitch] != 0)
 					continue;
 				XMVECTOR pd = p + directions[j];
-				XMVECTOR p0, p1 = XMLoadFloat2(&uv[0]);
+				XMVECTOR p0, p1 = XMLoadFloat2(&uvred[0]);
 				bool blocked = false;
-				for (int i = 1; i < uv.size(); i++)
+				for (int i = 1; i < uvred.size(); i++)
 				{
-					p0 = p1; p1 = XMLoadFloat2(&uv[i]);
+					p0 = p1; p1 = XMLoadFloat2(&uvred[i]);
+					if (fabsf(uvred[i].x - uvred[i - 1].x) > 0.5f ||
+						fabsf(uvred[i].y - uvred[i - 1].y) > 0.5f)
+						continue;
 					if (collide(p0, p1, p, pd) || ((wrapped.x || wrapped.y) &&
 						collide(p0,p1,
 							p  + directions[0] * wrapped.x + directions[1] * wrapped.y,
@@ -122,34 +141,22 @@ void paint(ID3D11Texture2D* tex,
 			}
 		}
 	}
-	XMINT3 colors[] = {
-		{0, 0, 0},
-		{255, 0, 63},
-		{63, 255, 0},
-		{0, 63, 255},
-		{127, 127, 0},
-		{0, 127, 127},
-		{127, 0, 127},
-		{255, 63, 0},
-		{0, 255, 63},
-		{63, 0, 255},
-		{63, 63, 127},
-		{127, 63, 63},
-		{63, 127, 63},
-	};
-	for (int y = 0; y < maxres; y++) for (int x = 0; x < maxres; x++)
+	for (int y = 0; y < resolution; y++) for (int x = 0; x < resolution; x++)
 	{
 		int color = data[(x * 4 + y * m.RowPitch)];
-		if (color > (sizeof(colors) / sizeof(XMINT3)))
+		if (color > (sizeof(ColorPalette::trims) / sizeof(XMFLOAT4)))
 			color = 0;
 
-		data[(x * 4 + y * m.RowPitch) + 0] = colors[color].x;
-		data[(x * 4 + y * m.RowPitch) + 1] = colors[color].y;
-		data[(x * 4 + y * m.RowPitch) + 2] = colors[color].z;
-		data[(x * 4 + y * m.RowPitch) + 3] = 255;
+		data[(x * 4 + y * m.RowPitch) + 0] = ColorPalette::trims[color].x*255;
+		data[(x * 4 + y * m.RowPitch) + 1] = ColorPalette::trims[color].y*255;
+		data[(x * 4 + y * m.RowPitch) + 2] = ColorPalette::trims[color].z*255;
+		data[(x * 4 + y * m.RowPitch) + 3] = ColorPalette::trims[color].w*255;
 	}
 	/*for (int i = 1; i < uv.size(); i++)
 	{
+		if (fabsf(uv[i].x - uv[i - 1].x) > 0.5f ||
+			fabsf(uv[i].y - uv[i - 1].y) > 0.5f)
+			continue;
 		int x = uv[i-1].x * maxres, xt = uv[i].x * maxres;
 		int y = uv[i-1].y * maxres, yt = uv[i].y * maxres;
 		int dx = xt - x;
@@ -200,6 +207,7 @@ void paint(ID3D11Texture2D* tex,
 		}
 	}*/
 	device.context()->Unmap(tex, 0);
+	return c_region;
 }
 void IntersectionCurve::InitTextures(DxDevice& device, int resolution)
 {
@@ -208,6 +216,8 @@ void IntersectionCurve::InitTextures(DxDevice& device, int resolution)
 	texB = device.CreateTexture(desc);
 	texvA = device.CreateShaderResourceView(texA);
 	texvB = device.CreateShaderResourceView(texB);
-	paint(texA.get(), pointsA, device, wrapModeA);
-	paint(texB.get(), pointsB, device, wrapModeB);
+	int areasA = paint(texA.get(), pointsA, device, wrapModeA, resolution);
+	int areasB = paint(texB.get(), pointsB, device, wrapModeB, resolution);
+	trimListA = std::vector<bool>(areasA,false);
+	trimListB = std::vector<bool>(areasB,false);
 }

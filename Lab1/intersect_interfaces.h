@@ -24,8 +24,9 @@ public:
 		DirectX::XMVECTOR& du,
 		DirectX::XMVECTOR& dv) const;
 	const BoundingBox& GetBB() const { return bb; }
-	const DirectX::XMINT2& GetWrapMode() const { return { 0,0 }; }
+	const DirectX::XMINT2& GetWrapMode() const { return wrapMode; }
 private:
+	DirectX::XMINT2 wrapMode = { 0,0 };
 	BoundingBox bb;
 	std::array<DirectX::XMFLOAT3, 16> cpoints;
 };
@@ -60,8 +61,9 @@ public:
 		DirectX::XMVECTOR& du,
 		DirectX::XMVECTOR& dv) const;
 	const BoundingBox& GetBB() const { return bb; }
-	const DirectX::XMINT2& GetWrapMode() const { return { 1,1 }; }
+	const DirectX::XMINT2& GetWrapMode() const { return wrapMode; }
 private:
+	DirectX::XMINT2 wrapMode = { 1,1 };
 	BoundingBox bb;
 	DirectX::XMFLOAT2 radii;
 	DirectX::XMMATRIX transform;

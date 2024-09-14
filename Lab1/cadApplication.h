@@ -26,6 +26,7 @@ private:
 	void GUI() override;
 	void Update() override;
 	void Render() override;
+	void Draw();
 private:
 	const float fov = DirectX::XM_PI / 4;
 	const float n = 0.1f, f = 500.0f;
@@ -47,6 +48,13 @@ private:
 	//DirectX::XMFLOAT3 selectionCenter;
 
 private:
+	float surfaceUVColoring = 0.0f;
+	bool anaglyph = false;
+	float eyeDistance = 0.1f;
+	float planeDistance = 10.0f;
+	DirectX::XMFLOAT4 leftTint = { 0.7f,0,0,1 };
+	DirectX::XMFLOAT4 rightTint = { 0,0.25f,1,1 };
+
 	std::unique_ptr<Mesh> point;
 	const float pointSize = 0.02f;
 	const float cursorSize = 0.1f;
@@ -67,13 +75,15 @@ private:
 	mini::dx_ptr<ID3D11DepthStencilState> m_depthStateOver;
 	mini::dx_ptr<ID3D11RasterizerState> m_rasterizerNoCull;
 
-	mini::dx_ptr<ID3D11VertexShader> m_vertexShader;
-	mini::dx_ptr<ID3D11PixelShader> m_pixelShader;
-	mini::dx_ptr<ID3D11PixelShader> m_wirePixelShader;
+	mini::dx_ptr<ID3D11VertexShader> m_vs_uvs;
+
+	mini::dx_ptr<ID3D11VertexShader> m_vs_transform;
+	mini::dx_ptr<ID3D11PixelShader> m_ps_model;
+	mini::dx_ptr<ID3D11PixelShader> m_ps_shape;
 	mini::dx_ptr<ID3D11GeometryShader> m_pointGeometryShader;
 	mini::dx_ptr<ID3D11GeometryShader> m_cursorGeometryShader;
 
-	mini::dx_ptr<ID3D11VertexShader> m_bezierVertexShader;
+	mini::dx_ptr<ID3D11VertexShader> m_vs_noTransform;
 	mini::dx_ptr<ID3D11HullShader> m_bezierHullShader;
 	mini::dx_ptr<ID3D11DomainShader> m_bezierDomainShader;
 
@@ -82,12 +92,13 @@ private:
 	mini::dx_ptr<ID3D11HullShader> m_gregHullShader;
 	mini::dx_ptr<ID3D11DomainShader> m_gregDomainShader;
 	mini::dx_ptr<ID3D11GeometryShader> m_bicubicGridGeometryShader;
-	mini::dx_ptr<ID3D11PixelShader> m_surfacePixelShader;
+	//mini::dx_ptr<ID3D11PixelShader> m_surfacePixelShader;
 
+	mini::dx_ptr<ID3D11BlendState> m_blendAdd;
 	std::vector<mini::dx_ptr<ID3D11InputLayout>> m_layout;
 
 
-	DirectX::XMFLOAT4X4 m_world;
+	//DirectX::XMFLOAT4X4 m_world;
 	DirectX::XMFLOAT4X4 m_view;
 	DirectX::XMFLOAT4X4 m_invview;
 	DirectX::XMFLOAT4X4 m_proj;
@@ -98,6 +109,7 @@ private:
 
 	mini::dx_ptr<ID3D11Buffer> m_cbSurfMode;
 	mini::dx_ptr<ID3D11Buffer> m_cbgizmos;
+	mini::dx_ptr<ID3D11Buffer> m_cbTint;
 
 	friend SaveResult save(const CadApplication& app, const char* filepath);
 	friend SaveResult load(CadApplication& app, const char* filepath);

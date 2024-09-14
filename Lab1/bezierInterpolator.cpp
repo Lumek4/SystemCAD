@@ -44,10 +44,10 @@ void BezierInterpolator::UpdateBezier()
 	{
 		XMFLOAT3 P_i,
 			P_im1 = pointCollection.GetPoint(count - 1);
-		for (int i = count - 2; i > 0; i--)
+		for (int i = count - 2; i >= 0; i--)
 		{
 			P_i = P_im1;
-			P_im1 = pointCollection.GetPoint(i - 1);
+			P_im1 = pointCollection.GetPoint(i);
 			d[i] = len(P_i - P_im1);
 			if (d[i] < EPS)
 			{

@@ -14,6 +14,7 @@ struct HS_OUTPUT
 struct DS_OUTPUT
 {
     float4 position : SV_Position;
+    float2 uv : TEXCOORD;
 };
 
 float3 Bezier1(float3 c0[4], float t)
@@ -62,5 +63,6 @@ DS_OUTPUT main(
                     Bezier3(c, t);
     output.position = float4(pos, 1.0f);
     output.position = mul(projMatrix, output.position);
+    output.uv = uv;
     return output;
 }

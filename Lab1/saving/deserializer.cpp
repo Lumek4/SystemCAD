@@ -17,6 +17,7 @@ Entity* Deserializer::Torus(const std::string& name, DirectX::XMFLOAT2 radii, Di
 {
 	auto* e = Entity::New();
 	auto& m = *e->AddComponent<TorusGenerator>();
+	std::swap(radii.x, radii.y);
 	m.SetData({samples, radii});
 
 	auto& t = *e->AddComponent<ModelTransform>();
@@ -166,8 +167,8 @@ Entity* Deserializer::BezierSurfaceC2(Entity::Selection& outSegments, const std:
 	const auto& collectionPoints = pc->Get();
 	auto it_b = collectionPoints.begin(), it_e = collectionPoints.end();
 
+	for (int y = 0; y < size.y; y++)
 	for (int x = 0; x < size.x; x++)
-		for (int y = 0; y < size.y; y++)
 		{
 			auto* e = Entity::New();
 			auto* bcs = e->AddComponent<BicubicSegment>();
@@ -177,10 +178,10 @@ Entity* Deserializer::BezierSurfaceC2(Entity::Selection& outSegments, const std:
 				for (int xx = 0; xx < 4; xx++)
 				{
 					auto it = std::find(it_b, it_e,
-						controlPoints[xx + yy * 4 + (y + x * size.y) * 16]);
+						controlPoints[xx + yy * 4 + (x + y * size.x) * 16]);
 					bcs->indices[xx + yy * 4] = it - it_b;
 				}
-			e->SetName(*segmentNames[y + size.y * x]);
+			e->SetName(*segmentNames[x + size.x * y]);
 			outSegments.push_back(e);
 		}
 

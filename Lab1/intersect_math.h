@@ -3,6 +3,21 @@
 #include"vecmath.h"
 #include<DirectXMath.h>
 
+inline float uvDist(
+	const DirectX::XMVECTOR& uvuv,
+	const DirectX::XMVECTOR& du,
+	const DirectX::XMVECTOR& dv)
+{
+	using namespace DirectX;
+	auto v = XMVector4Transform(
+		uvuv - XMVectorSwizzle(uvuv, 2, 3, 0, 1),
+		{ du,dv,{},{} }
+	);
+	auto l = XMVector3Length(v);
+	auto d = XMVectorGetX(l);
+	return d;
+}
+
 inline bool AABB(const BoundingBox& o1, const BoundingBox& o2)
 {
 	using namespace DirectX;

@@ -22,6 +22,11 @@ DirectX::XMFLOAT3 operator-(const DirectX::XMFLOAT3& l);
 
 namespace vecmath
 {
+	float screenRay(DirectX::XMVECTOR point, DirectX::XMVECTOR ray,
+		DirectX::XMMATRIX viewproj, float radius, float aspect);
+	bool screenBox(DirectX::XMVECTOR point,
+		DirectX::XMVECTOR lo, DirectX::XMVECTOR hi,
+		DirectX::XMMATRIX viewproj);
 	float clamp01(float v);
 	float length(DirectX::XMFLOAT3 v);
 	float lengthSq(DirectX::XMFLOAT3 v);

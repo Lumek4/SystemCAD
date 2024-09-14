@@ -300,7 +300,7 @@ SaveResult load(CadApplication& app, const char* filepath)
 			{
 				auto& cps = ptchs[i]["controlPoints"];
 				for (int j = 0; j < cps.size(); j++)
-					s.push_back(ids[cps[j/4 + (j%4)*4]["id"]]);
+					s.push_back(ids[cps[j]["id"]]);
 				segmentNames.push_back(ptchs[i]["name"].get_ptr<std::string*>());
 			}
 			e = Deserializer::BezierSurfaceC0(addedSegments,
@@ -328,7 +328,7 @@ SaveResult load(CadApplication& app, const char* filepath)
 			{
 				auto& cps = ptchs[i]["controlPoints"];
 				for (int j = 0; j < cps.size(); j++)
-					s.push_back(ids[cps[j / 4 + (j % 4) * 4]["id"]]);
+					s.push_back(ids[cps[j]["id"]]);
 				segmentNames.push_back(ptchs[i]["name"].get_ptr<std::string*>());
 			}
 			e = Deserializer::BezierSurfaceC2(addedSegments,

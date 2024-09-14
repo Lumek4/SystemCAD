@@ -398,8 +398,8 @@ bool MyGui::TorusMeshWidget(TorusGenerator* torus)
 {
 	auto data = torus->GetData();
 	if (ImGui::SliderInt2(" Model detail", (int*)&data.division, 3, 500, "%d Segments", ImGuiSliderFlags_AlwaysClamp) |
-		ImGui::SliderFloat(" Major radius", &data.radii.y, data.radii.x, 20, "%.2f", ImGuiSliderFlags_AlwaysClamp) |
-		ImGui::SliderFloat(" Minor radius", &data.radii.x, 0.1f, data.radii.y, "%.2f", ImGuiSliderFlags_AlwaysClamp))
+		ImGui::SliderFloat(" Major radius", &data.radii.x, data.radii.y, 20, "%.2f", ImGuiSliderFlags_AlwaysClamp) |
+		ImGui::SliderFloat(" Minor radius", &data.radii.y, 0.1f, data.radii.x, "%.2f", ImGuiSliderFlags_AlwaysClamp))
 	{
 		torus->SetData(data);
 		return true;
@@ -433,16 +433,6 @@ bool MyGui::SaveLoadWidget(std::span<char> buf, bool& save, bool& load)
 	return false;
 }
 
-void MyGui::TextureWidget(ID3D11ShaderResourceView* tex)
-{
-	auto p = ImGui::GetMousePos();
-	auto c = ImGui::GetCursorScreenPos();
-	
-	ImGui::Image(tex, { ImGui::GetWindowWidth(), ImGui::GetWindowWidth() });
-	ImGui::Text("[%f, %f]",
-		(p.x - c.x)/ ImGui::GetWindowWidth()*256,
-		(p.y - c.y)/ ImGui::GetWindowWidth()*256);
-}
 
 bool MyGui::SceneCursorWidget(SceneCursor* sc)
 {
@@ -463,7 +453,7 @@ bool MyGui::SceneCursorWidget(SceneCursor* sc)
 		sc->screen.y = size.y / 2;
 
 	ImGui::PopItemWidth();
-	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left) && !ImGui::GetIO().WantCaptureMouse)
+	if (ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left) && !ImGui::GetIO().WantCaptureMouse)
 	{
 		auto cur = ImGui::GetMousePos();
 		sc->screen.x = cur.x; sc->screen.y = size.y - cur.y;
@@ -580,6 +570,43 @@ void MyGui::GuiOptions()
 	ImGui::Checkbox("Show transforms", &showTransforms);
 	ImGui::Checkbox("Highlight drag and drop targets", &showDragDropTargets);
 }
+
+void MyGui::TextureWidget(ID3D11ShaderResourceView* tex,
+	std::vector<bool>& areas)
+{
+	auto p = ImGui::GetMousePos();
+	auto c = ImGui::GetCursorScreenPos();
+
+	auto w = ImGui::GetContentRegionAvail().x;
+	ImGui::Image(tex, { w, w });
+	ImGui::Text("[%f, %f]",
+		(p.x - c.x) / w * 256,
+		(p.y - c.y) / w * 256);
+	ImGui::PushID(tex);
+	for (int i = 0; i < areas.size(); i++)
+	{
+		ImGui::PushID(i);
+		ImGui::PushStyleColor(ImGuiCol_FrameBg,
+			ColorPalette::Darken(
+				ColorPalette::trims[i + 1], 0.85f));
+		ImGui::PushStyleColor(ImGuiCol_FrameBgActive,
+			ColorPalette::trims[i + 1]);
+		ImGui::PushStyleColor(ImGuiCol_FrameBgHovered,
+			ColorPalette::Darken(
+				ColorPalette::trims[i + 1], 0.5f));
+		ImGui::PushStyleColor(ImGuiCol_CheckMark,
+				ColorPalette::white);
+		bool v = areas[i];
+		ImGui::Checkbox("##area", &v);
+		ImGui::SameLine();
+		areas[i] = v;
+		ImGui::PopStyleColor(4);
+		ImGui::PopID();
+	}
+	ImGui::Dummy({});
+	ImGui::PopID();
+}
+
 void MyGui::ShowBicubicSurfacePopup(BicubicSurfaceParams& data)
 {
 	ImGui::OpenPopup("Create a Bicubic Surface", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonLeft);
@@ -597,12 +624,32 @@ void MyGui::BicubicSurfacePopup(BicubicSurfaceParams& data, bool& modified, bool
 	modified |= ImGui::Checkbox("C2 Continuity", &data.deBoor);
 
 	modified |= ImGui::SliderInt2(" Dimensions", (int*)&data.division, 1, 20, "%d Segments", ImGuiSliderFlags_AlwaysClamp) |
-		ImGui::SliderFloat(cylinder?" Radius":" Width", &data.dimensions.x, 0.1f, 40, "%.2f", ImGuiSliderFlags_AlwaysClamp) |
-		ImGui::SliderFloat(cylinder?" Height":" Height", &data.dimensions.y, 0.1f, 40, "%.2f", ImGuiSliderFlags_AlwaysClamp);
+		ImGui::SliderFloat(cylinder?" Radius":" Width", &data.dimensions.x, 0.1f, 40, "%.2f") |
+		ImGui::SliderFloat(cylinder?" Height":" Height", &data.dimensions.y, 0.1f, 40, "%.2f");
 	if (data.deBoor && cylinder  && data.division.x <3)
 		data.division.x = 3;
 
 	if ((create = ImGui::Button("Create")))
+	{
+		ImGui::CloseCurrentPopup();
+	}
+	ImGui::EndPopup();
+}
+
+void MyGui::ShowIntersectPopup()
+{
+	ImGui::OpenPopup("Intersect surfaces", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonLeft);
+}
+
+void MyGui::IntersectPopup(float& detail, int& texResolution, bool& create)
+{
+	if (!ImGui::BeginPopup("Intersect surfaces"))
+		return;
+	ImGui::Text("Intersect surfaces");
+	ImGui::SliderFloat("Detail", &detail, 0.01f, 20.0f, "%.2f", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
+	ImGui::SliderInt("Texture resolution", &texResolution, 128, 2048,"%d", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
+
+	if ((create = ImGui::Button("Intersect")))
 	{
 		ImGui::CloseCurrentPopup();
 	}

@@ -12,6 +12,7 @@ void Serializer::Torus(Entity* e, std::string& name,
 	name = e->GetName();
 	auto* torus = e->GetComponent<TorusGenerator>();
 	radii = torus->GetData().radii;
+	std::swap(radii.x, radii.y);
 	samples = torus->GetData().division;
 	auto* transform = e->GetComponent<ModelTransform>();
 	position = transform->Position();
@@ -38,10 +39,10 @@ void Serializer::Surface(Entity* e, std::string& name,
 	auto* surf = e->GetComponent<BicubicSurface>();
 	parameterWrapped = surf->wrapMode;
 	size = surf->division;
-	for(int x = 0; x<size.x; x++)
 		for (int y = 0; y < size.y; y++)
+			for (int x = 0; x < size.x; x++)
 		{
-			auto* segment = surf->GetSegments()[y + x * size.y];
+			auto* segment = surf->GetSegments()[x + y * size.x];
 			segmentNames.push_back(segment->owner.GetName());
 			for (int yy = 0; yy < 4; yy++)
 				for (int xx = 0; xx < 4; xx++)

@@ -24,8 +24,11 @@ namespace MyGui
 	void GuiOptions();
 	bool TorusMeshWidget(TorusGenerator* torus);
 	bool SaveLoadWidget(std::span<char> buffer, bool& save, bool& load);
-	void TextureWidget(ID3D11ShaderResourceView* tex);
+	void TextureWidget(ID3D11ShaderResourceView* tex, std::vector<bool>& areas);
 
 	void ShowBicubicSurfacePopup(BicubicSurfaceParams& data);
 	void BicubicSurfacePopup(BicubicSurfaceParams& data, bool& modified, bool& create);
+
+	void ShowIntersectPopup();
+	void IntersectPopup(float& detail, int& texResolution, bool& create);
 }

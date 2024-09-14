@@ -182,7 +182,6 @@ IntersectData<TorusGenerator>::IntersectData(TorusGenerator* object)
 {
 	auto t = object->owner.GetComponent<Transform>();
 	radii = object->m_meshData.radii;
-	std::swap(radii.x, radii.y);
 	auto lv = t->Position();
 	auto v = XMLoadFloat3(&lv);
 	auto extent = XMVECTOR{ 1, 1, 1, 0 } * (radii.x + radii.y) * t->scale.x;

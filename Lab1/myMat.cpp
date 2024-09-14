@@ -41,25 +41,37 @@ MyMat MyMat::Identity()
     return MyMat(MyMat::identityInit);
 }
 
-MyMat MyMat::Perspective(float fov, float aspect, float n, float f)
+MyMat MyMat::Perspective(float fov, float aspect, float n, float f,
+    float skew, float convergence)
 {
+    float w = 1 / tanf(fov * 0.5f);
     return MyMat({
-        1/tanf(fov*0.5f)/aspect, 0, 0, 0,
-        0, 1/tanf(fov*0.5f), 0, 0,
-        0, 0, (f+n)/(f-n), 1,
+        w/aspect, 0, 0, 0,
+        0, w, 0, 0,
+        w/aspect*skew/convergence, 0, (f+n)/(f-n), 1,
         0, 0, -2 * f * n / (f - n), 0
         });
 }
-MyMat MyMat::InvPerspective(float fov, float aspect, float n, float f)
-{
-    float v = (f * f - n * n) / (2 * f * n);
-    return MyMat({
-        aspect * tanf(fov * 0.5f), 0, 0, 0,
-        0, tanf(fov * 0.5f), 0, 0,
-        0, 0, 0, -v,
-        0, 0,f-n, v
-        });
-}
+
+//MyMat MyMat::Perspective(float fov, float aspect, float n, float f)
+//{
+//    return MyMat({
+//        1 / tanf(fov * 0.5f) / aspect, 0, 0, 0,
+//        0, 1 / tanf(fov * 0.5f), 0, 0,
+//        0, 0, (f + n) / (f - n), 1,
+//        0, 0, -2 * f * n / (f - n), 0
+//        });
+//}
+//MyMat MyMat::InvPerspective(float fov, float aspect, float n, float f)
+//{
+//    float v = (f * f - n * n) / (2 * f * n);
+//    return MyMat({
+//        aspect * tanf(fov * 0.5f), 0, 0, 0,
+//        0, tanf(fov * 0.5f), 0, 0,
+//        0, 0, 0, -v,
+//        0, 0,f-n, v
+//        });
+//}
 
 MyMRot::MyMRot(DirectX::XMFLOAT4 quaternion)
 {

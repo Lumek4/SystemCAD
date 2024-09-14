@@ -10,6 +10,7 @@ Entity* EntityPresets::Torus(DirectX::XMFLOAT3 position)
 	auto& m = *e->AddComponent<TorusGenerator>();
 
 	auto& t = *e->AddComponent<ModelTransform>();
+	t.Translate(position);
 
 	//e->AddComponent<MeshRenderer>()->mesh = Mesh::Torus(samples.x, samples.y, radii.x, radii.y).get();
 
@@ -99,9 +100,10 @@ Entity* EntityPresets::InterpCurve(const std::vector<Entity*>& selection)
 	return e;
 }
 
-Entity* EntityPresets::IntersCurve(Entity* a, Entity* b, DxDevice& device,
+Entity* EntityPresets::IntersCurve(Entity* a, Entity* b,
 	std::vector<DirectX::XMFLOAT2>& pointsA,
-	std::vector<DirectX::XMFLOAT2>& pointsB)
+	std::vector<DirectX::XMFLOAT2>& pointsB,
+	std::vector<DirectX::XMFLOAT3>& pointsWorld, int texResolution)
 {
 	auto* e = Entity::New();
 	auto* c = e->AddComponent<IntersectionCurve>();
@@ -121,8 +123,9 @@ Entity* EntityPresets::IntersCurve(Entity* a, Entity* b, DxDevice& device,
 	else
 		c->wrapModeB = b->GetComponent<BicubicSurface>()->wrapMode;
 
-	c->InitTextures(device, 128);
+	c->InitTextures(DxDevice::Instance(), texResolution);
 
+	c->pointsWorld = pointsWorld;
 	static unsigned curveI = 1;
 	std::string name = "Intersection Curve " + std::to_string(curveI++);
 	e->SetName(name.c_str());

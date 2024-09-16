@@ -1,0 +1,12135 @@
+{
+	"geometry": [
+		{
+			"objectType": "torus",
+			"id": 134,
+			"name": "Torus 0",
+			"smallRadius": 0.5,
+			"largeRadius": 1.0,
+			"position": {
+				"x": 7.222080230712891,
+				"y": -0.9384517669677734,
+				"z": -6.4374165534973145
+			},
+			"rotation": {
+				"x": 0.0,
+				"y": -0.0,
+				"z": 0.0
+			},
+			"scale": {
+				"x": 1.0,
+				"y": 1.0,
+				"z": 1.0
+			},
+			"samples": {
+				"x": 20,
+				"y": 20
+			}
+		},
+		{
+			"objectType": "torus",
+			"id": 135,
+			"name": "Torus 1",
+			"smallRadius": 0.5,
+			"largeRadius": 1.0,
+			"position": {
+				"x": 7.222080230712891,
+				"y": -0.5,
+				"z": -6.4374165534973145
+			},
+			"rotation": {
+				"x": 0.0,
+				"y": -0.0,
+				"z": 0.0
+			},
+			"scale": {
+				"x": 1.0,
+				"y": 1.0,
+				"z": 1.0
+			},
+			"samples": {
+				"x": 20,
+				"y": 20
+			}
+		},
+		{
+			"objectType": "torus",
+			"id": 231,
+			"name": "Torus 2",
+			"smallRadius": 0.5,
+			"largeRadius": 1.0,
+			"position": {
+				"x": -2.3309292793273926,
+				"y": 0.6073899269104004,
+				"z": -4.748722076416016
+			},
+			"rotation": {
+				"x": 0.0,
+				"y": -0.0,
+				"z": 0.0
+			},
+			"scale": {
+				"x": 1.0,
+				"y": 1.0,
+				"z": 1.0
+			},
+			"samples": {
+				"x": 20,
+				"y": 20
+			}
+		},
+		{
+			"objectType": "bezierSurfaceC0",
+			"name": "Bezier C0 surface 0",
+			"id": 0,
+			"patches": [
+				{
+					"objectType": "bezierPatchC0",
+					"id": 282,
+					"name": "Bezier C0 surface 0, patch[0,0]",
+					"controlPoints": [
+						{
+							"id": 1
+						},
+						{
+							"id": 2
+						},
+						{
+							"id": 3
+						},
+						{
+							"id": 4
+						},
+						{
+							"id": 5
+						},
+						{
+							"id": 6
+						},
+						{
+							"id": 7
+						},
+						{
+							"id": 8
+						},
+						{
+							"id": 9
+						},
+						{
+							"id": 10
+						},
+						{
+							"id": 11
+						},
+						{
+							"id": 12
+						},
+						{
+							"id": 13
+						},
+						{
+							"id": 14
+						},
+						{
+							"id": 15
+						},
+						{
+							"id": 16
+						}
+					],
+					"samples": {
+						"x": 15,
+						"y": 13
+					}
+				}
+			],
+			"parameterWrapped": {
+				"u": false,
+				"v": false
+			},
+			"size": {
+				"x": 1,
+				"y": 1
+			}
+		},
+		{
+			"objectType": "bezierSurfaceC0",
+			"name": "Bezier C0 surface 1",
+			"id": 17,
+			"patches": [
+				{
+					"objectType": "bezierPatchC0",
+					"id": 283,
+					"name": "Bezier C0 surface 1, patch[0,0]",
+					"controlPoints": [
+						{
+							"id": 18
+						},
+						{
+							"id": 19
+						},
+						{
+							"id": 20
+						},
+						{
+							"id": 21
+						},
+						{
+							"id": 22
+						},
+						{
+							"id": 23
+						},
+						{
+							"id": 24
+						},
+						{
+							"id": 25
+						},
+						{
+							"id": 26
+						},
+						{
+							"id": 27
+						},
+						{
+							"id": 28
+						},
+						{
+							"id": 29
+						},
+						{
+							"id": 30
+						},
+						{
+							"id": 31
+						},
+						{
+							"id": 32
+						},
+						{
+							"id": 33
+						}
+					],
+					"samples": {
+						"x": 15,
+						"y": 15
+					}
+				}
+			],
+			"parameterWrapped": {
+				"u": false,
+				"v": false
+			},
+			"size": {
+				"x": 1,
+				"y": 1
+			}
+		},
+		{
+			"objectType": "bezierSurfaceC2",
+			"name": "Bezier C2 surface 0",
+			"id": 34,
+			"patches": [
+				{
+					"objectType": "bezierPatchC2",
+					"id": 284,
+					"name": "Bezier C2 surface 0, patch[0,0]",
+					"controlPoints": [
+						{
+							"id": 36
+						},
+						{
+							"id": 37
+						},
+						{
+							"id": 38
+						},
+						{
+							"id": 39
+						},
+						{
+							"id": 42
+						},
+						{
+							"id": 43
+						},
+						{
+							"id": 44
+						},
+						{
+							"id": 45
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 285,
+					"name": "Bezier C2 surface 0, patch[1,0]",
+					"controlPoints": [
+						{
+							"id": 37
+						},
+						{
+							"id": 38
+						},
+						{
+							"id": 39
+						},
+						{
+							"id": 40
+						},
+						{
+							"id": 43
+						},
+						{
+							"id": 44
+						},
+						{
+							"id": 45
+						},
+						{
+							"id": 46
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 286,
+					"name": "Bezier C2 surface 0, patch[2,0]",
+					"controlPoints": [
+						{
+							"id": 38
+						},
+						{
+							"id": 39
+						},
+						{
+							"id": 40
+						},
+						{
+							"id": 41
+						},
+						{
+							"id": 44
+						},
+						{
+							"id": 45
+						},
+						{
+							"id": 46
+						},
+						{
+							"id": 47
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 287,
+					"name": "Bezier C2 surface 0, patch[3,0]",
+					"controlPoints": [
+						{
+							"id": 39
+						},
+						{
+							"id": 40
+						},
+						{
+							"id": 41
+						},
+						{
+							"id": 36
+						},
+						{
+							"id": 45
+						},
+						{
+							"id": 46
+						},
+						{
+							"id": 47
+						},
+						{
+							"id": 42
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 288,
+					"name": "Bezier C2 surface 0, patch[4,0]",
+					"controlPoints": [
+						{
+							"id": 40
+						},
+						{
+							"id": 41
+						},
+						{
+							"id": 36
+						},
+						{
+							"id": 37
+						},
+						{
+							"id": 46
+						},
+						{
+							"id": 47
+						},
+						{
+							"id": 42
+						},
+						{
+							"id": 43
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 289,
+					"name": "Bezier C2 surface 0, patch[5,0]",
+					"controlPoints": [
+						{
+							"id": 41
+						},
+						{
+							"id": 36
+						},
+						{
+							"id": 37
+						},
+						{
+							"id": 38
+						},
+						{
+							"id": 47
+						},
+						{
+							"id": 42
+						},
+						{
+							"id": 43
+						},
+						{
+							"id": 44
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 290,
+					"name": "Bezier C2 surface 0, patch[0,1]",
+					"controlPoints": [
+						{
+							"id": 42
+						},
+						{
+							"id": 43
+						},
+						{
+							"id": 44
+						},
+						{
+							"id": 45
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 291,
+					"name": "Bezier C2 surface 0, patch[1,1]",
+					"controlPoints": [
+						{
+							"id": 43
+						},
+						{
+							"id": 44
+						},
+						{
+							"id": 45
+						},
+						{
+							"id": 46
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 292,
+					"name": "Bezier C2 surface 0, patch[2,1]",
+					"controlPoints": [
+						{
+							"id": 44
+						},
+						{
+							"id": 45
+						},
+						{
+							"id": 46
+						},
+						{
+							"id": 47
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 293,
+					"name": "Bezier C2 surface 0, patch[3,1]",
+					"controlPoints": [
+						{
+							"id": 45
+						},
+						{
+							"id": 46
+						},
+						{
+							"id": 47
+						},
+						{
+							"id": 42
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 294,
+					"name": "Bezier C2 surface 0, patch[4,1]",
+					"controlPoints": [
+						{
+							"id": 46
+						},
+						{
+							"id": 47
+						},
+						{
+							"id": 42
+						},
+						{
+							"id": 43
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 295,
+					"name": "Bezier C2 surface 0, patch[5,1]",
+					"controlPoints": [
+						{
+							"id": 47
+						},
+						{
+							"id": 42
+						},
+						{
+							"id": 43
+						},
+						{
+							"id": 44
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 296,
+					"name": "Bezier C2 surface 0, patch[0,2]",
+					"controlPoints": [
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 297,
+					"name": "Bezier C2 surface 0, patch[1,2]",
+					"controlPoints": [
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 298,
+					"name": "Bezier C2 surface 0, patch[2,2]",
+					"controlPoints": [
+						{
+							"id": 50
+						},
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 299,
+					"name": "Bezier C2 surface 0, patch[3,2]",
+					"controlPoints": [
+						{
+							"id": 51
+						},
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 300,
+					"name": "Bezier C2 surface 0, patch[4,2]",
+					"controlPoints": [
+						{
+							"id": 52
+						},
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 301,
+					"name": "Bezier C2 surface 0, patch[5,2]",
+					"controlPoints": [
+						{
+							"id": 53
+						},
+						{
+							"id": 48
+						},
+						{
+							"id": 49
+						},
+						{
+							"id": 50
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 302,
+					"name": "Bezier C2 surface 0, patch[0,3]",
+					"controlPoints": [
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 72
+						},
+						{
+							"id": 73
+						},
+						{
+							"id": 74
+						},
+						{
+							"id": 75
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 303,
+					"name": "Bezier C2 surface 0, patch[1,3]",
+					"controlPoints": [
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 73
+						},
+						{
+							"id": 74
+						},
+						{
+							"id": 75
+						},
+						{
+							"id": 76
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 304,
+					"name": "Bezier C2 surface 0, patch[2,3]",
+					"controlPoints": [
+						{
+							"id": 56
+						},
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 74
+						},
+						{
+							"id": 75
+						},
+						{
+							"id": 76
+						},
+						{
+							"id": 77
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 305,
+					"name": "Bezier C2 surface 0, patch[3,3]",
+					"controlPoints": [
+						{
+							"id": 57
+						},
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 75
+						},
+						{
+							"id": 76
+						},
+						{
+							"id": 77
+						},
+						{
+							"id": 72
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 306,
+					"name": "Bezier C2 surface 0, patch[4,3]",
+					"controlPoints": [
+						{
+							"id": 58
+						},
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 76
+						},
+						{
+							"id": 77
+						},
+						{
+							"id": 72
+						},
+						{
+							"id": 73
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 307,
+					"name": "Bezier C2 surface 0, patch[5,3]",
+					"controlPoints": [
+						{
+							"id": 59
+						},
+						{
+							"id": 54
+						},
+						{
+							"id": 55
+						},
+						{
+							"id": 56
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 77
+						},
+						{
+							"id": 72
+						},
+						{
+							"id": 73
+						},
+						{
+							"id": 74
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 308,
+					"name": "Bezier C2 surface 0, patch[0,4]",
+					"controlPoints": [
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 72
+						},
+						{
+							"id": 73
+						},
+						{
+							"id": 74
+						},
+						{
+							"id": 75
+						},
+						{
+							"id": 78
+						},
+						{
+							"id": 79
+						},
+						{
+							"id": 80
+						},
+						{
+							"id": 81
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 309,
+					"name": "Bezier C2 surface 0, patch[1,4]",
+					"controlPoints": [
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 73
+						},
+						{
+							"id": 74
+						},
+						{
+							"id": 75
+						},
+						{
+							"id": 76
+						},
+						{
+							"id": 79
+						},
+						{
+							"id": 80
+						},
+						{
+							"id": 81
+						},
+						{
+							"id": 82
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 310,
+					"name": "Bezier C2 surface 0, patch[2,4]",
+					"controlPoints": [
+						{
+							"id": 62
+						},
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 74
+						},
+						{
+							"id": 75
+						},
+						{
+							"id": 76
+						},
+						{
+							"id": 77
+						},
+						{
+							"id": 80
+						},
+						{
+							"id": 81
+						},
+						{
+							"id": 82
+						},
+						{
+							"id": 83
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 311,
+					"name": "Bezier C2 surface 0, patch[3,4]",
+					"controlPoints": [
+						{
+							"id": 63
+						},
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 69
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 75
+						},
+						{
+							"id": 76
+						},
+						{
+							"id": 77
+						},
+						{
+							"id": 72
+						},
+						{
+							"id": 81
+						},
+						{
+							"id": 82
+						},
+						{
+							"id": 83
+						},
+						{
+							"id": 78
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 312,
+					"name": "Bezier C2 surface 0, patch[4,4]",
+					"controlPoints": [
+						{
+							"id": 64
+						},
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 70
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 76
+						},
+						{
+							"id": 77
+						},
+						{
+							"id": 72
+						},
+						{
+							"id": 73
+						},
+						{
+							"id": 82
+						},
+						{
+							"id": 83
+						},
+						{
+							"id": 78
+						},
+						{
+							"id": 79
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 313,
+					"name": "Bezier C2 surface 0, patch[5,4]",
+					"controlPoints": [
+						{
+							"id": 65
+						},
+						{
+							"id": 60
+						},
+						{
+							"id": 61
+						},
+						{
+							"id": 62
+						},
+						{
+							"id": 71
+						},
+						{
+							"id": 66
+						},
+						{
+							"id": 67
+						},
+						{
+							"id": 68
+						},
+						{
+							"id": 77
+						},
+						{
+							"id": 72
+						},
+						{
+							"id": 73
+						},
+						{
+							"id": 74
+						},
+						{
+							"id": 83
+						},
+						{
+							"id": 78
+						},
+						{
+							"id": 79
+						},
+						{
+							"id": 80
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				}
+			],
+			"parameterWrapped": {
+				"u": true,
+				"v": false
+			},
+			"size": {
+				"x": 6,
+				"y": 5
+			}
+		},
+		{
+			"objectType": "bezierSurfaceC2",
+			"name": "Bezier C2 surface 1",
+			"id": 35,
+			"patches": [
+				{
+					"objectType": "bezierPatchC2",
+					"id": 314,
+					"name": "Bezier C2 surface 1, patch[0,0]",
+					"controlPoints": [
+						{
+							"id": 84
+						},
+						{
+							"id": 85
+						},
+						{
+							"id": 86
+						},
+						{
+							"id": 87
+						},
+						{
+							"id": 90
+						},
+						{
+							"id": 91
+						},
+						{
+							"id": 92
+						},
+						{
+							"id": 93
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 315,
+					"name": "Bezier C2 surface 1, patch[1,0]",
+					"controlPoints": [
+						{
+							"id": 85
+						},
+						{
+							"id": 86
+						},
+						{
+							"id": 87
+						},
+						{
+							"id": 88
+						},
+						{
+							"id": 91
+						},
+						{
+							"id": 92
+						},
+						{
+							"id": 93
+						},
+						{
+							"id": 94
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 316,
+					"name": "Bezier C2 surface 1, patch[2,0]",
+					"controlPoints": [
+						{
+							"id": 86
+						},
+						{
+							"id": 87
+						},
+						{
+							"id": 88
+						},
+						{
+							"id": 89
+						},
+						{
+							"id": 92
+						},
+						{
+							"id": 93
+						},
+						{
+							"id": 94
+						},
+						{
+							"id": 95
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 317,
+					"name": "Bezier C2 surface 1, patch[3,0]",
+					"controlPoints": [
+						{
+							"id": 87
+						},
+						{
+							"id": 88
+						},
+						{
+							"id": 89
+						},
+						{
+							"id": 84
+						},
+						{
+							"id": 93
+						},
+						{
+							"id": 94
+						},
+						{
+							"id": 95
+						},
+						{
+							"id": 90
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 318,
+					"name": "Bezier C2 surface 1, patch[4,0]",
+					"controlPoints": [
+						{
+							"id": 88
+						},
+						{
+							"id": 89
+						},
+						{
+							"id": 84
+						},
+						{
+							"id": 85
+						},
+						{
+							"id": 94
+						},
+						{
+							"id": 95
+						},
+						{
+							"id": 90
+						},
+						{
+							"id": 91
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 319,
+					"name": "Bezier C2 surface 1, patch[5,0]",
+					"controlPoints": [
+						{
+							"id": 89
+						},
+						{
+							"id": 84
+						},
+						{
+							"id": 85
+						},
+						{
+							"id": 86
+						},
+						{
+							"id": 95
+						},
+						{
+							"id": 90
+						},
+						{
+							"id": 91
+						},
+						{
+							"id": 92
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 320,
+					"name": "Bezier C2 surface 1, patch[0,1]",
+					"controlPoints": [
+						{
+							"id": 90
+						},
+						{
+							"id": 91
+						},
+						{
+							"id": 92
+						},
+						{
+							"id": 93
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 321,
+					"name": "Bezier C2 surface 1, patch[1,1]",
+					"controlPoints": [
+						{
+							"id": 91
+						},
+						{
+							"id": 92
+						},
+						{
+							"id": 93
+						},
+						{
+							"id": 94
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 322,
+					"name": "Bezier C2 surface 1, patch[2,1]",
+					"controlPoints": [
+						{
+							"id": 92
+						},
+						{
+							"id": 93
+						},
+						{
+							"id": 94
+						},
+						{
+							"id": 95
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 323,
+					"name": "Bezier C2 surface 1, patch[3,1]",
+					"controlPoints": [
+						{
+							"id": 93
+						},
+						{
+							"id": 94
+						},
+						{
+							"id": 95
+						},
+						{
+							"id": 90
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 324,
+					"name": "Bezier C2 surface 1, patch[4,1]",
+					"controlPoints": [
+						{
+							"id": 94
+						},
+						{
+							"id": 95
+						},
+						{
+							"id": 90
+						},
+						{
+							"id": 91
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 325,
+					"name": "Bezier C2 surface 1, patch[5,1]",
+					"controlPoints": [
+						{
+							"id": 95
+						},
+						{
+							"id": 90
+						},
+						{
+							"id": 91
+						},
+						{
+							"id": 92
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 326,
+					"name": "Bezier C2 surface 1, patch[0,2]",
+					"controlPoints": [
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 327,
+					"name": "Bezier C2 surface 1, patch[1,2]",
+					"controlPoints": [
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 328,
+					"name": "Bezier C2 surface 1, patch[2,2]",
+					"controlPoints": [
+						{
+							"id": 98
+						},
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 329,
+					"name": "Bezier C2 surface 1, patch[3,2]",
+					"controlPoints": [
+						{
+							"id": 99
+						},
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 330,
+					"name": "Bezier C2 surface 1, patch[4,2]",
+					"controlPoints": [
+						{
+							"id": 100
+						},
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 331,
+					"name": "Bezier C2 surface 1, patch[5,2]",
+					"controlPoints": [
+						{
+							"id": 101
+						},
+						{
+							"id": 96
+						},
+						{
+							"id": 97
+						},
+						{
+							"id": 98
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 332,
+					"name": "Bezier C2 surface 1, patch[0,3]",
+					"controlPoints": [
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 120
+						},
+						{
+							"id": 121
+						},
+						{
+							"id": 122
+						},
+						{
+							"id": 123
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 333,
+					"name": "Bezier C2 surface 1, patch[1,3]",
+					"controlPoints": [
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 121
+						},
+						{
+							"id": 122
+						},
+						{
+							"id": 123
+						},
+						{
+							"id": 124
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 334,
+					"name": "Bezier C2 surface 1, patch[2,3]",
+					"controlPoints": [
+						{
+							"id": 104
+						},
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 122
+						},
+						{
+							"id": 123
+						},
+						{
+							"id": 124
+						},
+						{
+							"id": 125
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 335,
+					"name": "Bezier C2 surface 1, patch[3,3]",
+					"controlPoints": [
+						{
+							"id": 105
+						},
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 123
+						},
+						{
+							"id": 124
+						},
+						{
+							"id": 125
+						},
+						{
+							"id": 120
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 336,
+					"name": "Bezier C2 surface 1, patch[4,3]",
+					"controlPoints": [
+						{
+							"id": 106
+						},
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 124
+						},
+						{
+							"id": 125
+						},
+						{
+							"id": 120
+						},
+						{
+							"id": 121
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 337,
+					"name": "Bezier C2 surface 1, patch[5,3]",
+					"controlPoints": [
+						{
+							"id": 107
+						},
+						{
+							"id": 102
+						},
+						{
+							"id": 103
+						},
+						{
+							"id": 104
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 125
+						},
+						{
+							"id": 120
+						},
+						{
+							"id": 121
+						},
+						{
+							"id": 122
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 338,
+					"name": "Bezier C2 surface 1, patch[0,4]",
+					"controlPoints": [
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 120
+						},
+						{
+							"id": 121
+						},
+						{
+							"id": 122
+						},
+						{
+							"id": 123
+						},
+						{
+							"id": 126
+						},
+						{
+							"id": 127
+						},
+						{
+							"id": 128
+						},
+						{
+							"id": 129
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 339,
+					"name": "Bezier C2 surface 1, patch[1,4]",
+					"controlPoints": [
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 121
+						},
+						{
+							"id": 122
+						},
+						{
+							"id": 123
+						},
+						{
+							"id": 124
+						},
+						{
+							"id": 127
+						},
+						{
+							"id": 128
+						},
+						{
+							"id": 129
+						},
+						{
+							"id": 130
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 340,
+					"name": "Bezier C2 surface 1, patch[2,4]",
+					"controlPoints": [
+						{
+							"id": 110
+						},
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 122
+						},
+						{
+							"id": 123
+						},
+						{
+							"id": 124
+						},
+						{
+							"id": 125
+						},
+						{
+							"id": 128
+						},
+						{
+							"id": 129
+						},
+						{
+							"id": 130
+						},
+						{
+							"id": 131
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 341,
+					"name": "Bezier C2 surface 1, patch[3,4]",
+					"controlPoints": [
+						{
+							"id": 111
+						},
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 117
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 123
+						},
+						{
+							"id": 124
+						},
+						{
+							"id": 125
+						},
+						{
+							"id": 120
+						},
+						{
+							"id": 129
+						},
+						{
+							"id": 130
+						},
+						{
+							"id": 131
+						},
+						{
+							"id": 126
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 342,
+					"name": "Bezier C2 surface 1, patch[4,4]",
+					"controlPoints": [
+						{
+							"id": 112
+						},
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 118
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 124
+						},
+						{
+							"id": 125
+						},
+						{
+							"id": 120
+						},
+						{
+							"id": 121
+						},
+						{
+							"id": 130
+						},
+						{
+							"id": 131
+						},
+						{
+							"id": 126
+						},
+						{
+							"id": 127
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 343,
+					"name": "Bezier C2 surface 1, patch[5,4]",
+					"controlPoints": [
+						{
+							"id": 113
+						},
+						{
+							"id": 108
+						},
+						{
+							"id": 109
+						},
+						{
+							"id": 110
+						},
+						{
+							"id": 119
+						},
+						{
+							"id": 114
+						},
+						{
+							"id": 115
+						},
+						{
+							"id": 116
+						},
+						{
+							"id": 125
+						},
+						{
+							"id": 120
+						},
+						{
+							"id": 121
+						},
+						{
+							"id": 122
+						},
+						{
+							"id": 131
+						},
+						{
+							"id": 126
+						},
+						{
+							"id": 127
+						},
+						{
+							"id": 128
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				}
+			],
+			"parameterWrapped": {
+				"u": true,
+				"v": false
+			},
+			"size": {
+				"x": 6,
+				"y": 5
+			}
+		},
+		{
+			"objectType": "bezierSurfaceC2",
+			"name": "Bezier C2 surface 3",
+			"id": 138,
+			"patches": [
+				{
+					"objectType": "bezierPatchC2",
+					"id": 344,
+					"name": "Bezier C2 surface 3, patch[0,0]",
+					"controlPoints": [
+						{
+							"id": 139
+						},
+						{
+							"id": 140
+						},
+						{
+							"id": 141
+						},
+						{
+							"id": 142
+						},
+						{
+							"id": 146
+						},
+						{
+							"id": 147
+						},
+						{
+							"id": 148
+						},
+						{
+							"id": 149
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 345,
+					"name": "Bezier C2 surface 3, patch[1,0]",
+					"controlPoints": [
+						{
+							"id": 140
+						},
+						{
+							"id": 141
+						},
+						{
+							"id": 142
+						},
+						{
+							"id": 143
+						},
+						{
+							"id": 147
+						},
+						{
+							"id": 148
+						},
+						{
+							"id": 149
+						},
+						{
+							"id": 150
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 346,
+					"name": "Bezier C2 surface 3, patch[2,0]",
+					"controlPoints": [
+						{
+							"id": 141
+						},
+						{
+							"id": 142
+						},
+						{
+							"id": 143
+						},
+						{
+							"id": 144
+						},
+						{
+							"id": 148
+						},
+						{
+							"id": 149
+						},
+						{
+							"id": 150
+						},
+						{
+							"id": 151
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 347,
+					"name": "Bezier C2 surface 3, patch[3,0]",
+					"controlPoints": [
+						{
+							"id": 142
+						},
+						{
+							"id": 143
+						},
+						{
+							"id": 144
+						},
+						{
+							"id": 145
+						},
+						{
+							"id": 149
+						},
+						{
+							"id": 150
+						},
+						{
+							"id": 151
+						},
+						{
+							"id": 152
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 348,
+					"name": "Bezier C2 surface 3, patch[4,0]",
+					"controlPoints": [
+						{
+							"id": 143
+						},
+						{
+							"id": 144
+						},
+						{
+							"id": 145
+						},
+						{
+							"id": 139
+						},
+						{
+							"id": 150
+						},
+						{
+							"id": 151
+						},
+						{
+							"id": 152
+						},
+						{
+							"id": 146
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 349,
+					"name": "Bezier C2 surface 3, patch[5,0]",
+					"controlPoints": [
+						{
+							"id": 144
+						},
+						{
+							"id": 145
+						},
+						{
+							"id": 139
+						},
+						{
+							"id": 140
+						},
+						{
+							"id": 151
+						},
+						{
+							"id": 152
+						},
+						{
+							"id": 146
+						},
+						{
+							"id": 147
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 350,
+					"name": "Bezier C2 surface 3, patch[6,0]",
+					"controlPoints": [
+						{
+							"id": 145
+						},
+						{
+							"id": 139
+						},
+						{
+							"id": 140
+						},
+						{
+							"id": 141
+						},
+						{
+							"id": 152
+						},
+						{
+							"id": 146
+						},
+						{
+							"id": 147
+						},
+						{
+							"id": 148
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 351,
+					"name": "Bezier C2 surface 3, patch[0,1]",
+					"controlPoints": [
+						{
+							"id": 146
+						},
+						{
+							"id": 147
+						},
+						{
+							"id": 148
+						},
+						{
+							"id": 149
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 352,
+					"name": "Bezier C2 surface 3, patch[1,1]",
+					"controlPoints": [
+						{
+							"id": 147
+						},
+						{
+							"id": 148
+						},
+						{
+							"id": 149
+						},
+						{
+							"id": 150
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 353,
+					"name": "Bezier C2 surface 3, patch[2,1]",
+					"controlPoints": [
+						{
+							"id": 148
+						},
+						{
+							"id": 149
+						},
+						{
+							"id": 150
+						},
+						{
+							"id": 151
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 354,
+					"name": "Bezier C2 surface 3, patch[3,1]",
+					"controlPoints": [
+						{
+							"id": 149
+						},
+						{
+							"id": 150
+						},
+						{
+							"id": 151
+						},
+						{
+							"id": 152
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 355,
+					"name": "Bezier C2 surface 3, patch[4,1]",
+					"controlPoints": [
+						{
+							"id": 150
+						},
+						{
+							"id": 151
+						},
+						{
+							"id": 152
+						},
+						{
+							"id": 146
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 356,
+					"name": "Bezier C2 surface 3, patch[5,1]",
+					"controlPoints": [
+						{
+							"id": 151
+						},
+						{
+							"id": 152
+						},
+						{
+							"id": 146
+						},
+						{
+							"id": 147
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 357,
+					"name": "Bezier C2 surface 3, patch[6,1]",
+					"controlPoints": [
+						{
+							"id": 152
+						},
+						{
+							"id": 146
+						},
+						{
+							"id": 147
+						},
+						{
+							"id": 148
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 358,
+					"name": "Bezier C2 surface 3, patch[0,2]",
+					"controlPoints": [
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 359,
+					"name": "Bezier C2 surface 3, patch[1,2]",
+					"controlPoints": [
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 360,
+					"name": "Bezier C2 surface 3, patch[2,2]",
+					"controlPoints": [
+						{
+							"id": 155
+						},
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 361,
+					"name": "Bezier C2 surface 3, patch[3,2]",
+					"controlPoints": [
+						{
+							"id": 156
+						},
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 362,
+					"name": "Bezier C2 surface 3, patch[4,2]",
+					"controlPoints": [
+						{
+							"id": 157
+						},
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 363,
+					"name": "Bezier C2 surface 3, patch[5,2]",
+					"controlPoints": [
+						{
+							"id": 158
+						},
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 364,
+					"name": "Bezier C2 surface 3, patch[6,2]",
+					"controlPoints": [
+						{
+							"id": 159
+						},
+						{
+							"id": 153
+						},
+						{
+							"id": 154
+						},
+						{
+							"id": 155
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 365,
+					"name": "Bezier C2 surface 3, patch[0,3]",
+					"controlPoints": [
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 366,
+					"name": "Bezier C2 surface 3, patch[1,3]",
+					"controlPoints": [
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 367,
+					"name": "Bezier C2 surface 3, patch[2,3]",
+					"controlPoints": [
+						{
+							"id": 162
+						},
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 368,
+					"name": "Bezier C2 surface 3, patch[3,3]",
+					"controlPoints": [
+						{
+							"id": 163
+						},
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 369,
+					"name": "Bezier C2 surface 3, patch[4,3]",
+					"controlPoints": [
+						{
+							"id": 164
+						},
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 370,
+					"name": "Bezier C2 surface 3, patch[5,3]",
+					"controlPoints": [
+						{
+							"id": 165
+						},
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 371,
+					"name": "Bezier C2 surface 3, patch[6,3]",
+					"controlPoints": [
+						{
+							"id": 166
+						},
+						{
+							"id": 160
+						},
+						{
+							"id": 161
+						},
+						{
+							"id": 162
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 372,
+					"name": "Bezier C2 surface 3, patch[0,4]",
+					"controlPoints": [
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 373,
+					"name": "Bezier C2 surface 3, patch[1,4]",
+					"controlPoints": [
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 374,
+					"name": "Bezier C2 surface 3, patch[2,4]",
+					"controlPoints": [
+						{
+							"id": 169
+						},
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 375,
+					"name": "Bezier C2 surface 3, patch[3,4]",
+					"controlPoints": [
+						{
+							"id": 170
+						},
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 376,
+					"name": "Bezier C2 surface 3, patch[4,4]",
+					"controlPoints": [
+						{
+							"id": 171
+						},
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 377,
+					"name": "Bezier C2 surface 3, patch[5,4]",
+					"controlPoints": [
+						{
+							"id": 172
+						},
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 378,
+					"name": "Bezier C2 surface 3, patch[6,4]",
+					"controlPoints": [
+						{
+							"id": 173
+						},
+						{
+							"id": 167
+						},
+						{
+							"id": 168
+						},
+						{
+							"id": 169
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 379,
+					"name": "Bezier C2 surface 3, patch[0,5]",
+					"controlPoints": [
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 380,
+					"name": "Bezier C2 surface 3, patch[1,5]",
+					"controlPoints": [
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 381,
+					"name": "Bezier C2 surface 3, patch[2,5]",
+					"controlPoints": [
+						{
+							"id": 176
+						},
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 382,
+					"name": "Bezier C2 surface 3, patch[3,5]",
+					"controlPoints": [
+						{
+							"id": 177
+						},
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 383,
+					"name": "Bezier C2 surface 3, patch[4,5]",
+					"controlPoints": [
+						{
+							"id": 178
+						},
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 384,
+					"name": "Bezier C2 surface 3, patch[5,5]",
+					"controlPoints": [
+						{
+							"id": 179
+						},
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 385,
+					"name": "Bezier C2 surface 3, patch[6,5]",
+					"controlPoints": [
+						{
+							"id": 180
+						},
+						{
+							"id": 174
+						},
+						{
+							"id": 175
+						},
+						{
+							"id": 176
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 386,
+					"name": "Bezier C2 surface 3, patch[0,6]",
+					"controlPoints": [
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 387,
+					"name": "Bezier C2 surface 3, patch[1,6]",
+					"controlPoints": [
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 388,
+					"name": "Bezier C2 surface 3, patch[2,6]",
+					"controlPoints": [
+						{
+							"id": 183
+						},
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 389,
+					"name": "Bezier C2 surface 3, patch[3,6]",
+					"controlPoints": [
+						{
+							"id": 184
+						},
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 390,
+					"name": "Bezier C2 surface 3, patch[4,6]",
+					"controlPoints": [
+						{
+							"id": 185
+						},
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 391,
+					"name": "Bezier C2 surface 3, patch[5,6]",
+					"controlPoints": [
+						{
+							"id": 186
+						},
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 392,
+					"name": "Bezier C2 surface 3, patch[6,6]",
+					"controlPoints": [
+						{
+							"id": 187
+						},
+						{
+							"id": 181
+						},
+						{
+							"id": 182
+						},
+						{
+							"id": 183
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 393,
+					"name": "Bezier C2 surface 3, patch[0,7]",
+					"controlPoints": [
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 394,
+					"name": "Bezier C2 surface 3, patch[1,7]",
+					"controlPoints": [
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 395,
+					"name": "Bezier C2 surface 3, patch[2,7]",
+					"controlPoints": [
+						{
+							"id": 190
+						},
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 396,
+					"name": "Bezier C2 surface 3, patch[3,7]",
+					"controlPoints": [
+						{
+							"id": 191
+						},
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 397,
+					"name": "Bezier C2 surface 3, patch[4,7]",
+					"controlPoints": [
+						{
+							"id": 192
+						},
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 398,
+					"name": "Bezier C2 surface 3, patch[5,7]",
+					"controlPoints": [
+						{
+							"id": 193
+						},
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 399,
+					"name": "Bezier C2 surface 3, patch[6,7]",
+					"controlPoints": [
+						{
+							"id": 194
+						},
+						{
+							"id": 188
+						},
+						{
+							"id": 189
+						},
+						{
+							"id": 190
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 400,
+					"name": "Bezier C2 surface 3, patch[0,8]",
+					"controlPoints": [
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 216
+						},
+						{
+							"id": 217
+						},
+						{
+							"id": 218
+						},
+						{
+							"id": 219
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 401,
+					"name": "Bezier C2 surface 3, patch[1,8]",
+					"controlPoints": [
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 217
+						},
+						{
+							"id": 218
+						},
+						{
+							"id": 219
+						},
+						{
+							"id": 220
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 402,
+					"name": "Bezier C2 surface 3, patch[2,8]",
+					"controlPoints": [
+						{
+							"id": 197
+						},
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 218
+						},
+						{
+							"id": 219
+						},
+						{
+							"id": 220
+						},
+						{
+							"id": 221
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 403,
+					"name": "Bezier C2 surface 3, patch[3,8]",
+					"controlPoints": [
+						{
+							"id": 198
+						},
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 219
+						},
+						{
+							"id": 220
+						},
+						{
+							"id": 221
+						},
+						{
+							"id": 222
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 404,
+					"name": "Bezier C2 surface 3, patch[4,8]",
+					"controlPoints": [
+						{
+							"id": 199
+						},
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 220
+						},
+						{
+							"id": 221
+						},
+						{
+							"id": 222
+						},
+						{
+							"id": 216
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 405,
+					"name": "Bezier C2 surface 3, patch[5,8]",
+					"controlPoints": [
+						{
+							"id": 200
+						},
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 221
+						},
+						{
+							"id": 222
+						},
+						{
+							"id": 216
+						},
+						{
+							"id": 217
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 406,
+					"name": "Bezier C2 surface 3, patch[6,8]",
+					"controlPoints": [
+						{
+							"id": 201
+						},
+						{
+							"id": 195
+						},
+						{
+							"id": 196
+						},
+						{
+							"id": 197
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 222
+						},
+						{
+							"id": 216
+						},
+						{
+							"id": 217
+						},
+						{
+							"id": 218
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 407,
+					"name": "Bezier C2 surface 3, patch[0,9]",
+					"controlPoints": [
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 216
+						},
+						{
+							"id": 217
+						},
+						{
+							"id": 218
+						},
+						{
+							"id": 219
+						},
+						{
+							"id": 223
+						},
+						{
+							"id": 224
+						},
+						{
+							"id": 225
+						},
+						{
+							"id": 226
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 408,
+					"name": "Bezier C2 surface 3, patch[1,9]",
+					"controlPoints": [
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 217
+						},
+						{
+							"id": 218
+						},
+						{
+							"id": 219
+						},
+						{
+							"id": 220
+						},
+						{
+							"id": 224
+						},
+						{
+							"id": 225
+						},
+						{
+							"id": 226
+						},
+						{
+							"id": 227
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 409,
+					"name": "Bezier C2 surface 3, patch[2,9]",
+					"controlPoints": [
+						{
+							"id": 204
+						},
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 218
+						},
+						{
+							"id": 219
+						},
+						{
+							"id": 220
+						},
+						{
+							"id": 221
+						},
+						{
+							"id": 225
+						},
+						{
+							"id": 226
+						},
+						{
+							"id": 227
+						},
+						{
+							"id": 228
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 410,
+					"name": "Bezier C2 surface 3, patch[3,9]",
+					"controlPoints": [
+						{
+							"id": 205
+						},
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 212
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 219
+						},
+						{
+							"id": 220
+						},
+						{
+							"id": 221
+						},
+						{
+							"id": 222
+						},
+						{
+							"id": 226
+						},
+						{
+							"id": 227
+						},
+						{
+							"id": 228
+						},
+						{
+							"id": 229
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 411,
+					"name": "Bezier C2 surface 3, patch[4,9]",
+					"controlPoints": [
+						{
+							"id": 206
+						},
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 213
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 220
+						},
+						{
+							"id": 221
+						},
+						{
+							"id": 222
+						},
+						{
+							"id": 216
+						},
+						{
+							"id": 227
+						},
+						{
+							"id": 228
+						},
+						{
+							"id": 229
+						},
+						{
+							"id": 223
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 412,
+					"name": "Bezier C2 surface 3, patch[5,9]",
+					"controlPoints": [
+						{
+							"id": 207
+						},
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 214
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 221
+						},
+						{
+							"id": 222
+						},
+						{
+							"id": 216
+						},
+						{
+							"id": 217
+						},
+						{
+							"id": 228
+						},
+						{
+							"id": 229
+						},
+						{
+							"id": 223
+						},
+						{
+							"id": 224
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 413,
+					"name": "Bezier C2 surface 3, patch[6,9]",
+					"controlPoints": [
+						{
+							"id": 208
+						},
+						{
+							"id": 202
+						},
+						{
+							"id": 203
+						},
+						{
+							"id": 204
+						},
+						{
+							"id": 215
+						},
+						{
+							"id": 209
+						},
+						{
+							"id": 210
+						},
+						{
+							"id": 211
+						},
+						{
+							"id": 222
+						},
+						{
+							"id": 216
+						},
+						{
+							"id": 217
+						},
+						{
+							"id": 218
+						},
+						{
+							"id": 229
+						},
+						{
+							"id": 223
+						},
+						{
+							"id": 224
+						},
+						{
+							"id": 225
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				}
+			],
+			"parameterWrapped": {
+				"u": true,
+				"v": false
+			},
+			"size": {
+				"x": 7,
+				"y": 10
+			}
+		},
+		{
+			"objectType": "bezierSurfaceC2",
+			"name": "Bezier C2 surface 4",
+			"id": 232,
+			"patches": [
+				{
+					"objectType": "bezierPatchC2",
+					"id": 414,
+					"name": "Bezier C2 surface 4, patch[0,0]",
+					"controlPoints": [
+						{
+							"id": 233
+						},
+						{
+							"id": 234
+						},
+						{
+							"id": 235
+						},
+						{
+							"id": 236
+						},
+						{
+							"id": 239
+						},
+						{
+							"id": 240
+						},
+						{
+							"id": 241
+						},
+						{
+							"id": 242
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 415,
+					"name": "Bezier C2 surface 4, patch[1,0]",
+					"controlPoints": [
+						{
+							"id": 234
+						},
+						{
+							"id": 235
+						},
+						{
+							"id": 236
+						},
+						{
+							"id": 237
+						},
+						{
+							"id": 240
+						},
+						{
+							"id": 241
+						},
+						{
+							"id": 242
+						},
+						{
+							"id": 243
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 416,
+					"name": "Bezier C2 surface 4, patch[2,0]",
+					"controlPoints": [
+						{
+							"id": 235
+						},
+						{
+							"id": 236
+						},
+						{
+							"id": 237
+						},
+						{
+							"id": 238
+						},
+						{
+							"id": 241
+						},
+						{
+							"id": 242
+						},
+						{
+							"id": 243
+						},
+						{
+							"id": 244
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 417,
+					"name": "Bezier C2 surface 4, patch[3,0]",
+					"controlPoints": [
+						{
+							"id": 236
+						},
+						{
+							"id": 237
+						},
+						{
+							"id": 238
+						},
+						{
+							"id": 233
+						},
+						{
+							"id": 242
+						},
+						{
+							"id": 243
+						},
+						{
+							"id": 244
+						},
+						{
+							"id": 239
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 418,
+					"name": "Bezier C2 surface 4, patch[4,0]",
+					"controlPoints": [
+						{
+							"id": 237
+						},
+						{
+							"id": 238
+						},
+						{
+							"id": 233
+						},
+						{
+							"id": 234
+						},
+						{
+							"id": 243
+						},
+						{
+							"id": 244
+						},
+						{
+							"id": 239
+						},
+						{
+							"id": 240
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 419,
+					"name": "Bezier C2 surface 4, patch[5,0]",
+					"controlPoints": [
+						{
+							"id": 238
+						},
+						{
+							"id": 233
+						},
+						{
+							"id": 234
+						},
+						{
+							"id": 235
+						},
+						{
+							"id": 244
+						},
+						{
+							"id": 239
+						},
+						{
+							"id": 240
+						},
+						{
+							"id": 241
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 420,
+					"name": "Bezier C2 surface 4, patch[0,1]",
+					"controlPoints": [
+						{
+							"id": 239
+						},
+						{
+							"id": 240
+						},
+						{
+							"id": 241
+						},
+						{
+							"id": 242
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 421,
+					"name": "Bezier C2 surface 4, patch[1,1]",
+					"controlPoints": [
+						{
+							"id": 240
+						},
+						{
+							"id": 241
+						},
+						{
+							"id": 242
+						},
+						{
+							"id": 243
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 422,
+					"name": "Bezier C2 surface 4, patch[2,1]",
+					"controlPoints": [
+						{
+							"id": 241
+						},
+						{
+							"id": 242
+						},
+						{
+							"id": 243
+						},
+						{
+							"id": 244
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 423,
+					"name": "Bezier C2 surface 4, patch[3,1]",
+					"controlPoints": [
+						{
+							"id": 242
+						},
+						{
+							"id": 243
+						},
+						{
+							"id": 244
+						},
+						{
+							"id": 239
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 424,
+					"name": "Bezier C2 surface 4, patch[4,1]",
+					"controlPoints": [
+						{
+							"id": 243
+						},
+						{
+							"id": 244
+						},
+						{
+							"id": 239
+						},
+						{
+							"id": 240
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 425,
+					"name": "Bezier C2 surface 4, patch[5,1]",
+					"controlPoints": [
+						{
+							"id": 244
+						},
+						{
+							"id": 239
+						},
+						{
+							"id": 240
+						},
+						{
+							"id": 241
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 426,
+					"name": "Bezier C2 surface 4, patch[0,2]",
+					"controlPoints": [
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 427,
+					"name": "Bezier C2 surface 4, patch[1,2]",
+					"controlPoints": [
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 428,
+					"name": "Bezier C2 surface 4, patch[2,2]",
+					"controlPoints": [
+						{
+							"id": 247
+						},
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 429,
+					"name": "Bezier C2 surface 4, patch[3,2]",
+					"controlPoints": [
+						{
+							"id": 248
+						},
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 430,
+					"name": "Bezier C2 surface 4, patch[4,2]",
+					"controlPoints": [
+						{
+							"id": 249
+						},
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 431,
+					"name": "Bezier C2 surface 4, patch[5,2]",
+					"controlPoints": [
+						{
+							"id": 250
+						},
+						{
+							"id": 245
+						},
+						{
+							"id": 246
+						},
+						{
+							"id": 247
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 432,
+					"name": "Bezier C2 surface 4, patch[0,3]",
+					"controlPoints": [
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 269
+						},
+						{
+							"id": 270
+						},
+						{
+							"id": 271
+						},
+						{
+							"id": 272
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 433,
+					"name": "Bezier C2 surface 4, patch[1,3]",
+					"controlPoints": [
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 270
+						},
+						{
+							"id": 271
+						},
+						{
+							"id": 272
+						},
+						{
+							"id": 273
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 434,
+					"name": "Bezier C2 surface 4, patch[2,3]",
+					"controlPoints": [
+						{
+							"id": 253
+						},
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 271
+						},
+						{
+							"id": 272
+						},
+						{
+							"id": 273
+						},
+						{
+							"id": 274
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 435,
+					"name": "Bezier C2 surface 4, patch[3,3]",
+					"controlPoints": [
+						{
+							"id": 254
+						},
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 272
+						},
+						{
+							"id": 273
+						},
+						{
+							"id": 274
+						},
+						{
+							"id": 269
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 436,
+					"name": "Bezier C2 surface 4, patch[4,3]",
+					"controlPoints": [
+						{
+							"id": 255
+						},
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 273
+						},
+						{
+							"id": 274
+						},
+						{
+							"id": 269
+						},
+						{
+							"id": 270
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 437,
+					"name": "Bezier C2 surface 4, patch[5,3]",
+					"controlPoints": [
+						{
+							"id": 256
+						},
+						{
+							"id": 251
+						},
+						{
+							"id": 252
+						},
+						{
+							"id": 253
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 274
+						},
+						{
+							"id": 269
+						},
+						{
+							"id": 270
+						},
+						{
+							"id": 271
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 438,
+					"name": "Bezier C2 surface 4, patch[0,4]",
+					"controlPoints": [
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 269
+						},
+						{
+							"id": 270
+						},
+						{
+							"id": 271
+						},
+						{
+							"id": 272
+						},
+						{
+							"id": 275
+						},
+						{
+							"id": 276
+						},
+						{
+							"id": 277
+						},
+						{
+							"id": 278
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 439,
+					"name": "Bezier C2 surface 4, patch[1,4]",
+					"controlPoints": [
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 270
+						},
+						{
+							"id": 271
+						},
+						{
+							"id": 272
+						},
+						{
+							"id": 273
+						},
+						{
+							"id": 276
+						},
+						{
+							"id": 277
+						},
+						{
+							"id": 278
+						},
+						{
+							"id": 279
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 440,
+					"name": "Bezier C2 surface 4, patch[2,4]",
+					"controlPoints": [
+						{
+							"id": 259
+						},
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 271
+						},
+						{
+							"id": 272
+						},
+						{
+							"id": 273
+						},
+						{
+							"id": 274
+						},
+						{
+							"id": 277
+						},
+						{
+							"id": 278
+						},
+						{
+							"id": 279
+						},
+						{
+							"id": 280
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 441,
+					"name": "Bezier C2 surface 4, patch[3,4]",
+					"controlPoints": [
+						{
+							"id": 260
+						},
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 266
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 272
+						},
+						{
+							"id": 273
+						},
+						{
+							"id": 274
+						},
+						{
+							"id": 269
+						},
+						{
+							"id": 278
+						},
+						{
+							"id": 279
+						},
+						{
+							"id": 280
+						},
+						{
+							"id": 275
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 442,
+					"name": "Bezier C2 surface 4, patch[4,4]",
+					"controlPoints": [
+						{
+							"id": 261
+						},
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 267
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 273
+						},
+						{
+							"id": 274
+						},
+						{
+							"id": 269
+						},
+						{
+							"id": 270
+						},
+						{
+							"id": 279
+						},
+						{
+							"id": 280
+						},
+						{
+							"id": 275
+						},
+						{
+							"id": 276
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				},
+				{
+					"objectType": "bezierPatchC2",
+					"id": 443,
+					"name": "Bezier C2 surface 4, patch[5,4]",
+					"controlPoints": [
+						{
+							"id": 262
+						},
+						{
+							"id": 257
+						},
+						{
+							"id": 258
+						},
+						{
+							"id": 259
+						},
+						{
+							"id": 268
+						},
+						{
+							"id": 263
+						},
+						{
+							"id": 264
+						},
+						{
+							"id": 265
+						},
+						{
+							"id": 274
+						},
+						{
+							"id": 269
+						},
+						{
+							"id": 270
+						},
+						{
+							"id": 271
+						},
+						{
+							"id": 280
+						},
+						{
+							"id": 275
+						},
+						{
+							"id": 276
+						},
+						{
+							"id": 277
+						}
+					],
+					"samples": {
+						"x": 4,
+						"y": 4
+					}
+				}
+			],
+			"parameterWrapped": {
+				"u": true,
+				"v": false
+			},
+			"size": {
+				"x": 6,
+				"y": 5
+			}
+		}
+	],
+	"points": [
+		{
+			"id": 1,
+			"name": "Point 0",
+			"position": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"id": 2,
+			"name": "Point 1",
+			"position": {
+				"x": 1.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"id": 3,
+			"name": "Point 2",
+			"position": {
+				"x": 2.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"id": 4,
+			"name": "Point 3",
+			"position": {
+				"x": 3.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"id": 5,
+			"name": "Point 4",
+			"position": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 1.0
+			}
+		},
+		{
+			"id": 6,
+			"name": "Point 5",
+			"position": {
+				"x": 1.0,
+				"y": 0.0,
+				"z": 1.0
+			}
+		},
+		{
+			"id": 7,
+			"name": "Point 6",
+			"position": {
+				"x": 2.0,
+				"y": 0.0,
+				"z": 1.0
+			}
+		},
+		{
+			"id": 8,
+			"name": "Point 7",
+			"position": {
+				"x": 3.0,
+				"y": 0.0,
+				"z": 1.0
+			}
+		},
+		{
+			"id": 9,
+			"name": "Point 8",
+			"position": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 2.0
+			}
+		},
+		{
+			"id": 10,
+			"name": "Point 9",
+			"position": {
+				"x": 1.0,
+				"y": 0.0,
+				"z": 2.0
+			}
+		},
+		{
+			"id": 11,
+			"name": "Point 10",
+			"position": {
+				"x": 2.0,
+				"y": 0.0,
+				"z": 2.0
+			}
+		},
+		{
+			"id": 12,
+			"name": "Point 11",
+			"position": {
+				"x": 3.0,
+				"y": 0.0,
+				"z": 2.0
+			}
+		},
+		{
+			"id": 13,
+			"name": "Point 12",
+			"position": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 3.0
+			}
+		},
+		{
+			"id": 14,
+			"name": "Point 13",
+			"position": {
+				"x": 1.0,
+				"y": 0.0,
+				"z": 3.0
+			}
+		},
+		{
+			"id": 15,
+			"name": "Point 14",
+			"position": {
+				"x": 2.0,
+				"y": 0.0,
+				"z": 3.0
+			}
+		},
+		{
+			"id": 16,
+			"name": "Point 15",
+			"position": {
+				"x": 3.0,
+				"y": 0.0,
+				"z": 3.0
+			}
+		},
+		{
+			"id": 18,
+			"name": "Point 16",
+			"position": {
+				"x": -1.0897853374481201,
+				"y": 1.67024564743042,
+				"z": 0.7058897018432617
+			}
+		},
+		{
+			"id": 19,
+			"name": "Point 17",
+			"position": {
+				"x": -0.08978533744812012,
+				"y": 1.67024564743042,
+				"z": 0.7058897018432617
+			}
+		},
+		{
+			"id": 20,
+			"name": "Point 18",
+			"position": {
+				"x": 0.9102146625518799,
+				"y": 1.67024564743042,
+				"z": 0.7058897018432617
+			}
+		},
+		{
+			"id": 21,
+			"name": "Point 19",
+			"position": {
+				"x": 1.9102146625518799,
+				"y": 1.67024564743042,
+				"z": 0.7058897018432617
+			}
+		},
+		{
+			"id": 22,
+			"name": "Point 20",
+			"position": {
+				"x": -1.0897853374481201,
+				"y": 0.9631388187408447,
+				"z": 1.412996530532837
+			}
+		},
+		{
+			"id": 23,
+			"name": "Point 21",
+			"position": {
+				"x": -0.08978533744812012,
+				"y": 0.9631388187408447,
+				"z": 1.412996530532837
+			}
+		},
+		{
+			"id": 24,
+			"name": "Point 22",
+			"position": {
+				"x": 0.9102146625518799,
+				"y": 0.9631388187408447,
+				"z": 1.412996530532837
+			}
+		},
+		{
+			"id": 25,
+			"name": "Point 23",
+			"position": {
+				"x": 1.9102146625518799,
+				"y": 0.9631388187408447,
+				"z": 1.412996530532837
+			}
+		},
+		{
+			"id": 26,
+			"name": "Point 24",
+			"position": {
+				"x": -1.0897853374481201,
+				"y": 0.2560321092605591,
+				"z": 2.120103359222412
+			}
+		},
+		{
+			"id": 27,
+			"name": "Point 25",
+			"position": {
+				"x": -0.08978533744812012,
+				"y": 0.2560321092605591,
+				"z": 2.120103359222412
+			}
+		},
+		{
+			"id": 28,
+			"name": "Point 26",
+			"position": {
+				"x": 0.9102146625518799,
+				"y": 0.2560321092605591,
+				"z": 2.120103359222412
+			}
+		},
+		{
+			"id": 29,
+			"name": "Point 27",
+			"position": {
+				"x": 1.9102146625518799,
+				"y": 0.2560321092605591,
+				"z": 2.120103359222412
+			}
+		},
+		{
+			"id": 30,
+			"name": "Point 28",
+			"position": {
+				"x": -1.0897853374481201,
+				"y": -0.45107460021972656,
+				"z": 2.8272101879119873
+			}
+		},
+		{
+			"id": 31,
+			"name": "Point 29",
+			"position": {
+				"x": -0.08978533744812012,
+				"y": -0.45107460021972656,
+				"z": 2.8272101879119873
+			}
+		},
+		{
+			"id": 32,
+			"name": "Point 30",
+			"position": {
+				"x": 0.9102146625518799,
+				"y": -0.45107460021972656,
+				"z": 2.8272101879119873
+			}
+		},
+		{
+			"id": 33,
+			"name": "Point 31",
+			"position": {
+				"x": 1.9102146625518799,
+				"y": -0.45107460021972656,
+				"z": 2.8272101879119873
+			}
+		},
+		{
+			"id": 36,
+			"name": "Point 32",
+			"position": {
+				"x": 7.785943031311035,
+				"y": -2.1442489624023438,
+				"z": 0.1763763427734375
+			}
+		},
+		{
+			"id": 37,
+			"name": "Point 33",
+			"position": {
+				"x": 7.203342914581299,
+				"y": -1.1351561546325684,
+				"z": 0.1763763427734375
+			}
+		},
+		{
+			"id": 38,
+			"name": "Point 34",
+			"position": {
+				"x": 6.038142681121826,
+				"y": -1.1351561546325684,
+				"z": 0.1763763427734375
+			}
+		},
+		{
+			"id": 39,
+			"name": "Point 35",
+			"position": {
+				"x": 5.45554256439209,
+				"y": -2.1442489624023438,
+				"z": 0.1763763427734375
+			}
+		},
+		{
+			"id": 40,
+			"name": "Point 36",
+			"position": {
+				"x": 6.038143157958984,
+				"y": -3.153341770172119,
+				"z": 0.1763763427734375
+			}
+		},
+		{
+			"id": 41,
+			"name": "Point 37",
+			"position": {
+				"x": 7.203342437744141,
+				"y": -3.153341770172119,
+				"z": 0.1763763427734375
+			}
+		},
+		{
+			"id": 42,
+			"name": "Point 38",
+			"position": {
+				"x": 7.785943031311035,
+				"y": -2.1442489624023438,
+				"z": 1.626176357269287
+			}
+		},
+		{
+			"id": 43,
+			"name": "Point 39",
+			"position": {
+				"x": 7.203342914581299,
+				"y": -1.1351561546325684,
+				"z": 1.626176357269287
+			}
+		},
+		{
+			"id": 44,
+			"name": "Point 40",
+			"position": {
+				"x": 6.038142681121826,
+				"y": -1.1351561546325684,
+				"z": 1.626176357269287
+			}
+		},
+		{
+			"id": 45,
+			"name": "Point 41",
+			"position": {
+				"x": 5.45554256439209,
+				"y": -2.1442489624023438,
+				"z": 1.626176357269287
+			}
+		},
+		{
+			"id": 46,
+			"name": "Point 42",
+			"position": {
+				"x": 6.038143157958984,
+				"y": -3.153341770172119,
+				"z": 1.626176357269287
+			}
+		},
+		{
+			"id": 47,
+			"name": "Point 43",
+			"position": {
+				"x": 7.203342437744141,
+				"y": -3.153341770172119,
+				"z": 1.626176357269287
+			}
+		},
+		{
+			"id": 48,
+			"name": "Point 44",
+			"position": {
+				"x": 7.785943031311035,
+				"y": -2.1442489624023438,
+				"z": 3.0759763717651367
+			}
+		},
+		{
+			"id": 49,
+			"name": "Point 45",
+			"position": {
+				"x": 7.203342914581299,
+				"y": -1.1351561546325684,
+				"z": 3.0759763717651367
+			}
+		},
+		{
+			"id": 50,
+			"name": "Point 46",
+			"position": {
+				"x": 6.038142681121826,
+				"y": -1.1351561546325684,
+				"z": 3.0759763717651367
+			}
+		},
+		{
+			"id": 51,
+			"name": "Point 47",
+			"position": {
+				"x": 5.45554256439209,
+				"y": -2.1442489624023438,
+				"z": 3.0759763717651367
+			}
+		},
+		{
+			"id": 52,
+			"name": "Point 48",
+			"position": {
+				"x": 6.038143157958984,
+				"y": -3.153341770172119,
+				"z": 3.0759763717651367
+			}
+		},
+		{
+			"id": 53,
+			"name": "Point 49",
+			"position": {
+				"x": 7.203342437744141,
+				"y": -3.153341770172119,
+				"z": 3.0759763717651367
+			}
+		},
+		{
+			"id": 54,
+			"name": "Point 50",
+			"position": {
+				"x": 7.785943031311035,
+				"y": -2.1442489624023438,
+				"z": 4.525776386260986
+			}
+		},
+		{
+			"id": 55,
+			"name": "Point 51",
+			"position": {
+				"x": 7.203342914581299,
+				"y": -1.1351561546325684,
+				"z": 4.525776386260986
+			}
+		},
+		{
+			"id": 56,
+			"name": "Point 52",
+			"position": {
+				"x": 6.038142681121826,
+				"y": -1.1351561546325684,
+				"z": 4.525776386260986
+			}
+		},
+		{
+			"id": 57,
+			"name": "Point 53",
+			"position": {
+				"x": 5.45554256439209,
+				"y": -2.1442489624023438,
+				"z": 4.525776386260986
+			}
+		},
+		{
+			"id": 58,
+			"name": "Point 54",
+			"position": {
+				"x": 6.038143157958984,
+				"y": -3.153341770172119,
+				"z": 4.525776386260986
+			}
+		},
+		{
+			"id": 59,
+			"name": "Point 55",
+			"position": {
+				"x": 7.203342437744141,
+				"y": -3.153341770172119,
+				"z": 4.525776386260986
+			}
+		},
+		{
+			"id": 60,
+			"name": "Point 56",
+			"position": {
+				"x": 7.785943031311035,
+				"y": -2.1442489624023438,
+				"z": 5.975576400756836
+			}
+		},
+		{
+			"id": 61,
+			"name": "Point 57",
+			"position": {
+				"x": 7.203342914581299,
+				"y": -1.1351561546325684,
+				"z": 5.975576400756836
+			}
+		},
+		{
+			"id": 62,
+			"name": "Point 58",
+			"position": {
+				"x": 6.038142681121826,
+				"y": -1.1351561546325684,
+				"z": 5.975576400756836
+			}
+		},
+		{
+			"id": 63,
+			"name": "Point 59",
+			"position": {
+				"x": 5.45554256439209,
+				"y": -2.1442489624023438,
+				"z": 5.975576400756836
+			}
+		},
+		{
+			"id": 64,
+			"name": "Point 60",
+			"position": {
+				"x": 6.038143157958984,
+				"y": -3.153341770172119,
+				"z": 5.975576400756836
+			}
+		},
+		{
+			"id": 65,
+			"name": "Point 61",
+			"position": {
+				"x": 7.203342437744141,
+				"y": -3.153341770172119,
+				"z": 5.975576400756836
+			}
+		},
+		{
+			"id": 66,
+			"name": "Point 62",
+			"position": {
+				"x": 7.785943031311035,
+				"y": -2.1442489624023438,
+				"z": 7.4253764152526855
+			}
+		},
+		{
+			"id": 67,
+			"name": "Point 63",
+			"position": {
+				"x": 7.203342914581299,
+				"y": -1.1351561546325684,
+				"z": 7.4253764152526855
+			}
+		},
+		{
+			"id": 68,
+			"name": "Point 64",
+			"position": {
+				"x": 6.038142681121826,
+				"y": -1.1351561546325684,
+				"z": 7.4253764152526855
+			}
+		},
+		{
+			"id": 69,
+			"name": "Point 65",
+			"position": {
+				"x": 5.45554256439209,
+				"y": -2.1442489624023438,
+				"z": 7.4253764152526855
+			}
+		},
+		{
+			"id": 70,
+			"name": "Point 66",
+			"position": {
+				"x": 6.038143157958984,
+				"y": -3.153341770172119,
+				"z": 7.4253764152526855
+			}
+		},
+		{
+			"id": 71,
+			"name": "Point 67",
+			"position": {
+				"x": 7.203342437744141,
+				"y": -3.153341770172119,
+				"z": 7.4253764152526855
+			}
+		},
+		{
+			"id": 72,
+			"name": "Point 68",
+			"position": {
+				"x": 7.785943031311035,
+				"y": -2.1442489624023438,
+				"z": 8.875176429748535
+			}
+		},
+		{
+			"id": 73,
+			"name": "Point 69",
+			"position": {
+				"x": 7.203342914581299,
+				"y": -1.1351561546325684,
+				"z": 8.875176429748535
+			}
+		},
+		{
+			"id": 74,
+			"name": "Point 70",
+			"position": {
+				"x": 6.038142681121826,
+				"y": -1.1351561546325684,
+				"z": 8.875176429748535
+			}
+		},
+		{
+			"id": 75,
+			"name": "Point 71",
+			"position": {
+				"x": 5.45554256439209,
+				"y": -2.1442489624023438,
+				"z": 8.875176429748535
+			}
+		},
+		{
+			"id": 76,
+			"name": "Point 72",
+			"position": {
+				"x": 6.038143157958984,
+				"y": -3.153341770172119,
+				"z": 8.875176429748535
+			}
+		},
+		{
+			"id": 77,
+			"name": "Point 73",
+			"position": {
+				"x": 7.203342437744141,
+				"y": -3.153341770172119,
+				"z": 8.875176429748535
+			}
+		},
+		{
+			"id": 78,
+			"name": "Point 74",
+			"position": {
+				"x": 7.785943031311035,
+				"y": -2.1442489624023438,
+				"z": 10.324975967407227
+			}
+		},
+		{
+			"id": 79,
+			"name": "Point 75",
+			"position": {
+				"x": 7.203342914581299,
+				"y": -1.1351561546325684,
+				"z": 10.324975967407227
+			}
+		},
+		{
+			"id": 80,
+			"name": "Point 76",
+			"position": {
+				"x": 6.038142681121826,
+				"y": -1.1351561546325684,
+				"z": 10.324975967407227
+			}
+		},
+		{
+			"id": 81,
+			"name": "Point 77",
+			"position": {
+				"x": 5.45554256439209,
+				"y": -2.1442489624023438,
+				"z": 10.324975967407227
+			}
+		},
+		{
+			"id": 82,
+			"name": "Point 78",
+			"position": {
+				"x": 6.038143157958984,
+				"y": -3.153341770172119,
+				"z": 10.324975967407227
+			}
+		},
+		{
+			"id": 83,
+			"name": "Point 79",
+			"position": {
+				"x": 7.203342437744141,
+				"y": -3.153341770172119,
+				"z": 10.324975967407227
+			}
+		},
+		{
+			"id": 84,
+			"name": "Point 128",
+			"position": {
+				"x": 2.041415214538574,
+				"y": -1.2095532417297363,
+				"z": 4.163036346435547
+			}
+		},
+		{
+			"id": 85,
+			"name": "Point 129",
+			"position": {
+				"x": 2.041415214538574,
+				"y": -0.20046043395996094,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 86,
+			"name": "Point 130",
+			"position": {
+				"x": 2.041415214538574,
+				"y": -0.20046043395996094,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 87,
+			"name": "Point 131",
+			"position": {
+				"x": 2.041415214538574,
+				"y": -1.2095532417297363,
+				"z": 6.493436813354492
+			}
+		},
+		{
+			"id": 88,
+			"name": "Point 132",
+			"position": {
+				"x": 2.041415214538574,
+				"y": -2.2186460494995117,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 89,
+			"name": "Point 133",
+			"position": {
+				"x": 2.041415214538574,
+				"y": -2.2186460494995117,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 90,
+			"name": "Point 134",
+			"position": {
+				"x": 3.491215705871582,
+				"y": -1.2095532417297363,
+				"z": 4.163036346435547
+			}
+		},
+		{
+			"id": 91,
+			"name": "Point 135",
+			"position": {
+				"x": 3.491215705871582,
+				"y": -0.20046043395996094,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 92,
+			"name": "Point 136",
+			"position": {
+				"x": 3.491215705871582,
+				"y": -0.20046043395996094,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 93,
+			"name": "Point 137",
+			"position": {
+				"x": 3.491215705871582,
+				"y": -1.2095532417297363,
+				"z": 6.493436813354492
+			}
+		},
+		{
+			"id": 94,
+			"name": "Point 138",
+			"position": {
+				"x": 3.491215705871582,
+				"y": -2.2186460494995117,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 95,
+			"name": "Point 139",
+			"position": {
+				"x": 3.491215705871582,
+				"y": -2.2186460494995117,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 96,
+			"name": "Point 140",
+			"position": {
+				"x": 4.941015243530273,
+				"y": -1.2095532417297363,
+				"z": 4.163036346435547
+			}
+		},
+		{
+			"id": 97,
+			"name": "Point 141",
+			"position": {
+				"x": 4.941015243530273,
+				"y": -0.20046043395996094,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 98,
+			"name": "Point 142",
+			"position": {
+				"x": 4.941015243530273,
+				"y": -0.20046043395996094,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 99,
+			"name": "Point 143",
+			"position": {
+				"x": 4.941015243530273,
+				"y": -1.2095532417297363,
+				"z": 6.493436813354492
+			}
+		},
+		{
+			"id": 100,
+			"name": "Point 144",
+			"position": {
+				"x": 4.941015243530273,
+				"y": -2.2186460494995117,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 101,
+			"name": "Point 145",
+			"position": {
+				"x": 4.941015243530273,
+				"y": -2.2186460494995117,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 102,
+			"name": "Point 146",
+			"position": {
+				"x": 6.390814781188965,
+				"y": -1.2095532417297363,
+				"z": 4.163036346435547
+			}
+		},
+		{
+			"id": 103,
+			"name": "Point 147",
+			"position": {
+				"x": 6.390814781188965,
+				"y": -0.20046043395996094,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 104,
+			"name": "Point 148",
+			"position": {
+				"x": 6.390814781188965,
+				"y": -0.20046043395996094,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 105,
+			"name": "Point 149",
+			"position": {
+				"x": 6.390814781188965,
+				"y": -1.2095532417297363,
+				"z": 6.493436813354492
+			}
+		},
+		{
+			"id": 106,
+			"name": "Point 150",
+			"position": {
+				"x": 6.390814781188965,
+				"y": -2.2186460494995117,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 107,
+			"name": "Point 151",
+			"position": {
+				"x": 6.390814781188965,
+				"y": -2.2186460494995117,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 108,
+			"name": "Point 152",
+			"position": {
+				"x": 7.840615272521973,
+				"y": -1.2095532417297363,
+				"z": 4.163036346435547
+			}
+		},
+		{
+			"id": 109,
+			"name": "Point 153",
+			"position": {
+				"x": 7.840615272521973,
+				"y": -0.20046043395996094,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 110,
+			"name": "Point 154",
+			"position": {
+				"x": 7.840615272521973,
+				"y": -0.20046043395996094,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 111,
+			"name": "Point 155",
+			"position": {
+				"x": 7.840615272521973,
+				"y": -1.2095532417297363,
+				"z": 6.493436813354492
+			}
+		},
+		{
+			"id": 112,
+			"name": "Point 156",
+			"position": {
+				"x": 7.840615272521973,
+				"y": -2.2186460494995117,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 113,
+			"name": "Point 157",
+			"position": {
+				"x": 7.840615272521973,
+				"y": -2.2186460494995117,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 114,
+			"name": "Point 158",
+			"position": {
+				"x": 9.290414810180664,
+				"y": -1.2095532417297363,
+				"z": 4.163036346435547
+			}
+		},
+		{
+			"id": 115,
+			"name": "Point 159",
+			"position": {
+				"x": 9.290414810180664,
+				"y": -0.20046043395996094,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 116,
+			"name": "Point 160",
+			"position": {
+				"x": 9.290414810180664,
+				"y": -0.20046043395996094,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 117,
+			"name": "Point 161",
+			"position": {
+				"x": 9.290414810180664,
+				"y": -1.2095532417297363,
+				"z": 6.493436813354492
+			}
+		},
+		{
+			"id": 118,
+			"name": "Point 162",
+			"position": {
+				"x": 9.290414810180664,
+				"y": -2.2186460494995117,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 119,
+			"name": "Point 163",
+			"position": {
+				"x": 9.290414810180664,
+				"y": -2.2186460494995117,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 120,
+			"name": "Point 164",
+			"position": {
+				"x": 10.740214347839355,
+				"y": -1.2095532417297363,
+				"z": 4.163036346435547
+			}
+		},
+		{
+			"id": 121,
+			"name": "Point 165",
+			"position": {
+				"x": 10.740214347839355,
+				"y": -0.20046043395996094,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 122,
+			"name": "Point 166",
+			"position": {
+				"x": 10.740214347839355,
+				"y": -0.20046043395996094,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 123,
+			"name": "Point 167",
+			"position": {
+				"x": 10.740214347839355,
+				"y": -1.2095532417297363,
+				"z": 6.493436813354492
+			}
+		},
+		{
+			"id": 124,
+			"name": "Point 168",
+			"position": {
+				"x": 10.740214347839355,
+				"y": -2.2186460494995117,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 125,
+			"name": "Point 169",
+			"position": {
+				"x": 10.740214347839355,
+				"y": -2.2186460494995117,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 126,
+			"name": "Point 170",
+			"position": {
+				"x": 12.190014839172363,
+				"y": -1.2095532417297363,
+				"z": 4.163036346435547
+			}
+		},
+		{
+			"id": 127,
+			"name": "Point 171",
+			"position": {
+				"x": 12.190014839172363,
+				"y": -0.20046043395996094,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 128,
+			"name": "Point 172",
+			"position": {
+				"x": 12.190014839172363,
+				"y": -0.20046043395996094,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 129,
+			"name": "Point 173",
+			"position": {
+				"x": 12.190014839172363,
+				"y": -1.2095532417297363,
+				"z": 6.493436813354492
+			}
+		},
+		{
+			"id": 130,
+			"name": "Point 174",
+			"position": {
+				"x": 12.190014839172363,
+				"y": -2.2186460494995117,
+				"z": 5.910836219787598
+			}
+		},
+		{
+			"id": 131,
+			"name": "Point 175",
+			"position": {
+				"x": 12.190014839172363,
+				"y": -2.2186460494995117,
+				"z": 4.745636940002441
+			}
+		},
+		{
+			"id": 139,
+			"name": "Point 224",
+			"position": {
+				"x": 2.0301408767700195,
+				"y": -0.1428508162498474,
+				"z": -9.63951587677002
+			}
+		},
+		{
+			"id": 140,
+			"name": "Point 225",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": 0.16559159755706787,
+				"z": -9.63951587677002
+			}
+		},
+		{
+			"id": 141,
+			"name": "Point 226",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": 0.24177056550979614,
+				"z": -9.63951587677002
+			}
+		},
+		{
+			"id": 142,
+			"name": "Point 227",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": 0.02832174301147461,
+				"z": -9.63951587677002
+			}
+		},
+		{
+			"id": 143,
+			"name": "Point 228",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": -0.3140234351158142,
+				"z": -9.63951587677002
+			}
+		},
+		{
+			"id": 144,
+			"name": "Point 229",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": -0.527472198009491,
+				"z": -9.63951587677002
+			}
+		},
+		{
+			"id": 145,
+			"name": "Point 230",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": -0.4512931704521179,
+				"z": -9.63951587677002
+			}
+		},
+		{
+			"id": 146,
+			"name": "Point 231",
+			"position": {
+				"x": 2.0301408767700195,
+				"y": -0.1428508162498474,
+				"z": -9.03591537475586
+			}
+		},
+		{
+			"id": 147,
+			"name": "Point 232",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": 0.16559159755706787,
+				"z": -9.03591537475586
+			}
+		},
+		{
+			"id": 148,
+			"name": "Point 233",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": 0.24177056550979614,
+				"z": -9.03591537475586
+			}
+		},
+		{
+			"id": 149,
+			"name": "Point 234",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": 0.02832174301147461,
+				"z": -9.03591537475586
+			}
+		},
+		{
+			"id": 150,
+			"name": "Point 235",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": -0.3140234351158142,
+				"z": -9.03591537475586
+			}
+		},
+		{
+			"id": 151,
+			"name": "Point 236",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": -0.527472198009491,
+				"z": -9.03591537475586
+			}
+		},
+		{
+			"id": 152,
+			"name": "Point 237",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": -0.4512931704521179,
+				"z": -9.03591537475586
+			}
+		},
+		{
+			"id": 153,
+			"name": "Point 238",
+			"position": {
+				"x": 2.0301408767700195,
+				"y": -0.1428508162498474,
+				"z": -8.432315826416016
+			}
+		},
+		{
+			"id": 154,
+			"name": "Point 239",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": 0.16559159755706787,
+				"z": -8.432315826416016
+			}
+		},
+		{
+			"id": 155,
+			"name": "Point 240",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": 0.24177056550979614,
+				"z": -8.432315826416016
+			}
+		},
+		{
+			"id": 156,
+			"name": "Point 241",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": 0.02832174301147461,
+				"z": -8.432315826416016
+			}
+		},
+		{
+			"id": 157,
+			"name": "Point 242",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": -0.3140234351158142,
+				"z": -8.432315826416016
+			}
+		},
+		{
+			"id": 158,
+			"name": "Point 243",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": -0.527472198009491,
+				"z": -8.432315826416016
+			}
+		},
+		{
+			"id": 159,
+			"name": "Point 244",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": -0.4512931704521179,
+				"z": -8.432315826416016
+			}
+		},
+		{
+			"id": 160,
+			"name": "Point 245",
+			"position": {
+				"x": 2.0301408767700195,
+				"y": -0.1428508162498474,
+				"z": -7.828716278076172
+			}
+		},
+		{
+			"id": 161,
+			"name": "Point 246",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": 0.16559159755706787,
+				"z": -7.828716278076172
+			}
+		},
+		{
+			"id": 162,
+			"name": "Point 247",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": 0.24177056550979614,
+				"z": -7.828716278076172
+			}
+		},
+		{
+			"id": 163,
+			"name": "Point 248",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": 0.02832174301147461,
+				"z": -7.828716278076172
+			}
+		},
+		{
+			"id": 164,
+			"name": "Point 249",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": -0.3140234351158142,
+				"z": -7.828716278076172
+			}
+		},
+		{
+			"id": 165,
+			"name": "Point 250",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": -0.527472198009491,
+				"z": -7.828716278076172
+			}
+		},
+		{
+			"id": 166,
+			"name": "Point 251",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": -0.4512931704521179,
+				"z": -7.828716278076172
+			}
+		},
+		{
+			"id": 167,
+			"name": "Point 252",
+			"position": {
+				"x": 2.0301408767700195,
+				"y": -0.1428508162498474,
+				"z": -7.225115776062012
+			}
+		},
+		{
+			"id": 168,
+			"name": "Point 253",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": 0.16559159755706787,
+				"z": -7.225115776062012
+			}
+		},
+		{
+			"id": 169,
+			"name": "Point 254",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": 0.24177056550979614,
+				"z": -7.225115776062012
+			}
+		},
+		{
+			"id": 170,
+			"name": "Point 255",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": 0.02832174301147461,
+				"z": -7.225115776062012
+			}
+		},
+		{
+			"id": 171,
+			"name": "Point 256",
+			"position": {
+				"x": 1.2801845073699951,
+				"y": -0.3140234351158142,
+				"z": -7.225115776062012
+			}
+		},
+		{
+			"id": 172,
+			"name": "Point 257",
+			"position": {
+				"x": 1.5478408336639404,
+				"y": -0.527472198009491,
+				"z": -7.225115776062012
+			}
+		},
+		{
+			"id": 173,
+			"name": "Point 258",
+			"position": {
+				"x": 1.8816027641296387,
+				"y": -0.4512931704521179,
+				"z": -7.225115776062012
+			}
+		},
+		{
+			"id": 174,
+			"name": "Point 259",
+			"position": {
+				"x": 0.5728003978729248,
+				"y": -0.1376131772994995,
+				"z": -6.266684055328369
+			}
+		},
+		{
+			"id": 175,
+			"name": "Point 260",
+			"position": {
+				"x": 0.42426228523254395,
+				"y": -0.1376131772994995,
+				"z": -5.958241939544678
+			}
+		},
+		{
+			"id": 176,
+			"name": "Point 261",
+			"position": {
+				"x": 0.0905003547668457,
+				"y": -0.1376131772994995,
+				"z": -5.882062911987305
+			}
+		},
+		{
+			"id": 177,
+			"name": "Point 262",
+			"position": {
+				"x": -0.1771559715270996,
+				"y": -0.1376131772994995,
+				"z": -6.095511436462402
+			}
+		},
+		{
+			"id": 178,
+			"name": "Point 263",
+			"position": {
+				"x": -0.1771559715270996,
+				"y": -0.1376131772994995,
+				"z": -6.437856674194336
+			}
+		},
+		{
+			"id": 179,
+			"name": "Point 264",
+			"position": {
+				"x": 0.0905003547668457,
+				"y": -0.1376131772994995,
+				"z": -6.651305675506592
+			}
+		},
+		{
+			"id": 180,
+			"name": "Point 265",
+			"position": {
+				"x": 0.42426228523254395,
+				"y": -0.1376131772994995,
+				"z": -6.575126647949219
+			}
+		},
+		{
+			"id": 181,
+			"name": "Point 266",
+			"position": {
+				"x": 0.5728003978729248,
+				"y": -0.7412132024765015,
+				"z": -6.266684055328369
+			}
+		},
+		{
+			"id": 182,
+			"name": "Point 267",
+			"position": {
+				"x": 0.42426228523254395,
+				"y": -0.7412132024765015,
+				"z": -5.958241939544678
+			}
+		},
+		{
+			"id": 183,
+			"name": "Point 268",
+			"position": {
+				"x": 0.0905003547668457,
+				"y": -0.7412132024765015,
+				"z": -5.882062911987305
+			}
+		},
+		{
+			"id": 184,
+			"name": "Point 269",
+			"position": {
+				"x": -0.1771559715270996,
+				"y": -0.7412132024765015,
+				"z": -6.095511436462402
+			}
+		},
+		{
+			"id": 185,
+			"name": "Point 270",
+			"position": {
+				"x": -0.1771559715270996,
+				"y": -0.7412132024765015,
+				"z": -6.437856674194336
+			}
+		},
+		{
+			"id": 186,
+			"name": "Point 271",
+			"position": {
+				"x": 0.0905003547668457,
+				"y": -0.7412132024765015,
+				"z": -6.651305675506592
+			}
+		},
+		{
+			"id": 187,
+			"name": "Point 272",
+			"position": {
+				"x": 0.42426228523254395,
+				"y": -0.7412132024765015,
+				"z": -6.575126647949219
+			}
+		},
+		{
+			"id": 188,
+			"name": "Point 273",
+			"position": {
+				"x": 0.5728003978729248,
+				"y": -1.3448132276535034,
+				"z": -6.266684055328369
+			}
+		},
+		{
+			"id": 189,
+			"name": "Point 274",
+			"position": {
+				"x": 0.42426228523254395,
+				"y": -1.3448132276535034,
+				"z": -5.958241939544678
+			}
+		},
+		{
+			"id": 190,
+			"name": "Point 275",
+			"position": {
+				"x": 0.0905003547668457,
+				"y": -1.3448132276535034,
+				"z": -5.882062911987305
+			}
+		},
+		{
+			"id": 191,
+			"name": "Point 276",
+			"position": {
+				"x": -0.1771559715270996,
+				"y": -1.3448132276535034,
+				"z": -6.095511436462402
+			}
+		},
+		{
+			"id": 192,
+			"name": "Point 277",
+			"position": {
+				"x": -0.1771559715270996,
+				"y": -1.3448132276535034,
+				"z": -6.437856674194336
+			}
+		},
+		{
+			"id": 193,
+			"name": "Point 278",
+			"position": {
+				"x": 0.0905003547668457,
+				"y": -1.3448132276535034,
+				"z": -6.651305675506592
+			}
+		},
+		{
+			"id": 194,
+			"name": "Point 279",
+			"position": {
+				"x": 0.42426228523254395,
+				"y": -1.3448132276535034,
+				"z": -6.575126647949219
+			}
+		},
+		{
+			"id": 195,
+			"name": "Point 280",
+			"position": {
+				"x": 0.8059945702552795,
+				"y": -1.4912656545639038,
+				"z": -7.173113822937012
+			}
+		},
+		{
+			"id": 196,
+			"name": "Point 281",
+			"position": {
+				"x": 0.6574564576148987,
+				"y": -1.7997077703475952,
+				"z": -7.173113822937012
+			}
+		},
+		{
+			"id": 197,
+			"name": "Point 282",
+			"position": {
+				"x": 0.32369452714920044,
+				"y": -1.8758867979049683,
+				"z": -7.173113822937012
+			}
+		},
+		{
+			"id": 198,
+			"name": "Point 283",
+			"position": {
+				"x": 0.05603820085525513,
+				"y": -1.6624382734298706,
+				"z": -7.173113822937012
+			}
+		},
+		{
+			"id": 199,
+			"name": "Point 284",
+			"position": {
+				"x": 0.05603820085525513,
+				"y": -1.320093035697937,
+				"z": -7.173113822937012
+			}
+		},
+		{
+			"id": 200,
+			"name": "Point 285",
+			"position": {
+				"x": 0.32369452714920044,
+				"y": -1.1066440343856812,
+				"z": -7.173113822937012
+			}
+		},
+		{
+			"id": 201,
+			"name": "Point 286",
+			"position": {
+				"x": 0.6574564576148987,
+				"y": -1.1828230619430542,
+				"z": -7.173113822937012
+			}
+		},
+		{
+			"id": 202,
+			"name": "Point 287",
+			"position": {
+				"x": 1.720259189605713,
+				"y": -1.3052833080291748,
+				"z": -8.44250774383545
+			}
+		},
+		{
+			"id": 203,
+			"name": "Point 288",
+			"position": {
+				"x": 1.571721076965332,
+				"y": -1.3052833080291748,
+				"z": -8.750950813293457
+			}
+		},
+		{
+			"id": 204,
+			"name": "Point 289",
+			"position": {
+				"x": 1.2379591464996338,
+				"y": -1.3052833080291748,
+				"z": -8.827129364013672
+			}
+		},
+		{
+			"id": 205,
+			"name": "Point 290",
+			"position": {
+				"x": 0.9703027606010437,
+				"y": -1.3052833080291748,
+				"z": -8.613680839538574
+			}
+		},
+		{
+			"id": 206,
+			"name": "Point 291",
+			"position": {
+				"x": 0.9703027606010437,
+				"y": -1.3052833080291748,
+				"z": -8.27133560180664
+			}
+		},
+		{
+			"id": 207,
+			"name": "Point 292",
+			"position": {
+				"x": 1.2379591464996338,
+				"y": -1.3052833080291748,
+				"z": -8.057886123657227
+			}
+		},
+		{
+			"id": 208,
+			"name": "Point 293",
+			"position": {
+				"x": 1.571721076965332,
+				"y": -1.3052833080291748,
+				"z": -8.134065628051758
+			}
+		},
+		{
+			"id": 209,
+			"name": "Point 294",
+			"position": {
+				"x": 1.720259189605713,
+				"y": -0.7016838788986206,
+				"z": -8.44250774383545
+			}
+		},
+		{
+			"id": 210,
+			"name": "Point 295",
+			"position": {
+				"x": 1.571721076965332,
+				"y": -0.7016838788986206,
+				"z": -8.750950813293457
+			}
+		},
+		{
+			"id": 211,
+			"name": "Point 296",
+			"position": {
+				"x": 1.2379591464996338,
+				"y": -0.7016838788986206,
+				"z": -8.827129364013672
+			}
+		},
+		{
+			"id": 212,
+			"name": "Point 297",
+			"position": {
+				"x": 0.9703027606010437,
+				"y": -0.7016838788986206,
+				"z": -8.613680839538574
+			}
+		},
+		{
+			"id": 213,
+			"name": "Point 298",
+			"position": {
+				"x": 0.9703027606010437,
+				"y": -0.7016838788986206,
+				"z": -8.27133560180664
+			}
+		},
+		{
+			"id": 214,
+			"name": "Point 299",
+			"position": {
+				"x": 1.2379591464996338,
+				"y": -0.7016838788986206,
+				"z": -8.057886123657227
+			}
+		},
+		{
+			"id": 215,
+			"name": "Point 300",
+			"position": {
+				"x": 1.571721076965332,
+				"y": -0.7016838788986206,
+				"z": -8.134065628051758
+			}
+		},
+		{
+			"id": 216,
+			"name": "Point 301",
+			"position": {
+				"x": 1.720259189605713,
+				"y": -0.09808337688446045,
+				"z": -8.44250774383545
+			}
+		},
+		{
+			"id": 217,
+			"name": "Point 302",
+			"position": {
+				"x": 1.571721076965332,
+				"y": -0.09808337688446045,
+				"z": -8.750950813293457
+			}
+		},
+		{
+			"id": 218,
+			"name": "Point 303",
+			"position": {
+				"x": 1.2379591464996338,
+				"y": -0.09808337688446045,
+				"z": -8.827129364013672
+			}
+		},
+		{
+			"id": 219,
+			"name": "Point 304",
+			"position": {
+				"x": 0.9703027606010437,
+				"y": -0.09808337688446045,
+				"z": -8.613680839538574
+			}
+		},
+		{
+			"id": 220,
+			"name": "Point 305",
+			"position": {
+				"x": 0.9703027606010437,
+				"y": -0.09808337688446045,
+				"z": -8.27133560180664
+			}
+		},
+		{
+			"id": 221,
+			"name": "Point 306",
+			"position": {
+				"x": 1.2379591464996338,
+				"y": -0.09808337688446045,
+				"z": -8.057886123657227
+			}
+		},
+		{
+			"id": 222,
+			"name": "Point 307",
+			"position": {
+				"x": 1.571721076965332,
+				"y": -0.09808337688446045,
+				"z": -8.134065628051758
+			}
+		},
+		{
+			"id": 223,
+			"name": "Point 308",
+			"position": {
+				"x": 1.720259189605713,
+				"y": 0.5055161714553833,
+				"z": -8.44250774383545
+			}
+		},
+		{
+			"id": 224,
+			"name": "Point 309",
+			"position": {
+				"x": 1.571721076965332,
+				"y": 0.5055161714553833,
+				"z": -8.750950813293457
+			}
+		},
+		{
+			"id": 225,
+			"name": "Point 310",
+			"position": {
+				"x": 1.2379591464996338,
+				"y": 0.5055161714553833,
+				"z": -8.827129364013672
+			}
+		},
+		{
+			"id": 226,
+			"name": "Point 311",
+			"position": {
+				"x": 0.9703027606010437,
+				"y": 0.5055161714553833,
+				"z": -8.613680839538574
+			}
+		},
+		{
+			"id": 227,
+			"name": "Point 312",
+			"position": {
+				"x": 0.9703027606010437,
+				"y": 0.5055161714553833,
+				"z": -8.27133560180664
+			}
+		},
+		{
+			"id": 228,
+			"name": "Point 313",
+			"position": {
+				"x": 1.2379591464996338,
+				"y": 0.5055161714553833,
+				"z": -8.057886123657227
+			}
+		},
+		{
+			"id": 229,
+			"name": "Point 314",
+			"position": {
+				"x": 1.571721076965332,
+				"y": 0.5055161714553833,
+				"z": -8.134065628051758
+			}
+		},
+		{
+			"id": 233,
+			"name": "Point 315",
+			"position": {
+				"x": -1.1006519794464111,
+				"y": 4.526226997375488,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 234,
+			"name": "Point 316",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 4.526226997375488,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 235,
+			"name": "Point 317",
+			"position": {
+				"x": -2.517252206802368,
+				"y": 4.526226997375488,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 236,
+			"name": "Point 318",
+			"position": {
+				"x": -2.9894521236419678,
+				"y": 4.526226997375488,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 237,
+			"name": "Point 319",
+			"position": {
+				"x": -2.517251968383789,
+				"y": 4.526226997375488,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 238,
+			"name": "Point 320",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 4.526226997375488,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 239,
+			"name": "Point 321",
+			"position": {
+				"x": -1.1006519794464111,
+				"y": 3.7234268188476563,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 240,
+			"name": "Point 322",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 3.7234268188476563,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 241,
+			"name": "Point 323",
+			"position": {
+				"x": -2.517252206802368,
+				"y": 3.7234268188476563,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 242,
+			"name": "Point 324",
+			"position": {
+				"x": -2.9894521236419678,
+				"y": 3.7234268188476563,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 243,
+			"name": "Point 325",
+			"position": {
+				"x": -2.517251968383789,
+				"y": 3.7234268188476563,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 244,
+			"name": "Point 326",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 3.7234268188476563,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 245,
+			"name": "Point 327",
+			"position": {
+				"x": -1.1006519794464111,
+				"y": 2.9206271171569824,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 246,
+			"name": "Point 328",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 2.9206271171569824,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 247,
+			"name": "Point 329",
+			"position": {
+				"x": -2.517252206802368,
+				"y": 2.9206271171569824,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 248,
+			"name": "Point 330",
+			"position": {
+				"x": -2.9894521236419678,
+				"y": 2.9206271171569824,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 249,
+			"name": "Point 331",
+			"position": {
+				"x": -2.517251968383789,
+				"y": 2.9206271171569824,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 250,
+			"name": "Point 332",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 2.9206271171569824,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 251,
+			"name": "Point 333",
+			"position": {
+				"x": -1.1006519794464111,
+				"y": 2.1178269386291504,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 252,
+			"name": "Point 334",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 2.1178269386291504,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 253,
+			"name": "Point 335",
+			"position": {
+				"x": -2.517252206802368,
+				"y": 2.1178269386291504,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 254,
+			"name": "Point 336",
+			"position": {
+				"x": -2.9894521236419678,
+				"y": 2.1178269386291504,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 255,
+			"name": "Point 337",
+			"position": {
+				"x": -2.517251968383789,
+				"y": 2.1178269386291504,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 256,
+			"name": "Point 338",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 2.1178269386291504,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 257,
+			"name": "Point 339",
+			"position": {
+				"x": -1.1006519794464111,
+				"y": 1.3150269985198975,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 258,
+			"name": "Point 340",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 1.3150269985198975,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 259,
+			"name": "Point 341",
+			"position": {
+				"x": -2.517252206802368,
+				"y": 1.3150269985198975,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 260,
+			"name": "Point 342",
+			"position": {
+				"x": -2.9894521236419678,
+				"y": 1.3150269985198975,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 261,
+			"name": "Point 343",
+			"position": {
+				"x": -2.517251968383789,
+				"y": 1.3150269985198975,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 262,
+			"name": "Point 344",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 1.3150269985198975,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 263,
+			"name": "Point 345",
+			"position": {
+				"x": -1.1006519794464111,
+				"y": 0.5122270584106445,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 264,
+			"name": "Point 346",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 0.5122270584106445,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 265,
+			"name": "Point 347",
+			"position": {
+				"x": -2.517252206802368,
+				"y": 0.5122270584106445,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 266,
+			"name": "Point 348",
+			"position": {
+				"x": -2.9894521236419678,
+				"y": 0.5122270584106445,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 267,
+			"name": "Point 349",
+			"position": {
+				"x": -2.517251968383789,
+				"y": 0.5122270584106445,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 268,
+			"name": "Point 350",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": 0.5122270584106445,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 269,
+			"name": "Point 351",
+			"position": {
+				"x": -1.1006519794464111,
+				"y": -0.29057300090789795,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 270,
+			"name": "Point 352",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": -0.29057300090789795,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 271,
+			"name": "Point 353",
+			"position": {
+				"x": -2.517252206802368,
+				"y": -0.29057300090789795,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 272,
+			"name": "Point 354",
+			"position": {
+				"x": -2.9894521236419678,
+				"y": -0.29057300090789795,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 273,
+			"name": "Point 355",
+			"position": {
+				"x": -2.517251968383789,
+				"y": -0.29057300090789795,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 274,
+			"name": "Point 356",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": -0.29057300090789795,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 275,
+			"name": "Point 357",
+			"position": {
+				"x": -1.1006519794464111,
+				"y": -1.0933727025985718,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 276,
+			"name": "Point 358",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": -1.0933727025985718,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 277,
+			"name": "Point 359",
+			"position": {
+				"x": -2.517252206802368,
+				"y": -1.0933727025985718,
+				"z": -4.1776442527771
+			}
+		},
+		{
+			"id": 278,
+			"name": "Point 360",
+			"position": {
+				"x": -2.9894521236419678,
+				"y": -1.0933727025985718,
+				"z": -4.995518684387207
+			}
+		},
+		{
+			"id": 279,
+			"name": "Point 361",
+			"position": {
+				"x": -2.517251968383789,
+				"y": -1.0933727025985718,
+				"z": -5.8133931159973145
+			}
+		},
+		{
+			"id": 280,
+			"name": "Point 362",
+			"position": {
+				"x": -1.5728521347045898,
+				"y": -1.0933727025985718,
+				"z": -5.8133931159973145
+			}
+		}
+	]
+}

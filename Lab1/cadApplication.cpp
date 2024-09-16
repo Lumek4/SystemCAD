@@ -456,11 +456,6 @@ void CadApplication::Update() {
 		{
 			translating = scaling = rotating = false;
 		}
-		if (ImGui::IsKeyPressed(ImGuiKey_Enter, false) && io.KeyShift)
-		{
-			translating = scaling = rotating = false;
-			SceneTransform::instance.Apply();
-		}
 		if(translating || scaling || rotating)
 		{
 			auto mou = ImGui::GetMousePos();
@@ -551,9 +546,16 @@ void CadApplication::Update() {
 
 				st.rotation = Quaternion::Get(st.axis, st.rotationAngle);
 			}
-				
-			SceneTransform::instance.onModified.Notify(&SceneTransform::instance);
+			
+			if (!ImGui::IsMouseDragging(0))
+			{
+				translating = scaling = rotating = false;
+				SceneTransform::instance.Apply();
+			}
+			else
+				SceneTransform::instance.onModified.Notify(&SceneTransform::instance);
 		}
+		
 		mouseTransformingStart = mouseTransforming ^ ImGui::IsMouseDragging(0);
 		mouseTransforming = (translating || scaling || rotating) && !io.WantCaptureMouse &&
 			ImGui::IsMouseDragging(0);

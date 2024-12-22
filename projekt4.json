@@ -1,0 +1,8096 @@
+{
+ "geometry": [
+  {
+   "id": 283,
+   "largeRadius": 5.829999923706055,
+   "name": "Torus 1",
+   "objectType": "torus",
+   "position": {
+    "x": 5.683281421661377,
+    "y": -0.1732230931520462,
+    "z": -14.534914016723633
+   },
+   "rotation": {
+    "x": 0.0,
+    "y": -1.0331604016755591e-07,
+    "z": 0.0
+   },
+   "samples": {
+    "x": 124,
+    "y": 14
+   },
+   "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+   },
+   "smallRadius": 1.0
+  },
+  {
+   "id": 284,
+   "largeRadius": 0.6399999856948853,
+   "name": "Torus 2",
+   "objectType": "torus",
+   "position": {
+    "x": 1.5496805906295776,
+    "y": 0.6266042590141296,
+    "z": -21.337112426757813
+   },
+   "rotation": {
+    "x": -0.11566315591335297,
+    "y": -0.0034295774530619383,
+    "z": -0.16725267469882965
+   },
+   "samples": {
+    "x": 10,
+    "y": 10
+   },
+   "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+   },
+   "smallRadius": 0.33000001311302185
+  },
+  {
+   "id": 285,
+   "largeRadius": 3.799999952316284,
+   "name": "Torus 3",
+   "objectType": "torus",
+   "position": {
+    "x": 0.4293193519115448,
+    "y": -1.4646614789962769,
+    "z": 19.638532638549805
+   },
+   "rotation": {
+    "x": 0.3227466344833374,
+    "y": -0.016807381063699722,
+    "z": -0.009827734902501106
+   },
+   "samples": {
+    "x": 147,
+    "y": 47
+   },
+   "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+   },
+   "smallRadius": 1.7999999523162842
+  },
+  {
+   "id": 286,
+   "name": "Bicubic Surface 4",
+   "objectType": "bezierSurfaceC2",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 1
+      },
+      {
+       "id": 2
+      },
+      {
+       "id": 3
+      },
+      {
+       "id": 4
+      },
+      {
+       "id": 9
+      },
+      {
+       "id": 10
+      },
+      {
+       "id": 11
+      },
+      {
+       "id": 12
+      },
+      {
+       "id": 17
+      },
+      {
+       "id": 18
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 25
+      },
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      }
+     ],
+     "id": 287,
+     "name": "Bicubic Surface 4 Segment 1",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 2
+      },
+      {
+       "id": 3
+      },
+      {
+       "id": 4
+      },
+      {
+       "id": 5
+      },
+      {
+       "id": 10
+      },
+      {
+       "id": 11
+      },
+      {
+       "id": 12
+      },
+      {
+       "id": 13
+      },
+      {
+       "id": 18
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      }
+     ],
+     "id": 288,
+     "name": "Bicubic Surface 4 Segment 2",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 3
+      },
+      {
+       "id": 4
+      },
+      {
+       "id": 5
+      },
+      {
+       "id": 6
+      },
+      {
+       "id": 11
+      },
+      {
+       "id": 12
+      },
+      {
+       "id": 13
+      },
+      {
+       "id": 14
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      }
+     ],
+     "id": 289,
+     "name": "Bicubic Surface 4 Segment 3",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 4
+      },
+      {
+       "id": 5
+      },
+      {
+       "id": 6
+      },
+      {
+       "id": 7
+      },
+      {
+       "id": 12
+      },
+      {
+       "id": 13
+      },
+      {
+       "id": 14
+      },
+      {
+       "id": 15
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 23
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      }
+     ],
+     "id": 290,
+     "name": "Bicubic Surface 4 Segment 4",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 5
+      },
+      {
+       "id": 6
+      },
+      {
+       "id": 7
+      },
+      {
+       "id": 8
+      },
+      {
+       "id": 13
+      },
+      {
+       "id": 14
+      },
+      {
+       "id": 15
+      },
+      {
+       "id": 16
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 23
+      },
+      {
+       "id": 24
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      },
+      {
+       "id": 32
+      }
+     ],
+     "id": 291,
+     "name": "Bicubic Surface 4 Segment 5",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 9
+      },
+      {
+       "id": 10
+      },
+      {
+       "id": 11
+      },
+      {
+       "id": 12
+      },
+      {
+       "id": 17
+      },
+      {
+       "id": 18
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 25
+      },
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 33
+      },
+      {
+       "id": 34
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      }
+     ],
+     "id": 292,
+     "name": "Bicubic Surface 4 Segment 6",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 10
+      },
+      {
+       "id": 11
+      },
+      {
+       "id": 12
+      },
+      {
+       "id": 13
+      },
+      {
+       "id": 18
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 34
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      }
+     ],
+     "id": 293,
+     "name": "Bicubic Surface 4 Segment 7",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 11
+      },
+      {
+       "id": 12
+      },
+      {
+       "id": 13
+      },
+      {
+       "id": 14
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      }
+     ],
+     "id": 294,
+     "name": "Bicubic Surface 4 Segment 8",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 12
+      },
+      {
+       "id": 13
+      },
+      {
+       "id": 14
+      },
+      {
+       "id": 15
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 23
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 39
+      }
+     ],
+     "id": 295,
+     "name": "Bicubic Surface 4 Segment 9",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 13
+      },
+      {
+       "id": 14
+      },
+      {
+       "id": 15
+      },
+      {
+       "id": 16
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 23
+      },
+      {
+       "id": 24
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      },
+      {
+       "id": 32
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 39
+      },
+      {
+       "id": 40
+      }
+     ],
+     "id": 296,
+     "name": "Bicubic Surface 4 Segment 10",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 17
+      },
+      {
+       "id": 18
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 25
+      },
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 33
+      },
+      {
+       "id": 34
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 41
+      },
+      {
+       "id": 42
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      }
+     ],
+     "id": 297,
+     "name": "Bicubic Surface 4 Segment 11",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 18
+      },
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 34
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 42
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      }
+     ],
+     "id": 298,
+     "name": "Bicubic Surface 4 Segment 12",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 19
+      },
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      }
+     ],
+     "id": 299,
+     "name": "Bicubic Surface 4 Segment 13",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 20
+      },
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 23
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 39
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 47
+      }
+     ],
+     "id": 300,
+     "name": "Bicubic Surface 4 Segment 14",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 21
+      },
+      {
+       "id": 22
+      },
+      {
+       "id": 23
+      },
+      {
+       "id": 24
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      },
+      {
+       "id": 32
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 39
+      },
+      {
+       "id": 40
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 47
+      },
+      {
+       "id": 48
+      }
+     ],
+     "id": 301,
+     "name": "Bicubic Surface 4 Segment 15",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 25
+      },
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 33
+      },
+      {
+       "id": 34
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 41
+      },
+      {
+       "id": 42
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 49
+      },
+      {
+       "id": 50
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      }
+     ],
+     "id": 302,
+     "name": "Bicubic Surface 4 Segment 16",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 26
+      },
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 34
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 42
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 50
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      }
+     ],
+     "id": 303,
+     "name": "Bicubic Surface 4 Segment 17",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 27
+      },
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      }
+     ],
+     "id": 304,
+     "name": "Bicubic Surface 4 Segment 18",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 28
+      },
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 39
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 47
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 55
+      }
+     ],
+     "id": 305,
+     "name": "Bicubic Surface 4 Segment 19",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 29
+      },
+      {
+       "id": 30
+      },
+      {
+       "id": 31
+      },
+      {
+       "id": 32
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 39
+      },
+      {
+       "id": 40
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 47
+      },
+      {
+       "id": 48
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 55
+      },
+      {
+       "id": 56
+      }
+     ],
+     "id": 306,
+     "name": "Bicubic Surface 4 Segment 20",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 33
+      },
+      {
+       "id": 34
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 41
+      },
+      {
+       "id": 42
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 49
+      },
+      {
+       "id": 50
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 57
+      },
+      {
+       "id": 58
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      }
+     ],
+     "id": 307,
+     "name": "Bicubic Surface 4 Segment 21",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 34
+      },
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 42
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 50
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 58
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      }
+     ],
+     "id": 308,
+     "name": "Bicubic Surface 4 Segment 22",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 35
+      },
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      }
+     ],
+     "id": 309,
+     "name": "Bicubic Surface 4 Segment 23",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 36
+      },
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 39
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 47
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 55
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 63
+      }
+     ],
+     "id": 310,
+     "name": "Bicubic Surface 4 Segment 24",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 37
+      },
+      {
+       "id": 38
+      },
+      {
+       "id": 39
+      },
+      {
+       "id": 40
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 47
+      },
+      {
+       "id": 48
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 55
+      },
+      {
+       "id": 56
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 63
+      },
+      {
+       "id": 64
+      }
+     ],
+     "id": 311,
+     "name": "Bicubic Surface 4 Segment 25",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 41
+      },
+      {
+       "id": 42
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 49
+      },
+      {
+       "id": 50
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 57
+      },
+      {
+       "id": 58
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 65
+      },
+      {
+       "id": 66
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      }
+     ],
+     "id": 312,
+     "name": "Bicubic Surface 4 Segment 26",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 42
+      },
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 50
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 58
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 66
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      }
+     ],
+     "id": 313,
+     "name": "Bicubic Surface 4 Segment 27",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 43
+      },
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      }
+     ],
+     "id": 314,
+     "name": "Bicubic Surface 4 Segment 28",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 44
+      },
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 47
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 55
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 63
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 71
+      }
+     ],
+     "id": 315,
+     "name": "Bicubic Surface 4 Segment 29",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 45
+      },
+      {
+       "id": 46
+      },
+      {
+       "id": 47
+      },
+      {
+       "id": 48
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 55
+      },
+      {
+       "id": 56
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 63
+      },
+      {
+       "id": 64
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 71
+      },
+      {
+       "id": 72
+      }
+     ],
+     "id": 316,
+     "name": "Bicubic Surface 4 Segment 30",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 49
+      },
+      {
+       "id": 50
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 57
+      },
+      {
+       "id": 58
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 65
+      },
+      {
+       "id": 66
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 73
+      },
+      {
+       "id": 74
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      }
+     ],
+     "id": 317,
+     "name": "Bicubic Surface 4 Segment 31",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 50
+      },
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 58
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 66
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 74
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      }
+     ],
+     "id": 318,
+     "name": "Bicubic Surface 4 Segment 32",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 51
+      },
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      }
+     ],
+     "id": 319,
+     "name": "Bicubic Surface 4 Segment 33",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 52
+      },
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 55
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 63
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 71
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 79
+      }
+     ],
+     "id": 320,
+     "name": "Bicubic Surface 4 Segment 34",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 53
+      },
+      {
+       "id": 54
+      },
+      {
+       "id": 55
+      },
+      {
+       "id": 56
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 63
+      },
+      {
+       "id": 64
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 71
+      },
+      {
+       "id": 72
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 79
+      },
+      {
+       "id": 80
+      }
+     ],
+     "id": 321,
+     "name": "Bicubic Surface 4 Segment 35",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 57
+      },
+      {
+       "id": 58
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 65
+      },
+      {
+       "id": 66
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 73
+      },
+      {
+       "id": 74
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 81
+      },
+      {
+       "id": 82
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      }
+     ],
+     "id": 322,
+     "name": "Bicubic Surface 4 Segment 36",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 58
+      },
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 66
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 74
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 82
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      }
+     ],
+     "id": 323,
+     "name": "Bicubic Surface 4 Segment 37",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 59
+      },
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      }
+     ],
+     "id": 324,
+     "name": "Bicubic Surface 4 Segment 38",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 60
+      },
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 63
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 71
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 79
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 87
+      }
+     ],
+     "id": 325,
+     "name": "Bicubic Surface 4 Segment 39",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 61
+      },
+      {
+       "id": 62
+      },
+      {
+       "id": 63
+      },
+      {
+       "id": 64
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 71
+      },
+      {
+       "id": 72
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 79
+      },
+      {
+       "id": 80
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 87
+      },
+      {
+       "id": 88
+      }
+     ],
+     "id": 326,
+     "name": "Bicubic Surface 4 Segment 40",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 65
+      },
+      {
+       "id": 66
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 73
+      },
+      {
+       "id": 74
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 81
+      },
+      {
+       "id": 82
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 89
+      },
+      {
+       "id": 90
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      }
+     ],
+     "id": 327,
+     "name": "Bicubic Surface 4 Segment 41",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 66
+      },
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 74
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 82
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 90
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      }
+     ],
+     "id": 328,
+     "name": "Bicubic Surface 4 Segment 42",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 67
+      },
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      }
+     ],
+     "id": 329,
+     "name": "Bicubic Surface 4 Segment 43",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 68
+      },
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 71
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 79
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 87
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 95
+      }
+     ],
+     "id": 330,
+     "name": "Bicubic Surface 4 Segment 44",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 69
+      },
+      {
+       "id": 70
+      },
+      {
+       "id": 71
+      },
+      {
+       "id": 72
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 79
+      },
+      {
+       "id": 80
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 87
+      },
+      {
+       "id": 88
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 95
+      },
+      {
+       "id": 96
+      }
+     ],
+     "id": 331,
+     "name": "Bicubic Surface 4 Segment 45",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 73
+      },
+      {
+       "id": 74
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 81
+      },
+      {
+       "id": 82
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 89
+      },
+      {
+       "id": 90
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 97
+      },
+      {
+       "id": 98
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      }
+     ],
+     "id": 332,
+     "name": "Bicubic Surface 4 Segment 46",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 74
+      },
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 82
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 90
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 98
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      }
+     ],
+     "id": 333,
+     "name": "Bicubic Surface 4 Segment 47",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 75
+      },
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      }
+     ],
+     "id": 334,
+     "name": "Bicubic Surface 4 Segment 48",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 76
+      },
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 79
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 87
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 95
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 103
+      }
+     ],
+     "id": 335,
+     "name": "Bicubic Surface 4 Segment 49",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 77
+      },
+      {
+       "id": 78
+      },
+      {
+       "id": 79
+      },
+      {
+       "id": 80
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 87
+      },
+      {
+       "id": 88
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 95
+      },
+      {
+       "id": 96
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 103
+      },
+      {
+       "id": 104
+      }
+     ],
+     "id": 336,
+     "name": "Bicubic Surface 4 Segment 50",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 81
+      },
+      {
+       "id": 82
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 89
+      },
+      {
+       "id": 90
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 97
+      },
+      {
+       "id": 98
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 105
+      },
+      {
+       "id": 106
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      }
+     ],
+     "id": 337,
+     "name": "Bicubic Surface 4 Segment 51",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 82
+      },
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 90
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 98
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 106
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      }
+     ],
+     "id": 338,
+     "name": "Bicubic Surface 4 Segment 52",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 83
+      },
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      }
+     ],
+     "id": 339,
+     "name": "Bicubic Surface 4 Segment 53",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 84
+      },
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 87
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 95
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 103
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 111
+      }
+     ],
+     "id": 340,
+     "name": "Bicubic Surface 4 Segment 54",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 85
+      },
+      {
+       "id": 86
+      },
+      {
+       "id": 87
+      },
+      {
+       "id": 88
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 95
+      },
+      {
+       "id": 96
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 103
+      },
+      {
+       "id": 104
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 111
+      },
+      {
+       "id": 112
+      }
+     ],
+     "id": 341,
+     "name": "Bicubic Surface 4 Segment 55",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 89
+      },
+      {
+       "id": 90
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 97
+      },
+      {
+       "id": 98
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 105
+      },
+      {
+       "id": 106
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 113
+      },
+      {
+       "id": 114
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      }
+     ],
+     "id": 342,
+     "name": "Bicubic Surface 4 Segment 56",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 90
+      },
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 98
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 106
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 114
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      }
+     ],
+     "id": 343,
+     "name": "Bicubic Surface 4 Segment 57",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 91
+      },
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      }
+     ],
+     "id": 344,
+     "name": "Bicubic Surface 4 Segment 58",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 92
+      },
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 95
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 103
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 111
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      },
+      {
+       "id": 119
+      }
+     ],
+     "id": 345,
+     "name": "Bicubic Surface 4 Segment 59",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 93
+      },
+      {
+       "id": 94
+      },
+      {
+       "id": 95
+      },
+      {
+       "id": 96
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 103
+      },
+      {
+       "id": 104
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 111
+      },
+      {
+       "id": 112
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      },
+      {
+       "id": 119
+      },
+      {
+       "id": 120
+      }
+     ],
+     "id": 346,
+     "name": "Bicubic Surface 4 Segment 60",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 97
+      },
+      {
+       "id": 98
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 105
+      },
+      {
+       "id": 106
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 113
+      },
+      {
+       "id": 114
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 121
+      },
+      {
+       "id": 122
+      },
+      {
+       "id": 123
+      },
+      {
+       "id": 124
+      }
+     ],
+     "id": 347,
+     "name": "Bicubic Surface 4 Segment 61",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 98
+      },
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 106
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 114
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 122
+      },
+      {
+       "id": 123
+      },
+      {
+       "id": 124
+      },
+      {
+       "id": 125
+      }
+     ],
+     "id": 348,
+     "name": "Bicubic Surface 4 Segment 62",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 99
+      },
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      },
+      {
+       "id": 123
+      },
+      {
+       "id": 124
+      },
+      {
+       "id": 125
+      },
+      {
+       "id": 126
+      }
+     ],
+     "id": 349,
+     "name": "Bicubic Surface 4 Segment 63",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 100
+      },
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 103
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 111
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      },
+      {
+       "id": 119
+      },
+      {
+       "id": 124
+      },
+      {
+       "id": 125
+      },
+      {
+       "id": 126
+      },
+      {
+       "id": 127
+      }
+     ],
+     "id": 350,
+     "name": "Bicubic Surface 4 Segment 64",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 101
+      },
+      {
+       "id": 102
+      },
+      {
+       "id": 103
+      },
+      {
+       "id": 104
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 111
+      },
+      {
+       "id": 112
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      },
+      {
+       "id": 119
+      },
+      {
+       "id": 120
+      },
+      {
+       "id": 125
+      },
+      {
+       "id": 126
+      },
+      {
+       "id": 127
+      },
+      {
+       "id": 128
+      }
+     ],
+     "id": 351,
+     "name": "Bicubic Surface 4 Segment 65",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 105
+      },
+      {
+       "id": 106
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 113
+      },
+      {
+       "id": 114
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 121
+      },
+      {
+       "id": 122
+      },
+      {
+       "id": 123
+      },
+      {
+       "id": 124
+      },
+      {
+       "id": 129
+      },
+      {
+       "id": 130
+      },
+      {
+       "id": 131
+      },
+      {
+       "id": 132
+      }
+     ],
+     "id": 352,
+     "name": "Bicubic Surface 4 Segment 66",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 106
+      },
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 114
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 122
+      },
+      {
+       "id": 123
+      },
+      {
+       "id": 124
+      },
+      {
+       "id": 125
+      },
+      {
+       "id": 130
+      },
+      {
+       "id": 131
+      },
+      {
+       "id": 132
+      },
+      {
+       "id": 133
+      }
+     ],
+     "id": 353,
+     "name": "Bicubic Surface 4 Segment 67",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 107
+      },
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 115
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      },
+      {
+       "id": 123
+      },
+      {
+       "id": 124
+      },
+      {
+       "id": 125
+      },
+      {
+       "id": 126
+      },
+      {
+       "id": 131
+      },
+      {
+       "id": 132
+      },
+      {
+       "id": 133
+      },
+      {
+       "id": 134
+      }
+     ],
+     "id": 354,
+     "name": "Bicubic Surface 4 Segment 68",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 108
+      },
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 111
+      },
+      {
+       "id": 116
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      },
+      {
+       "id": 119
+      },
+      {
+       "id": 124
+      },
+      {
+       "id": 125
+      },
+      {
+       "id": 126
+      },
+      {
+       "id": 127
+      },
+      {
+       "id": 132
+      },
+      {
+       "id": 133
+      },
+      {
+       "id": 134
+      },
+      {
+       "id": 135
+      }
+     ],
+     "id": 355,
+     "name": "Bicubic Surface 4 Segment 69",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 109
+      },
+      {
+       "id": 110
+      },
+      {
+       "id": 111
+      },
+      {
+       "id": 112
+      },
+      {
+       "id": 117
+      },
+      {
+       "id": 118
+      },
+      {
+       "id": 119
+      },
+      {
+       "id": 120
+      },
+      {
+       "id": 125
+      },
+      {
+       "id": 126
+      },
+      {
+       "id": 127
+      },
+      {
+       "id": 128
+      },
+      {
+       "id": 133
+      },
+      {
+       "id": 134
+      },
+      {
+       "id": 135
+      },
+      {
+       "id": 136
+      }
+     ],
+     "id": 356,
+     "name": "Bicubic Surface 4 Segment 70",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 5,
+    "y": 14
+   }
+  },
+  {
+   "id": 357,
+   "name": "Bicubic Surface 3",
+   "objectType": "bezierSurfaceC0",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 137
+      },
+      {
+       "id": 138
+      },
+      {
+       "id": 139
+      },
+      {
+       "id": 140
+      },
+      {
+       "id": 141
+      },
+      {
+       "id": 142
+      },
+      {
+       "id": 143
+      },
+      {
+       "id": 144
+      },
+      {
+       "id": 145
+      },
+      {
+       "id": 146
+      },
+      {
+       "id": 147
+      },
+      {
+       "id": 148
+      },
+      {
+       "id": 149
+      },
+      {
+       "id": 150
+      },
+      {
+       "id": 151
+      },
+      {
+       "id": 152
+      }
+     ],
+     "id": 358,
+     "name": "Bicubic Surface 3 Segment 1",
+     "objectType": "bezierPatchC0",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 149
+      },
+      {
+       "id": 150
+      },
+      {
+       "id": 151
+      },
+      {
+       "id": 152
+      },
+      {
+       "id": 153
+      },
+      {
+       "id": 154
+      },
+      {
+       "id": 155
+      },
+      {
+       "id": 156
+      },
+      {
+       "id": 157
+      },
+      {
+       "id": 158
+      },
+      {
+       "id": 159
+      },
+      {
+       "id": 160
+      },
+      {
+       "id": 161
+      },
+      {
+       "id": 162
+      },
+      {
+       "id": 163
+      },
+      {
+       "id": 164
+      }
+     ],
+     "id": 359,
+     "name": "Bicubic Surface 3 Segment 2",
+     "objectType": "bezierPatchC0",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 1,
+    "y": 2
+   }
+  },
+  {
+   "id": 360,
+   "name": "Floor",
+   "objectType": "bezierSurfaceC0",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 165
+      },
+      {
+       "id": 166
+      },
+      {
+       "id": 167
+      },
+      {
+       "id": 168
+      },
+      {
+       "id": 169
+      },
+      {
+       "id": 170
+      },
+      {
+       "id": 171
+      },
+      {
+       "id": 172
+      },
+      {
+       "id": 173
+      },
+      {
+       "id": 174
+      },
+      {
+       "id": 175
+      },
+      {
+       "id": 176
+      },
+      {
+       "id": 177
+      },
+      {
+       "id": 178
+      },
+      {
+       "id": 179
+      },
+      {
+       "id": 180
+      }
+     ],
+     "id": 361,
+     "name": "Floor Segment 1",
+     "objectType": "bezierPatchC0",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 1,
+    "y": 1
+   }
+  },
+  {
+   "id": 362,
+   "name": "Bicubic Surface 5",
+   "objectType": "bezierSurfaceC0",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 181
+      },
+      {
+       "id": 182
+      },
+      {
+       "id": 183
+      },
+      {
+       "id": 184
+      },
+      {
+       "id": 185
+      },
+      {
+       "id": 186
+      },
+      {
+       "id": 187
+      },
+      {
+       "id": 188
+      },
+      {
+       "id": 189
+      },
+      {
+       "id": 190
+      },
+      {
+       "id": 191
+      },
+      {
+       "id": 192
+      },
+      {
+       "id": 193
+      },
+      {
+       "id": 194
+      },
+      {
+       "id": 195
+      },
+      {
+       "id": 196
+      }
+     ],
+     "id": 363,
+     "name": "Bicubic Surface 5 Segment 1",
+     "objectType": "bezierPatchC0",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 1,
+    "y": 1
+   }
+  },
+  {
+   "id": 364,
+   "name": "Bicubic Surface 6",
+   "objectType": "bezierSurfaceC2",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 197
+      },
+      {
+       "id": 198
+      },
+      {
+       "id": 199
+      },
+      {
+       "id": 200
+      },
+      {
+       "id": 202
+      },
+      {
+       "id": 203
+      },
+      {
+       "id": 204
+      },
+      {
+       "id": 205
+      },
+      {
+       "id": 207
+      },
+      {
+       "id": 208
+      },
+      {
+       "id": 209
+      },
+      {
+       "id": 210
+      },
+      {
+       "id": 212
+      },
+      {
+       "id": 213
+      },
+      {
+       "id": 214
+      },
+      {
+       "id": 215
+      }
+     ],
+     "id": 365,
+     "name": "Bicubic Surface 6 Segment 1",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 198
+      },
+      {
+       "id": 199
+      },
+      {
+       "id": 200
+      },
+      {
+       "id": 201
+      },
+      {
+       "id": 203
+      },
+      {
+       "id": 204
+      },
+      {
+       "id": 205
+      },
+      {
+       "id": 206
+      },
+      {
+       "id": 208
+      },
+      {
+       "id": 209
+      },
+      {
+       "id": 210
+      },
+      {
+       "id": 211
+      },
+      {
+       "id": 213
+      },
+      {
+       "id": 214
+      },
+      {
+       "id": 215
+      },
+      {
+       "id": 216
+      }
+     ],
+     "id": 366,
+     "name": "Bicubic Surface 6 Segment 2",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 202
+      },
+      {
+       "id": 203
+      },
+      {
+       "id": 204
+      },
+      {
+       "id": 205
+      },
+      {
+       "id": 207
+      },
+      {
+       "id": 208
+      },
+      {
+       "id": 209
+      },
+      {
+       "id": 210
+      },
+      {
+       "id": 212
+      },
+      {
+       "id": 213
+      },
+      {
+       "id": 214
+      },
+      {
+       "id": 215
+      },
+      {
+       "id": 217
+      },
+      {
+       "id": 218
+      },
+      {
+       "id": 219
+      },
+      {
+       "id": 220
+      }
+     ],
+     "id": 367,
+     "name": "Bicubic Surface 6 Segment 3",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 203
+      },
+      {
+       "id": 204
+      },
+      {
+       "id": 205
+      },
+      {
+       "id": 206
+      },
+      {
+       "id": 208
+      },
+      {
+       "id": 209
+      },
+      {
+       "id": 210
+      },
+      {
+       "id": 211
+      },
+      {
+       "id": 213
+      },
+      {
+       "id": 214
+      },
+      {
+       "id": 215
+      },
+      {
+       "id": 216
+      },
+      {
+       "id": 218
+      },
+      {
+       "id": 219
+      },
+      {
+       "id": 220
+      },
+      {
+       "id": 221
+      }
+     ],
+     "id": 368,
+     "name": "Bicubic Surface 6 Segment 4",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 2,
+    "y": 2
+   }
+  },
+  {
+   "id": 369,
+   "name": "Bicubic Surface 7",
+   "objectType": "bezierSurfaceC2",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 222
+      },
+      {
+       "id": 223
+      },
+      {
+       "id": 224
+      },
+      {
+       "id": 225
+      },
+      {
+       "id": 227
+      },
+      {
+       "id": 228
+      },
+      {
+       "id": 229
+      },
+      {
+       "id": 230
+      },
+      {
+       "id": 232
+      },
+      {
+       "id": 233
+      },
+      {
+       "id": 234
+      },
+      {
+       "id": 235
+      },
+      {
+       "id": 237
+      },
+      {
+       "id": 238
+      },
+      {
+       "id": 239
+      },
+      {
+       "id": 240
+      }
+     ],
+     "id": 370,
+     "name": "Bicubic Surface 7 Segment 1",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 223
+      },
+      {
+       "id": 224
+      },
+      {
+       "id": 225
+      },
+      {
+       "id": 226
+      },
+      {
+       "id": 228
+      },
+      {
+       "id": 229
+      },
+      {
+       "id": 230
+      },
+      {
+       "id": 231
+      },
+      {
+       "id": 233
+      },
+      {
+       "id": 234
+      },
+      {
+       "id": 235
+      },
+      {
+       "id": 236
+      },
+      {
+       "id": 238
+      },
+      {
+       "id": 239
+      },
+      {
+       "id": 240
+      },
+      {
+       "id": 241
+      }
+     ],
+     "id": 371,
+     "name": "Bicubic Surface 7 Segment 2",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 227
+      },
+      {
+       "id": 228
+      },
+      {
+       "id": 229
+      },
+      {
+       "id": 230
+      },
+      {
+       "id": 232
+      },
+      {
+       "id": 233
+      },
+      {
+       "id": 234
+      },
+      {
+       "id": 235
+      },
+      {
+       "id": 237
+      },
+      {
+       "id": 238
+      },
+      {
+       "id": 239
+      },
+      {
+       "id": 240
+      },
+      {
+       "id": 242
+      },
+      {
+       "id": 243
+      },
+      {
+       "id": 244
+      },
+      {
+       "id": 245
+      }
+     ],
+     "id": 372,
+     "name": "Bicubic Surface 7 Segment 3",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 228
+      },
+      {
+       "id": 229
+      },
+      {
+       "id": 230
+      },
+      {
+       "id": 231
+      },
+      {
+       "id": 233
+      },
+      {
+       "id": 234
+      },
+      {
+       "id": 235
+      },
+      {
+       "id": 236
+      },
+      {
+       "id": 238
+      },
+      {
+       "id": 239
+      },
+      {
+       "id": 240
+      },
+      {
+       "id": 241
+      },
+      {
+       "id": 243
+      },
+      {
+       "id": 244
+      },
+      {
+       "id": 245
+      },
+      {
+       "id": 246
+      }
+     ],
+     "id": 373,
+     "name": "Bicubic Surface 7 Segment 4",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 2,
+    "y": 2
+   }
+  },
+  {
+   "id": 374,
+   "name": "Bicubic Surface 9",
+   "objectType": "bezierSurfaceC2",
+   "parameterWrapped": {
+    "u": false,
+    "v": false
+   },
+   "patches": [
+    {
+     "controlPoints": [
+      {
+       "id": 247
+      },
+      {
+       "id": 248
+      },
+      {
+       "id": 249
+      },
+      {
+       "id": 250
+      },
+      {
+       "id": 253
+      },
+      {
+       "id": 254
+      },
+      {
+       "id": 255
+      },
+      {
+       "id": 256
+      },
+      {
+       "id": 259
+      },
+      {
+       "id": 260
+      },
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 265
+      },
+      {
+       "id": 266
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      }
+     ],
+     "id": 375,
+     "name": "Bicubic Surface 9 Segment 1",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 248
+      },
+      {
+       "id": 249
+      },
+      {
+       "id": 250
+      },
+      {
+       "id": 251
+      },
+      {
+       "id": 254
+      },
+      {
+       "id": 255
+      },
+      {
+       "id": 256
+      },
+      {
+       "id": 257
+      },
+      {
+       "id": 260
+      },
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 263
+      },
+      {
+       "id": 266
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      },
+      {
+       "id": 269
+      }
+     ],
+     "id": 376,
+     "name": "Bicubic Surface 9 Segment 2",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 249
+      },
+      {
+       "id": 250
+      },
+      {
+       "id": 251
+      },
+      {
+       "id": 252
+      },
+      {
+       "id": 255
+      },
+      {
+       "id": 256
+      },
+      {
+       "id": 257
+      },
+      {
+       "id": 258
+      },
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 263
+      },
+      {
+       "id": 264
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      },
+      {
+       "id": 269
+      },
+      {
+       "id": 270
+      }
+     ],
+     "id": 377,
+     "name": "Bicubic Surface 9 Segment 3",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 253
+      },
+      {
+       "id": 254
+      },
+      {
+       "id": 255
+      },
+      {
+       "id": 256
+      },
+      {
+       "id": 259
+      },
+      {
+       "id": 260
+      },
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 265
+      },
+      {
+       "id": 266
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      },
+      {
+       "id": 271
+      },
+      {
+       "id": 272
+      },
+      {
+       "id": 273
+      },
+      {
+       "id": 274
+      }
+     ],
+     "id": 378,
+     "name": "Bicubic Surface 9 Segment 4",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 254
+      },
+      {
+       "id": 255
+      },
+      {
+       "id": 256
+      },
+      {
+       "id": 257
+      },
+      {
+       "id": 260
+      },
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 263
+      },
+      {
+       "id": 266
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      },
+      {
+       "id": 269
+      },
+      {
+       "id": 272
+      },
+      {
+       "id": 273
+      },
+      {
+       "id": 274
+      },
+      {
+       "id": 275
+      }
+     ],
+     "id": 379,
+     "name": "Bicubic Surface 9 Segment 5",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 255
+      },
+      {
+       "id": 256
+      },
+      {
+       "id": 257
+      },
+      {
+       "id": 258
+      },
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 263
+      },
+      {
+       "id": 264
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      },
+      {
+       "id": 269
+      },
+      {
+       "id": 270
+      },
+      {
+       "id": 273
+      },
+      {
+       "id": 274
+      },
+      {
+       "id": 275
+      },
+      {
+       "id": 276
+      }
+     ],
+     "id": 380,
+     "name": "Bicubic Surface 9 Segment 6",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 259
+      },
+      {
+       "id": 260
+      },
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 265
+      },
+      {
+       "id": 266
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      },
+      {
+       "id": 271
+      },
+      {
+       "id": 272
+      },
+      {
+       "id": 273
+      },
+      {
+       "id": 274
+      },
+      {
+       "id": 277
+      },
+      {
+       "id": 278
+      },
+      {
+       "id": 279
+      },
+      {
+       "id": 280
+      }
+     ],
+     "id": 381,
+     "name": "Bicubic Surface 9 Segment 7",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 260
+      },
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 263
+      },
+      {
+       "id": 266
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      },
+      {
+       "id": 269
+      },
+      {
+       "id": 272
+      },
+      {
+       "id": 273
+      },
+      {
+       "id": 274
+      },
+      {
+       "id": 275
+      },
+      {
+       "id": 278
+      },
+      {
+       "id": 279
+      },
+      {
+       "id": 280
+      },
+      {
+       "id": 281
+      }
+     ],
+     "id": 382,
+     "name": "Bicubic Surface 9 Segment 8",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    },
+    {
+     "controlPoints": [
+      {
+       "id": 261
+      },
+      {
+       "id": 262
+      },
+      {
+       "id": 263
+      },
+      {
+       "id": 264
+      },
+      {
+       "id": 267
+      },
+      {
+       "id": 268
+      },
+      {
+       "id": 269
+      },
+      {
+       "id": 270
+      },
+      {
+       "id": 273
+      },
+      {
+       "id": 274
+      },
+      {
+       "id": 275
+      },
+      {
+       "id": 276
+      },
+      {
+       "id": 279
+      },
+      {
+       "id": 280
+      },
+      {
+       "id": 281
+      },
+      {
+       "id": 282
+      }
+     ],
+     "id": 383,
+     "name": "Bicubic Surface 9 Segment 9",
+     "objectType": "bezierPatchC2",
+     "samples": {
+      "x": 4,
+      "y": 4
+     }
+    }
+   ],
+   "size": {
+    "x": 3,
+    "y": 3
+   }
+  }
+ ],
+ "points": [
+  {
+   "id": 1,
+   "name": "Bicubic Surface 4 Point 1",
+   "position": {
+    "x": -2.9301469326019287,
+    "y": 0.8201998472213745,
+    "z": -19.67415428161621
+   }
+  },
+  {
+   "id": 2,
+   "name": "Bicubic Surface 4 Point 2",
+   "position": {
+    "x": -1.0313043594360352,
+    "y": 0.3178415298461914,
+    "z": -25.37551498413086
+   }
+  },
+  {
+   "id": 3,
+   "name": "Bicubic Surface 4 Point 3",
+   "position": {
+    "x": 1.090174674987793,
+    "y": -4.3680338859558105,
+    "z": -24.165193557739258
+   }
+  },
+  {
+   "id": 4,
+   "name": "Bicubic Surface 4 Point 4",
+   "position": {
+    "x": -0.40802615880966187,
+    "y": -3.6520731449127197,
+    "z": -22.317331314086914
+   }
+  },
+  {
+   "id": 5,
+   "name": "Bicubic Surface 4 Point 5",
+   "position": {
+    "x": 1.1740611791610718,
+    "y": -3.249246835708618,
+    "z": -20.14451789855957
+   }
+  },
+  {
+   "id": 6,
+   "name": "Bicubic Surface 4 Point 6",
+   "position": {
+    "x": 1.9832496643066406,
+    "y": -3.1798882484436035,
+    "z": -20.02189826965332
+   }
+  },
+  {
+   "id": 7,
+   "name": "Bicubic Surface 4 Point 7",
+   "position": {
+    "x": 2.820739984512329,
+    "y": -1.8224934339523315,
+    "z": -19.943782806396484
+   }
+  },
+  {
+   "id": 8,
+   "name": "Bicubic Surface 4 Point 8",
+   "position": {
+    "x": 3.6310999393463135,
+    "y": -0.3202992379665375,
+    "z": -19.67415428161621
+   }
+  },
+  {
+   "id": 9,
+   "name": "Bicubic Surface 4 Point 9",
+   "position": {
+    "x": -6.929802894592285,
+    "y": -1.4989784955978394,
+    "z": -19.75780487060547
+   }
+  },
+  {
+   "id": 10,
+   "name": "Bicubic Surface 4 Point 10",
+   "position": {
+    "x": -1.8069169521331787,
+    "y": 0.03877663612365723,
+    "z": -20.541263580322266
+   }
+  },
+  {
+   "id": 11,
+   "name": "Bicubic Surface 4 Point 11",
+   "position": {
+    "x": -0.7141165733337402,
+    "y": 0.23669016361236572,
+    "z": -17.552963256835938
+   }
+  },
+  {
+   "id": 12,
+   "name": "Bicubic Surface 4 Point 12",
+   "position": {
+    "x": 0.8092951774597168,
+    "y": -0.11784183979034424,
+    "z": -17.472679138183594
+   }
+  },
+  {
+   "id": 13,
+   "name": "Bicubic Surface 4 Point 13",
+   "position": {
+    "x": 1.9398374557495117,
+    "y": -0.11784183979034424,
+    "z": -17.472679138183594
+   }
+  },
+  {
+   "id": 14,
+   "name": "Bicubic Surface 4 Point 14",
+   "position": {
+    "x": 3.070380210876465,
+    "y": -0.11784183979034424,
+    "z": -17.472679138183594
+   }
+  },
+  {
+   "id": 15,
+   "name": "Bicubic Surface 4 Point 15",
+   "position": {
+    "x": 4.713653564453125,
+    "y": -0.6884627342224121,
+    "z": -19.041288375854492
+   }
+  },
+  {
+   "id": 16,
+   "name": "Bicubic Surface 4 Point 16",
+   "position": {
+    "x": 5.844195365905762,
+    "y": -1.4581512212753296,
+    "z": -19.041288375854492
+   }
+  },
+  {
+   "id": 17,
+   "name": "Bicubic Surface 4 Point 17",
+   "position": {
+    "x": -6.175312519073486,
+    "y": -2.4594650268554688,
+    "z": -15.434745788574219
+   }
+  },
+  {
+   "id": 18,
+   "name": "Bicubic Surface 4 Point 18",
+   "position": {
+    "x": -4.668269634246826,
+    "y": -0.22055934369564056,
+    "z": -15.880232810974121
+   }
+  },
+  {
+   "id": 19,
+   "name": "Bicubic Surface 4 Point 19",
+   "position": {
+    "x": -2.6983773708343506,
+    "y": 0.8022162318229675,
+    "z": -15.680121421813965
+   }
+  },
+  {
+   "id": 20,
+   "name": "Bicubic Surface 4 Point 20",
+   "position": {
+    "x": -0.5817373991012573,
+    "y": 1.3204772472381592,
+    "z": -15.400053977966309
+   }
+  },
+  {
+   "id": 21,
+   "name": "Bicubic Surface 4 Point 21",
+   "position": {
+    "x": 1.674293875694275,
+    "y": 1.1725893020629883,
+    "z": -15.442296981811523
+   }
+  },
+  {
+   "id": 22,
+   "name": "Bicubic Surface 4 Point 22",
+   "position": {
+    "x": 3.371028423309326,
+    "y": 0.7607171535491943,
+    "z": -15.480504035949707
+   }
+  },
+  {
+   "id": 23,
+   "name": "Bicubic Surface 4 Point 23",
+   "position": {
+    "x": 4.9268012046813965,
+    "y": -0.020615430548787117,
+    "z": -15.388224601745605
+   }
+  },
+  {
+   "id": 24,
+   "name": "Bicubic Surface 4 Point 24",
+   "position": {
+    "x": 6.608956336975098,
+    "y": -1.118775486946106,
+    "z": -15.40842342376709
+   }
+  },
+  {
+   "id": 25,
+   "name": "Bicubic Surface 4 Point 25",
+   "position": {
+    "x": -6.550161361694336,
+    "y": -2.265533924102783,
+    "z": -13.162638664245605
+   }
+  },
+  {
+   "id": 26,
+   "name": "Bicubic Surface 4 Point 26",
+   "position": {
+    "x": -4.909304141998291,
+    "y": -0.08341227471828461,
+    "z": -13.26072883605957
+   }
+  },
+  {
+   "id": 27,
+   "name": "Bicubic Surface 4 Point 27",
+   "position": {
+    "x": -2.528724431991577,
+    "y": 0.8944803476333618,
+    "z": -13.107941627502441
+   }
+  },
+  {
+   "id": 28,
+   "name": "Bicubic Surface 4 Point 28",
+   "position": {
+    "x": -0.368003249168396,
+    "y": 1.5033849477767944,
+    "z": -13.112444877624512
+   }
+  },
+  {
+   "id": 29,
+   "name": "Bicubic Surface 4 Point 29",
+   "position": {
+    "x": 1.7867891788482666,
+    "y": 1.4299501180648804,
+    "z": -13.144200325012207
+   }
+  },
+  {
+   "id": 30,
+   "name": "Bicubic Surface 4 Point 30",
+   "position": {
+    "x": 3.6291773319244385,
+    "y": 0.6871588826179504,
+    "z": -13.111221313476563
+   }
+  },
+  {
+   "id": 31,
+   "name": "Bicubic Surface 4 Point 31",
+   "position": {
+    "x": 5.2837114334106445,
+    "y": -0.0036771008744835854,
+    "z": -13.323644638061523
+   }
+  },
+  {
+   "id": 32,
+   "name": "Bicubic Surface 4 Point 32",
+   "position": {
+    "x": 6.675172328948975,
+    "y": -1.1036772727966309,
+    "z": -13.049901962280273
+   }
+  },
+  {
+   "id": 33,
+   "name": "Bicubic Surface 4 Point 33",
+   "position": {
+    "x": -6.861824035644531,
+    "y": -2.175138235092163,
+    "z": -11.104141235351563
+   }
+  },
+  {
+   "id": 34,
+   "name": "Bicubic Surface 4 Point 34",
+   "position": {
+    "x": -5.2484941482543945,
+    "y": -0.0890304297208786,
+    "z": -10.917922019958496
+   }
+  },
+  {
+   "id": 35,
+   "name": "Bicubic Surface 4 Point 35",
+   "position": {
+    "x": -2.6152303218841553,
+    "y": 0.9347957968711853,
+    "z": -10.854190826416016
+   }
+  },
+  {
+   "id": 36,
+   "name": "Bicubic Surface 4 Point 36",
+   "position": {
+    "x": -0.3200348913669586,
+    "y": 1.339078664779663,
+    "z": -10.69332218170166
+   }
+  },
+  {
+   "id": 37,
+   "name": "Bicubic Surface 4 Point 37",
+   "position": {
+    "x": 1.8163516521453857,
+    "y": 1.455603837966919,
+    "z": -10.737451553344727
+   }
+  },
+  {
+   "id": 38,
+   "name": "Bicubic Surface 4 Point 38",
+   "position": {
+    "x": 3.909306764602661,
+    "y": 0.6118283271789551,
+    "z": -10.832235336303711
+   }
+  },
+  {
+   "id": 39,
+   "name": "Bicubic Surface 4 Point 39",
+   "position": {
+    "x": 5.607222080230713,
+    "y": -0.04051489755511284,
+    "z": -10.966904640197754
+   }
+  },
+  {
+   "id": 40,
+   "name": "Bicubic Surface 4 Point 40",
+   "position": {
+    "x": 6.972032070159912,
+    "y": -1.2994229793548584,
+    "z": -10.779886245727539
+   }
+  },
+  {
+   "id": 41,
+   "name": "Bicubic Surface 4 Point 41",
+   "position": {
+    "x": -7.022456169128418,
+    "y": -1.414589285850525,
+    "z": -8.676873207092285
+   }
+  },
+  {
+   "id": 42,
+   "name": "Bicubic Surface 4 Point 42",
+   "position": {
+    "x": -5.670378684997559,
+    "y": -0.10323615372180939,
+    "z": -8.604991912841797
+   }
+  },
+  {
+   "id": 43,
+   "name": "Bicubic Surface 4 Point 43",
+   "position": {
+    "x": -2.5054643154144287,
+    "y": 0.6322141885757446,
+    "z": -8.42333984375
+   }
+  },
+  {
+   "id": 44,
+   "name": "Bicubic Surface 4 Point 44",
+   "position": {
+    "x": -0.2704213857650757,
+    "y": 1.4290660619735718,
+    "z": -8.460083961486816
+   }
+  },
+  {
+   "id": 45,
+   "name": "Bicubic Surface 4 Point 45",
+   "position": {
+    "x": 2.0510594844818115,
+    "y": 1.4351428747177124,
+    "z": -8.504410743713379
+   }
+  },
+  {
+   "id": 46,
+   "name": "Bicubic Surface 4 Point 46",
+   "position": {
+    "x": 4.10655403137207,
+    "y": 0.6268466711044312,
+    "z": -8.526082992553711
+   }
+  },
+  {
+   "id": 47,
+   "name": "Bicubic Surface 4 Point 47",
+   "position": {
+    "x": 5.606194019317627,
+    "y": -0.0526726059615612,
+    "z": -8.510475158691406
+   }
+  },
+  {
+   "id": 48,
+   "name": "Bicubic Surface 4 Point 48",
+   "position": {
+    "x": 7.3110270500183105,
+    "y": -1.364025592803955,
+    "z": -8.623268127441406
+   }
+  },
+  {
+   "id": 49,
+   "name": "Bicubic Surface 4 Point 49",
+   "position": {
+    "x": -6.8813347816467285,
+    "y": -1.5289063453674316,
+    "z": -5.834234237670898
+   }
+  },
+  {
+   "id": 50,
+   "name": "Bicubic Surface 4 Point 50",
+   "position": {
+    "x": -5.620390892028809,
+    "y": -0.28175944089889526,
+    "z": -5.851371765136719
+   }
+  },
+  {
+   "id": 51,
+   "name": "Bicubic Surface 4 Point 51",
+   "position": {
+    "x": -2.48774790763855,
+    "y": 0.6486813426017761,
+    "z": -5.996859550476074
+   }
+  },
+  {
+   "id": 52,
+   "name": "Bicubic Surface 4 Point 52",
+   "position": {
+    "x": -0.44959545135498047,
+    "y": 1.4949082136154175,
+    "z": -5.996859550476074
+   }
+  },
+  {
+   "id": 53,
+   "name": "Bicubic Surface 4 Point 53",
+   "position": {
+    "x": 1.998618245124817,
+    "y": 1.524908185005188,
+    "z": -6.114760398864746
+   }
+  },
+  {
+   "id": 54,
+   "name": "Bicubic Surface 4 Point 54",
+   "position": {
+    "x": 4.159317493438721,
+    "y": 0.6486813426017761,
+    "z": -5.927819728851318
+   }
+  },
+  {
+   "id": 55,
+   "name": "Bicubic Surface 4 Point 55",
+   "position": {
+    "x": 5.664860725402832,
+    "y": -0.07034832239151001,
+    "z": -5.996859550476074
+   }
+  },
+  {
+   "id": 56,
+   "name": "Bicubic Surface 4 Point 56",
+   "position": {
+    "x": 7.703012466430664,
+    "y": -1.4579497575759888,
+    "z": -5.996859550476074
+   }
+  },
+  {
+   "id": 57,
+   "name": "Bicubic Surface 4 Point 57",
+   "position": {
+    "x": -6.378407955169678,
+    "y": -1.3767096996307373,
+    "z": -3.7141034603118896
+   }
+  },
+  {
+   "id": 58,
+   "name": "Bicubic Surface 4 Point 58",
+   "position": {
+    "x": -5.558014392852783,
+    "y": -0.42970985174179077,
+    "z": -3.733320951461792
+   }
+  },
+  {
+   "id": 59,
+   "name": "Bicubic Surface 4 Point 59",
+   "position": {
+    "x": -2.413463592529297,
+    "y": 0.6388494372367859,
+    "z": -3.729640245437622
+   }
+  },
+  {
+   "id": 60,
+   "name": "Bicubic Surface 4 Point 60",
+   "position": {
+    "x": -0.46342289447784424,
+    "y": 1.432247281074524,
+    "z": -3.7620890140533447
+   }
+  },
+  {
+   "id": 61,
+   "name": "Bicubic Surface 4 Point 61",
+   "position": {
+    "x": 1.9037245512008667,
+    "y": 1.432247281074524,
+    "z": -3.6250388622283936
+   }
+  },
+  {
+   "id": 62,
+   "name": "Bicubic Surface 4 Point 62",
+   "position": {
+    "x": 4.116208553314209,
+    "y": 0.6388493776321411,
+    "z": -3.6008098125457764
+   }
+  },
+  {
+   "id": 63,
+   "name": "Bicubic Surface 4 Point 63",
+   "position": {
+    "x": 5.551624298095703,
+    "y": -0.04909582808613777,
+    "z": -3.506185531616211
+   }
+  },
+  {
+   "id": 64,
+   "name": "Bicubic Surface 4 Point 64",
+   "position": {
+    "x": 7.336738586425781,
+    "y": -1.3767096996307373,
+    "z": -3.729640245437622
+   }
+  },
+  {
+   "id": 65,
+   "name": "Bicubic Surface 4 Point 65",
+   "position": {
+    "x": -6.174981594085693,
+    "y": -1.3473851680755615,
+    "z": -1.2879151105880737
+   }
+  },
+  {
+   "id": 66,
+   "name": "Bicubic Surface 4 Point 66",
+   "position": {
+    "x": -4.328998565673828,
+    "y": -0.1641051322221756,
+    "z": -1.236967921257019
+   }
+  },
+  {
+   "id": 67,
+   "name": "Bicubic Surface 4 Point 67",
+   "position": {
+    "x": -2.3210031986236572,
+    "y": 0.6443479061126709,
+    "z": -1.2879151105880737
+   }
+  },
+  {
+   "id": 68,
+   "name": "Bicubic Surface 4 Point 68",
+   "position": {
+    "x": -0.3940138816833496,
+    "y": 1.3837937116622925,
+    "z": -1.3236945867538452
+   }
+  },
+  {
+   "id": 69,
+   "name": "Bicubic Surface 4 Point 69",
+   "position": {
+    "x": 1.8850057125091553,
+    "y": 1.3837937116622925,
+    "z": -1.2294825315475464
+   }
+  },
+  {
+   "id": 70,
+   "name": "Bicubic Surface 4 Point 70",
+   "position": {
+    "x": 3.798565149307251,
+    "y": 0.6443479061126709,
+    "z": -1.2609916925430298
+   }
+  },
+  {
+   "id": 71,
+   "name": "Bicubic Surface 4 Point 71",
+   "position": {
+    "x": 5.386952877044678,
+    "y": -0.035465121269226074,
+    "z": -1.2879151105880737
+   }
+  },
+  {
+   "id": 72,
+   "name": "Bicubic Surface 4 Point 72",
+   "position": {
+    "x": 7.313941478729248,
+    "y": -1.3473851680755615,
+    "z": -1.2879151105880737
+   }
+  },
+  {
+   "id": 73,
+   "name": "Bicubic Surface 4 Point 73",
+   "position": {
+    "x": -5.359490871429443,
+    "y": -1.163230061531067,
+    "z": 1.3218302726745605
+   }
+  },
+  {
+   "id": 74,
+   "name": "Bicubic Surface 4 Point 74",
+   "position": {
+    "x": -4.014003753662109,
+    "y": -0.0086331432685256,
+    "z": 1.026283621788025
+   }
+  },
+  {
+   "id": 75,
+   "name": "Bicubic Surface 4 Point 75",
+   "position": {
+    "x": -1.9754921197891235,
+    "y": 0.5866321325302124,
+    "z": 1.0641483068466187
+   }
+  },
+  {
+   "id": 76,
+   "name": "Bicubic Surface 4 Point 76",
+   "position": {
+    "x": -0.2825111746788025,
+    "y": 1.2362815141677856,
+    "z": 1.032713770866394
+   }
+  },
+  {
+   "id": 77,
+   "name": "Bicubic Surface 4 Point 77",
+   "position": {
+    "x": 1.8242055177688599,
+    "y": 1.2843681573867798,
+    "z": 0.9712917804718018
+   }
+  },
+  {
+   "id": 78,
+   "name": "Bicubic Surface 4 Point 78",
+   "position": {
+    "x": 3.735698938369751,
+    "y": 0.6289023756980896,
+    "z": 1.1116560697555542
+   }
+  },
+  {
+   "id": 79,
+   "name": "Bicubic Surface 4 Point 79",
+   "position": {
+    "x": 5.108117580413818,
+    "y": -0.10537031292915344,
+    "z": 1.158433198928833
+   }
+  },
+  {
+   "id": 80,
+   "name": "Bicubic Surface 4 Point 80",
+   "position": {
+    "x": 6.489410400390625,
+    "y": -1.163230061531067,
+    "z": 1.0641483068466187
+   }
+  },
+  {
+   "id": 81,
+   "name": "Bicubic Surface 4 Point 81",
+   "position": {
+    "x": -5.032024383544922,
+    "y": -1.1031619310379028,
+    "z": 3.675429344177246
+   }
+  },
+  {
+   "id": 82,
+   "name": "Bicubic Surface 4 Point 82",
+   "position": {
+    "x": -3.735088586807251,
+    "y": -0.2690262198448181,
+    "z": 3.482494354248047
+   }
+  },
+  {
+   "id": 83,
+   "name": "Bicubic Surface 4 Point 83",
+   "position": {
+    "x": -1.8540911674499512,
+    "y": 0.5663228034973145,
+    "z": 3.418139696121216
+   }
+  },
+  {
+   "id": 84,
+   "name": "Bicubic Surface 4 Point 84",
+   "position": {
+    "x": -0.23837655782699585,
+    "y": 1.186322808265686,
+    "z": 3.3881397247314453
+   }
+  },
+  {
+   "id": 85,
+   "name": "Bicubic Surface 4 Point 85",
+   "position": {
+    "x": 1.6748454570770264,
+    "y": 1.1606029272079468,
+    "z": 3.448021411895752
+   }
+  },
+  {
+   "id": 86,
+   "name": "Bicubic Surface 4 Point 86",
+   "position": {
+    "x": 3.519500970840454,
+    "y": 0.6085659265518188,
+    "z": 3.4549314975738525
+   }
+  },
+  {
+   "id": 87,
+   "name": "Bicubic Surface 4 Point 87",
+   "position": {
+    "x": 4.95953369140625,
+    "y": -0.28098422288894653,
+    "z": 3.5407893657684326
+   }
+  },
+  {
+   "id": 88,
+   "name": "Bicubic Surface 4 Point 88",
+   "position": {
+    "x": 6.224480628967285,
+    "y": -1.1036772727966309,
+    "z": 3.418139696121216
+   }
+  },
+  {
+   "id": 89,
+   "name": "Bicubic Surface 4 Point 89",
+   "position": {
+    "x": -4.774354934692383,
+    "y": -1.1005851030349731,
+    "z": 6.027218818664551
+   }
+  },
+  {
+   "id": 90,
+   "name": "Bicubic Surface 4 Point 90",
+   "position": {
+    "x": -3.469590425491333,
+    "y": -0.2760017216205597,
+    "z": 5.771862506866455
+   }
+  },
+  {
+   "id": 91,
+   "name": "Bicubic Surface 4 Point 91",
+   "position": {
+    "x": -1.8540911674499512,
+    "y": 0.5663228034973145,
+    "z": 5.771890640258789
+   }
+  },
+  {
+   "id": 92,
+   "name": "Bicubic Surface 4 Point 92",
+   "position": {
+    "x": -0.23837655782699585,
+    "y": 1.186322808265686,
+    "z": 5.7418904304504395
+   }
+  },
+  {
+   "id": 93,
+   "name": "Bicubic Surface 4 Point 93",
+   "position": {
+    "x": 1.6085669994354248,
+    "y": 1.2719730138778687,
+    "z": 5.845660209655762
+   }
+  },
+  {
+   "id": 94,
+   "name": "Bicubic Surface 4 Point 94",
+   "position": {
+    "x": 3.519916534423828,
+    "y": 0.6085659265518188,
+    "z": 5.809792995452881
+   }
+  },
+  {
+   "id": 95,
+   "name": "Bicubic Surface 4 Point 95",
+   "position": {
+    "x": 4.722966194152832,
+    "y": -0.2760017216205597,
+    "z": 5.804693698883057
+   }
+  },
+  {
+   "id": 96,
+   "name": "Bicubic Surface 4 Point 96",
+   "position": {
+    "x": 6.409626007080078,
+    "y": -2.2202088832855225,
+    "z": 5.9288153648376465
+   }
+  },
+  {
+   "id": 97,
+   "name": "Bicubic Surface 4 Point 97",
+   "position": {
+    "x": -4.458956241607666,
+    "y": -1.0610841512680054,
+    "z": 8.474065780639648
+   }
+  },
+  {
+   "id": 98,
+   "name": "Bicubic Surface 4 Point 98",
+   "position": {
+    "x": -3.1403250694274902,
+    "y": -0.27261167764663696,
+    "z": 8.172953605651855
+   }
+  },
+  {
+   "id": 99,
+   "name": "Bicubic Surface 4 Point 99",
+   "position": {
+    "x": -1.77627694606781,
+    "y": 0.5547672510147095,
+    "z": 8.127462387084961
+   }
+  },
+  {
+   "id": 100,
+   "name": "Bicubic Surface 4 Point 100",
+   "position": {
+    "x": -0.20859646797180176,
+    "y": 1.1563348770141602,
+    "z": 8.09835433959961
+   }
+  },
+  {
+   "id": 101,
+   "name": "Bicubic Surface 4 Point 101",
+   "position": {
+    "x": 1.5834383964538574,
+    "y": 1.239438772201538,
+    "z": 8.199039459228516
+   }
+  },
+  {
+   "id": 102,
+   "name": "Bicubic Surface 4 Point 102",
+   "position": {
+    "x": 3.2457275390625,
+    "y": 0.5957545042037964,
+    "z": 8.135757446289063
+   }
+  },
+  {
+   "id": 103,
+   "name": "Bicubic Surface 4 Point 103",
+   "position": {
+    "x": 4.25974178314209,
+    "y": -0.2706114947795868,
+    "z": 7.979231834411621
+   }
+  },
+  {
+   "id": 104,
+   "name": "Bicubic Surface 4 Point 104",
+   "position": {
+    "x": 6.0621232986450195,
+    "y": -1.065584659576416,
+    "z": 8.127462387084961
+   }
+  },
+  {
+   "id": 105,
+   "name": "Bicubic Surface 4 Point 105",
+   "position": {
+    "x": -3.5078296661376953,
+    "y": -1.0252103805541992,
+    "z": 10.627365112304688
+   }
+  },
+  {
+   "id": 106,
+   "name": "Bicubic Surface 4 Point 106",
+   "position": {
+    "x": -2.4471826553344727,
+    "y": -0.221561998128891,
+    "z": 10.452227592468262
+   }
+  },
+  {
+   "id": 107,
+   "name": "Bicubic Surface 4 Point 107",
+   "position": {
+    "x": -1.2723751068115234,
+    "y": 0.4671984910964966,
+    "z": 10.407188415527344
+   }
+  },
+  {
+   "id": 108,
+   "name": "Bicubic Surface 4 Point 108",
+   "position": {
+    "x": -0.1016342043876648,
+    "y": 0.9135816097259521,
+    "z": 10.41576862335205
+   }
+  },
+  {
+   "id": 109,
+   "name": "Bicubic Surface 4 Point 109",
+   "position": {
+    "x": 1.4987423419952393,
+    "y": 0.90643709897995,
+    "z": 10.347634315490723
+   }
+  },
+  {
+   "id": 110,
+   "name": "Bicubic Surface 4 Point 110",
+   "position": {
+    "x": 2.8555359840393066,
+    "y": 0.4862467646598816,
+    "z": 10.3966646194458
+   }
+  },
+  {
+   "id": 111,
+   "name": "Bicubic Surface 4 Point 111",
+   "position": {
+    "x": 3.624509334564209,
+    "y": -0.25377610325813293,
+    "z": 10.563395500183105
+   }
+  },
+  {
+   "id": 112,
+   "name": "Bicubic Surface 4 Point 112",
+   "position": {
+    "x": 4.415635108947754,
+    "y": -1.0252102613449097,
+    "z": 10.527027130126953
+   }
+  },
+  {
+   "id": 113,
+   "name": "Bicubic Surface 4 Point 113",
+   "position": {
+    "x": -2.638814926147461,
+    "y": -1.2406471967697144,
+    "z": 12.879633903503418
+   }
+  },
+  {
+   "id": 114,
+   "name": "Bicubic Surface 4 Point 114",
+   "position": {
+    "x": -1.9012901782989502,
+    "y": -0.16567692160606384,
+    "z": 12.645755767822266
+   }
+  },
+  {
+   "id": 115,
+   "name": "Bicubic Surface 4 Point 115",
+   "position": {
+    "x": -0.9348185658454895,
+    "y": 0.42848846316337585,
+    "z": 12.695286750793457
+   }
+  },
+  {
+   "id": 116,
+   "name": "Bicubic Surface 4 Point 116",
+   "position": {
+    "x": 0.10060258209705353,
+    "y": 0.985190749168396,
+    "z": 12.689456939697266
+   }
+  },
+  {
+   "id": 117,
+   "name": "Bicubic Surface 4 Point 117",
+   "position": {
+    "x": 1.3260433673858643,
+    "y": 0.8786311149597168,
+    "z": 12.840356826782227
+   }
+  },
+  {
+   "id": 118,
+   "name": "Bicubic Surface 4 Point 118",
+   "position": {
+    "x": 2.616816520690918,
+    "y": 0.48336488008499146,
+    "z": 12.83260726928711
+   }
+  },
+  {
+   "id": 119,
+   "name": "Bicubic Surface 4 Point 119",
+   "position": {
+    "x": 3.014616012573242,
+    "y": -0.1452508270740509,
+    "z": 12.88109016418457
+   }
+  },
+  {
+   "id": 120,
+   "name": "Bicubic Surface 4 Point 120",
+   "position": {
+    "x": 3.7471818923950195,
+    "y": -1.2406471967697144,
+    "z": 12.879633903503418
+   }
+  },
+  {
+   "id": 121,
+   "name": "Bicubic Surface 4 Point 121",
+   "position": {
+    "x": -4.675496578216553,
+    "y": -0.9130440950393677,
+    "z": 16.65507698059082
+   }
+  },
+  {
+   "id": 122,
+   "name": "Bicubic Surface 4 Point 122",
+   "position": {
+    "x": -2.9220023155212402,
+    "y": -0.013891911134123802,
+    "z": 15.957754135131836
+   }
+  },
+  {
+   "id": 123,
+   "name": "Bicubic Surface 4 Point 123",
+   "position": {
+    "x": -1.4124419689178467,
+    "y": 0.45203226804733276,
+    "z": 15.335257530212402
+   }
+  },
+  {
+   "id": 124,
+   "name": "Bicubic Surface 4 Point 124",
+   "position": {
+    "x": -0.003288447856903076,
+    "y": 0.8516461849212646,
+    "z": 15.111742973327637
+   }
+  },
+  {
+   "id": 125,
+   "name": "Bicubic Surface 4 Point 125",
+   "position": {
+    "x": 1.4000647068023682,
+    "y": 0.724081814289093,
+    "z": 15.152255058288574
+   }
+  },
+  {
+   "id": 126,
+   "name": "Bicubic Surface 4 Point 126",
+   "position": {
+    "x": 2.9251086711883545,
+    "y": 0.5979295372962952,
+    "z": 15.503108024597168
+   }
+  },
+  {
+   "id": 127,
+   "name": "Bicubic Surface 4 Point 127",
+   "position": {
+    "x": 4.538213729858398,
+    "y": -0.013891858048737049,
+    "z": 16.4751033782959
+   }
+  },
+  {
+   "id": 128,
+   "name": "Bicubic Surface 4 Point 128",
+   "position": {
+    "x": 5.7991132736206055,
+    "y": -0.9130440950393677,
+    "z": 16.38053321838379
+   }
+  },
+  {
+   "id": 129,
+   "name": "Bicubic Surface 4 Point 129",
+   "position": {
+    "x": -5.498222351074219,
+    "y": -1.1516740322113037,
+    "z": 19.208694458007813
+   }
+  },
+  {
+   "id": 130,
+   "name": "Bicubic Surface 4 Point 130",
+   "position": {
+    "x": -3.7048017978668213,
+    "y": 0.012321919202804565,
+    "z": 17.540639877319336
+   }
+  },
+  {
+   "id": 131,
+   "name": "Bicubic Surface 4 Point 131",
+   "position": {
+    "x": -1.995088815689087,
+    "y": 0.012321919202804565,
+    "z": 17.540639877319336
+   }
+  },
+  {
+   "id": 132,
+   "name": "Bicubic Surface 4 Point 132",
+   "position": {
+    "x": -0.28537583351135254,
+    "y": 0.012321919202804565,
+    "z": 17.540639877319336
+   }
+  },
+  {
+   "id": 133,
+   "name": "Bicubic Surface 4 Point 133",
+   "position": {
+    "x": 1.424337387084961,
+    "y": 0.012321919202804565,
+    "z": 17.540639877319336
+   }
+  },
+  {
+   "id": 134,
+   "name": "Bicubic Surface 4 Point 134",
+   "position": {
+    "x": 3.1340508460998535,
+    "y": 0.012321919202804565,
+    "z": 17.540639877319336
+   }
+  },
+  {
+   "id": 135,
+   "name": "Bicubic Surface 4 Point 135",
+   "position": {
+    "x": 4.84376335144043,
+    "y": 0.012321919202804565,
+    "z": 17.540639877319336
+   }
+  },
+  {
+   "id": 136,
+   "name": "Bicubic Surface 4 Point 136",
+   "position": {
+    "x": 6.669205665588379,
+    "y": -1.1516739130020142,
+    "z": 19.691558837890625
+   }
+  },
+  {
+   "id": 137,
+   "name": "Bicubic Surface 3 Point 1",
+   "position": {
+    "x": -0.16595175862312317,
+    "y": -0.7151777744293213,
+    "z": -24.221389770507813
+   }
+  },
+  {
+   "id": 138,
+   "name": "Bicubic Surface 3 Point 2",
+   "position": {
+    "x": 0.37390050292015076,
+    "y": 0.04158415645360947,
+    "z": -24.0855770111084
+   }
+  },
+  {
+   "id": 139,
+   "name": "Bicubic Surface 3 Point 3",
+   "position": {
+    "x": 1.0028914213180542,
+    "y": 0.04158415645360947,
+    "z": -24.0855770111084
+   }
+  },
+  {
+   "id": 140,
+   "name": "Bicubic Surface 3 Point 4",
+   "position": {
+    "x": 2.0597293376922607,
+    "y": -0.20991230010986328,
+    "z": -23.799034118652344
+   }
+  },
+  {
+   "id": 141,
+   "name": "Bicubic Surface 3 Point 5",
+   "position": {
+    "x": -1.1137306690216064,
+    "y": -0.18165551126003265,
+    "z": -23.49714469909668
+   }
+  },
+  {
+   "id": 142,
+   "name": "Bicubic Surface 3 Point 6",
+   "position": {
+    "x": -0.11506208032369614,
+    "y": 1.5894570350646973,
+    "z": -22.598703384399414
+   }
+  },
+  {
+   "id": 143,
+   "name": "Bicubic Surface 3 Point 7",
+   "position": {
+    "x": 1.75104558467865,
+    "y": 1.5894570350646973,
+    "z": -22.598703384399414
+   }
+  },
+  {
+   "id": 144,
+   "name": "Bicubic Surface 3 Point 8",
+   "position": {
+    "x": 3.197284698486328,
+    "y": 0.12516668438911438,
+    "z": -22.669551849365234
+   }
+  },
+  {
+   "id": 145,
+   "name": "Bicubic Surface 3 Point 9",
+   "position": {
+    "x": -1.9178224802017212,
+    "y": -0.1308056265115738,
+    "z": -22.195405960083008
+   }
+  },
+  {
+   "id": 146,
+   "name": "Bicubic Surface 3 Point 10",
+   "position": {
+    "x": -0.23598045110702515,
+    "y": 1.4875060319900513,
+    "z": -19.048494338989258
+   }
+  },
+  {
+   "id": 147,
+   "name": "Bicubic Surface 3 Point 11",
+   "position": {
+    "x": 1.8870229721069336,
+    "y": 1.4170854091644287,
+    "z": -18.979909896850586
+   }
+  },
+  {
+   "id": 148,
+   "name": "Bicubic Surface 3 Point 12",
+   "position": {
+    "x": 3.916658878326416,
+    "y": -0.11136668175458908,
+    "z": -20.5299072265625
+   }
+  },
+  {
+   "id": 149,
+   "name": "Bicubic Surface 3 Point 13",
+   "position": {
+    "x": -2.8809220790863037,
+    "y": -0.1568545401096344,
+    "z": -20.486900329589844
+   }
+  },
+  {
+   "id": 150,
+   "name": "Bicubic Surface 3 Point 14",
+   "position": {
+    "x": -3.2179410457611084,
+    "y": 1.2400870323181152,
+    "z": -14.768978118896484
+   }
+  },
+  {
+   "id": 151,
+   "name": "Bicubic Surface 3 Point 15",
+   "position": {
+    "x": 3.3811025619506836,
+    "y": 2.710742950439453,
+    "z": -15.294846534729004
+   }
+  },
+  {
+   "id": 152,
+   "name": "Bicubic Surface 3 Point 16",
+   "position": {
+    "x": 4.637297630310059,
+    "y": -0.5044678449630737,
+    "z": -17.7593994140625
+   }
+  },
+  {
+   "id": 153,
+   "name": "Bicubic Surface 3 Point 17",
+   "position": {
+    "x": -4.184561252593994,
+    "y": -0.8354300260543823,
+    "z": -16.52397346496582
+   }
+  },
+  {
+   "id": 154,
+   "name": "Bicubic Surface 3 Point 18",
+   "position": {
+    "x": -0.7075076103210449,
+    "y": 1.0001972913742065,
+    "z": -14.174867630004883
+   }
+  },
+  {
+   "id": 155,
+   "name": "Bicubic Surface 3 Point 19",
+   "position": {
+    "x": 1.6968605518341064,
+    "y": 0.9651603698730469,
+    "z": -14.160356521606445
+   }
+  },
+  {
+   "id": 156,
+   "name": "Bicubic Surface 3 Point 20",
+   "position": {
+    "x": 4.579439163208008,
+    "y": -0.8895635604858398,
+    "z": -13.954111099243164
+   }
+  },
+  {
+   "id": 157,
+   "name": "Bicubic Surface 3 Point 21",
+   "position": {
+    "x": -3.921398162841797,
+    "y": -0.27468249201774597,
+    "z": -15.228166580200195
+   }
+  },
+  {
+   "id": 158,
+   "name": "Bicubic Surface 3 Point 22",
+   "position": {
+    "x": -1.5629674196243286,
+    "y": 0.5484550595283508,
+    "z": -14.351970672607422
+   }
+  },
+  {
+   "id": 159,
+   "name": "Bicubic Surface 3 Point 23",
+   "position": {
+    "x": 1.8836127519607544,
+    "y": 0.08958978950977325,
+    "z": -13.809699058532715
+   }
+  },
+  {
+   "id": 160,
+   "name": "Bicubic Surface 3 Point 24",
+   "position": {
+    "x": 4.426061630249023,
+    "y": -0.3569505512714386,
+    "z": -14.785530090332031
+   }
+  },
+  {
+   "id": 161,
+   "name": "Bicubic Surface 3 Point 25",
+   "position": {
+    "x": -3.087434768676758,
+    "y": -0.8736465573310852,
+    "z": -13.739564895629883
+   }
+  },
+  {
+   "id": 162,
+   "name": "Bicubic Surface 3 Point 26",
+   "position": {
+    "x": -0.9897935390472412,
+    "y": -0.21340158581733704,
+    "z": -12.670491218566895
+   }
+  },
+  {
+   "id": 163,
+   "name": "Bicubic Surface 3 Point 27",
+   "position": {
+    "x": 2.870404005050659,
+    "y": -0.15721732378005981,
+    "z": -12.901508331298828
+   }
+  },
+  {
+   "id": 164,
+   "name": "Bicubic Surface 3 Point 28",
+   "position": {
+    "x": 5.0418267250061035,
+    "y": -1.4127154350280762,
+    "z": -12.941980361938477
+   }
+  },
+  {
+   "id": 165,
+   "name": "Bicubic Surface 4 Point 1",
+   "position": {
+    "x": -19.69576072692871,
+    "y": -9.053287897131668e-09,
+    "z": -26.206863403320313
+   }
+  },
+  {
+   "id": 166,
+   "name": "Bicubic Surface 4 Point 2",
+   "position": {
+    "x": -6.3624267578125,
+    "y": -9.053287897131668e-09,
+    "z": -26.206863403320313
+   }
+  },
+  {
+   "id": 167,
+   "name": "Bicubic Surface 4 Point 3",
+   "position": {
+    "x": 6.970906734466553,
+    "y": -9.053287897131668e-09,
+    "z": -26.206863403320313
+   }
+  },
+  {
+   "id": 168,
+   "name": "Bicubic Surface 4 Point 4",
+   "position": {
+    "x": 20.30423927307129,
+    "y": -9.053287897131668e-09,
+    "z": -26.206863403320313
+   }
+  },
+  {
+   "id": 169,
+   "name": "Bicubic Surface 4 Point 5",
+   "position": {
+    "x": -20.0,
+    "y": 0.0,
+    "z": -6.666666030883789
+   }
+  },
+  {
+   "id": 170,
+   "name": "Bicubic Surface 4 Point 6",
+   "position": {
+    "x": -6.666666030883789,
+    "y": 0.0,
+    "z": -6.666666030883789
+   }
+  },
+  {
+   "id": 171,
+   "name": "Bicubic Surface 4 Point 7",
+   "position": {
+    "x": 6.666667461395264,
+    "y": 0.0,
+    "z": -6.666666030883789
+   }
+  },
+  {
+   "id": 172,
+   "name": "Bicubic Surface 4 Point 8",
+   "position": {
+    "x": 20.0,
+    "y": 0.0,
+    "z": -6.666666030883789
+   }
+  },
+  {
+   "id": 173,
+   "name": "Bicubic Surface 4 Point 9",
+   "position": {
+    "x": -20.0,
+    "y": 0.0,
+    "z": 6.666667461395264
+   }
+  },
+  {
+   "id": 174,
+   "name": "Bicubic Surface 4 Point 10",
+   "position": {
+    "x": -6.666666030883789,
+    "y": 0.0,
+    "z": 6.666667461395264
+   }
+  },
+  {
+   "id": 175,
+   "name": "Bicubic Surface 4 Point 11",
+   "position": {
+    "x": 6.666667461395264,
+    "y": 0.0,
+    "z": 6.666667461395264
+   }
+  },
+  {
+   "id": 176,
+   "name": "Bicubic Surface 4 Point 12",
+   "position": {
+    "x": 20.0,
+    "y": 0.0,
+    "z": 6.666667461395264
+   }
+  },
+  {
+   "id": 177,
+   "name": "Bicubic Surface 4 Point 13",
+   "position": {
+    "x": -20.01936912536621,
+    "y": -9.053287897131668e-09,
+    "z": 25.489492416381836
+   }
+  },
+  {
+   "id": 178,
+   "name": "Bicubic Surface 4 Point 14",
+   "position": {
+    "x": -6.68603515625,
+    "y": -9.053287897131668e-09,
+    "z": 25.489492416381836
+   }
+  },
+  {
+   "id": 179,
+   "name": "Bicubic Surface 4 Point 15",
+   "position": {
+    "x": 6.647298336029053,
+    "y": -9.053287897131668e-09,
+    "z": 25.489492416381836
+   }
+  },
+  {
+   "id": 180,
+   "name": "Bicubic Surface 4 Point 16",
+   "position": {
+    "x": 19.98063087463379,
+    "y": -9.053287897131668e-09,
+    "z": 25.489492416381836
+   }
+  },
+  {
+   "id": 181,
+   "name": "Bicubic Surface 5 Point 1",
+   "position": {
+    "x": -4.09648323059082,
+    "y": -0.15297505259513855,
+    "z": -2.8426101207733154
+   }
+  },
+  {
+   "id": 182,
+   "name": "Bicubic Surface 5 Point 2",
+   "position": {
+    "x": -3.2225074768066406,
+    "y": 0.2256462574005127,
+    "z": -1.9856441020965576
+   }
+  },
+  {
+   "id": 183,
+   "name": "Bicubic Surface 5 Point 3",
+   "position": {
+    "x": -2.577983856201172,
+    "y": 0.4166361093521118,
+    "z": -1.374393105506897
+   }
+  },
+  {
+   "id": 184,
+   "name": "Bicubic Surface 5 Point 4",
+   "position": {
+    "x": -2.1173815727233887,
+    "y": 0.19662559032440186,
+    "z": -0.3643244504928589
+   }
+  },
+  {
+   "id": 185,
+   "name": "Bicubic Surface 5 Point 5",
+   "position": {
+    "x": -6.054236888885498,
+    "y": -0.17803716659545898,
+    "z": -1.6975030899047852
+   }
+  },
+  {
+   "id": 186,
+   "name": "Bicubic Surface 5 Point 6",
+   "position": {
+    "x": -5.084440231323242,
+    "y": 0.12199029326438904,
+    "z": -1.242570161819458
+   }
+  },
+  {
+   "id": 187,
+   "name": "Bicubic Surface 5 Point 7",
+   "position": {
+    "x": -3.9877936840057373,
+    "y": 0.22924169898033142,
+    "z": -0.9374871253967285
+   }
+  },
+  {
+   "id": 188,
+   "name": "Bicubic Surface 5 Point 8",
+   "position": {
+    "x": -2.561094284057617,
+    "y": 0.21793794631958008,
+    "z": -0.6389235258102417
+   }
+  },
+  {
+   "id": 189,
+   "name": "Bicubic Surface 5 Point 9",
+   "position": {
+    "x": -7.100200653076172,
+    "y": -0.2307869791984558,
+    "z": 0.10229424387216568
+   }
+  },
+  {
+   "id": 190,
+   "name": "Bicubic Surface 5 Point 10",
+   "position": {
+    "x": -5.921562671661377,
+    "y": 0.10352137684822083,
+    "z": 0.15568681061267853
+   }
+  },
+  {
+   "id": 191,
+   "name": "Bicubic Surface 5 Point 11",
+   "position": {
+    "x": -4.805976390838623,
+    "y": 0.198920339345932,
+    "z": 0.2240818440914154
+   }
+  },
+  {
+   "id": 192,
+   "name": "Bicubic Surface 5 Point 12",
+   "position": {
+    "x": -3.3880395889282227,
+    "y": 0.21539121866226196,
+    "z": 0.27880993485450745
+   }
+  },
+  {
+   "id": 193,
+   "name": "Bicubic Surface 5 Point 13",
+   "position": {
+    "x": -7.320185661315918,
+    "y": -0.2880069613456726,
+    "z": 1.5057555437088013
+   }
+  },
+  {
+   "id": 194,
+   "name": "Bicubic Surface 5 Point 14",
+   "position": {
+    "x": -6.167367458343506,
+    "y": -0.1029697060585022,
+    "z": 1.5105420351028442
+   }
+  },
+  {
+   "id": 195,
+   "name": "Bicubic Surface 5 Point 15",
+   "position": {
+    "x": -4.9981770515441895,
+    "y": -0.15878044068813324,
+    "z": 1.546391487121582
+   }
+  },
+  {
+   "id": 196,
+   "name": "Bicubic Surface 5 Point 16",
+   "position": {
+    "x": -3.449714183807373,
+    "y": -0.26761430501937866,
+    "z": 1.5509604215621948
+   }
+  },
+  {
+   "id": 197,
+   "name": "Bicubic Surface 6 Point 1",
+   "position": {
+    "x": -2.5823287963867188,
+    "y": -3.044346332550049,
+    "z": 6.655834197998047
+   }
+  },
+  {
+   "id": 198,
+   "name": "Bicubic Surface 6 Point 2",
+   "position": {
+    "x": 1.157605528831482,
+    "y": -1.3834129571914673,
+    "z": 5.738383769989014
+   }
+  },
+  {
+   "id": 199,
+   "name": "Bicubic Surface 6 Point 3",
+   "position": {
+    "x": 2.789025068283081,
+    "y": 0.24918566644191742,
+    "z": 7.20974063873291
+   }
+  },
+  {
+   "id": 200,
+   "name": "Bicubic Surface 6 Point 4",
+   "position": {
+    "x": 3.499804735183716,
+    "y": 0.249185711145401,
+    "z": 8.008119583129883
+   }
+  },
+  {
+   "id": 201,
+   "name": "Bicubic Surface 6 Point 5",
+   "position": {
+    "x": 1.2166969776153564,
+    "y": -2.0122885704040527,
+    "z": 10.624722480773926
+   }
+  },
+  {
+   "id": 202,
+   "name": "Bicubic Surface 6 Point 6",
+   "position": {
+    "x": -4.004814624786377,
+    "y": -3.044346332550049,
+    "z": 7.563683032989502
+   }
+  },
+  {
+   "id": 203,
+   "name": "Bicubic Surface 6 Point 7",
+   "position": {
+    "x": -2.587327241897583,
+    "y": 0.2491856962442398,
+    "z": 8.415350914001465
+   }
+  },
+  {
+   "id": 204,
+   "name": "Bicubic Surface 6 Point 8",
+   "position": {
+    "x": -1.8874120712280273,
+    "y": 0.24918580055236816,
+    "z": 10.285887718200684
+   }
+  },
+  {
+   "id": 205,
+   "name": "Bicubic Surface 6 Point 9",
+   "position": {
+    "x": -0.9227896332740784,
+    "y": 0.24918584525585175,
+    "z": 11.39376163482666
+   }
+  },
+  {
+   "id": 206,
+   "name": "Bicubic Surface 6 Point 10",
+   "position": {
+    "x": 0.32895416021347046,
+    "y": -2.0122883319854736,
+    "z": 12.059843063354492
+   }
+  },
+  {
+   "id": 207,
+   "name": "Bicubic Surface 6 Point 11",
+   "position": {
+    "x": -5.42730188369751,
+    "y": -3.044346332550049,
+    "z": 8.471531867980957
+   }
+  },
+  {
+   "id": 208,
+   "name": "Bicubic Surface 6 Point 12",
+   "position": {
+    "x": -4.0098137855529785,
+    "y": 0.24918583035469055,
+    "z": 9.323199272155762
+   }
+  },
+  {
+   "id": 209,
+   "name": "Bicubic Surface 6 Point 13",
+   "position": {
+    "x": -3.3098983764648438,
+    "y": 0.24918591976165771,
+    "z": 11.19373607635498
+   }
+  },
+  {
+   "id": 210,
+   "name": "Bicubic Surface 6 Point 14",
+   "position": {
+    "x": -2.091433525085449,
+    "y": 0.2491859793663025,
+    "z": 12.611105918884277
+   }
+  },
+  {
+   "id": 211,
+   "name": "Bicubic Surface 6 Point 15",
+   "position": {
+    "x": -0.5587883591651917,
+    "y": -2.0122880935668945,
+    "z": 13.494962692260742
+   }
+  },
+  {
+   "id": 212,
+   "name": "Bicubic Surface 6 Point 16",
+   "position": {
+    "x": -6.655439853668213,
+    "y": -1.8007372617721558,
+    "z": 9.43217945098877
+   }
+  },
+  {
+   "id": 213,
+   "name": "Bicubic Surface 6 Point 17",
+   "position": {
+    "x": -5.432300090789795,
+    "y": 0.2491859495639801,
+    "z": 10.231048583984375
+   }
+  },
+  {
+   "id": 214,
+   "name": "Bicubic Surface 6 Point 18",
+   "position": {
+    "x": -4.732385158538818,
+    "y": 0.24918605387210846,
+    "z": 12.101584434509277
+   }
+  },
+  {
+   "id": 215,
+   "name": "Bicubic Surface 6 Point 19",
+   "position": {
+    "x": -3.1356468200683594,
+    "y": 0.6992222666740417,
+    "z": 14.263932228088379
+   }
+  },
+  {
+   "id": 216,
+   "name": "Bicubic Surface 6 Point 20",
+   "position": {
+    "x": -1.4465320110321045,
+    "y": -2.0122880935668945,
+    "z": 14.930083274841309
+   }
+  },
+  {
+   "id": 217,
+   "name": "Bicubic Surface 6 Point 21",
+   "position": {
+    "x": -8.945972442626953,
+    "y": -0.66397625207901,
+    "z": 10.964096069335938
+   }
+  },
+  {
+   "id": 218,
+   "name": "Bicubic Surface 6 Point 22",
+   "position": {
+    "x": -8.066368103027344,
+    "y": -0.6639761924743652,
+    "z": 12.342327117919922
+   }
+  },
+  {
+   "id": 219,
+   "name": "Bicubic Surface 6 Point 23",
+   "position": {
+    "x": -6.440399169921875,
+    "y": -2.5559823513031006,
+    "z": 13.24320125579834
+   }
+  },
+  {
+   "id": 220,
+   "name": "Bicubic Surface 6 Point 24",
+   "position": {
+    "x": -4.714249134063721,
+    "y": -2.5559823513031006,
+    "z": 15.279562950134277
+   }
+  },
+  {
+   "id": 221,
+   "name": "Bicubic Surface 6 Point 25",
+   "position": {
+    "x": -2.334275007247925,
+    "y": -2.0122880935668945,
+    "z": 16.365201950073242
+   }
+  },
+  {
+   "id": 222,
+   "name": "Bicubic Surface 7 Point 1",
+   "position": {
+    "x": 3.9745168685913086,
+    "y": -1.2570830583572388,
+    "z": 7.058497905731201
+   }
+  },
+  {
+   "id": 223,
+   "name": "Bicubic Surface 7 Point 2",
+   "position": {
+    "x": 4.430379867553711,
+    "y": -1.2570829391479492,
+    "z": 7.903358459472656
+   }
+  },
+  {
+   "id": 224,
+   "name": "Bicubic Surface 7 Point 3",
+   "position": {
+    "x": 4.886241912841797,
+    "y": -1.2570829391479492,
+    "z": 8.74821949005127
+   }
+  },
+  {
+   "id": 225,
+   "name": "Bicubic Surface 7 Point 4",
+   "position": {
+    "x": 5.459329605102539,
+    "y": -1.8897490501403809,
+    "z": 9.684538841247559
+   }
+  },
+  {
+   "id": 226,
+   "name": "Bicubic Surface 7 Point 5",
+   "position": {
+    "x": 5.608335971832275,
+    "y": 1.5211997032165527,
+    "z": 10.321245193481445
+   }
+  },
+  {
+   "id": 227,
+   "name": "Bicubic Surface 7 Point 6",
+   "position": {
+    "x": 3.573885440826416,
+    "y": 0.008961217477917671,
+    "z": 7.240287780761719
+   }
+  },
+  {
+   "id": 228,
+   "name": "Bicubic Surface 7 Point 7",
+   "position": {
+    "x": 4.026224136352539,
+    "y": 0.14951305091381073,
+    "z": 8.100647926330566
+   }
+  },
+  {
+   "id": 229,
+   "name": "Bicubic Surface 7 Point 8",
+   "position": {
+    "x": 4.240763187408447,
+    "y": 0.1412263959646225,
+    "z": 8.85983657836914
+   }
+  },
+  {
+   "id": 230,
+   "name": "Bicubic Surface 7 Point 9",
+   "position": {
+    "x": 4.976357460021973,
+    "y": 0.5392267107963562,
+    "z": 9.782851219177246
+   }
+  },
+  {
+   "id": 231,
+   "name": "Bicubic Surface 7 Point 10",
+   "position": {
+    "x": 5.60966157913208,
+    "y": -1.8350965976715088,
+    "z": 10.522302627563477
+   }
+  },
+  {
+   "id": 232,
+   "name": "Bicubic Surface 7 Point 11",
+   "position": {
+    "x": 2.8192310333251953,
+    "y": 0.008961157873272896,
+    "z": 7.647476673126221
+   }
+  },
+  {
+   "id": 233,
+   "name": "Bicubic Surface 7 Point 12",
+   "position": {
+    "x": 3.2715702056884766,
+    "y": 0.14951305091381073,
+    "z": 8.507837295532227
+   }
+  },
+  {
+   "id": 234,
+   "name": "Bicubic Surface 7 Point 13",
+   "position": {
+    "x": 4.045996189117432,
+    "y": 0.14951302111148834,
+    "z": 9.005640983581543
+   }
+  },
+  {
+   "id": 235,
+   "name": "Bicubic Surface 7 Point 14",
+   "position": {
+    "x": 4.384725093841553,
+    "y": 0.1315949708223343,
+    "z": 10.17048454284668
+   }
+  },
+  {
+   "id": 236,
+   "name": "Bicubic Surface 7 Point 15",
+   "position": {
+    "x": 4.855007648468018,
+    "y": -1.8350967168807983,
+    "z": 10.929491996765137
+   }
+  },
+  {
+   "id": 237,
+   "name": "Bicubic Surface 7 Point 16",
+   "position": {
+    "x": 2.3996894359588623,
+    "y": 0.089571014046669,
+    "z": 7.8682026863098145
+   }
+  },
+  {
+   "id": 238,
+   "name": "Bicubic Surface 7 Point 17",
+   "position": {
+    "x": 2.8520283699035645,
+    "y": 0.2301228791475296,
+    "z": 8.72856330871582
+   }
+  },
+  {
+   "id": 239,
+   "name": "Bicubic Surface 7 Point 18",
+   "position": {
+    "x": 3.6264543533325195,
+    "y": 0.23012299835681915,
+    "z": 9.226366996765137
+   }
+  },
+  {
+   "id": 240,
+   "name": "Bicubic Surface 7 Point 19",
+   "position": {
+    "x": 3.7637526988983154,
+    "y": 0.23012299835681915,
+    "z": 10.418285369873047
+   }
+  },
+  {
+   "id": 241,
+   "name": "Bicubic Surface 7 Point 20",
+   "position": {
+    "x": 4.281478404998779,
+    "y": -1.1170334815979004,
+    "z": 11.228679656982422
+   }
+  },
+  {
+   "id": 242,
+   "name": "Bicubic Surface 7 Point 21",
+   "position": {
+    "x": 2.190155029296875,
+    "y": -1.1767778396606445,
+    "z": 8.027888298034668
+   }
+  },
+  {
+   "id": 243,
+   "name": "Bicubic Surface 7 Point 22",
+   "position": {
+    "x": 2.64601731300354,
+    "y": -1.1767778396606445,
+    "z": 8.872748374938965
+   }
+  },
+  {
+   "id": 244,
+   "name": "Bicubic Surface 7 Point 23",
+   "position": {
+    "x": 3.420443296432495,
+    "y": -1.176777720451355,
+    "z": 9.370552062988281
+   }
+  },
+  {
+   "id": 245,
+   "name": "Bicubic Surface 7 Point 24",
+   "position": {
+    "x": 3.9433953762054443,
+    "y": -1.176777720451355,
+    "z": 10.464943885803223
+   }
+  },
+  {
+   "id": 246,
+   "name": "Bicubic Surface 7 Point 25",
+   "position": {
+    "x": 5.335353851318359,
+    "y": -1.176777720451355,
+    "z": 11.466529846191406
+   }
+  },
+  {
+   "id": 247,
+   "name": "Bicubic Surface 9 Point 1",
+   "position": {
+    "x": -2.520486354827881,
+    "y": -4.489890098571777,
+    "z": -7.769026756286621
+   }
+  },
+  {
+   "id": 248,
+   "name": "Bicubic Surface 9 Point 2",
+   "position": {
+    "x": 4.777760982513428,
+    "y": -5.848048686981201,
+    "z": -4.357321739196777
+   }
+  },
+  {
+   "id": 249,
+   "name": "Bicubic Surface 9 Point 3",
+   "position": {
+    "x": 6.1536335945129395,
+    "y": -5.903444766998291,
+    "z": -3.1248385906219482
+   }
+  },
+  {
+   "id": 250,
+   "name": "Bicubic Surface 9 Point 4",
+   "position": {
+    "x": 7.5295090675354,
+    "y": -5.958841323852539,
+    "z": -1.8923596143722534
+   }
+  },
+  {
+   "id": 251,
+   "name": "Bicubic Surface 9 Point 5",
+   "position": {
+    "x": 8.90538215637207,
+    "y": -6.014237403869629,
+    "z": -0.6598798036575317
+   }
+  },
+  {
+   "id": 252,
+   "name": "Bicubic Surface 9 Point 6",
+   "position": {
+    "x": 10.281255722045898,
+    "y": -6.069633483886719,
+    "z": 0.5726000070571899
+   }
+  },
+  {
+   "id": 253,
+   "name": "Bicubic Surface 9 Point 7",
+   "position": {
+    "x": 2.5242130756378174,
+    "y": 0.14409103989601135,
+    "z": -5.953338146209717
+   }
+  },
+  {
+   "id": 254,
+   "name": "Bicubic Surface 9 Point 8",
+   "position": {
+    "x": 5.059146881103516,
+    "y": 1.107843279838562,
+    "z": -4.49376106262207
+   }
+  },
+  {
+   "id": 255,
+   "name": "Bicubic Surface 9 Point 9",
+   "position": {
+    "x": 6.429145336151123,
+    "y": 0.908289909362793,
+    "z": -2.912156105041504
+   }
+  },
+  {
+   "id": 256,
+   "name": "Bicubic Surface 9 Point 10",
+   "position": {
+    "x": 7.505609035491943,
+    "y": 0.644087016582489,
+    "z": -1.433464527130127
+   }
+  },
+  {
+   "id": 257,
+   "name": "Bicubic Surface 9 Point 11",
+   "position": {
+    "x": 9.027913093566895,
+    "y": 0.16625873744487762,
+    "z": 0.2787523865699768
+   }
+  },
+  {
+   "id": 258,
+   "name": "Bicubic Surface 9 Point 12",
+   "position": {
+    "x": 9.856517791748047,
+    "y": -1.1935882568359375,
+    "z": 1.8138856887817383
+   }
+  },
+  {
+   "id": 259,
+   "name": "Bicubic Surface 9 Point 13",
+   "position": {
+    "x": 2.926253318786621,
+    "y": -0.0320625901222229,
+    "z": -6.172006607055664
+   }
+  },
+  {
+   "id": 260,
+   "name": "Bicubic Surface 9 Point 14",
+   "position": {
+    "x": 4.880098819732666,
+    "y": 0.3723028600215912,
+    "z": -3.1934051513671875
+   }
+  },
+  {
+   "id": 261,
+   "name": "Bicubic Surface 9 Point 15",
+   "position": {
+    "x": 6.156099796295166,
+    "y": 0.3412477970123291,
+    "z": -1.3728749752044678
+   }
+  },
+  {
+   "id": 262,
+   "name": "Bicubic Surface 9 Point 16",
+   "position": {
+    "x": 7.216075420379639,
+    "y": 0.1908443719148636,
+    "z": 0.5550368428230286
+   }
+  },
+  {
+   "id": 263,
+   "name": "Bicubic Surface 9 Point 17",
+   "position": {
+    "x": 8.119354248046875,
+    "y": 0.03592108190059662,
+    "z": 1.7810173034667969
+   }
+  },
+  {
+   "id": 264,
+   "name": "Bicubic Surface 9 Point 18",
+   "position": {
+    "x": 9.57409954071045,
+    "y": -1.7905750274658203,
+    "z": 4.043056011199951
+   }
+  },
+  {
+   "id": 265,
+   "name": "Bicubic Surface 9 Point 19",
+   "position": {
+    "x": 2.527691125869751,
+    "y": -0.15659871697425842,
+    "z": -5.3083319664001465
+   }
+  },
+  {
+   "id": 266,
+   "name": "Bicubic Surface 9 Point 20",
+   "position": {
+    "x": 4.603661060333252,
+    "y": 0.25426560640335083,
+    "z": -1.9944239854812622
+   }
+  },
+  {
+   "id": 267,
+   "name": "Bicubic Surface 9 Point 21",
+   "position": {
+    "x": 5.313072681427002,
+    "y": 0.24510978162288666,
+    "z": -0.2880370616912842
+   }
+  },
+  {
+   "id": 268,
+   "name": "Bicubic Surface 9 Point 22",
+   "position": {
+    "x": 6.150815963745117,
+    "y": 0.10890541970729828,
+    "z": 1.7504546642303467
+   }
+  },
+  {
+   "id": 269,
+   "name": "Bicubic Surface 9 Point 23",
+   "position": {
+    "x": 6.783877372741699,
+    "y": 0.09907111525535583,
+    "z": 3.130445718765259
+   }
+  },
+  {
+   "id": 270,
+   "name": "Bicubic Surface 9 Point 24",
+   "position": {
+    "x": 7.70933723449707,
+    "y": -1.8846840858459473,
+    "z": 5.17741060256958
+   }
+  },
+  {
+   "id": 271,
+   "name": "Bicubic Surface 9 Point 25",
+   "position": {
+    "x": 2.186375617980957,
+    "y": 0.22044354677200317,
+    "z": -2.991011381149292
+   }
+  },
+  {
+   "id": 272,
+   "name": "Bicubic Surface 9 Point 26",
+   "position": {
+    "x": 2.8957865238189697,
+    "y": 0.2112877368927002,
+    "z": -1.2846243381500244
+   }
+  },
+  {
+   "id": 273,
+   "name": "Bicubic Surface 9 Point 27",
+   "position": {
+    "x": 3.6051979064941406,
+    "y": 0.2021319568157196,
+    "z": 0.4217625856399536
+   }
+  },
+  {
+   "id": 274,
+   "name": "Bicubic Surface 9 Point 28",
+   "position": {
+    "x": 4.314609527587891,
+    "y": 0.19297613203525543,
+    "z": 2.1281490325927734
+   }
+  },
+  {
+   "id": 275,
+   "name": "Bicubic Surface 9 Point 29",
+   "position": {
+    "x": 4.607057094573975,
+    "y": -0.27856481075286865,
+    "z": 3.881786584854126
+   }
+  },
+  {
+   "id": 276,
+   "name": "Bicubic Surface 9 Point 30",
+   "position": {
+    "x": 5.816315650939941,
+    "y": -0.8111304044723511,
+    "z": 5.730284690856934
+   }
+  },
+  {
+   "id": 277,
+   "name": "Bicubic Surface 9 Point 31",
+   "position": {
+    "x": 0.4785008430480957,
+    "y": 0.17746566236019135,
+    "z": -2.2812113761901855
+   }
+  },
+  {
+   "id": 278,
+   "name": "Bicubic Surface 9 Point 32",
+   "position": {
+    "x": 1.1879117488861084,
+    "y": 0.16830982267856598,
+    "z": -0.5748248100280762
+   }
+  },
+  {
+   "id": 279,
+   "name": "Bicubic Surface 9 Point 33",
+   "position": {
+    "x": 1.897322654724121,
+    "y": 0.1591540277004242,
+    "z": 1.1315621137619019
+   }
+  },
+  {
+   "id": 280,
+   "name": "Bicubic Surface 9 Point 34",
+   "position": {
+    "x": 2.6067347526550293,
+    "y": 0.14999821782112122,
+    "z": 2.837948799133301
+   }
+  },
+  {
+   "id": 281,
+   "name": "Bicubic Surface 9 Point 35",
+   "position": {
+    "x": 3.316145896911621,
+    "y": 0.14084242284297943,
+    "z": 4.54433536529541
+   }
+  },
+  {
+   "id": 282,
+   "name": "Bicubic Surface 9 Point 36",
+   "position": {
+    "x": 4.025557518005371,
+    "y": 0.13168662786483765,
+    "z": 6.250720500946045
+   }
+  }
+ ]
+}

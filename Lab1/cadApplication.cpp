@@ -9,7 +9,9 @@
 #include"entityPresets.h"
 #include"saving/saving.h"
 #include"intersect.h"
-
+#include"outline.h"
+#include"rough.h"
+#include"exact.h"
 using namespace mini;
 using namespace DirectX;
 
@@ -127,7 +129,13 @@ void CadApplication::GUI()
 	ImGui::Begin("Options");
 	MyGui::GuiOptions();
 	{
-		static std::array<char, 256> buf{ "../testint.json" };
+		static std::array<char, 256> buf{ "../projekt5.json" };
+		static bool init = false;
+		if (!init)
+		{
+			load(*this, buf.data());
+			init = true;
+		}
 		bool sv = false, ld = false;
 		MyGui::SaveLoadWidget(buf, sv, ld);
 		try
@@ -267,6 +275,106 @@ void CadApplication::GUI()
 				mainFolder->Add(EntityPresets::IntersCurve(
 					a[i], b[i],
 					uva[i], uvb[i], pts[i], texResolution));
+			}
+		}
+	}
+	MyGui::SameLineIfFits(buttonDims.x);
+	{
+		if (ImGui::Button("Outline", buttonDims))
+			MyGui::ShowOutlinePopup();
+		static float detail = 1.0f, pathStep = 0.1f; bool create = false;
+		MyGui::OutlinePopup(detail, pathStep, create);
+		if (create)
+		{
+			auto base = Entity::GetSelected<BicubicSurface>();
+			if (base.size() == 1)
+			{
+				auto trs = Catalogue<TorusGenerator>::Instance.GetAll();
+				auto bsf = Catalogue<BicubicSurface>::Instance.GetAll();
+				Entity::Selection set{};
+				for (int i = 0; i < trs.size(); i++)
+					set.push_back(&trs[i]->owner);
+				for (int i = 0; i < bsf.size(); i++)
+					if (!bsf[i]->owner.Selected())
+						set.push_back(&bsf[i]->owner);
+				std::vector<DirectX::XMFLOAT2> pts;
+				Paths::OutlineSet(set, &base[0]->owner,
+					SceneCursor::instance.GetWorld(), detail, pts);
+
+				XMFLOAT2 last = pts[0];
+				std::vector<XMFLOAT3> fileOutput{ { pts[0].x, pts[0].y, 0.0f } };
+				for (int i = 1; i < pts.size(); i++)
+				{
+					float d = vecmath::length({ last.x - pts[i].x, last.y - pts[i].y });
+					if (d > pathStep)
+					{
+						fileOutput.push_back({ pts[i].x, pts[i].y, 0.0f });
+						last = pts[i];
+					}
+				}
+				for (int i = 1; i < fileOutput.size(); i++)
+					mainFolder->Add(EntityPresets::Point(fileOutput[i]));
+				savePath(&fileOutput[0].x, fileOutput.size() * 3, "../3.f10");
+
+			}
+		}
+	}
+	MyGui::SameLineIfFits(buttonDims.x);
+	{
+		static int resolution = 128; bool create = false;
+		static float tolerance = 1.0f;
+		if (ImGui::Button("Rough", buttonDims))
+			MyGui::ShowRoughPopup();
+		MyGui::RoughPopup(resolution, tolerance, create);
+		if (create)
+		{
+			auto base = Entity::GetSelected<BicubicSurface>();
+			if (base.size() == 1)
+			{
+				auto trs = Catalogue<TorusGenerator>::Instance.GetAll();
+				auto bsf = Catalogue<BicubicSurface>::Instance.GetAll();
+				Entity::Selection set{};
+				for (int i = 0; i < trs.size(); i++)
+					set.push_back(&trs[i]->owner);
+				for (int i = 0; i < bsf.size(); i++)
+					if (!bsf[i]->owner.Selected())
+						set.push_back(&bsf[i]->owner);
+				std::vector<DirectX::XMFLOAT3> pts;
+				Paths::Rough(set, &base[0]->owner,
+					resolution, tolerance, pts);
+
+				//for (int i = 0; i < pts.size(); i++)
+				//	mainFolder->Add(EntityPresets::Point(pts[i]));
+				savePath(&pts[0].x, pts.size() * 3, "../1.k16");
+			}
+		}
+	}
+	MyGui::SameLineIfFits(buttonDims.x);
+	{
+		bool create = false;
+		static float detail = 1.0f;
+		if (ImGui::Button("Exact", buttonDims))
+			MyGui::ShowExactPopup();
+		MyGui::ExactPopup(detail, create);
+		if (create)
+		{
+			auto base = Entity::GetSelected<BicubicSurface>();
+			//if (base.size() == 1)
+			{
+				auto trs = Catalogue<TorusGenerator>::Instance.GetAll();
+				auto bsf = Catalogue<BicubicSurface>::Instance.GetAll();
+				Entity::Selection set{};
+				for (int i = 0; i < trs.size(); i++)
+					set.push_back(&trs[i]->owner);
+				for (int i = 0; i < bsf.size(); i++)
+					if (!bsf[i]->owner.Selected())
+						set.push_back(&bsf[i]->owner);
+				std::vector<DirectX::XMFLOAT3> pts;
+				Paths::Exact(set, detail, pts);
+
+				for (int i = 0; i < pts.size(); i++)
+					mainFolder->Add(EntityPresets::Point(pts[i]));
+				//savePath(&pts[0].x, pts.size() * 3, "../1.k16");
 			}
 		}
 	}

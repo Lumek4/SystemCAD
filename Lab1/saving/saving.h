@@ -19,3 +19,5 @@ enum class SaveResult
 };
 SaveResult save(const CadApplication& app, const char* filepath);
 SaveResult load(CadApplication& app, const char* filepath);
+
+SaveResult savePath(const float* path, int count, const char* filepath);

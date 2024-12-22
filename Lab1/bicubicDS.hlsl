@@ -114,11 +114,13 @@ DS_OUTPUT main(
             dy += bx[x] * dby[y] * p[x + y * 4];
         }
     
+    float3 normal = normalize(cross(dx, dy));
+    if (flip)
+        normal = -normal;
     output.vPosition = float4(pos, 1);
     output.vPosition = mul(projMatrix, output.vPosition);
     output.uv = flip ? uv.yx : uv.xy;
-    //output.vNormal = mul(projMatrix, float4(normalize(cross(dx, dy)), 0)).xyz;
-    //output.vNormal = normalize(output.vNormal);
 	
+    
 	return output;
 }

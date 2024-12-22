@@ -49,6 +49,9 @@
     <Filter Include="Source Files\intersect">
       <UniqueIdentifier>{9c3a343a-7106-4988-813c-469e332d4306}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\paths">
+      <UniqueIdentifier>{7d8b6e95-2d95-4e1d-b399-1dbf66ddf271}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgui\imconfig.h">
@@ -207,6 +210,15 @@
     <ClInclude Include="intersect_math.h">
       <Filter>Header Files\intersect</Filter>
     </ClInclude>
+    <ClInclude Include="outline.h">
+      <Filter>Header Files\paths</Filter>
+    </ClInclude>
+    <ClInclude Include="rough.h">
+      <Filter>Header Files\paths</Filter>
+    </ClInclude>
+    <ClInclude Include="exact.h">
+      <Filter>Header Files\paths</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui\imgui.cpp">
@@ -342,6 +354,15 @@
       <Filter>Source Files\ecs</Filter>
     </ClCompile>
     <ClCompile Include="intersect_interfaces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="outline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rough.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

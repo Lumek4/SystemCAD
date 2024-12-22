@@ -103,6 +103,75 @@ float vecmath::lengthSq(DirectX::XMFLOAT3 v)
     return v.x * v.x + v.y * v.y + v.z * v.z;
 }
 
+float vecmath::length(DirectX::XMFLOAT2 v)
+{
+    return sqrtf(v.x * v.x + v.y * v.y);
+}
+
+float vecmath::lengthSq(DirectX::XMFLOAT2 v)
+{
+    return v.x * v.x + v.y * v.y;
+}
+
+float vecmath::triArea(DirectX::XMFLOAT2 a, DirectX::XMFLOAT2 b, DirectX::XMFLOAT2 c)
+{
+    XMFLOAT2 da = { a.x - c.x, a.y - c.y };
+    XMFLOAT2 db = { b.x - c.x, b.y - c.y };
+    return da.x * db.y - da.y * db.x;
+}
+
+bool vecmath::bb2d(DirectX::XMFLOAT2 a1, DirectX::XMFLOAT2 a2,
+    DirectX::XMFLOAT2 b1, DirectX::XMFLOAT2 b2)
+{
+    XMFLOAT2 atl = { fminf(a1.x, a2.x), fminf(a1.y, a2.y) };
+    XMFLOAT2 abr = { fmaxf(a1.x, a2.x), fmaxf(a1.y, a2.y) };
+    XMFLOAT2 btl = { fminf(b1.x, b2.x), fminf(b1.y, b2.y) };
+    XMFLOAT2 bbr = { fmaxf(b1.x, b2.x), fmaxf(b1.y, b2.y) };
+    bool xin =
+        (atl.x <= btl.x && btl.x <= abr.x) ||
+        (atl.x <= bbr.x && bbr.x <= abr.x) ||
+        (btl.x <= atl.x && atl.x <= bbr.x);
+    bool yin =                  
+        (atl.y <= btl.y && btl.y <= abr.y) ||
+        (atl.y <= bbr.y && bbr.y <= abr.y) ||
+        (btl.y <= atl.y && atl.y <= bbr.y);
+
+    return xin && yin;
+}
+
+bool vecmath::bb2d(DirectX::XMFLOAT2 atl, DirectX::XMFLOAT2 abr, DirectX::XMFLOAT2 b)
+{
+    bool xin = atl.x <= b.x && b.x <= abr.x;
+    bool yin = atl.y <= b.y && b.y <= abr.y;
+    return xin && yin;
+}
+
+int vecmath::segments2d(DirectX::XMFLOAT2 a1, DirectX::XMFLOAT2 a2, DirectX::XMFLOAT2 b1, DirectX::XMFLOAT2 b2)
+{
+    float ax = a1.x - a2.x;
+    float bx = b1.x - b2.x;
+    float dx = a1.x - b1.x;
+
+    float ay = a1.y - a2.y;
+    float by = b1.y - b2.y;
+    float dy = a1.y - b1.y;
+
+    float t = dx * by - dy * bx;
+    float u = - (ax * dy - ay * dx);
+    float v = ax * by - ay * bx;
+    if (fabsf(v) < EPS * fminf(fminf(ax,bx),fminf(ay,by)))
+    {
+        return 0; // lines are parallel
+        if (fabsf(u) < EPS && fabsf(t) < EPS && bb2d(a1, a2, b1, b2))
+            return v < 0 ? -1 : 1;
+        else return 0;
+    }
+    t /= v; u /= v;
+    if (-EPS <= t && t <= 1+EPS && -EPS <= u && u <= 1+EPS)
+        return v < 0 ? -1 : 1;
+    else return 0;
+}
+
 DirectX::XMFLOAT3 vecmath::argwiseMul(DirectX::XMFLOAT3 a, DirectX::XMFLOAT3 b)
 {
     return DirectX::XMFLOAT3(a.x*b.x, a.y*b.y, a.z*b.z);

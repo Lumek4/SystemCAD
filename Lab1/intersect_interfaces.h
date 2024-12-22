@@ -5,7 +5,7 @@
 #include "exceptions.h"
 
 template<typename T>
-class IntersectData {};
+class IntersectData;
 
 struct BoundingBox
 {
@@ -68,3 +68,48 @@ private:
 	DirectX::XMFLOAT2 radii;
 	DirectX::XMMATRIX transform;
 };
+
+template<typename T>
+class Inflation : public IntersectData<T>
+{
+public:
+	const float R;
+	Inflation(T* object, float R)
+		:IntersectData<T>(object), R(R)
+	{}
+};
+
+template<typename T>
+class IntersectData<Inflation<T>>
+{
+private:
+	Inflation<T>* data;
+public:
+	IntersectData<Inflation<T>>(Inflation<T>* object);
+	inline void Point(DirectX::XMFLOAT2 uv,
+		DirectX::XMVECTOR& position,
+		DirectX::XMVECTOR& du,
+		DirectX::XMVECTOR& dv) const;
+	const BoundingBox& GetBB() const { return bb; }
+	const DirectX::XMINT2& GetWrapMode() const { return data->GetWrapMode(); }
+private:
+	BoundingBox bb;
+};
+
+template<typename T>
+IntersectData<Inflation<T>>::IntersectData<Inflation<T>>
+(Inflation<T>* object)
+{
+	data = object;
+	bb = object->GetBB();
+}
+template<typename T>
+inline void IntersectData<Inflation<T>>::Point(DirectX::XMFLOAT2 uv,
+	DirectX::XMVECTOR& position,
+	DirectX::XMVECTOR& du,
+	DirectX::XMVECTOR& dv) const
+{
+	using namespace DirectX;
+	data->Point(uv, position, du, dv);
+	position = position + XMVector3Normalize(XMVector3Cross(du, dv))*data->R;
+}

@@ -30,6 +30,15 @@ namespace vecmath
 	float clamp01(float v);
 	float length(DirectX::XMFLOAT3 v);
 	float lengthSq(DirectX::XMFLOAT3 v);
+	float length(DirectX::XMFLOAT2 v);
+	float lengthSq(DirectX::XMFLOAT2 v);
+	float triArea(DirectX::XMFLOAT2 a, DirectX::XMFLOAT2 b, DirectX::XMFLOAT2 c);
+	bool bb2d(DirectX::XMFLOAT2 a1, DirectX::XMFLOAT2 a2,
+		DirectX::XMFLOAT2 b1, DirectX::XMFLOAT2 b2);
+	bool bb2d(DirectX::XMFLOAT2 a1, DirectX::XMFLOAT2 a2,
+		DirectX::XMFLOAT2 b);
+	int segments2d(DirectX::XMFLOAT2 a1, DirectX::XMFLOAT2 a2,
+		DirectX::XMFLOAT2 b1, DirectX::XMFLOAT2 b2);
 	DirectX::XMFLOAT3 argwiseMul(DirectX::XMFLOAT3 a, DirectX::XMFLOAT3 b);
 	DirectX::XMFLOAT3& get(DirectX::XMFLOAT3X3& m, int k);
 }

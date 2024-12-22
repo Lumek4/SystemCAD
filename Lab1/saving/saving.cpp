@@ -364,3 +364,27 @@ SaveResult load(CadApplication& app, const char* filepath)
 
 	return SaveResult::Success;
 }
+
+SaveResult savePath(const float* path, int count, const char* filepath)
+{
+	std::ofstream f(filepath);
+	if (!f.is_open())
+		return SaveResult::NoFile;
+	assert(count % 3 == 0);
+	try
+	{
+		for (int i = 0; i < count; i += 3)
+		{
+			f << "N" << i / 3 + 1 << "G01";
+			f << "X" << std::fixed << std::setw(5) << std::setprecision(3) << 75*(path[i + 0] * 2 - 1);
+			f << "Y" << std::fixed << std::setw(5) << std::setprecision(3) << 75*(path[i + 1] * 2 - 1);
+			f << "Z" << std::fixed << std::setw(5) << std::setprecision(3) << (50-16)*path[i + 2] + 16;
+			f << "\n";
+		}
+	}
+	catch (...)
+	{
+		return SaveResult::InvalidFile;
+	}
+	return SaveResult::Success;
+}

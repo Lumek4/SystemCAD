@@ -1,4 +1,5 @@
 #pragma once
+#include"sceneCursor.h"
 #include"bicubicSegment.h"
 #include"intersect_interfaces.h"
 #include"intersect_math.h"
@@ -30,7 +31,33 @@ DirectX::XMFLOAT2 nearCursorPoint(
 		mincoord.y * 1.0f / maxres
 	};
 }
-DirectX::XMVECTOR pullBack(
+template<typename T, int maxres>
+DirectX::XMFLOAT2 nearCursorPoint(
+	const IntersectData<T>& data,
+	const DirectX::XMVECTOR& cur)
+{
+	using namespace DirectX;
+	float mindist = INFINITY;
+	XMINT2 mincoord;
+	for (int u = 0; u < maxres; u++)
+		for (int v = 0; v < maxres; v++)
+		{
+			XMVECTOR pos, du, dv;
+			data.Point({ u * 1.0f / maxres, v * 1.0f / maxres }, pos, du, dv);
+			float len = XMVectorGetX(XMVector3LengthSq(pos - cur));
+			if (len < mindist)
+			{
+				mincoord = { u, v };
+				mindist = len;
+			}
+		}
+
+	return {
+		mincoord.x * 1.0f / maxres,
+		mincoord.y * 1.0f / maxres
+	};
+}
+static DirectX::XMVECTOR pullBack(
 	DirectX::XMVECTOR vector,
 	DirectX::XMMATRIX j,
 	bool& error)
@@ -143,9 +170,9 @@ bool intersect(TA* a, TB* b,
 		db.GetWrapMode().x ? INFINITY : 1,
 		db.GetWrapMode().y ? INFINITY : 1,
 	};
+	int it = 0;
 
 	float dist = INFINITY;
-	int it = 0;
 	bool error = false;
 	XMVECTOR vcursor = XMLoadFloat3(&cursor);
 	XMVECTOR pos;
@@ -190,7 +217,7 @@ bool intersect(TA* a, TB* b,
 			apos, adu, adv);
 		db.Point({ XMVectorGetZ(coord), XMVectorGetW(coord) },
 			bpos, bdu, bdv);
-		for (int it = 1; it < 1000; it++)
+		for (int it = 1; it < 100000; it++)
 		{
 			auto tangent = sgn * XMVector3Normalize(XMVector3Cross(
 				XMVector3Cross(adu, adv),

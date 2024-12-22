@@ -656,6 +656,79 @@ void MyGui::IntersectPopup(float& detail, int& texResolution, bool& create)
 	ImGui::EndPopup();
 }
 
+void MyGui::ShowOutlinePopup()
+{
+	ImGui::OpenPopup("Outline surfaces", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonLeft);
+}
+
+void MyGui::OutlinePopup(float& detail, float& pathStep, bool& create)
+{
+	if (!ImGui::BeginPopup("Outline surfaces"))
+		return;
+	ImGui::Text("Outline surfaces");
+	ImGui::SliderFloat("Detail", &detail, 0.01f, 20.0f, "%.2f", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
+	ImGui::SliderFloat("Path Step", &pathStep, 0.001f, 2.0f, "%.3f", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
+
+	if ((create = ImGui::Button("Outline")))
+	{
+		ImGui::CloseCurrentPopup();
+	}
+	ImGui::EndPopup();
+}
+
+void MyGui::ShowRoughPopup()
+{
+	ImGui::OpenPopup("Rough Processing", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonLeft);
+}
+
+void MyGui::RoughPopup(int& resolution, float& tolerance, bool& create)
+{
+	if (!ImGui::BeginPopup("Rough Processing"))
+		return;
+	ImGui::Text("Rough Processing");
+	static bool cfp_dirty = true, cached = false;
+	if (ImGui::SliderInt("Texture Resolution", &resolution, 64, 4096, nullptr, ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp))
+		cfp_dirty = true;
+	if (cfp_dirty)
+	{
+		char cacheFilePath[] = "../RoughTexture_xxxx.b";
+		snprintf(cacheFilePath + 16, 5, "%04d", resolution);
+		cacheFilePath[20] = '.';
+		auto cacheFile = std::fopen(cacheFilePath, "rb");
+		cached = !!cacheFile;
+		if (cacheFile)
+			std::fclose(cacheFile);
+	}
+	ImGui::Text(cached ? "Cached" : "Not Cached");
+	
+	ImGui::SliderFloat("Tolerance", &tolerance, 0.01f, 150.0f, "%.2f", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
+
+	if ((create = ImGui::Button("Process")))
+	{
+		ImGui::CloseCurrentPopup();
+	}
+	ImGui::EndPopup();
+}
+
+void MyGui::ShowExactPopup()
+{
+	ImGui::OpenPopup("Exact Processing", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonLeft);
+}
+
+void MyGui::ExactPopup(float& detail, bool& create)
+{
+	if (!ImGui::BeginPopup("Exact Processing"))
+		return;
+	ImGui::Text("Exact Processing");
+	ImGui::SliderFloat("Detail", &detail, 0.01f, 20.0f, "%.2f", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
+	
+	if ((create = ImGui::Button("Process")))
+	{
+		ImGui::CloseCurrentPopup();
+	}
+	ImGui::EndPopup();
+}
+
 void MyGui::SameLineIfFits(float width)
 {
 	ImGui::SameLine();

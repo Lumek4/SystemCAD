@@ -31,4 +31,10 @@ namespace MyGui
 
 	void ShowIntersectPopup();
 	void IntersectPopup(float& detail, int& texResolution, bool& create);
+	void ShowOutlinePopup();
+	void OutlinePopup(float& detail, float& pathStep, bool& create);
+	void ShowRoughPopup();
+	void RoughPopup(int& resolution, float& tolerance, bool& create);
+	void ShowExactPopup();
+	void ExactPopup(float& detail, bool& create);
 }

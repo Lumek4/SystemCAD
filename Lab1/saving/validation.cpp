@@ -13,12 +13,17 @@ static const std::array geometryTypesArray =
 	(std::string)"bezierSurfaceC2",
 	(std::string)"gregoryPatch"
 };
+nlohmann::detail::other_error my_error(int id, const std::string& message)
+{
+	return nlohmann::detail::other_error::create(id, message, nullptr);
+}
+
 #define CHECKTYPE(key, checked_type) \
-	do{if(object.at(#key).type()!=value_t::checked_type)throw nlohmann::detail::other_error::create(__LINE__, "test");}while(false)
+	do{if(object.at(#key).type()!=value_t::checked_type)throw my_error(__LINE__, "test");}while(false)
 static bool validateV2(json& object)
 {
 	if (object.type() != value_t::object)
-		throw nlohmann::detail::other_error::create(__LINE__, "test");
+		throw my_error(__LINE__, "test");
 	CHECKTYPE(x, number_float);
 	CHECKTYPE(y, number_float);
 	return true;
@@ -26,7 +31,7 @@ static bool validateV2(json& object)
 static bool validateV2u(json& object)
 {
 	if (object.type() != value_t::object)
-		throw nlohmann::detail::other_error::create(__LINE__, "test");
+		throw my_error(__LINE__, "test");
 	CHECKTYPE(x, number_unsigned);
 	CHECKTYPE(y, number_unsigned);
 	return true;
@@ -34,7 +39,7 @@ static bool validateV2u(json& object)
 static bool validateV3(json& object)
 {
 	if (object.type() != value_t::object)
-		throw nlohmann::detail::other_error::create(__LINE__, "test");
+		throw my_error(__LINE__, "test");
 	CHECKTYPE(x, number_float);
 	CHECKTYPE(y, number_float);
 	CHECKTYPE(z, number_float);
@@ -43,7 +48,7 @@ static bool validateV3(json& object)
 static bool validateIdArray(json& arr)
 {
 	if (arr.type() != value_t::array)
-		throw nlohmann::detail::other_error::create(__LINE__, "test");
+		throw my_error(__LINE__, "test");
 	for (auto it = arr.begin(); it < arr.end(); it++)
 	{
 		json& object = (*it);
@@ -54,7 +59,7 @@ static bool validateIdArray(json& arr)
 static bool validatePatchArray(json& arr)
 {
 	if (arr.type() != value_t::array)
-		throw nlohmann::detail::other_error::create(__LINE__, "test");
+		throw my_error(__LINE__, "test");
 	for (auto it = arr.begin(); it < arr.end(); it++)
 	{
 		json& object = (*it);
@@ -62,9 +67,9 @@ static bool validatePatchArray(json& arr)
 		CHECKTYPE(id, number_unsigned);
 		CHECKTYPE(name, string);
 		if (!validateIdArray(object.at("controlPoints")))
-			throw nlohmann::detail::other_error::create(__LINE__, "test");
+			throw my_error(__LINE__, "test");
 		if (!validateV2u(object.at("samples")))
-			throw nlohmann::detail::other_error::create(__LINE__, "test");
+			throw my_error(__LINE__, "test");
 	}
 	return true;
 }
@@ -81,7 +86,7 @@ GEOMETRY_TYPE getGeometryType(const std::string& v)
 bool validate(json& file)
 {
 	if (file.type() != value_t::object)
-		throw nlohmann::detail::other_error::create(__LINE__, "test");
+		throw my_error(__LINE__, "test");
 
 	try
 	{
@@ -89,24 +94,24 @@ bool validate(json& file)
 			& points = file.at("points");
 		if (geometry.type() != value_t::array ||
 			points.type() != value_t::array)
-			throw nlohmann::detail::other_error::create(__LINE__, "test");
+			throw my_error(__LINE__, "test");
 
 		for (auto it = points.begin(); it < points.end(); it++)
 		{
 			json& object = (*it);
 			if (object.type() != value_t::object)
-				throw nlohmann::detail::other_error::create(__LINE__, "test");
+				throw my_error(__LINE__, "test");
 			CHECKTYPE(id, number_unsigned);
 			CHECKTYPE(name, string);
 			json& position = object.at("position");
 			if (!validateV3(position))
-				throw nlohmann::detail::other_error::create(__LINE__, "test");
+				throw my_error(__LINE__, "test");
 		}
 		for (auto it = geometry.begin(); it < geometry.end(); it++)
 		{
 			json& object = (*it);
 			if (object.type() != value_t::object)
-				throw nlohmann::detail::other_error::create(__LINE__, "test");
+				throw my_error(__LINE__, "test");
 
 			CHECKTYPE(objectType, string);
 			std::string* type = object.at("objectType").get<std::string*>();
@@ -116,58 +121,58 @@ bool validate(json& file)
 			switch (t)
 			{
 			case GEOMETRY_TYPE::INVALID:
-				throw nlohmann::detail::other_error::create(__LINE__, "test");
+				throw my_error(__LINE__, "test");
 			case GEOMETRY_TYPE::torus:
 				CHECKTYPE(smallRadius, number_float);
 				CHECKTYPE(largeRadius, number_float);
 				if (!validateV3(object.at("position")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				if (!validateV3(object.at("rotation")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				if (!validateV3(object.at("scale")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				if (!validateV2u(object.at("samples")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				break;
 			case GEOMETRY_TYPE::bezierC0:
 				if (!validateIdArray(object.at("controlPoints")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				break;
 			case GEOMETRY_TYPE::bezierC2:
 				if (!validateIdArray(object.at("deBoorPoints")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				break;
 			case GEOMETRY_TYPE::interpolatedC2:
 				if (!validateIdArray(object.at("controlPoints")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				break;
 			case GEOMETRY_TYPE::bezierSurfaceC0:
 				if (!validatePatchArray(object.at("patches")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				{
 					json& parameterWrapped = object.at("parameterWrapped");
 					if (parameterWrapped.at("u").type() != value_t::boolean ||
 						parameterWrapped.at("v").type() != value_t::boolean)
-						throw nlohmann::detail::other_error::create(__LINE__, "test");
+						throw my_error(__LINE__, "test");
 				}
 				if (!validateV2u(object.at("size")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				break;
 			case GEOMETRY_TYPE::bezierSurfaceC2:
 				if (!validatePatchArray(object.at("patches")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				{
 					json& parameterWrapped = object.at("parameterWrapped");
 					if (parameterWrapped.at("u").type() != value_t::boolean ||
 						parameterWrapped.at("v").type() != value_t::boolean)
-						throw nlohmann::detail::other_error::create(__LINE__, "test");
+						throw my_error(__LINE__, "test");
 				}
 				if (!validateV2u(object.at("size")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				break;
 			case GEOMETRY_TYPE::gregoryPatch:
 				if (!validateIdArray(object.at("neighbors")))
-					throw nlohmann::detail::other_error::create(__LINE__, "test");
+					throw my_error(__LINE__, "test");
 				break;
 			}
 		}
@@ -175,7 +180,7 @@ bool validate(json& file)
 	}
 	catch (nlohmann::detail::out_of_range e)
 	{
-		throw nlohmann::detail::other_error::create(__LINE__, "test");
+		throw my_error(__LINE__, "test");
 	}
 	return true;
 }

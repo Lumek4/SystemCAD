@@ -359,10 +359,10 @@
     <ClCompile Include="outline.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="rough.cpp">
+    <ClCompile Include="exact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="exact.cpp">
+    <ClCompile Include="rough.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

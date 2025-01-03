@@ -72,7 +72,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\source\repos\GK2\Scene-Serializer-main\cpp\Serializer\;C:\Libraries</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\source\repos\GK2\Scene-Serializer-main\cpp\Serializer\;C:\Libraries;C:\Users\socze\Documents\GitHub\json\include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);;C:\Libraries</IncludePath>

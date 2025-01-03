@@ -276,12 +276,13 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 		{ 0.5f,0.5f },	  //		 3DP, 
 		{ 0.5f,0.5f },	  //		 4GP, 
 		{ 0.5f,0.5f },	  //		 5GL
-		//{ 0.5f,0.80f },  // -1 Aureola, // large, small
+		//{ 0.5f,0.80f }, // -1 Aureola, // large, small
 		{ 0.5f,0.5f },	  // 0Oko, 6
-		{ 0.375f,0.75f },	  // 1Pletwa Ogonowa, 7
-		{ 0.85f,0.85f },	  // 0Glowa, 8
+		{ 0.375f,0.75f }, // 1Pletwa Ogonowa, 7
+		{ 0.85f,0.85f },  // 0Glowa, 8
 		{ 0.8f,0.05f },	  // 1Glowa, 9
 		{ 0.5f,0.8f },	  // 0Oko 2, 10
+		{ 0.5f,0.5f },	  // 0Glowa 2, 11
 	};
 	/*for (int i = 0; i < shapes[1].size(); i++)
 		for (int j = 0; j < shapes[1][i].size(); j++)
@@ -292,13 +293,13 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 			XMStoreFloat3(&p, pos);
 			path.push_back(PathPoint(p));
 		}*/
-	std::vector<std::vector<XMFLOAT2>> outline(shapes.size() + 1);
-	for (int k = 0; k < shapes.size() + 1; k++)
-	//for (int k = 7; k < 11; k+=4)
+	std::vector<std::vector<XMFLOAT2>> outline(shapes.size() + 2);
+	//for (int k = 0; k < shapes.size() + 2; k++)
+	for (int k = 8; k <= 11; k+=11-8)
 	{
 		if (k == base)
 			continue;
-		int kk = (k == shapes.size()) ? 6 : k;
+		int kk = (k == shapes.size()) ? 6 : ((k == shapes.size() + 1) ? 8 : k);
 		XMFLOAT2 cursor2d = middles[k];
 		std::vector<XMFLOAT2> bb_topleft;
 		std::vector<XMFLOAT2> bb_btright;
@@ -446,7 +447,8 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 			vert_i = nextInd;
 		} while (shape_i != startingShape || vert_i != startingVert);
 
-	}//if(false)
+	}
+	if(false)
 	{ // oko
 		auto& outside = outline[6];
 		auto& inside = outline[10];
@@ -476,7 +478,7 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 			}
 		}
 		path.push_back(FreePoint(p, (float)6 / shapes.size()));
-	}//if(false)
+	}if(false)
 	{ // ogon
 		XMFLOAT3 p;
 		XMVECTOR pos, u, v;
@@ -512,12 +514,59 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 		}
 		path.push_back(FreePoint(p, (float)7 / shapes.size()));
 	}
+	{ // head
+
+		auto& outside = outline[8];
+		auto& inside = outline[11];
+		XMFLOAT2 center = {};
+		for (int i = 0; i < inside.size(); i++)
+			center = { center.x + inside[i].x, center.y + inside[i].y};
+		center = { center.x / inside.size(), center.y / inside.size() };
+		std::reverse(inside.begin(), inside.end());
+		int in_start = 114, in_direction = 1;
+		int ou_start = 678, ou_direction = 1;
+		XMFLOAT3 p;
+		XMVECTOR pos, u, v;
+
+		for (int i = 0; i <= 20; i++)
+		{
+			float t = (float)i / 20;
+			int inU = 114;
+			int outU = 678;
+			int outU2 = 677;
+			float outAngle2 = std::atan2f(outside[outU2].y - center.y, outside[outU2].x - center.x);
+			for (inU; inU != 113; inU = (inU + 1) % inside.size())
+			{
+				float inAngle = std::atan2f(inside[inU].y - center.y, inside[inU].x - center.x);
+				float outAngle = std::atan2f(outside[outU].y - center.y, outside[outU].x - center.x);
+				while (inAngle > outAngle)
+				{
+					outU2 = outU;
+					outU = (outU + 1) % outside.size();
+					outAngle2 = outAngle;
+					outAngle = std::atan2f(outside[outU].y - center.y, outside[outU].x - center.x);
+				}
+				//if (inU % 4 == 0)
+				{
+					float ft = -(inAngle - outAngle) / (outAngle - outAngle2);
+					XMFLOAT2 a = {
+						outside[outU].x * (1 - ft) + outside[outU2].x * ft,
+						outside[outU].y * (1 - ft) + outside[outU2].y * ft },
+						b = inside[inU];
+					segm[0].Point({ a.x * t + b.x * (1 - t), a.y * t + b.y * (1 - t) }, pos, u, v);
+					XMStoreFloat3(&p, pos);
+					path.push_back(PathPoint(p));
+				}
+			}
+		}
+		//path.push_back(FreePoint(p, (float)6 / shapes.size()));
+	}
 	for(int k = 0; k<outline.size(); k++)
 		for (int i = 0; i < outline[k].size(); i++)
 		{
 			XMFLOAT3 p;
 			XMVECTOR pos, u, v;
-			int kk = (k == outline.size()-1) ? 6 : k;
+			int kk = (k == shapes.size()) ? 6 : ((k == shapes.size() + 1) ? 8 : k);
 			if (kk < surf.size())
 				surf[kk].Point(outline[k][i], pos, u, v);
 			else if (kk < surf.size() + toru.size())

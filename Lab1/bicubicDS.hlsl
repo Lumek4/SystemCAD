@@ -1,3 +1,7 @@
+cbuffer cbView : register(b1)
+{
+    matrix viewMatrix;
+};
 cbuffer cbProj : register(b2)
 {
     matrix projMatrix;
@@ -117,7 +121,12 @@ DS_OUTPUT main(
     float3 normal = normalize(cross(dx, dy));
     if (flip)
         normal = -normal;
-    output.vPosition = float4(pos, 1);
+    float r = 1.44f;
+    bool narzedzioodlegla = true;
+    if(narzedzioodlegla)
+        output.vPosition = float4(pos + normal * r + mul(viewMatrix, float4(0, 0, -r, 0)).xyz, 1);
+    else
+        output.vPosition = float4(pos, 1);
     output.vPosition = mul(projMatrix, output.vPosition);
     output.uv = flip ? uv.yx : uv.xy;
 	

@@ -3,7 +3,7 @@
   {
    "id": 283,
    "largeRadius": 5.829999923706055,
-   "name": "Aureola",
+   "name": "Torus 1",
    "objectType": "torus",
    "position": {
     "x": 5.683281421661377,
@@ -29,7 +29,7 @@
   {
    "id": 284,
    "largeRadius": 0.6399999856948853,
-   "name": "Oko",
+   "name": "Torus 2",
    "objectType": "torus",
    "position": {
     "x": 1.5496805906295776,
@@ -39,7 +39,7 @@
    "rotation": {
     "x": -0.11566315591335297,
     "y": -0.0034295774530619383,
-    "z": -0.16725264489650726
+    "z": -0.16725262999534607
    },
    "samples": {
     "x": 10,
@@ -55,7 +55,7 @@
   {
    "id": 285,
    "largeRadius": 3.799999952316284,
-   "name": "Pletwa Ogonowa",
+   "name": "Torus 3",
    "objectType": "torus",
    "position": {
     "x": 0.4293193519115448,
@@ -80,7 +80,7 @@
   },
   {
    "id": 286,
-   "name": "Tors",
+   "name": "Bicubic Surface 4",
    "objectType": "bezierSurfaceC2",
    "parameterWrapped": {
     "u": false,
@@ -139,7 +139,7 @@
       }
      ],
      "id": 287,
-     "name": "Tors Segment 1",
+     "name": "Bicubic Surface 4 Segment 1",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -198,7 +198,7 @@
       }
      ],
      "id": 288,
-     "name": "Tors Segment 2",
+     "name": "Bicubic Surface 4 Segment 2",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -257,7 +257,7 @@
       }
      ],
      "id": 289,
-     "name": "Tors Segment 3",
+     "name": "Bicubic Surface 4 Segment 3",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -316,7 +316,7 @@
       }
      ],
      "id": 290,
-     "name": "Tors Segment 4",
+     "name": "Bicubic Surface 4 Segment 4",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -375,7 +375,7 @@
       }
      ],
      "id": 291,
-     "name": "Tors Segment 5",
+     "name": "Bicubic Surface 4 Segment 5",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -434,7 +434,7 @@
       }
      ],
      "id": 292,
-     "name": "Tors Segment 6",
+     "name": "Bicubic Surface 4 Segment 6",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -493,7 +493,7 @@
       }
      ],
      "id": 293,
-     "name": "Tors Segment 7",
+     "name": "Bicubic Surface 4 Segment 7",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -552,7 +552,7 @@
       }
      ],
      "id": 294,
-     "name": "Tors Segment 8",
+     "name": "Bicubic Surface 4 Segment 8",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -611,7 +611,7 @@
       }
      ],
      "id": 295,
-     "name": "Tors Segment 9",
+     "name": "Bicubic Surface 4 Segment 9",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -670,7 +670,7 @@
       }
      ],
      "id": 296,
-     "name": "Tors Segment 10",
+     "name": "Bicubic Surface 4 Segment 10",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -729,7 +729,7 @@
       }
      ],
      "id": 297,
-     "name": "Tors Segment 11",
+     "name": "Bicubic Surface 4 Segment 11",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -788,7 +788,7 @@
       }
      ],
      "id": 298,
-     "name": "Tors Segment 12",
+     "name": "Bicubic Surface 4 Segment 12",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -847,7 +847,7 @@
       }
      ],
      "id": 299,
-     "name": "Tors Segment 13",
+     "name": "Bicubic Surface 4 Segment 13",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -906,7 +906,7 @@
       }
      ],
      "id": 300,
-     "name": "Tors Segment 14",
+     "name": "Bicubic Surface 4 Segment 14",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -965,7 +965,7 @@
       }
      ],
      "id": 301,
-     "name": "Tors Segment 15",
+     "name": "Bicubic Surface 4 Segment 15",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1024,7 +1024,7 @@
       }
      ],
      "id": 302,
-     "name": "Tors Segment 16",
+     "name": "Bicubic Surface 4 Segment 16",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1083,7 +1083,7 @@
       }
      ],
      "id": 303,
-     "name": "Tors Segment 17",
+     "name": "Bicubic Surface 4 Segment 17",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1142,7 +1142,7 @@
       }
      ],
      "id": 304,
-     "name": "Tors Segment 18",
+     "name": "Bicubic Surface 4 Segment 18",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1201,7 +1201,7 @@
       }
      ],
      "id": 305,
-     "name": "Tors Segment 19",
+     "name": "Bicubic Surface 4 Segment 19",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1260,7 +1260,7 @@
       }
      ],
      "id": 306,
-     "name": "Tors Segment 20",
+     "name": "Bicubic Surface 4 Segment 20",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1319,7 +1319,7 @@
       }
      ],
      "id": 307,
-     "name": "Tors Segment 21",
+     "name": "Bicubic Surface 4 Segment 21",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1378,7 +1378,7 @@
       }
      ],
      "id": 308,
-     "name": "Tors Segment 22",
+     "name": "Bicubic Surface 4 Segment 22",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1437,7 +1437,7 @@
       }
      ],
      "id": 309,
-     "name": "Tors Segment 23",
+     "name": "Bicubic Surface 4 Segment 23",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1496,7 +1496,7 @@
       }
      ],
      "id": 310,
-     "name": "Tors Segment 24",
+     "name": "Bicubic Surface 4 Segment 24",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1555,7 +1555,7 @@
       }
      ],
      "id": 311,
-     "name": "Tors Segment 25",
+     "name": "Bicubic Surface 4 Segment 25",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1614,7 +1614,7 @@
       }
      ],
      "id": 312,
-     "name": "Tors Segment 26",
+     "name": "Bicubic Surface 4 Segment 26",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1673,7 +1673,7 @@
       }
      ],
      "id": 313,
-     "name": "Tors Segment 27",
+     "name": "Bicubic Surface 4 Segment 27",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1732,7 +1732,7 @@
       }
      ],
      "id": 314,
-     "name": "Tors Segment 28",
+     "name": "Bicubic Surface 4 Segment 28",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1791,7 +1791,7 @@
       }
      ],
      "id": 315,
-     "name": "Tors Segment 29",
+     "name": "Bicubic Surface 4 Segment 29",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1850,7 +1850,7 @@
       }
      ],
      "id": 316,
-     "name": "Tors Segment 30",
+     "name": "Bicubic Surface 4 Segment 30",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1909,7 +1909,7 @@
       }
      ],
      "id": 317,
-     "name": "Tors Segment 31",
+     "name": "Bicubic Surface 4 Segment 31",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -1968,7 +1968,7 @@
       }
      ],
      "id": 318,
-     "name": "Tors Segment 32",
+     "name": "Bicubic Surface 4 Segment 32",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2027,7 +2027,7 @@
       }
      ],
      "id": 319,
-     "name": "Tors Segment 33",
+     "name": "Bicubic Surface 4 Segment 33",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2086,7 +2086,7 @@
       }
      ],
      "id": 320,
-     "name": "Tors Segment 34",
+     "name": "Bicubic Surface 4 Segment 34",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2145,7 +2145,7 @@
       }
      ],
      "id": 321,
-     "name": "Tors Segment 35",
+     "name": "Bicubic Surface 4 Segment 35",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2204,7 +2204,7 @@
       }
      ],
      "id": 322,
-     "name": "Tors Segment 36",
+     "name": "Bicubic Surface 4 Segment 36",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2263,7 +2263,7 @@
       }
      ],
      "id": 323,
-     "name": "Tors Segment 37",
+     "name": "Bicubic Surface 4 Segment 37",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2322,7 +2322,7 @@
       }
      ],
      "id": 324,
-     "name": "Tors Segment 38",
+     "name": "Bicubic Surface 4 Segment 38",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2381,7 +2381,7 @@
       }
      ],
      "id": 325,
-     "name": "Tors Segment 39",
+     "name": "Bicubic Surface 4 Segment 39",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2440,7 +2440,7 @@
       }
      ],
      "id": 326,
-     "name": "Tors Segment 40",
+     "name": "Bicubic Surface 4 Segment 40",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2499,7 +2499,7 @@
       }
      ],
      "id": 327,
-     "name": "Tors Segment 41",
+     "name": "Bicubic Surface 4 Segment 41",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2558,7 +2558,7 @@
       }
      ],
      "id": 328,
-     "name": "Tors Segment 42",
+     "name": "Bicubic Surface 4 Segment 42",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2617,7 +2617,7 @@
       }
      ],
      "id": 329,
-     "name": "Tors Segment 43",
+     "name": "Bicubic Surface 4 Segment 43",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2676,7 +2676,7 @@
       }
      ],
      "id": 330,
-     "name": "Tors Segment 44",
+     "name": "Bicubic Surface 4 Segment 44",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2735,7 +2735,7 @@
       }
      ],
      "id": 331,
-     "name": "Tors Segment 45",
+     "name": "Bicubic Surface 4 Segment 45",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2794,7 +2794,7 @@
       }
      ],
      "id": 332,
-     "name": "Tors Segment 46",
+     "name": "Bicubic Surface 4 Segment 46",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2853,7 +2853,7 @@
       }
      ],
      "id": 333,
-     "name": "Tors Segment 47",
+     "name": "Bicubic Surface 4 Segment 47",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2912,7 +2912,7 @@
       }
      ],
      "id": 334,
-     "name": "Tors Segment 48",
+     "name": "Bicubic Surface 4 Segment 48",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -2971,7 +2971,7 @@
       }
      ],
      "id": 335,
-     "name": "Tors Segment 49",
+     "name": "Bicubic Surface 4 Segment 49",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3030,7 +3030,7 @@
       }
      ],
      "id": 336,
-     "name": "Tors Segment 50",
+     "name": "Bicubic Surface 4 Segment 50",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3089,7 +3089,7 @@
       }
      ],
      "id": 337,
-     "name": "Tors Segment 51",
+     "name": "Bicubic Surface 4 Segment 51",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3148,7 +3148,7 @@
       }
      ],
      "id": 338,
-     "name": "Tors Segment 52",
+     "name": "Bicubic Surface 4 Segment 52",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3207,7 +3207,7 @@
       }
      ],
      "id": 339,
-     "name": "Tors Segment 53",
+     "name": "Bicubic Surface 4 Segment 53",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3266,7 +3266,7 @@
       }
      ],
      "id": 340,
-     "name": "Tors Segment 54",
+     "name": "Bicubic Surface 4 Segment 54",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3325,7 +3325,7 @@
       }
      ],
      "id": 341,
-     "name": "Tors Segment 55",
+     "name": "Bicubic Surface 4 Segment 55",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3384,7 +3384,7 @@
       }
      ],
      "id": 342,
-     "name": "Tors Segment 56",
+     "name": "Bicubic Surface 4 Segment 56",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3443,7 +3443,7 @@
       }
      ],
      "id": 343,
-     "name": "Tors Segment 57",
+     "name": "Bicubic Surface 4 Segment 57",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3502,7 +3502,7 @@
       }
      ],
      "id": 344,
-     "name": "Tors Segment 58",
+     "name": "Bicubic Surface 4 Segment 58",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3561,7 +3561,7 @@
       }
      ],
      "id": 345,
-     "name": "Tors Segment 59",
+     "name": "Bicubic Surface 4 Segment 59",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3620,7 +3620,7 @@
       }
      ],
      "id": 346,
-     "name": "Tors Segment 60",
+     "name": "Bicubic Surface 4 Segment 60",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3679,7 +3679,7 @@
       }
      ],
      "id": 347,
-     "name": "Tors Segment 61",
+     "name": "Bicubic Surface 4 Segment 61",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3738,7 +3738,7 @@
       }
      ],
      "id": 348,
-     "name": "Tors Segment 62",
+     "name": "Bicubic Surface 4 Segment 62",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3797,7 +3797,7 @@
       }
      ],
      "id": 349,
-     "name": "Tors Segment 63",
+     "name": "Bicubic Surface 4 Segment 63",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3856,7 +3856,7 @@
       }
      ],
      "id": 350,
-     "name": "Tors Segment 64",
+     "name": "Bicubic Surface 4 Segment 64",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3915,7 +3915,7 @@
       }
      ],
      "id": 351,
-     "name": "Tors Segment 65",
+     "name": "Bicubic Surface 4 Segment 65",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -3974,7 +3974,7 @@
       }
      ],
      "id": 352,
-     "name": "Tors Segment 66",
+     "name": "Bicubic Surface 4 Segment 66",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4033,7 +4033,7 @@
       }
      ],
      "id": 353,
-     "name": "Tors Segment 67",
+     "name": "Bicubic Surface 4 Segment 67",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4092,7 +4092,7 @@
       }
      ],
      "id": 354,
-     "name": "Tors Segment 68",
+     "name": "Bicubic Surface 4 Segment 68",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4151,7 +4151,7 @@
       }
      ],
      "id": 355,
-     "name": "Tors Segment 69",
+     "name": "Bicubic Surface 4 Segment 69",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4210,7 +4210,7 @@
       }
      ],
      "id": 356,
-     "name": "Tors Segment 70",
+     "name": "Bicubic Surface 4 Segment 70",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4225,7 +4225,7 @@
   },
   {
    "id": 357,
-   "name": "Glowa",
+   "name": "Bicubic Surface 3",
    "objectType": "bezierSurfaceC0",
    "parameterWrapped": {
     "u": false,
@@ -4284,7 +4284,7 @@
       }
      ],
      "id": 358,
-     "name": "Glowa Segment 1",
+     "name": "Bicubic Surface 3 Segment 1",
      "objectType": "bezierPatchC0",
      "samples": {
       "x": 4,
@@ -4343,7 +4343,7 @@
       }
      ],
      "id": 359,
-     "name": "Glowa Segment 2",
+     "name": "Bicubic Surface 3 Segment 2",
      "objectType": "bezierPatchC0",
      "samples": {
       "x": 4,
@@ -4358,7 +4358,7 @@
   },
   {
    "id": 360,
-   "name": "Podstawka",
+   "name": "Floor",
    "objectType": "bezierSurfaceC0",
    "parameterWrapped": {
     "u": false,
@@ -4417,7 +4417,7 @@
       }
      ],
      "id": 361,
-     "name": "Podstawka Segment 1",
+     "name": "Floor Segment 1",
      "objectType": "bezierPatchC0",
      "samples": {
       "x": 4,
@@ -4432,7 +4432,7 @@
   },
   {
    "id": 362,
-   "name": "Pletwa Dolna Lewa",
+   "name": "Bicubic Surface 5",
    "objectType": "bezierSurfaceC0",
    "parameterWrapped": {
     "u": false,
@@ -4491,7 +4491,7 @@
       }
      ],
      "id": 363,
-     "name": "Pletwa Dolna Lewa Segment 1",
+     "name": "Bicubic Surface 5 Segment 1",
      "objectType": "bezierPatchC0",
      "samples": {
       "x": 4,
@@ -4506,7 +4506,7 @@
   },
   {
    "id": 364,
-   "name": "Pletwa Dolna Prawa",
+   "name": "Bicubic Surface 6",
    "objectType": "bezierSurfaceC2",
    "parameterWrapped": {
     "u": false,
@@ -4565,7 +4565,7 @@
       }
      ],
      "id": 365,
-     "name": "Pletwa Dolna Prawa Segment 1",
+     "name": "Bicubic Surface 6 Segment 1",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4624,7 +4624,7 @@
       }
      ],
      "id": 366,
-     "name": "Pletwa Dolna Prawa Segment 2",
+     "name": "Bicubic Surface 6 Segment 2",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4683,7 +4683,7 @@
       }
      ],
      "id": 367,
-     "name": "Pletwa Dolna Prawa Segment 3",
+     "name": "Bicubic Surface 6 Segment 3",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4742,7 +4742,7 @@
       }
      ],
      "id": 368,
-     "name": "Pletwa Dolna Prawa Segment 4",
+     "name": "Bicubic Surface 6 Segment 4",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4757,7 +4757,7 @@
   },
   {
    "id": 369,
-   "name": "Pletwa Gorna Prawa",
+   "name": "Bicubic Surface 7",
    "objectType": "bezierSurfaceC2",
    "parameterWrapped": {
     "u": false,
@@ -4816,7 +4816,7 @@
       }
      ],
      "id": 370,
-     "name": "Pletwa Gorna Prawa Segment 1",
+     "name": "Bicubic Surface 7 Segment 1",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4875,7 +4875,7 @@
       }
      ],
      "id": 371,
-     "name": "Pletwa Gorna Prawa Segment 2",
+     "name": "Bicubic Surface 7 Segment 2",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4934,7 +4934,7 @@
       }
      ],
      "id": 372,
-     "name": "Pletwa Gorna Prawa Segment 3",
+     "name": "Bicubic Surface 7 Segment 3",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -4993,7 +4993,7 @@
       }
      ],
      "id": 373,
-     "name": "Pletwa Gorna Prawa Segment 4",
+     "name": "Bicubic Surface 7 Segment 4",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5008,7 +5008,7 @@
   },
   {
    "id": 374,
-   "name": "Pletwa Gorna Lewa",
+   "name": "Bicubic Surface 9",
    "objectType": "bezierSurfaceC2",
    "parameterWrapped": {
     "u": false,
@@ -5067,7 +5067,7 @@
       }
      ],
      "id": 375,
-     "name": "Pletwa Gorna Lewa Segment 1",
+     "name": "Bicubic Surface 9 Segment 1",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5126,7 +5126,7 @@
       }
      ],
      "id": 376,
-     "name": "Pletwa Gorna Lewa Segment 2",
+     "name": "Bicubic Surface 9 Segment 2",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5185,7 +5185,7 @@
       }
      ],
      "id": 377,
-     "name": "Pletwa Gorna Lewa Segment 3",
+     "name": "Bicubic Surface 9 Segment 3",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5244,7 +5244,7 @@
       }
      ],
      "id": 378,
-     "name": "Pletwa Gorna Lewa Segment 4",
+     "name": "Bicubic Surface 9 Segment 4",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5303,7 +5303,7 @@
       }
      ],
      "id": 379,
-     "name": "Pletwa Gorna Lewa Segment 5",
+     "name": "Bicubic Surface 9 Segment 5",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5362,7 +5362,7 @@
       }
      ],
      "id": 380,
-     "name": "Pletwa Gorna Lewa Segment 6",
+     "name": "Bicubic Surface 9 Segment 6",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5421,7 +5421,7 @@
       }
      ],
      "id": 381,
-     "name": "Pletwa Gorna Lewa Segment 7",
+     "name": "Bicubic Surface 9 Segment 7",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5480,7 +5480,7 @@
       }
      ],
      "id": 382,
-     "name": "Pletwa Gorna Lewa Segment 8",
+     "name": "Bicubic Surface 9 Segment 8",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5539,7 +5539,7 @@
       }
      ],
      "id": 383,
-     "name": "Pletwa Gorna Lewa Segment 9",
+     "name": "Bicubic Surface 9 Segment 9",
      "objectType": "bezierPatchC2",
      "samples": {
       "x": 4,
@@ -5556,7 +5556,7 @@
  "points": [
   {
    "id": 1,
-   "name": "Tors Point 1",
+   "name": "Bicubic Surface 4 Point 1",
    "position": {
     "x": -2.9301469326019287,
     "y": 0.8201998472213745,
@@ -5565,7 +5565,7 @@
   },
   {
    "id": 2,
-   "name": "Tors Point 2",
+   "name": "Bicubic Surface 4 Point 2",
    "position": {
     "x": -1.0313043594360352,
     "y": 0.3178415298461914,
@@ -5574,7 +5574,7 @@
   },
   {
    "id": 3,
-   "name": "Tors Point 3",
+   "name": "Bicubic Surface 4 Point 3",
    "position": {
     "x": 1.090174674987793,
     "y": -4.3680338859558105,
@@ -5583,7 +5583,7 @@
   },
   {
    "id": 4,
-   "name": "Tors Point 4",
+   "name": "Bicubic Surface 4 Point 4",
    "position": {
     "x": -0.40802615880966187,
     "y": -3.6520731449127197,
@@ -5592,7 +5592,7 @@
   },
   {
    "id": 5,
-   "name": "Tors Point 5",
+   "name": "Bicubic Surface 4 Point 5",
    "position": {
     "x": 1.1740611791610718,
     "y": -3.249246835708618,
@@ -5601,7 +5601,7 @@
   },
   {
    "id": 6,
-   "name": "Tors Point 6",
+   "name": "Bicubic Surface 4 Point 6",
    "position": {
     "x": 1.9832496643066406,
     "y": -3.1798882484436035,
@@ -5610,7 +5610,7 @@
   },
   {
    "id": 7,
-   "name": "Tors Point 7",
+   "name": "Bicubic Surface 4 Point 7",
    "position": {
     "x": 2.820739984512329,
     "y": -1.8224934339523315,
@@ -5619,7 +5619,7 @@
   },
   {
    "id": 8,
-   "name": "Tors Point 8",
+   "name": "Bicubic Surface 4 Point 8",
    "position": {
     "x": 3.6310999393463135,
     "y": -0.3202992379665375,
@@ -5628,7 +5628,7 @@
   },
   {
    "id": 9,
-   "name": "Tors Point 9",
+   "name": "Bicubic Surface 4 Point 9",
    "position": {
     "x": -6.929802894592285,
     "y": -1.4989784955978394,
@@ -5637,7 +5637,7 @@
   },
   {
    "id": 10,
-   "name": "Tors Point 10",
+   "name": "Bicubic Surface 4 Point 10",
    "position": {
     "x": -1.8069169521331787,
     "y": 0.03877663612365723,
@@ -5646,7 +5646,7 @@
   },
   {
    "id": 11,
-   "name": "Tors Point 11",
+   "name": "Bicubic Surface 4 Point 11",
    "position": {
     "x": -0.7141165733337402,
     "y": 0.23669016361236572,
@@ -5655,7 +5655,7 @@
   },
   {
    "id": 12,
-   "name": "Tors Point 12",
+   "name": "Bicubic Surface 4 Point 12",
    "position": {
     "x": 0.8092951774597168,
     "y": -0.11784183979034424,
@@ -5664,7 +5664,7 @@
   },
   {
    "id": 13,
-   "name": "Tors Point 13",
+   "name": "Bicubic Surface 4 Point 13",
    "position": {
     "x": 1.9398374557495117,
     "y": -0.11784183979034424,
@@ -5673,7 +5673,7 @@
   },
   {
    "id": 14,
-   "name": "Tors Point 14",
+   "name": "Bicubic Surface 4 Point 14",
    "position": {
     "x": 3.070380210876465,
     "y": -0.11784183979034424,
@@ -5682,7 +5682,7 @@
   },
   {
    "id": 15,
-   "name": "Tors Point 15",
+   "name": "Bicubic Surface 4 Point 15",
    "position": {
     "x": 4.713653564453125,
     "y": -0.6884627342224121,
@@ -5691,7 +5691,7 @@
   },
   {
    "id": 16,
-   "name": "Tors Point 16",
+   "name": "Bicubic Surface 4 Point 16",
    "position": {
     "x": 5.844195365905762,
     "y": -1.4581512212753296,
@@ -5700,7 +5700,7 @@
   },
   {
    "id": 17,
-   "name": "Tors Point 17",
+   "name": "Bicubic Surface 4 Point 17",
    "position": {
     "x": -6.175312519073486,
     "y": -2.4594650268554688,
@@ -5709,7 +5709,7 @@
   },
   {
    "id": 18,
-   "name": "Tors Point 18",
+   "name": "Bicubic Surface 4 Point 18",
    "position": {
     "x": -4.668269634246826,
     "y": -0.22055934369564056,
@@ -5718,7 +5718,7 @@
   },
   {
    "id": 19,
-   "name": "Tors Point 19",
+   "name": "Bicubic Surface 4 Point 19",
    "position": {
     "x": -2.6983773708343506,
     "y": 0.8022162318229675,
@@ -5727,7 +5727,7 @@
   },
   {
    "id": 20,
-   "name": "Tors Point 20",
+   "name": "Bicubic Surface 4 Point 20",
    "position": {
     "x": -0.5817373991012573,
     "y": 1.3204772472381592,
@@ -5736,7 +5736,7 @@
   },
   {
    "id": 21,
-   "name": "Tors Point 21",
+   "name": "Bicubic Surface 4 Point 21",
    "position": {
     "x": 1.674293875694275,
     "y": 1.1725893020629883,
@@ -5745,7 +5745,7 @@
   },
   {
    "id": 22,
-   "name": "Tors Point 22",
+   "name": "Bicubic Surface 4 Point 22",
    "position": {
     "x": 3.371028423309326,
     "y": 0.7607171535491943,
@@ -5754,7 +5754,7 @@
   },
   {
    "id": 23,
-   "name": "Tors Point 23",
+   "name": "Bicubic Surface 4 Point 23",
    "position": {
     "x": 4.9268012046813965,
     "y": -0.020615430548787117,
@@ -5763,7 +5763,7 @@
   },
   {
    "id": 24,
-   "name": "Tors Point 24",
+   "name": "Bicubic Surface 4 Point 24",
    "position": {
     "x": 6.608956336975098,
     "y": -1.118775486946106,
@@ -5772,7 +5772,7 @@
   },
   {
    "id": 25,
-   "name": "Tors Point 25",
+   "name": "Bicubic Surface 4 Point 25",
    "position": {
     "x": -6.550161361694336,
     "y": -2.265533924102783,
@@ -5781,7 +5781,7 @@
   },
   {
    "id": 26,
-   "name": "Tors Point 26",
+   "name": "Bicubic Surface 4 Point 26",
    "position": {
     "x": -4.909304141998291,
     "y": -0.08341227471828461,
@@ -5790,7 +5790,7 @@
   },
   {
    "id": 27,
-   "name": "Tors Point 27",
+   "name": "Bicubic Surface 4 Point 27",
    "position": {
     "x": -2.528724431991577,
     "y": 0.8944803476333618,
@@ -5799,7 +5799,7 @@
   },
   {
    "id": 28,
-   "name": "Tors Point 28",
+   "name": "Bicubic Surface 4 Point 28",
    "position": {
     "x": -0.368003249168396,
     "y": 1.5033849477767944,
@@ -5808,7 +5808,7 @@
   },
   {
    "id": 29,
-   "name": "Tors Point 29",
+   "name": "Bicubic Surface 4 Point 29",
    "position": {
     "x": 1.7867891788482666,
     "y": 1.4299501180648804,
@@ -5817,7 +5817,7 @@
   },
   {
    "id": 30,
-   "name": "Tors Point 30",
+   "name": "Bicubic Surface 4 Point 30",
    "position": {
     "x": 3.6291773319244385,
     "y": 0.6871588826179504,
@@ -5826,7 +5826,7 @@
   },
   {
    "id": 31,
-   "name": "Tors Point 31",
+   "name": "Bicubic Surface 4 Point 31",
    "position": {
     "x": 5.2837114334106445,
     "y": -0.0036771008744835854,
@@ -5835,7 +5835,7 @@
   },
   {
    "id": 32,
-   "name": "Tors Point 32",
+   "name": "Bicubic Surface 4 Point 32",
    "position": {
     "x": 6.675172328948975,
     "y": -1.1036772727966309,
@@ -5844,7 +5844,7 @@
   },
   {
    "id": 33,
-   "name": "Tors Point 33",
+   "name": "Bicubic Surface 4 Point 33",
    "position": {
     "x": -6.861824035644531,
     "y": -2.175138235092163,
@@ -5853,7 +5853,7 @@
   },
   {
    "id": 34,
-   "name": "Tors Point 34",
+   "name": "Bicubic Surface 4 Point 34",
    "position": {
     "x": -5.2484941482543945,
     "y": -0.0890304297208786,
@@ -5862,7 +5862,7 @@
   },
   {
    "id": 35,
-   "name": "Tors Point 35",
+   "name": "Bicubic Surface 4 Point 35",
    "position": {
     "x": -2.6152303218841553,
     "y": 0.9347957968711853,
@@ -5871,7 +5871,7 @@
   },
   {
    "id": 36,
-   "name": "Tors Point 36",
+   "name": "Bicubic Surface 4 Point 36",
    "position": {
     "x": -0.3200348913669586,
     "y": 1.339078664779663,
@@ -5880,7 +5880,7 @@
   },
   {
    "id": 37,
-   "name": "Tors Point 37",
+   "name": "Bicubic Surface 4 Point 37",
    "position": {
     "x": 1.8163516521453857,
     "y": 1.455603837966919,
@@ -5889,7 +5889,7 @@
   },
   {
    "id": 38,
-   "name": "Tors Point 38",
+   "name": "Bicubic Surface 4 Point 38",
    "position": {
     "x": 3.909306764602661,
     "y": 0.6118283271789551,
@@ -5898,7 +5898,7 @@
   },
   {
    "id": 39,
-   "name": "Tors Point 39",
+   "name": "Bicubic Surface 4 Point 39",
    "position": {
     "x": 5.607222080230713,
     "y": -0.04051489755511284,
@@ -5907,7 +5907,7 @@
   },
   {
    "id": 40,
-   "name": "Tors Point 40",
+   "name": "Bicubic Surface 4 Point 40",
    "position": {
     "x": 6.972032070159912,
     "y": -1.2994229793548584,
@@ -5916,7 +5916,7 @@
   },
   {
    "id": 41,
-   "name": "Tors Point 41",
+   "name": "Bicubic Surface 4 Point 41",
    "position": {
     "x": -7.022456169128418,
     "y": -1.414589285850525,
@@ -5925,7 +5925,7 @@
   },
   {
    "id": 42,
-   "name": "Tors Point 42",
+   "name": "Bicubic Surface 4 Point 42",
    "position": {
     "x": -5.670378684997559,
     "y": -0.10323615372180939,
@@ -5934,7 +5934,7 @@
   },
   {
    "id": 43,
-   "name": "Tors Point 43",
+   "name": "Bicubic Surface 4 Point 43",
    "position": {
     "x": -2.5054643154144287,
     "y": 0.6322141885757446,
@@ -5943,7 +5943,7 @@
   },
   {
    "id": 44,
-   "name": "Tors Point 44",
+   "name": "Bicubic Surface 4 Point 44",
    "position": {
     "x": -0.2704213857650757,
     "y": 1.4290660619735718,
@@ -5952,7 +5952,7 @@
   },
   {
    "id": 45,
-   "name": "Tors Point 45",
+   "name": "Bicubic Surface 4 Point 45",
    "position": {
     "x": 2.0510594844818115,
     "y": 1.4351428747177124,
@@ -5961,7 +5961,7 @@
   },
   {
    "id": 46,
-   "name": "Tors Point 46",
+   "name": "Bicubic Surface 4 Point 46",
    "position": {
     "x": 4.10655403137207,
     "y": 0.6268466711044312,
@@ -5970,7 +5970,7 @@
   },
   {
    "id": 47,
-   "name": "Tors Point 47",
+   "name": "Bicubic Surface 4 Point 47",
    "position": {
     "x": 5.606194019317627,
     "y": -0.0526726059615612,
@@ -5979,7 +5979,7 @@
   },
   {
    "id": 48,
-   "name": "Tors Point 48",
+   "name": "Bicubic Surface 4 Point 48",
    "position": {
     "x": 7.3110270500183105,
     "y": -1.364025592803955,
@@ -5988,7 +5988,7 @@
   },
   {
    "id": 49,
-   "name": "Tors Point 49",
+   "name": "Bicubic Surface 4 Point 49",
    "position": {
     "x": -6.8813347816467285,
     "y": -1.5289063453674316,
@@ -5997,7 +5997,7 @@
   },
   {
    "id": 50,
-   "name": "Tors Point 50",
+   "name": "Bicubic Surface 4 Point 50",
    "position": {
     "x": -5.620390892028809,
     "y": -0.28175944089889526,
@@ -6006,7 +6006,7 @@
   },
   {
    "id": 51,
-   "name": "Tors Point 51",
+   "name": "Bicubic Surface 4 Point 51",
    "position": {
     "x": -2.48774790763855,
     "y": 0.6486813426017761,
@@ -6015,7 +6015,7 @@
   },
   {
    "id": 52,
-   "name": "Tors Point 52",
+   "name": "Bicubic Surface 4 Point 52",
    "position": {
     "x": -0.44959545135498047,
     "y": 1.4949082136154175,
@@ -6024,7 +6024,7 @@
   },
   {
    "id": 53,
-   "name": "Tors Point 53",
+   "name": "Bicubic Surface 4 Point 53",
    "position": {
     "x": 1.998618245124817,
     "y": 1.524908185005188,
@@ -6033,7 +6033,7 @@
   },
   {
    "id": 54,
-   "name": "Tors Point 54",
+   "name": "Bicubic Surface 4 Point 54",
    "position": {
     "x": 4.159317493438721,
     "y": 0.6486813426017761,
@@ -6042,7 +6042,7 @@
   },
   {
    "id": 55,
-   "name": "Tors Point 55",
+   "name": "Bicubic Surface 4 Point 55",
    "position": {
     "x": 5.664860725402832,
     "y": -0.07034832239151001,
@@ -6051,7 +6051,7 @@
   },
   {
    "id": 56,
-   "name": "Tors Point 56",
+   "name": "Bicubic Surface 4 Point 56",
    "position": {
     "x": 7.703012466430664,
     "y": -1.4579497575759888,
@@ -6060,7 +6060,7 @@
   },
   {
    "id": 57,
-   "name": "Tors Point 57",
+   "name": "Bicubic Surface 4 Point 57",
    "position": {
     "x": -6.378407955169678,
     "y": -1.3767096996307373,
@@ -6069,7 +6069,7 @@
   },
   {
    "id": 58,
-   "name": "Tors Point 58",
+   "name": "Bicubic Surface 4 Point 58",
    "position": {
     "x": -5.558014392852783,
     "y": -0.42970985174179077,
@@ -6078,7 +6078,7 @@
   },
   {
    "id": 59,
-   "name": "Tors Point 59",
+   "name": "Bicubic Surface 4 Point 59",
    "position": {
     "x": -2.413463592529297,
     "y": 0.6388494372367859,
@@ -6087,7 +6087,7 @@
   },
   {
    "id": 60,
-   "name": "Tors Point 60",
+   "name": "Bicubic Surface 4 Point 60",
    "position": {
     "x": -0.46342289447784424,
     "y": 1.432247281074524,
@@ -6096,7 +6096,7 @@
   },
   {
    "id": 61,
-   "name": "Tors Point 61",
+   "name": "Bicubic Surface 4 Point 61",
    "position": {
     "x": 1.9037245512008667,
     "y": 1.432247281074524,
@@ -6105,7 +6105,7 @@
   },
   {
    "id": 62,
-   "name": "Tors Point 62",
+   "name": "Bicubic Surface 4 Point 62",
    "position": {
     "x": 4.116208553314209,
     "y": 0.6388493776321411,
@@ -6114,7 +6114,7 @@
   },
   {
    "id": 63,
-   "name": "Tors Point 63",
+   "name": "Bicubic Surface 4 Point 63",
    "position": {
     "x": 5.551624298095703,
     "y": -0.04909582808613777,
@@ -6123,7 +6123,7 @@
   },
   {
    "id": 64,
-   "name": "Tors Point 64",
+   "name": "Bicubic Surface 4 Point 64",
    "position": {
     "x": 7.336738586425781,
     "y": -1.3767096996307373,
@@ -6132,7 +6132,7 @@
   },
   {
    "id": 65,
-   "name": "Tors Point 65",
+   "name": "Bicubic Surface 4 Point 65",
    "position": {
     "x": -6.174981594085693,
     "y": -1.3473851680755615,
@@ -6141,7 +6141,7 @@
   },
   {
    "id": 66,
-   "name": "Tors Point 66",
+   "name": "Bicubic Surface 4 Point 66",
    "position": {
     "x": -4.328998565673828,
     "y": -0.1641051322221756,
@@ -6150,7 +6150,7 @@
   },
   {
    "id": 67,
-   "name": "Tors Point 67",
+   "name": "Bicubic Surface 4 Point 67",
    "position": {
     "x": -2.3210031986236572,
     "y": 0.6443479061126709,
@@ -6159,7 +6159,7 @@
   },
   {
    "id": 68,
-   "name": "Tors Point 68",
+   "name": "Bicubic Surface 4 Point 68",
    "position": {
     "x": -0.3940138816833496,
     "y": 1.3837937116622925,
@@ -6168,7 +6168,7 @@
   },
   {
    "id": 69,
-   "name": "Tors Point 69",
+   "name": "Bicubic Surface 4 Point 69",
    "position": {
     "x": 1.8850057125091553,
     "y": 1.3837937116622925,
@@ -6177,7 +6177,7 @@
   },
   {
    "id": 70,
-   "name": "Tors Point 70",
+   "name": "Bicubic Surface 4 Point 70",
    "position": {
     "x": 3.798565149307251,
     "y": 0.6443479061126709,
@@ -6186,7 +6186,7 @@
   },
   {
    "id": 71,
-   "name": "Tors Point 71",
+   "name": "Bicubic Surface 4 Point 71",
    "position": {
     "x": 5.386952877044678,
     "y": -0.035465121269226074,
@@ -6195,7 +6195,7 @@
   },
   {
    "id": 72,
-   "name": "Tors Point 72",
+   "name": "Bicubic Surface 4 Point 72",
    "position": {
     "x": 7.313941478729248,
     "y": -1.3473851680755615,
@@ -6204,7 +6204,7 @@
   },
   {
    "id": 73,
-   "name": "Tors Point 73",
+   "name": "Bicubic Surface 4 Point 73",
    "position": {
     "x": -5.359490871429443,
     "y": -1.163230061531067,
@@ -6213,7 +6213,7 @@
   },
   {
    "id": 74,
-   "name": "Tors Point 74",
+   "name": "Bicubic Surface 4 Point 74",
    "position": {
     "x": -4.014003753662109,
     "y": -0.0086331432685256,
@@ -6222,7 +6222,7 @@
   },
   {
    "id": 75,
-   "name": "Tors Point 75",
+   "name": "Bicubic Surface 4 Point 75",
    "position": {
     "x": -1.9754921197891235,
     "y": 0.5866321325302124,
@@ -6231,7 +6231,7 @@
   },
   {
    "id": 76,
-   "name": "Tors Point 76",
+   "name": "Bicubic Surface 4 Point 76",
    "position": {
     "x": -0.2825111746788025,
     "y": 1.2362815141677856,
@@ -6240,7 +6240,7 @@
   },
   {
    "id": 77,
-   "name": "Tors Point 77",
+   "name": "Bicubic Surface 4 Point 77",
    "position": {
     "x": 1.8242055177688599,
     "y": 1.2843681573867798,
@@ -6249,7 +6249,7 @@
   },
   {
    "id": 78,
-   "name": "Tors Point 78",
+   "name": "Bicubic Surface 4 Point 78",
    "position": {
     "x": 3.735698938369751,
     "y": 0.6289023756980896,
@@ -6258,7 +6258,7 @@
   },
   {
    "id": 79,
-   "name": "Tors Point 79",
+   "name": "Bicubic Surface 4 Point 79",
    "position": {
     "x": 5.108117580413818,
     "y": -0.10537031292915344,
@@ -6267,7 +6267,7 @@
   },
   {
    "id": 80,
-   "name": "Tors Point 80",
+   "name": "Bicubic Surface 4 Point 80",
    "position": {
     "x": 6.489410400390625,
     "y": -1.163230061531067,
@@ -6276,7 +6276,7 @@
   },
   {
    "id": 81,
-   "name": "Tors Point 81",
+   "name": "Bicubic Surface 4 Point 81",
    "position": {
     "x": -5.032024383544922,
     "y": -1.1031619310379028,
@@ -6285,7 +6285,7 @@
   },
   {
    "id": 82,
-   "name": "Tors Point 82",
+   "name": "Bicubic Surface 4 Point 82",
    "position": {
     "x": -3.735088586807251,
     "y": -0.2690262198448181,
@@ -6294,7 +6294,7 @@
   },
   {
    "id": 83,
-   "name": "Tors Point 83",
+   "name": "Bicubic Surface 4 Point 83",
    "position": {
     "x": -1.8540911674499512,
     "y": 0.5663228034973145,
@@ -6303,7 +6303,7 @@
   },
   {
    "id": 84,
-   "name": "Tors Point 84",
+   "name": "Bicubic Surface 4 Point 84",
    "position": {
     "x": -0.23837655782699585,
     "y": 1.186322808265686,
@@ -6312,7 +6312,7 @@
   },
   {
    "id": 85,
-   "name": "Tors Point 85",
+   "name": "Bicubic Surface 4 Point 85",
    "position": {
     "x": 1.6748454570770264,
     "y": 1.1606029272079468,
@@ -6321,7 +6321,7 @@
   },
   {
    "id": 86,
-   "name": "Tors Point 86",
+   "name": "Bicubic Surface 4 Point 86",
    "position": {
     "x": 3.519500970840454,
     "y": 0.6085659265518188,
@@ -6330,7 +6330,7 @@
   },
   {
    "id": 87,
-   "name": "Tors Point 87",
+   "name": "Bicubic Surface 4 Point 87",
    "position": {
     "x": 4.95953369140625,
     "y": -0.28098422288894653,
@@ -6339,7 +6339,7 @@
   },
   {
    "id": 88,
-   "name": "Tors Point 88",
+   "name": "Bicubic Surface 4 Point 88",
    "position": {
     "x": 6.224480628967285,
     "y": -1.1036772727966309,
@@ -6348,7 +6348,7 @@
   },
   {
    "id": 89,
-   "name": "Tors Point 89",
+   "name": "Bicubic Surface 4 Point 89",
    "position": {
     "x": -4.774354934692383,
     "y": -1.1005851030349731,
@@ -6357,7 +6357,7 @@
   },
   {
    "id": 90,
-   "name": "Tors Point 90",
+   "name": "Bicubic Surface 4 Point 90",
    "position": {
     "x": -3.469590425491333,
     "y": -0.2760017216205597,
@@ -6366,7 +6366,7 @@
   },
   {
    "id": 91,
-   "name": "Tors Point 91",
+   "name": "Bicubic Surface 4 Point 91",
    "position": {
     "x": -1.8540911674499512,
     "y": 0.5663228034973145,
@@ -6375,7 +6375,7 @@
   },
   {
    "id": 92,
-   "name": "Tors Point 92",
+   "name": "Bicubic Surface 4 Point 92",
    "position": {
     "x": -0.23837655782699585,
     "y": 1.186322808265686,
@@ -6384,7 +6384,7 @@
   },
   {
    "id": 93,
-   "name": "Tors Point 93",
+   "name": "Bicubic Surface 4 Point 93",
    "position": {
     "x": 1.6085669994354248,
     "y": 1.2719730138778687,
@@ -6393,7 +6393,7 @@
   },
   {
    "id": 94,
-   "name": "Tors Point 94",
+   "name": "Bicubic Surface 4 Point 94",
    "position": {
     "x": 3.519916534423828,
     "y": 0.6085659265518188,
@@ -6402,7 +6402,7 @@
   },
   {
    "id": 95,
-   "name": "Tors Point 95",
+   "name": "Bicubic Surface 4 Point 95",
    "position": {
     "x": 4.722966194152832,
     "y": -0.2760017216205597,
@@ -6411,7 +6411,7 @@
   },
   {
    "id": 96,
-   "name": "Tors Point 96",
+   "name": "Bicubic Surface 4 Point 96",
    "position": {
     "x": 6.409626007080078,
     "y": -2.2202088832855225,
@@ -6420,7 +6420,7 @@
   },
   {
    "id": 97,
-   "name": "Tors Point 97",
+   "name": "Bicubic Surface 4 Point 97",
    "position": {
     "x": -4.458956241607666,
     "y": -1.0610841512680054,
@@ -6429,7 +6429,7 @@
   },
   {
    "id": 98,
-   "name": "Tors Point 98",
+   "name": "Bicubic Surface 4 Point 98",
    "position": {
     "x": -3.1403250694274902,
     "y": -0.27261167764663696,
@@ -6438,7 +6438,7 @@
   },
   {
    "id": 99,
-   "name": "Tors Point 99",
+   "name": "Bicubic Surface 4 Point 99",
    "position": {
     "x": -1.77627694606781,
     "y": 0.5547672510147095,
@@ -6447,7 +6447,7 @@
   },
   {
    "id": 100,
-   "name": "Tors Point 100",
+   "name": "Bicubic Surface 4 Point 100",
    "position": {
     "x": -0.20859646797180176,
     "y": 1.1563348770141602,
@@ -6456,7 +6456,7 @@
   },
   {
    "id": 101,
-   "name": "Tors Point 101",
+   "name": "Bicubic Surface 4 Point 101",
    "position": {
     "x": 1.5834383964538574,
     "y": 1.239438772201538,
@@ -6465,7 +6465,7 @@
   },
   {
    "id": 102,
-   "name": "Tors Point 102",
+   "name": "Bicubic Surface 4 Point 102",
    "position": {
     "x": 3.2457275390625,
     "y": 0.5957545042037964,
@@ -6474,7 +6474,7 @@
   },
   {
    "id": 103,
-   "name": "Tors Point 103",
+   "name": "Bicubic Surface 4 Point 103",
    "position": {
     "x": 4.25974178314209,
     "y": -0.2706114947795868,
@@ -6483,7 +6483,7 @@
   },
   {
    "id": 104,
-   "name": "Tors Point 104",
+   "name": "Bicubic Surface 4 Point 104",
    "position": {
     "x": 6.0621232986450195,
     "y": -1.065584659576416,
@@ -6492,7 +6492,7 @@
   },
   {
    "id": 105,
-   "name": "Tors Point 105",
+   "name": "Bicubic Surface 4 Point 105",
    "position": {
     "x": -3.5078296661376953,
     "y": -1.0252103805541992,
@@ -6501,7 +6501,7 @@
   },
   {
    "id": 106,
-   "name": "Tors Point 106",
+   "name": "Bicubic Surface 4 Point 106",
    "position": {
     "x": -2.4471826553344727,
     "y": -0.221561998128891,
@@ -6510,7 +6510,7 @@
   },
   {
    "id": 107,
-   "name": "Tors Point 107",
+   "name": "Bicubic Surface 4 Point 107",
    "position": {
     "x": -1.2723751068115234,
     "y": 0.4671984910964966,
@@ -6519,7 +6519,7 @@
   },
   {
    "id": 108,
-   "name": "Tors Point 108",
+   "name": "Bicubic Surface 4 Point 108",
    "position": {
     "x": -0.1016342043876648,
     "y": 0.9135816097259521,
@@ -6528,7 +6528,7 @@
   },
   {
    "id": 109,
-   "name": "Tors Point 109",
+   "name": "Bicubic Surface 4 Point 109",
    "position": {
     "x": 1.4987423419952393,
     "y": 0.90643709897995,
@@ -6537,7 +6537,7 @@
   },
   {
    "id": 110,
-   "name": "Tors Point 110",
+   "name": "Bicubic Surface 4 Point 110",
    "position": {
     "x": 2.8555359840393066,
     "y": 0.4862467646598816,
@@ -6546,7 +6546,7 @@
   },
   {
    "id": 111,
-   "name": "Tors Point 111",
+   "name": "Bicubic Surface 4 Point 111",
    "position": {
     "x": 3.624509334564209,
     "y": -0.25377610325813293,
@@ -6555,7 +6555,7 @@
   },
   {
    "id": 112,
-   "name": "Tors Point 112",
+   "name": "Bicubic Surface 4 Point 112",
    "position": {
     "x": 4.415635108947754,
     "y": -1.0252102613449097,
@@ -6564,7 +6564,7 @@
   },
   {
    "id": 113,
-   "name": "Tors Point 113",
+   "name": "Bicubic Surface 4 Point 113",
    "position": {
     "x": -2.638814926147461,
     "y": -1.2406471967697144,
@@ -6573,7 +6573,7 @@
   },
   {
    "id": 114,
-   "name": "Tors Point 114",
+   "name": "Bicubic Surface 4 Point 114",
    "position": {
     "x": -1.9012901782989502,
     "y": -0.16567692160606384,
@@ -6582,7 +6582,7 @@
   },
   {
    "id": 115,
-   "name": "Tors Point 115",
+   "name": "Bicubic Surface 4 Point 115",
    "position": {
     "x": -0.9348185658454895,
     "y": 0.42848846316337585,
@@ -6591,7 +6591,7 @@
   },
   {
    "id": 116,
-   "name": "Tors Point 116",
+   "name": "Bicubic Surface 4 Point 116",
    "position": {
     "x": 0.10060258209705353,
     "y": 0.985190749168396,
@@ -6600,7 +6600,7 @@
   },
   {
    "id": 117,
-   "name": "Tors Point 117",
+   "name": "Bicubic Surface 4 Point 117",
    "position": {
     "x": 1.3260433673858643,
     "y": 0.8786311149597168,
@@ -6609,7 +6609,7 @@
   },
   {
    "id": 118,
-   "name": "Tors Point 118",
+   "name": "Bicubic Surface 4 Point 118",
    "position": {
     "x": 2.616816520690918,
     "y": 0.48336488008499146,
@@ -6618,7 +6618,7 @@
   },
   {
    "id": 119,
-   "name": "Tors Point 119",
+   "name": "Bicubic Surface 4 Point 119",
    "position": {
     "x": 3.014616012573242,
     "y": -0.1452508270740509,
@@ -6627,7 +6627,7 @@
   },
   {
    "id": 120,
-   "name": "Tors Point 120",
+   "name": "Bicubic Surface 4 Point 120",
    "position": {
     "x": 3.7471818923950195,
     "y": -1.2406471967697144,
@@ -6636,7 +6636,7 @@
   },
   {
    "id": 121,
-   "name": "Tors Point 121",
+   "name": "Bicubic Surface 4 Point 121",
    "position": {
     "x": -4.675496578216553,
     "y": -0.9130440950393677,
@@ -6645,7 +6645,7 @@
   },
   {
    "id": 122,
-   "name": "Tors Point 122",
+   "name": "Bicubic Surface 4 Point 122",
    "position": {
     "x": -2.9220023155212402,
     "y": -0.013891911134123802,
@@ -6654,7 +6654,7 @@
   },
   {
    "id": 123,
-   "name": "Tors Point 123",
+   "name": "Bicubic Surface 4 Point 123",
    "position": {
     "x": -1.4124419689178467,
     "y": 0.45203226804733276,
@@ -6663,7 +6663,7 @@
   },
   {
    "id": 124,
-   "name": "Tors Point 124",
+   "name": "Bicubic Surface 4 Point 124",
    "position": {
     "x": -0.003288447856903076,
     "y": 0.8516461849212646,
@@ -6672,7 +6672,7 @@
   },
   {
    "id": 125,
-   "name": "Tors Point 125",
+   "name": "Bicubic Surface 4 Point 125",
    "position": {
     "x": 1.4000647068023682,
     "y": 0.724081814289093,
@@ -6681,7 +6681,7 @@
   },
   {
    "id": 126,
-   "name": "Tors Point 126",
+   "name": "Bicubic Surface 4 Point 126",
    "position": {
     "x": 2.9251086711883545,
     "y": 0.5979295372962952,
@@ -6690,7 +6690,7 @@
   },
   {
    "id": 127,
-   "name": "Tors Point 127",
+   "name": "Bicubic Surface 4 Point 127",
    "position": {
     "x": 4.538213729858398,
     "y": -0.013891858048737049,
@@ -6699,7 +6699,7 @@
   },
   {
    "id": 128,
-   "name": "Tors Point 128",
+   "name": "Bicubic Surface 4 Point 128",
    "position": {
     "x": 5.7991132736206055,
     "y": -0.9130440950393677,
@@ -6708,7 +6708,7 @@
   },
   {
    "id": 129,
-   "name": "Tors Point 129",
+   "name": "Bicubic Surface 4 Point 129",
    "position": {
     "x": -5.498222351074219,
     "y": -1.1516740322113037,
@@ -6717,7 +6717,7 @@
   },
   {
    "id": 130,
-   "name": "Tors Point 130",
+   "name": "Bicubic Surface 4 Point 130",
    "position": {
     "x": -3.7048017978668213,
     "y": 0.012321919202804565,
@@ -6726,7 +6726,7 @@
   },
   {
    "id": 131,
-   "name": "Tors Point 131",
+   "name": "Bicubic Surface 4 Point 131",
    "position": {
     "x": -1.995088815689087,
     "y": 0.012321919202804565,
@@ -6735,7 +6735,7 @@
   },
   {
    "id": 132,
-   "name": "Tors Point 132",
+   "name": "Bicubic Surface 4 Point 132",
    "position": {
     "x": -0.28537583351135254,
     "y": 0.012321919202804565,
@@ -6744,7 +6744,7 @@
   },
   {
    "id": 133,
-   "name": "Tors Point 133",
+   "name": "Bicubic Surface 4 Point 133",
    "position": {
     "x": 1.424337387084961,
     "y": 0.012321919202804565,
@@ -6753,7 +6753,7 @@
   },
   {
    "id": 134,
-   "name": "Tors Point 134",
+   "name": "Bicubic Surface 4 Point 134",
    "position": {
     "x": 3.1340508460998535,
     "y": 0.012321919202804565,
@@ -6762,7 +6762,7 @@
   },
   {
    "id": 135,
-   "name": "Tors Point 135",
+   "name": "Bicubic Surface 4 Point 135",
    "position": {
     "x": 4.84376335144043,
     "y": 0.012321919202804565,
@@ -6771,7 +6771,7 @@
   },
   {
    "id": 136,
-   "name": "Tors Point 136",
+   "name": "Bicubic Surface 4 Point 136",
    "position": {
     "x": 6.669205665588379,
     "y": -1.1516739130020142,
@@ -6780,7 +6780,7 @@
   },
   {
    "id": 137,
-   "name": "Glowa Point 1",
+   "name": "Bicubic Surface 3 Point 1",
    "position": {
     "x": -0.16595175862312317,
     "y": -0.7151777744293213,
@@ -6789,7 +6789,7 @@
   },
   {
    "id": 138,
-   "name": "Glowa Point 2",
+   "name": "Bicubic Surface 3 Point 2",
    "position": {
     "x": 0.37390050292015076,
     "y": 0.04158415645360947,
@@ -6798,7 +6798,7 @@
   },
   {
    "id": 139,
-   "name": "Glowa Point 3",
+   "name": "Bicubic Surface 3 Point 3",
    "position": {
     "x": 1.0028914213180542,
     "y": 0.04158415645360947,
@@ -6807,7 +6807,7 @@
   },
   {
    "id": 140,
-   "name": "Glowa Point 4",
+   "name": "Bicubic Surface 3 Point 4",
    "position": {
     "x": 2.0597293376922607,
     "y": -0.20991230010986328,
@@ -6816,7 +6816,7 @@
   },
   {
    "id": 141,
-   "name": "Glowa Point 5",
+   "name": "Bicubic Surface 3 Point 5",
    "position": {
     "x": -1.1137306690216064,
     "y": -0.18165551126003265,
@@ -6825,7 +6825,7 @@
   },
   {
    "id": 142,
-   "name": "Glowa Point 6",
+   "name": "Bicubic Surface 3 Point 6",
    "position": {
     "x": -0.11506208032369614,
     "y": 1.5894570350646973,
@@ -6834,7 +6834,7 @@
   },
   {
    "id": 143,
-   "name": "Glowa Point 7",
+   "name": "Bicubic Surface 3 Point 7",
    "position": {
     "x": 1.75104558467865,
     "y": 1.5894570350646973,
@@ -6843,7 +6843,7 @@
   },
   {
    "id": 144,
-   "name": "Glowa Point 8",
+   "name": "Bicubic Surface 3 Point 8",
    "position": {
     "x": 3.197284698486328,
     "y": 0.12516668438911438,
@@ -6852,7 +6852,7 @@
   },
   {
    "id": 145,
-   "name": "Glowa Point 9",
+   "name": "Bicubic Surface 3 Point 9",
    "position": {
     "x": -1.9178224802017212,
     "y": -0.1308056265115738,
@@ -6861,7 +6861,7 @@
   },
   {
    "id": 146,
-   "name": "Glowa Point 10",
+   "name": "Bicubic Surface 3 Point 10",
    "position": {
     "x": -0.23598045110702515,
     "y": 1.4875060319900513,
@@ -6870,7 +6870,7 @@
   },
   {
    "id": 147,
-   "name": "Glowa Point 11",
+   "name": "Bicubic Surface 3 Point 11",
    "position": {
     "x": 1.8870229721069336,
     "y": 1.4170854091644287,
@@ -6879,7 +6879,7 @@
   },
   {
    "id": 148,
-   "name": "Glowa Point 12",
+   "name": "Bicubic Surface 3 Point 12",
    "position": {
     "x": 3.916658878326416,
     "y": -0.11136668175458908,
@@ -6888,7 +6888,7 @@
   },
   {
    "id": 149,
-   "name": "Glowa Point 13",
+   "name": "Bicubic Surface 3 Point 13",
    "position": {
     "x": -2.8809220790863037,
     "y": -0.1568545401096344,
@@ -6897,7 +6897,7 @@
   },
   {
    "id": 150,
-   "name": "Glowa Point 14",
+   "name": "Bicubic Surface 3 Point 14",
    "position": {
     "x": -3.2179410457611084,
     "y": 1.2400870323181152,
@@ -6906,7 +6906,7 @@
   },
   {
    "id": 151,
-   "name": "Glowa Point 15",
+   "name": "Bicubic Surface 3 Point 15",
    "position": {
     "x": 3.3811025619506836,
     "y": 2.710742950439453,
@@ -6915,7 +6915,7 @@
   },
   {
    "id": 152,
-   "name": "Glowa Point 16",
+   "name": "Bicubic Surface 3 Point 16",
    "position": {
     "x": 4.637297630310059,
     "y": -0.5044678449630737,
@@ -6924,7 +6924,7 @@
   },
   {
    "id": 153,
-   "name": "Glowa Point 17",
+   "name": "Bicubic Surface 3 Point 17",
    "position": {
     "x": -4.184561252593994,
     "y": -0.8354300260543823,
@@ -6933,7 +6933,7 @@
   },
   {
    "id": 154,
-   "name": "Glowa Point 18",
+   "name": "Bicubic Surface 3 Point 18",
    "position": {
     "x": -0.7075076103210449,
     "y": 1.0001972913742065,
@@ -6942,7 +6942,7 @@
   },
   {
    "id": 155,
-   "name": "Glowa Point 19",
+   "name": "Bicubic Surface 3 Point 19",
    "position": {
     "x": 1.6968605518341064,
     "y": 0.9651603698730469,
@@ -6951,7 +6951,7 @@
   },
   {
    "id": 156,
-   "name": "Glowa Point 20",
+   "name": "Bicubic Surface 3 Point 20",
    "position": {
     "x": 4.579439163208008,
     "y": -0.8895635604858398,
@@ -6960,7 +6960,7 @@
   },
   {
    "id": 157,
-   "name": "Glowa Point 21",
+   "name": "Bicubic Surface 3 Point 21",
    "position": {
     "x": -3.921398162841797,
     "y": -0.27468249201774597,
@@ -6969,7 +6969,7 @@
   },
   {
    "id": 158,
-   "name": "Glowa Point 22",
+   "name": "Bicubic Surface 3 Point 22",
    "position": {
     "x": -1.5629674196243286,
     "y": 0.5484550595283508,
@@ -6978,7 +6978,7 @@
   },
   {
    "id": 159,
-   "name": "Glowa Point 23",
+   "name": "Bicubic Surface 3 Point 23",
    "position": {
     "x": 1.8836127519607544,
     "y": 0.08958978950977325,
@@ -6987,7 +6987,7 @@
   },
   {
    "id": 160,
-   "name": "Glowa Point 24",
+   "name": "Bicubic Surface 3 Point 24",
    "position": {
     "x": 4.426061630249023,
     "y": -0.3569505512714386,
@@ -6996,7 +6996,7 @@
   },
   {
    "id": 161,
-   "name": "Glowa Point 25",
+   "name": "Bicubic Surface 3 Point 25",
    "position": {
     "x": -3.087434768676758,
     "y": -0.8736465573310852,
@@ -7005,7 +7005,7 @@
   },
   {
    "id": 162,
-   "name": "Glowa Point 26",
+   "name": "Bicubic Surface 3 Point 26",
    "position": {
     "x": -0.9897935390472412,
     "y": -0.21340158581733704,
@@ -7014,7 +7014,7 @@
   },
   {
    "id": 163,
-   "name": "Glowa Point 27",
+   "name": "Bicubic Surface 3 Point 27",
    "position": {
     "x": 2.870404005050659,
     "y": -0.15721732378005981,
@@ -7023,7 +7023,7 @@
   },
   {
    "id": 164,
-   "name": "Glowa Point 28",
+   "name": "Bicubic Surface 3 Point 28",
    "position": {
     "x": 5.0418267250061035,
     "y": -1.4127154350280762,
@@ -7032,7 +7032,7 @@
   },
   {
    "id": 165,
-   "name": "Tors Point 1",
+   "name": "Bicubic Surface 4 Point 1",
    "position": {
     "x": -27.0,
     "y": -9.053287897131668e-09,
@@ -7041,7 +7041,7 @@
   },
   {
    "id": 166,
-   "name": "Tors Point 2",
+   "name": "Bicubic Surface 4 Point 2",
    "position": {
     "x": -9.0,
     "y": -9.053287897131668e-09,
@@ -7050,7 +7050,7 @@
   },
   {
    "id": 167,
-   "name": "Tors Point 3",
+   "name": "Bicubic Surface 4 Point 3",
    "position": {
     "x": 9.0,
     "y": -9.053287897131668e-09,
@@ -7059,7 +7059,7 @@
   },
   {
    "id": 168,
-   "name": "Tors Point 4",
+   "name": "Bicubic Surface 4 Point 4",
    "position": {
     "x": 27.0,
     "y": -9.053287897131668e-09,
@@ -7068,7 +7068,7 @@
   },
   {
    "id": 169,
-   "name": "Tors Point 5",
+   "name": "Bicubic Surface 4 Point 5",
    "position": {
     "x": -27.0,
     "y": 0.0,
@@ -7077,7 +7077,7 @@
   },
   {
    "id": 170,
-   "name": "Tors Point 6",
+   "name": "Bicubic Surface 4 Point 6",
    "position": {
     "x": -9.0,
     "y": 0.0,
@@ -7086,7 +7086,7 @@
   },
   {
    "id": 171,
-   "name": "Tors Point 7",
+   "name": "Bicubic Surface 4 Point 7",
    "position": {
     "x": 9.0,
     "y": 0.0,
@@ -7095,7 +7095,7 @@
   },
   {
    "id": 172,
-   "name": "Tors Point 8",
+   "name": "Bicubic Surface 4 Point 8",
    "position": {
     "x": 27.0,
     "y": 0.0,
@@ -7104,7 +7104,7 @@
   },
   {
    "id": 173,
-   "name": "Tors Point 9",
+   "name": "Bicubic Surface 4 Point 9",
    "position": {
     "x": -27.0,
     "y": 0.0,
@@ -7113,7 +7113,7 @@
   },
   {
    "id": 174,
-   "name": "Tors Point 10",
+   "name": "Bicubic Surface 4 Point 10",
    "position": {
     "x": -9.0,
     "y": 0.0,
@@ -7122,7 +7122,7 @@
   },
   {
    "id": 175,
-   "name": "Tors Point 11",
+   "name": "Bicubic Surface 4 Point 11",
    "position": {
     "x": 9.0,
     "y": 0.0,
@@ -7131,7 +7131,7 @@
   },
   {
    "id": 176,
-   "name": "Tors Point 12",
+   "name": "Bicubic Surface 4 Point 12",
    "position": {
     "x": 27.0,
     "y": 0.0,
@@ -7140,7 +7140,7 @@
   },
   {
    "id": 177,
-   "name": "Tors Point 13",
+   "name": "Bicubic Surface 4 Point 13",
    "position": {
     "x": -27.0,
     "y": -9.053287897131668e-09,
@@ -7149,7 +7149,7 @@
   },
   {
    "id": 178,
-   "name": "Tors Point 14",
+   "name": "Bicubic Surface 4 Point 14",
    "position": {
     "x": -9.0,
     "y": -9.053287897131668e-09,
@@ -7158,7 +7158,7 @@
   },
   {
    "id": 179,
-   "name": "Tors Point 15",
+   "name": "Bicubic Surface 4 Point 15",
    "position": {
     "x": 9.0,
     "y": -9.053287897131668e-09,
@@ -7167,7 +7167,7 @@
   },
   {
    "id": 180,
-   "name": "Tors Point 16",
+   "name": "Bicubic Surface 4 Point 16",
    "position": {
     "x": 27.0,
     "y": -9.053287897131668e-09,
@@ -7176,7 +7176,7 @@
   },
   {
    "id": 181,
-   "name": "Pletwa Dolna Lewa Point 1",
+   "name": "Bicubic Surface 5 Point 1",
    "position": {
     "x": -4.09648323059082,
     "y": -0.15297505259513855,
@@ -7185,7 +7185,7 @@
   },
   {
    "id": 182,
-   "name": "Pletwa Dolna Lewa Point 2",
+   "name": "Bicubic Surface 5 Point 2",
    "position": {
     "x": -3.2225074768066406,
     "y": 0.2256462574005127,
@@ -7194,7 +7194,7 @@
   },
   {
    "id": 183,
-   "name": "Pletwa Dolna Lewa Point 3",
+   "name": "Bicubic Surface 5 Point 3",
    "position": {
     "x": -2.577983856201172,
     "y": 0.4166361093521118,
@@ -7203,7 +7203,7 @@
   },
   {
    "id": 184,
-   "name": "Pletwa Dolna Lewa Point 4",
+   "name": "Bicubic Surface 5 Point 4",
    "position": {
     "x": -2.1173815727233887,
     "y": 0.19662559032440186,
@@ -7212,7 +7212,7 @@
   },
   {
    "id": 185,
-   "name": "Pletwa Dolna Lewa Point 5",
+   "name": "Bicubic Surface 5 Point 5",
    "position": {
     "x": -6.054236888885498,
     "y": -0.17803716659545898,
@@ -7221,7 +7221,7 @@
   },
   {
    "id": 186,
-   "name": "Pletwa Dolna Lewa Point 6",
+   "name": "Bicubic Surface 5 Point 6",
    "position": {
     "x": -5.084440231323242,
     "y": 0.12199029326438904,
@@ -7230,7 +7230,7 @@
   },
   {
    "id": 187,
-   "name": "Pletwa Dolna Lewa Point 7",
+   "name": "Bicubic Surface 5 Point 7",
    "position": {
     "x": -3.9877936840057373,
     "y": 0.22924169898033142,
@@ -7239,7 +7239,7 @@
   },
   {
    "id": 188,
-   "name": "Pletwa Dolna Lewa Point 8",
+   "name": "Bicubic Surface 5 Point 8",
    "position": {
     "x": -2.561094284057617,
     "y": 0.21793794631958008,
@@ -7248,7 +7248,7 @@
   },
   {
    "id": 189,
-   "name": "Pletwa Dolna Lewa Point 9",
+   "name": "Bicubic Surface 5 Point 9",
    "position": {
     "x": -7.100200653076172,
     "y": -0.2307869791984558,
@@ -7257,7 +7257,7 @@
   },
   {
    "id": 190,
-   "name": "Pletwa Dolna Lewa Point 10",
+   "name": "Bicubic Surface 5 Point 10",
    "position": {
     "x": -5.921562671661377,
     "y": 0.10352137684822083,
@@ -7266,7 +7266,7 @@
   },
   {
    "id": 191,
-   "name": "Pletwa Dolna Lewa Point 11",
+   "name": "Bicubic Surface 5 Point 11",
    "position": {
     "x": -4.805976390838623,
     "y": 0.198920339345932,
@@ -7275,7 +7275,7 @@
   },
   {
    "id": 192,
-   "name": "Pletwa Dolna Lewa Point 12",
+   "name": "Bicubic Surface 5 Point 12",
    "position": {
     "x": -3.3880395889282227,
     "y": 0.21539121866226196,
@@ -7284,7 +7284,7 @@
   },
   {
    "id": 193,
-   "name": "Pletwa Dolna Lewa Point 13",
+   "name": "Bicubic Surface 5 Point 13",
    "position": {
     "x": -7.320185661315918,
     "y": -0.2880069613456726,
@@ -7293,7 +7293,7 @@
   },
   {
    "id": 194,
-   "name": "Pletwa Dolna Lewa Point 14",
+   "name": "Bicubic Surface 5 Point 14",
    "position": {
     "x": -6.167367458343506,
     "y": -0.1029697060585022,
@@ -7302,7 +7302,7 @@
   },
   {
    "id": 195,
-   "name": "Pletwa Dolna Lewa Point 15",
+   "name": "Bicubic Surface 5 Point 15",
    "position": {
     "x": -4.9981770515441895,
     "y": -0.15878044068813324,
@@ -7311,7 +7311,7 @@
   },
   {
    "id": 196,
-   "name": "Pletwa Dolna Lewa Point 16",
+   "name": "Bicubic Surface 5 Point 16",
    "position": {
     "x": -3.449714183807373,
     "y": -0.26761430501937866,
@@ -7320,7 +7320,7 @@
   },
   {
    "id": 197,
-   "name": "Pletwa Dolna Prawa Point 1",
+   "name": "Bicubic Surface 6 Point 1",
    "position": {
     "x": -2.5823287963867188,
     "y": -3.044346332550049,
@@ -7329,7 +7329,7 @@
   },
   {
    "id": 198,
-   "name": "Pletwa Dolna Prawa Point 2",
+   "name": "Bicubic Surface 6 Point 2",
    "position": {
     "x": 1.157605528831482,
     "y": -1.3834129571914673,
@@ -7338,7 +7338,7 @@
   },
   {
    "id": 199,
-   "name": "Pletwa Dolna Prawa Point 3",
+   "name": "Bicubic Surface 6 Point 3",
    "position": {
     "x": 2.789025068283081,
     "y": 0.24918566644191742,
@@ -7347,7 +7347,7 @@
   },
   {
    "id": 200,
-   "name": "Pletwa Dolna Prawa Point 4",
+   "name": "Bicubic Surface 6 Point 4",
    "position": {
     "x": 3.499804735183716,
     "y": 0.249185711145401,
@@ -7356,7 +7356,7 @@
   },
   {
    "id": 201,
-   "name": "Pletwa Dolna Prawa Point 5",
+   "name": "Bicubic Surface 6 Point 5",
    "position": {
     "x": 1.2166969776153564,
     "y": -2.0122885704040527,
@@ -7365,7 +7365,7 @@
   },
   {
    "id": 202,
-   "name": "Pletwa Dolna Prawa Point 6",
+   "name": "Bicubic Surface 6 Point 6",
    "position": {
     "x": -4.004814624786377,
     "y": -3.044346332550049,
@@ -7374,7 +7374,7 @@
   },
   {
    "id": 203,
-   "name": "Pletwa Dolna Prawa Point 7",
+   "name": "Bicubic Surface 6 Point 7",
    "position": {
     "x": -2.587327241897583,
     "y": 0.2491856962442398,
@@ -7383,7 +7383,7 @@
   },
   {
    "id": 204,
-   "name": "Pletwa Dolna Prawa Point 8",
+   "name": "Bicubic Surface 6 Point 8",
    "position": {
     "x": -1.8874120712280273,
     "y": 0.24918580055236816,
@@ -7392,7 +7392,7 @@
   },
   {
    "id": 205,
-   "name": "Pletwa Dolna Prawa Point 9",
+   "name": "Bicubic Surface 6 Point 9",
    "position": {
     "x": -0.9227896332740784,
     "y": 0.24918584525585175,
@@ -7401,7 +7401,7 @@
   },
   {
    "id": 206,
-   "name": "Pletwa Dolna Prawa Point 10",
+   "name": "Bicubic Surface 6 Point 10",
    "position": {
     "x": 0.32895416021347046,
     "y": -2.0122883319854736,
@@ -7410,7 +7410,7 @@
   },
   {
    "id": 207,
-   "name": "Pletwa Dolna Prawa Point 11",
+   "name": "Bicubic Surface 6 Point 11",
    "position": {
     "x": -5.42730188369751,
     "y": -3.044346332550049,
@@ -7419,7 +7419,7 @@
   },
   {
    "id": 208,
-   "name": "Pletwa Dolna Prawa Point 12",
+   "name": "Bicubic Surface 6 Point 12",
    "position": {
     "x": -4.0098137855529785,
     "y": 0.24918583035469055,
@@ -7428,7 +7428,7 @@
   },
   {
    "id": 209,
-   "name": "Pletwa Dolna Prawa Point 13",
+   "name": "Bicubic Surface 6 Point 13",
    "position": {
     "x": -3.3098983764648438,
     "y": 0.24918591976165771,
@@ -7437,7 +7437,7 @@
   },
   {
    "id": 210,
-   "name": "Pletwa Dolna Prawa Point 14",
+   "name": "Bicubic Surface 6 Point 14",
    "position": {
     "x": -2.091433525085449,
     "y": 0.2491859793663025,
@@ -7446,7 +7446,7 @@
   },
   {
    "id": 211,
-   "name": "Pletwa Dolna Prawa Point 15",
+   "name": "Bicubic Surface 6 Point 15",
    "position": {
     "x": -0.5587883591651917,
     "y": -2.0122880935668945,
@@ -7455,7 +7455,7 @@
   },
   {
    "id": 212,
-   "name": "Pletwa Dolna Prawa Point 16",
+   "name": "Bicubic Surface 6 Point 16",
    "position": {
     "x": -6.655439853668213,
     "y": -1.8007372617721558,
@@ -7464,7 +7464,7 @@
   },
   {
    "id": 213,
-   "name": "Pletwa Dolna Prawa Point 17",
+   "name": "Bicubic Surface 6 Point 17",
    "position": {
     "x": -5.432300090789795,
     "y": 0.2491859495639801,
@@ -7473,7 +7473,7 @@
   },
   {
    "id": 214,
-   "name": "Pletwa Dolna Prawa Point 18",
+   "name": "Bicubic Surface 6 Point 18",
    "position": {
     "x": -4.732385158538818,
     "y": 0.24918605387210846,
@@ -7482,7 +7482,7 @@
   },
   {
    "id": 215,
-   "name": "Pletwa Dolna Prawa Point 19",
+   "name": "Bicubic Surface 6 Point 19",
    "position": {
     "x": -3.1356468200683594,
     "y": 0.6992222666740417,
@@ -7491,7 +7491,7 @@
   },
   {
    "id": 216,
-   "name": "Pletwa Dolna Prawa Point 20",
+   "name": "Bicubic Surface 6 Point 20",
    "position": {
     "x": -1.4465320110321045,
     "y": -2.0122880935668945,
@@ -7500,7 +7500,7 @@
   },
   {
    "id": 217,
-   "name": "Pletwa Dolna Prawa Point 21",
+   "name": "Bicubic Surface 6 Point 21",
    "position": {
     "x": -8.945972442626953,
     "y": -0.66397625207901,
@@ -7509,7 +7509,7 @@
   },
   {
    "id": 218,
-   "name": "Pletwa Dolna Prawa Point 22",
+   "name": "Bicubic Surface 6 Point 22",
    "position": {
     "x": -8.066368103027344,
     "y": -0.6639761924743652,
@@ -7518,7 +7518,7 @@
   },
   {
    "id": 219,
-   "name": "Pletwa Dolna Prawa Point 23",
+   "name": "Bicubic Surface 6 Point 23",
    "position": {
     "x": -6.440399169921875,
     "y": -2.5559823513031006,
@@ -7527,7 +7527,7 @@
   },
   {
    "id": 220,
-   "name": "Pletwa Dolna Prawa Point 24",
+   "name": "Bicubic Surface 6 Point 24",
    "position": {
     "x": -4.714249134063721,
     "y": -2.5559823513031006,
@@ -7536,7 +7536,7 @@
   },
   {
    "id": 221,
-   "name": "Pletwa Dolna Prawa Point 25",
+   "name": "Bicubic Surface 6 Point 25",
    "position": {
     "x": -2.334275007247925,
     "y": -2.0122880935668945,
@@ -7545,7 +7545,7 @@
   },
   {
    "id": 222,
-   "name": "Pletwa Gorna Prawa Point 1",
+   "name": "Bicubic Surface 7 Point 1",
    "position": {
     "x": 3.9745168685913086,
     "y": -1.2570830583572388,
@@ -7554,7 +7554,7 @@
   },
   {
    "id": 223,
-   "name": "Pletwa Gorna Prawa Point 2",
+   "name": "Bicubic Surface 7 Point 2",
    "position": {
     "x": 4.430379867553711,
     "y": -1.2570829391479492,
@@ -7563,7 +7563,7 @@
   },
   {
    "id": 224,
-   "name": "Pletwa Gorna Prawa Point 3",
+   "name": "Bicubic Surface 7 Point 3",
    "position": {
     "x": 4.886241912841797,
     "y": -1.2570829391479492,
@@ -7572,7 +7572,7 @@
   },
   {
    "id": 225,
-   "name": "Pletwa Gorna Prawa Point 4",
+   "name": "Bicubic Surface 7 Point 4",
    "position": {
     "x": 5.459329605102539,
     "y": -1.8897490501403809,
@@ -7581,7 +7581,7 @@
   },
   {
    "id": 226,
-   "name": "Pletwa Gorna Prawa Point 5",
+   "name": "Bicubic Surface 7 Point 5",
    "position": {
     "x": 5.608335971832275,
     "y": 1.5211997032165527,
@@ -7590,7 +7590,7 @@
   },
   {
    "id": 227,
-   "name": "Pletwa Gorna Prawa Point 6",
+   "name": "Bicubic Surface 7 Point 6",
    "position": {
     "x": 3.573885440826416,
     "y": 0.008961217477917671,
@@ -7599,7 +7599,7 @@
   },
   {
    "id": 228,
-   "name": "Pletwa Gorna Prawa Point 7",
+   "name": "Bicubic Surface 7 Point 7",
    "position": {
     "x": 4.026224136352539,
     "y": 0.14951305091381073,
@@ -7608,7 +7608,7 @@
   },
   {
    "id": 229,
-   "name": "Pletwa Gorna Prawa Point 8",
+   "name": "Bicubic Surface 7 Point 8",
    "position": {
     "x": 4.240763187408447,
     "y": 0.1412263959646225,
@@ -7617,7 +7617,7 @@
   },
   {
    "id": 230,
-   "name": "Pletwa Gorna Prawa Point 9",
+   "name": "Bicubic Surface 7 Point 9",
    "position": {
     "x": 4.976357460021973,
     "y": 0.5392267107963562,
@@ -7626,7 +7626,7 @@
   },
   {
    "id": 231,
-   "name": "Pletwa Gorna Prawa Point 10",
+   "name": "Bicubic Surface 7 Point 10",
    "position": {
     "x": 5.60966157913208,
     "y": -1.8350965976715088,
@@ -7635,7 +7635,7 @@
   },
   {
    "id": 232,
-   "name": "Pletwa Gorna Prawa Point 11",
+   "name": "Bicubic Surface 7 Point 11",
    "position": {
     "x": 2.8192310333251953,
     "y": 0.008961157873272896,
@@ -7644,7 +7644,7 @@
   },
   {
    "id": 233,
-   "name": "Pletwa Gorna Prawa Point 12",
+   "name": "Bicubic Surface 7 Point 12",
    "position": {
     "x": 3.2715702056884766,
     "y": 0.14951305091381073,
@@ -7653,7 +7653,7 @@
   },
   {
    "id": 234,
-   "name": "Pletwa Gorna Prawa Point 13",
+   "name": "Bicubic Surface 7 Point 13",
    "position": {
     "x": 4.045996189117432,
     "y": 0.14951302111148834,
@@ -7662,7 +7662,7 @@
   },
   {
    "id": 235,
-   "name": "Pletwa Gorna Prawa Point 14",
+   "name": "Bicubic Surface 7 Point 14",
    "position": {
     "x": 4.384725093841553,
     "y": 0.1315949708223343,
@@ -7671,7 +7671,7 @@
   },
   {
    "id": 236,
-   "name": "Pletwa Gorna Prawa Point 15",
+   "name": "Bicubic Surface 7 Point 15",
    "position": {
     "x": 4.855007648468018,
     "y": -1.8350967168807983,
@@ -7680,7 +7680,7 @@
   },
   {
    "id": 237,
-   "name": "Pletwa Gorna Prawa Point 16",
+   "name": "Bicubic Surface 7 Point 16",
    "position": {
     "x": 2.3996894359588623,
     "y": 0.089571014046669,
@@ -7689,7 +7689,7 @@
   },
   {
    "id": 238,
-   "name": "Pletwa Gorna Prawa Point 17",
+   "name": "Bicubic Surface 7 Point 17",
    "position": {
     "x": 2.8520283699035645,
     "y": 0.2301228791475296,
@@ -7698,7 +7698,7 @@
   },
   {
    "id": 239,
-   "name": "Pletwa Gorna Prawa Point 18",
+   "name": "Bicubic Surface 7 Point 18",
    "position": {
     "x": 3.6264543533325195,
     "y": 0.23012299835681915,
@@ -7707,7 +7707,7 @@
   },
   {
    "id": 240,
-   "name": "Pletwa Gorna Prawa Point 19",
+   "name": "Bicubic Surface 7 Point 19",
    "position": {
     "x": 3.7637526988983154,
     "y": 0.23012299835681915,
@@ -7716,7 +7716,7 @@
   },
   {
    "id": 241,
-   "name": "Pletwa Gorna Prawa Point 20",
+   "name": "Bicubic Surface 7 Point 20",
    "position": {
     "x": 4.281478404998779,
     "y": -1.1170334815979004,
@@ -7725,7 +7725,7 @@
   },
   {
    "id": 242,
-   "name": "Pletwa Gorna Prawa Point 21",
+   "name": "Bicubic Surface 7 Point 21",
    "position": {
     "x": 2.190155029296875,
     "y": -1.1767778396606445,
@@ -7734,7 +7734,7 @@
   },
   {
    "id": 243,
-   "name": "Pletwa Gorna Prawa Point 22",
+   "name": "Bicubic Surface 7 Point 22",
    "position": {
     "x": 2.64601731300354,
     "y": -1.1767778396606445,
@@ -7743,7 +7743,7 @@
   },
   {
    "id": 244,
-   "name": "Pletwa Gorna Prawa Point 23",
+   "name": "Bicubic Surface 7 Point 23",
    "position": {
     "x": 3.420443296432495,
     "y": -1.176777720451355,
@@ -7752,7 +7752,7 @@
   },
   {
    "id": 245,
-   "name": "Pletwa Gorna Prawa Point 24",
+   "name": "Bicubic Surface 7 Point 24",
    "position": {
     "x": 3.9433953762054443,
     "y": -1.176777720451355,
@@ -7761,7 +7761,7 @@
   },
   {
    "id": 246,
-   "name": "Pletwa Gorna Prawa Point 25",
+   "name": "Bicubic Surface 7 Point 25",
    "position": {
     "x": 5.335353851318359,
     "y": -1.176777720451355,
@@ -7770,7 +7770,7 @@
   },
   {
    "id": 247,
-   "name": "Pletwa Gorna Lewa Point 1",
+   "name": "Bicubic Surface 9 Point 1",
    "position": {
     "x": -2.520486354827881,
     "y": -4.489890098571777,
@@ -7779,7 +7779,7 @@
   },
   {
    "id": 248,
-   "name": "Pletwa Gorna Lewa Point 2",
+   "name": "Bicubic Surface 9 Point 2",
    "position": {
     "x": 4.777760982513428,
     "y": -5.848048686981201,
@@ -7788,7 +7788,7 @@
   },
   {
    "id": 249,
-   "name": "Pletwa Gorna Lewa Point 3",
+   "name": "Bicubic Surface 9 Point 3",
    "position": {
     "x": 6.1536335945129395,
     "y": -5.903444766998291,
@@ -7797,7 +7797,7 @@
   },
   {
    "id": 250,
-   "name": "Pletwa Gorna Lewa Point 4",
+   "name": "Bicubic Surface 9 Point 4",
    "position": {
     "x": 7.5295090675354,
     "y": -5.958841323852539,
@@ -7806,7 +7806,7 @@
   },
   {
    "id": 251,
-   "name": "Pletwa Gorna Lewa Point 5",
+   "name": "Bicubic Surface 9 Point 5",
    "position": {
     "x": 8.90538215637207,
     "y": -6.014237403869629,
@@ -7815,7 +7815,7 @@
   },
   {
    "id": 252,
-   "name": "Pletwa Gorna Lewa Point 6",
+   "name": "Bicubic Surface 9 Point 6",
    "position": {
     "x": 10.281255722045898,
     "y": -6.069633483886719,
@@ -7824,7 +7824,7 @@
   },
   {
    "id": 253,
-   "name": "Pletwa Gorna Lewa Point 7",
+   "name": "Bicubic Surface 9 Point 7",
    "position": {
     "x": 2.5242130756378174,
     "y": 0.14409103989601135,
@@ -7833,7 +7833,7 @@
   },
   {
    "id": 254,
-   "name": "Pletwa Gorna Lewa Point 8",
+   "name": "Bicubic Surface 9 Point 8",
    "position": {
     "x": 5.059146881103516,
     "y": 1.107843279838562,
@@ -7842,7 +7842,7 @@
   },
   {
    "id": 255,
-   "name": "Pletwa Gorna Lewa Point 9",
+   "name": "Bicubic Surface 9 Point 9",
    "position": {
     "x": 6.429145336151123,
     "y": 0.908289909362793,
@@ -7851,7 +7851,7 @@
   },
   {
    "id": 256,
-   "name": "Pletwa Gorna Lewa Point 10",
+   "name": "Bicubic Surface 9 Point 10",
    "position": {
     "x": 7.505609035491943,
     "y": 0.644087016582489,
@@ -7860,7 +7860,7 @@
   },
   {
    "id": 257,
-   "name": "Pletwa Gorna Lewa Point 11",
+   "name": "Bicubic Surface 9 Point 11",
    "position": {
     "x": 9.027913093566895,
     "y": 0.16625873744487762,
@@ -7869,7 +7869,7 @@
   },
   {
    "id": 258,
-   "name": "Pletwa Gorna Lewa Point 12",
+   "name": "Bicubic Surface 9 Point 12",
    "position": {
     "x": 9.856517791748047,
     "y": -1.1935882568359375,
@@ -7878,7 +7878,7 @@
   },
   {
    "id": 259,
-   "name": "Pletwa Gorna Lewa Point 13",
+   "name": "Bicubic Surface 9 Point 13",
    "position": {
     "x": 2.926253318786621,
     "y": -0.0320625901222229,
@@ -7887,7 +7887,7 @@
   },
   {
    "id": 260,
-   "name": "Pletwa Gorna Lewa Point 14",
+   "name": "Bicubic Surface 9 Point 14",
    "position": {
     "x": 4.880098819732666,
     "y": 0.3723028600215912,
@@ -7896,7 +7896,7 @@
   },
   {
    "id": 261,
-   "name": "Pletwa Gorna Lewa Point 15",
+   "name": "Bicubic Surface 9 Point 15",
    "position": {
     "x": 6.156099796295166,
     "y": 0.3412477970123291,
@@ -7905,7 +7905,7 @@
   },
   {
    "id": 262,
-   "name": "Pletwa Gorna Lewa Point 16",
+   "name": "Bicubic Surface 9 Point 16",
    "position": {
     "x": 7.216075420379639,
     "y": 0.1908443719148636,
@@ -7914,7 +7914,7 @@
   },
   {
    "id": 263,
-   "name": "Pletwa Gorna Lewa Point 17",
+   "name": "Bicubic Surface 9 Point 17",
    "position": {
     "x": 8.119354248046875,
     "y": 0.03592108190059662,
@@ -7923,7 +7923,7 @@
   },
   {
    "id": 264,
-   "name": "Pletwa Gorna Lewa Point 18",
+   "name": "Bicubic Surface 9 Point 18",
    "position": {
     "x": 9.57409954071045,
     "y": -1.7905750274658203,
@@ -7932,7 +7932,7 @@
   },
   {
    "id": 265,
-   "name": "Pletwa Gorna Lewa Point 19",
+   "name": "Bicubic Surface 9 Point 19",
    "position": {
     "x": 2.527691125869751,
     "y": -0.15659871697425842,
@@ -7941,7 +7941,7 @@
   },
   {
    "id": 266,
-   "name": "Pletwa Gorna Lewa Point 20",
+   "name": "Bicubic Surface 9 Point 20",
    "position": {
     "x": 4.603661060333252,
     "y": 0.25426560640335083,
@@ -7950,7 +7950,7 @@
   },
   {
    "id": 267,
-   "name": "Pletwa Gorna Lewa Point 21",
+   "name": "Bicubic Surface 9 Point 21",
    "position": {
     "x": 5.313072681427002,
     "y": 0.24510978162288666,
@@ -7959,7 +7959,7 @@
   },
   {
    "id": 268,
-   "name": "Pletwa Gorna Lewa Point 22",
+   "name": "Bicubic Surface 9 Point 22",
    "position": {
     "x": 6.150815963745117,
     "y": 0.10890541970729828,
@@ -7968,7 +7968,7 @@
   },
   {
    "id": 269,
-   "name": "Pletwa Gorna Lewa Point 23",
+   "name": "Bicubic Surface 9 Point 23",
    "position": {
     "x": 6.783877372741699,
     "y": 0.09907111525535583,
@@ -7977,7 +7977,7 @@
   },
   {
    "id": 270,
-   "name": "Pletwa Gorna Lewa Point 24",
+   "name": "Bicubic Surface 9 Point 24",
    "position": {
     "x": 7.70933723449707,
     "y": -1.8846840858459473,
@@ -7986,7 +7986,7 @@
   },
   {
    "id": 271,
-   "name": "Pletwa Gorna Lewa Point 25",
+   "name": "Bicubic Surface 9 Point 25",
    "position": {
     "x": 2.186375617980957,
     "y": 0.22044354677200317,
@@ -7995,7 +7995,7 @@
   },
   {
    "id": 272,
-   "name": "Pletwa Gorna Lewa Point 26",
+   "name": "Bicubic Surface 9 Point 26",
    "position": {
     "x": 2.8957865238189697,
     "y": 0.2112877368927002,
@@ -8004,7 +8004,7 @@
   },
   {
    "id": 273,
-   "name": "Pletwa Gorna Lewa Point 27",
+   "name": "Bicubic Surface 9 Point 27",
    "position": {
     "x": 3.6051979064941406,
     "y": 0.2021319568157196,
@@ -8013,7 +8013,7 @@
   },
   {
    "id": 274,
-   "name": "Pletwa Gorna Lewa Point 28",
+   "name": "Bicubic Surface 9 Point 28",
    "position": {
     "x": 4.314609527587891,
     "y": 0.19297613203525543,
@@ -8022,7 +8022,7 @@
   },
   {
    "id": 275,
-   "name": "Pletwa Gorna Lewa Point 29",
+   "name": "Bicubic Surface 9 Point 29",
    "position": {
     "x": 4.607057094573975,
     "y": -0.27856481075286865,
@@ -8031,7 +8031,7 @@
   },
   {
    "id": 276,
-   "name": "Pletwa Gorna Lewa Point 30",
+   "name": "Bicubic Surface 9 Point 30",
    "position": {
     "x": 5.816315650939941,
     "y": -0.8111304044723511,
@@ -8040,7 +8040,7 @@
   },
   {
    "id": 277,
-   "name": "Pletwa Gorna Lewa Point 31",
+   "name": "Bicubic Surface 9 Point 31",
    "position": {
     "x": 0.4785008430480957,
     "y": 0.17746566236019135,
@@ -8049,7 +8049,7 @@
   },
   {
    "id": 278,
-   "name": "Pletwa Gorna Lewa Point 32",
+   "name": "Bicubic Surface 9 Point 32",
    "position": {
     "x": 1.1879117488861084,
     "y": 0.16830982267856598,
@@ -8058,7 +8058,7 @@
   },
   {
    "id": 279,
-   "name": "Pletwa Gorna Lewa Point 33",
+   "name": "Bicubic Surface 9 Point 33",
    "position": {
     "x": 1.897322654724121,
     "y": 0.1591540277004242,
@@ -8067,7 +8067,7 @@
   },
   {
    "id": 280,
-   "name": "Pletwa Gorna Lewa Point 34",
+   "name": "Bicubic Surface 9 Point 34",
    "position": {
     "x": 2.6067347526550293,
     "y": 0.14999821782112122,
@@ -8076,7 +8076,7 @@
   },
   {
    "id": 281,
-   "name": "Pletwa Gorna Lewa Point 35",
+   "name": "Bicubic Surface 9 Point 35",
    "position": {
     "x": 3.316145896911621,
     "y": 0.14084242284297943,
@@ -8085,7 +8085,7 @@
   },
   {
    "id": 282,
-   "name": "Pletwa Gorna Lewa Point 36",
+   "name": "Bicubic Surface 9 Point 36",
    "position": {
     "x": 4.025557518005371,
     "y": 0.13168662786483765,

@@ -82,12 +82,12 @@ Entity* Deserializer::BezierSurfaceC0(
 	auto* e = Entity::New();
 	auto* pc = e->AddComponent<PointCollection>();
 	auto* bs = e->AddComponent<BicubicSurface>();
-
+	
 	pc->AddSelection(controlPoints);
 	pc->isMutable = false;
 	bs->division = size;
 	bs->wrapMode = parameterWrapped;
-
+	
 	const auto& collectionPoints = pc->Get();
 	auto it_b = collectionPoints.begin(), it_e = collectionPoints.end();
 

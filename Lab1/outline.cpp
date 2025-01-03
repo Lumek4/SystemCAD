@@ -48,7 +48,8 @@ void InflateLoop(std::vector<XMFLOAT2>& outline, float radius)
 
 void Paths::OutlineSet(Entity::Selection& set, Entity* plane, XMFLOAT3 cursor,
 	float precision,
-	std::vector<XMFLOAT2>& outline)
+	std::vector<XMFLOAT2>& outline,
+	std::vector<XMFLOAT2>& fill)
 {
 	auto* base = plane->GetComponent<BicubicSurface>();
 	if (!base)
@@ -207,5 +208,56 @@ void Paths::OutlineSet(Entity::Selection& set, Entity* plane, XMFLOAT3 cursor,
 		}
 		vert_i = nextInd;
 	}while(shape_i != startingShape || vert_i != startingVert);
+
+	//XMFLOAT2 uv = { 0, 0 };
+	//bool moving = true; bool inside = false, was_inside = false;
+	//bool backwards = false;
+	//int it = 0;
+	////if (k == 1)
+	////	precision *= 0.5f;
+	//while (moving)
+	//{
+	//	inside = true;
+
+	//	bool moving = true;
+	//	while (moving)
+	//	{
+	//		if (!was_inside && inside)
+	//			fill.push_back({NAN, NAN});
+	//		was_inside = inside;
+	//		if (inside)
+	//			fill.push_back(uv);
+	//		float nextu = uv.x + (backwards ? -1 : 1) * precision;
+	//		if ((!backwards && nextu > 1) ||
+	//			(backwards && nextu < 0))
+	//		{
+	//			uv.x = backwards ? 0 : 1;
+	//			break;
+	//		}
+	//		for (int j = 0; j < outline.size(); j++)
+	//		{
+	//			int jp1 = (j + 1) % outline.size();
+	//			auto& b1 = outline[j];
+	//			auto& b2 = outline[jp1];
+	//			if (fabsf(b1.x - b2.x) > 1 || fabsf(b1.y - b2.y) > 1)
+	//				continue;
+
+	//			if (fminf(b1.y, b2.y) <= uv.y && uv.y <= fmaxf(b1.y, b2.y))
+	//				if (vecmath::segments2d(uv, { nextu, uv.y }, b1, b2))
+	//				{
+	//					inside = !inside; break;
+	//				}
+	//		}
+	//		if (was_inside && !inside)
+	//			fill.push_back({ NAN, NAN });
+
+	//		uv.x = nextu;
+	//		it++;
+	//	}
+	//	uv.y += precision;
+	//	if (uv.y > 1)
+	//		break;
+	//	backwards = !backwards;
+	//}
 	return;
 }

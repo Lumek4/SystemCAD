@@ -36,5 +36,5 @@ namespace MyGui
 	void ShowRoughPopup();
 	void RoughPopup(int& resolution, float& tolerance, bool& create);
 	void ShowExactPopup();
-	void ExactPopup(float& detail, bool& create);
+	void ExactPopup(float& detail, float& pathStep, bool& create);
 }

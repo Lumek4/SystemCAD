@@ -122,11 +122,11 @@ float Raise(XMFLOAT2 position, const std::vector<float>& tex, int resolution, fl
 			{
 
 				int id = x + y * resolution;
-				float h = tex[id] + (sqrtf(d) - r)* vertRatio;
+				float h = tex[id] + uToW(sqrtf(d)-r);
 				maxh = fmaxf(maxh, h);
 			}
 		}
-	return maxh;
+	return uWTouH(wToU(maxh));
 }
 void Paths::Rough(Entity::Selection& set, Entity* plane, int resolution, float tolerance, std::vector<DirectX::XMFLOAT3>& path)
 {
@@ -166,7 +166,7 @@ void Paths::Rough(Entity::Selection& set, Entity* plane, int resolution, float t
 		}
 		for (int i = 0; i < tex.size(); i++)
 		{
-			tex[i] /= maxh * 6;
+			tex[i] /= 9;
 		}
 		cacheFile = std::fopen(cacheFilePath, "wb");
 		if (cacheFile)
@@ -176,6 +176,10 @@ void Paths::Rough(Entity::Selection& set, Entity* plane, int resolution, float t
 			std::fwrite(tex.data(), sizeof(tex[0]), count, cacheFile);
 			std::fclose(cacheFile);
 		}
+		for (int i = 0; i < tex.size(); i++)
+		{
+			tex[i] *= 9;
+		}
 	}
 	else
 	{
@@ -184,13 +188,19 @@ void Paths::Rough(Entity::Selection& set, Entity* plane, int resolution, float t
 		tex.resize(count);
 		std::fread(tex.data(), sizeof(tex[0]), count, cacheFile);
 		std::fclose(cacheFile);
+		for (int i = 0; i < tex.size(); i++)
+		{
+			tex[i] *= 9;
+			maxh = fmaxf(maxh, tex[i]);
+		}
 	}
-	int toolDiameter = 16;
+	int headDiameter = 16;
 	int baseWidth = 150;
 	int baseHeight = 50 - 16;
-	float r = toolDiameter / 2.0f / baseWidth;
+	float r = mmToU(headDiameter / 2.0f);
 	bool backwards = false;
-	float width = 2*sqrt(tolerance/baseHeight*r);
+	float width = 2*sqrt(mmToU(tolerance)*r);
+	float maxfz = 0;
 	for (int y = 0; y < resolution; y++)
 	{
 		float fy = y * width;
@@ -201,7 +211,9 @@ void Paths::Rough(Entity::Selection& set, Entity* plane, int resolution, float t
 		for (int x = startx; x * step <= endx * step; x += step)
 		{
 			float fx = (float)x / resolution;
-			path.push_back({ fx, fy, Raise({fx,fy},tex, resolution, r, (float)baseWidth/baseHeight) + 1/resolution });
+			float fz = Raise({ fx,fy }, tex, resolution, r, 1) + 1.0f / resolution;
+			maxfz = fmaxf(maxfz, fz);
+			path.push_back({ fx, fy, fz });
 			//path.push_back({ fx, fy, tex[x+y*resolution] + 1 / resolution});
 		}
 		if (fy > 1)

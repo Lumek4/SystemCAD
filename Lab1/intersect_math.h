@@ -59,3 +59,23 @@ inline void bezierBasis(float b3[4], float db3[4], float t)
 	db3[2] = (b2[1] - b2[2]) * 3;
 	db3[3] = b2[2] * 3;
 }
+inline float uToW(float x)
+{
+	return x * 54;
+}
+inline float wToU(float x)
+{
+	return x / 54;
+}
+inline float uToMm(float x)
+{
+	return x * 150;
+}
+inline float mmToU(float x)
+{
+	return x / 150;
+}
+inline float uWTouH(float x)
+{
+	return x * 150.0f / (50.0f - 16.0f);
+}

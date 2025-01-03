@@ -63,7 +63,7 @@ private:
 	void DrawAxes(DirectX::XMFLOAT3 location, float size);
 	void DrawGrid();
 	void DrawSingleGrid(float scale, float visibility);
-	int surfDetail = 4;
+	int surfDetail = 8;
 
 	std::unique_ptr<Mesh> torus;
 	std::unique_ptr<Mesh> grid;

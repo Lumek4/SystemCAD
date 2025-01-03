@@ -139,7 +139,10 @@ bool converge(
 }
 
 template<typename TA, typename TB>
-bool intersect(TA* a, TB* b,
+bool intersect(
+	const IntersectData<TA>& da,
+	const IntersectData<TB>& db,
+	bool self,
 	DirectX::XMFLOAT3 cursor, float precision,
 	std::vector<DirectX::XMFLOAT3>& output,
 	std::vector<DirectX::XMFLOAT2>& uva,
@@ -148,9 +151,6 @@ bool intersect(TA* a, TB* b,
 {
 	using namespace DirectX;
 	loop = false;
-	bool self = (void*)a == (void*)b;
-	auto da = IntersectData<TA>(a);
-	auto db = IntersectData<TB>(b);
 	auto wrap = XMConvertVectorFloatToInt(XMVECTOR{
 		-(float)da.GetWrapMode().x, -(float)da.GetWrapMode().y,
 		-(float)db.GetWrapMode().x, -(float)db.GetWrapMode().y
@@ -177,6 +177,7 @@ bool intersect(TA* a, TB* b,
 	XMVECTOR vcursor = XMLoadFloat3(&cursor);
 	XMVECTOR pos;
 	XMVECTOR startCoord, coord;
+	srand(2137);
 	for (int i = 0; i < 10000; i++)
 	{
 		coord = {
@@ -344,6 +345,21 @@ bool intersect(TA* a, TB* b,
 	return true;
 }
 
+template<typename TA, typename TB>
+bool intersect(TA* a, TB* b,
+	DirectX::XMFLOAT3 cursor, float precision,
+	std::vector<DirectX::XMFLOAT3>& output,
+	std::vector<DirectX::XMFLOAT2>& uva,
+	std::vector<DirectX::XMFLOAT2>& uvb,
+	bool& loop)
+{
+	auto da = IntersectData<TA>(a);
+	auto db = IntersectData<TB>(b);
+	bool self = (void*)a == (void*)b;
+	return intersect(da, db, self,
+		cursor, precision,
+		output, uva, uvb, loop);
+}
 
 template<typename TA, typename TB>
 void multiIntersect(

@@ -124,12 +124,12 @@ CadApplication::~CadApplication()
 void CadApplication::GUI()
 {
 	auto viewportDock = ImGui::DockSpaceOverViewport(nullptr, ImGuiDockNodeFlags_PassthruCentralNode);
-	
+	auto& io = ImGui::GetIO();
 
 	ImGui::Begin("Options");
 	MyGui::GuiOptions();
 	{
-		static std::array<char, 256> buf{ "../projekt5.json" };
+		static std::array<char, 256> buf{ "../projekt12.json" };
 		static bool init = false;
 		if (!init)
 		{
@@ -280,11 +280,12 @@ void CadApplication::GUI()
 	}
 	MyGui::SameLineIfFits(buttonDims.x);
 	{
-		if (ImGui::Button("Outline", buttonDims))
+		if (ImGui::Button("Outline", buttonDims) ||
+			(!io.WantCaptureKeyboard && io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_1)))
 			MyGui::ShowOutlinePopup();
 		static float detail = 1.0f, pathStep = 0.1f; bool create = false;
 		MyGui::OutlinePopup(detail, pathStep, create);
-		if (create)
+		if (create || (!io.WantCaptureKeyboard && ImGui::IsKeyPressed(ImGuiKey_1)))
 		{
 			auto base = Entity::GetSelected<BicubicSurface>();
 			if (base.size() == 1)
@@ -298,8 +299,9 @@ void CadApplication::GUI()
 					if (!bsf[i]->owner.Selected())
 						set.push_back(&bsf[i]->owner);
 				std::vector<DirectX::XMFLOAT2> pts;
+				std::vector<DirectX::XMFLOAT2> fill;
 				Paths::OutlineSet(set, &base[0]->owner,
-					SceneCursor::instance.GetWorld(), detail, pts);
+					SceneCursor::instance.GetWorld(), detail, pts, fill);
 
 				XMFLOAT2 last = pts[0];
 				std::vector<XMFLOAT3> fileOutput{ { pts[0].x, pts[0].y, 0.0f } };
@@ -312,8 +314,17 @@ void CadApplication::GUI()
 						last = pts[i];
 					}
 				}
+				fileOutput.push_back({ fileOutput.back().x, fileOutput.back().y, 1.0f });
+				for (int i = 0; i < fill.size(); i++)
+				{
+					if(isnan(fill[i].x))
+						fileOutput.push_back({ fileOutput.back().x, fileOutput.back().y, 1.0f });
+					else
+						fileOutput.push_back({ fill[i].x, fill[i].y, 0.0f });
+				}
 				for (int i = 1; i < fileOutput.size(); i++)
 					mainFolder->Add(EntityPresets::Point(fileOutput[i]));
+
 				savePath(&fileOutput[0].x, fileOutput.size() * 3, "../3.f10");
 
 			}
@@ -323,10 +334,11 @@ void CadApplication::GUI()
 	{
 		static int resolution = 128; bool create = false;
 		static float tolerance = 1.0f;
-		if (ImGui::Button("Rough", buttonDims))
+		if (ImGui::Button("Rough", buttonDims) ||
+			(!io.WantCaptureKeyboard && io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_3)))
 			MyGui::ShowRoughPopup();
 		MyGui::RoughPopup(resolution, tolerance, create);
-		if (create)
+		if (create || (!io.WantCaptureKeyboard && ImGui::IsKeyPressed(ImGuiKey_2)))
 		{
 			auto base = Entity::GetSelected<BicubicSurface>();
 			if (base.size() == 1)
@@ -352,11 +364,12 @@ void CadApplication::GUI()
 	MyGui::SameLineIfFits(buttonDims.x);
 	{
 		bool create = false;
-		static float detail = 1.0f;
-		if (ImGui::Button("Exact", buttonDims))
+		static float detail = 0.05f, pathStep = 0.005f;
+		if (ImGui::Button("Exact", buttonDims) ||
+			(!io.WantCaptureKeyboard && io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_3)))
 			MyGui::ShowExactPopup();
-		MyGui::ExactPopup(detail, create);
-		if (create)
+		MyGui::ExactPopup(detail, pathStep, create);
+		if (create || (!io.WantCaptureKeyboard && ImGui::IsKeyPressed(ImGuiKey_3)))
 		{
 			auto base = Entity::GetSelected<BicubicSurface>();
 			//if (base.size() == 1)
@@ -372,9 +385,26 @@ void CadApplication::GUI()
 				std::vector<DirectX::XMFLOAT3> pts;
 				Paths::Exact(set, detail, pts);
 
-				for (int i = 0; i < pts.size(); i++)
-					mainFolder->Add(EntityPresets::Point(pts[i]));
-				//savePath(&pts[0].x, pts.size() * 3, "../1.k16");
+				if (!pts.empty())
+				{
+					XMFLOAT3 last = pts[0];
+					std::vector<XMFLOAT3> fileOutput{ pts[0] };
+					for (int i = 1; i < pts.size(); i++)
+					{
+						float d = vecmath::lengthSq({ last.x - pts[i].x, last.y - pts[i].y, last.z - pts[i].z });
+						if (d > pathStep * pathStep)
+						{
+							fileOutput.push_back(pts[i]);
+							last = pts[i];
+						}
+					}
+					for (int i = 0; i < fileOutput.size(); i++)
+						mainFolder->Add(EntityPresets::Point({
+						(fileOutput[i].x - 0.5f) * 54,
+						(fileOutput[i].y - 0.5f) * 54,
+						fileOutput[i].z * 54 * (50.0f - 16.0f) / 150.0f }));
+					savePath(&fileOutput[0].x, fileOutput.size() * 3, "../4.k08");
+				}
 			}
 		}
 	}
@@ -536,6 +566,35 @@ void CadApplication::Update() {
 	{
 		Camera::mainCamera->Zoom(io.MouseWheel * scaleRate);
 	}
+	if (!io.WantCaptureKeyboard)
+	{
+		float speedup = io.KeyShift ? 4 : 1;
+		if (ImGui::IsKeyDown(ImGuiKey_KeypadSubtract))
+			Camera::mainCamera->Zoom(speedup * scaleRate * 0.25f);
+		if (ImGui::IsKeyDown(ImGuiKey_KeypadAdd))
+			Camera::mainCamera->Zoom(-speedup * scaleRate * 0.25f);
+		if (io.KeyCtrl)
+		{
+			if(ImGui::IsKeyDown(ImGuiKey_UpArrow))
+				Camera::mainCamera->Move({ 0, speedup *turnRate });
+			if(ImGui::IsKeyDown(ImGuiKey_DownArrow))
+				Camera::mainCamera->Move({ 0, -speedup * turnRate });
+			if(ImGui::IsKeyDown(ImGuiKey_RightArrow))
+				Camera::mainCamera->Move({ speedup * turnRate, 0 });
+			if(ImGui::IsKeyDown(ImGuiKey_LeftArrow))
+				Camera::mainCamera->Move({ -speedup * turnRate, 0 });
+		}
+		else {
+			if (ImGui::IsKeyDown(ImGuiKey_UpArrow))
+				Camera::mainCamera->Rotate({ 0, speedup * turnRate });
+			if (ImGui::IsKeyDown(ImGuiKey_DownArrow))
+				Camera::mainCamera->Rotate({ 0, -speedup * turnRate });
+			if (ImGui::IsKeyDown(ImGuiKey_RightArrow))
+				Camera::mainCamera->Rotate({ -speedup * turnRate, 0 });
+			if (ImGui::IsKeyDown(ImGuiKey_LeftArrow))
+				Camera::mainCamera->Rotate({ speedup * turnRate, 0 });
+		}
+	}
 	{
 		static bool translating = false;
 		static bool scaling = false;
@@ -579,6 +638,7 @@ void CadApplication::Update() {
 				ImGui::Text("S");
 			if (rotating)
 				ImGui::Text("R");
+
 			ImGui::End();
 			ImGui::PopStyleColor();
 			ImGui::PopStyleVar(2);

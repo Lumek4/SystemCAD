@@ -74,6 +74,7 @@ class Inflation : public IntersectData<T>
 {
 public:
 	const float R;
+	bool specialTreatment = false;
 	Inflation(T* object, float R)
 		:IntersectData<T>(object), R(R)
 	{}
@@ -112,4 +113,20 @@ inline void IntersectData<Inflation<T>>::Point(DirectX::XMFLOAT2 uv,
 	using namespace DirectX;
 	data->Point(uv, position, du, dv);
 	position = position + XMVector3Normalize(XMVector3Cross(du, dv))*data->R;
+	float h = 1e-5;
+	if (!data->specialTreatment && uv.x + h <= 1)
+	{
+		XMVECTOR pu, duu, dvu;
+		data->Point({ uv.x + h, uv.y }, pu, duu, dvu);
+		pu = pu + XMVector3Normalize(XMVector3Cross(duu, dvu)) * data->R;
+		du = (pu - position) / h;
+	}
+
+	if (!data->specialTreatment && uv.y + h <= 1)
+	{
+		XMVECTOR pv, duv, dvv;
+		data->Point({ uv.x, uv.y + h }, pv, duv, dvv);
+		pv = pv + XMVector3Normalize(XMVector3Cross(duv, dvv)) * data->R;
+		dv = (pv - position) / h;
+	}
 }

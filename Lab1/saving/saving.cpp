@@ -165,7 +165,7 @@ SaveResult save(const CadApplication& app, const char* filepath)
 					controlPoints,
 					segmentNames,
 					id,
-					bss[i]->surfDetailOffset+4
+					bss[i]->surfDetailOffset+8
 					)),
 				std::pair("parameterWrapped", make_tfpoint(bss[i]->wrapMode)),
 				std::pair("size", make_point(bss[i]->division))
@@ -316,6 +316,8 @@ SaveResult load(CadApplication& app, const char* filepath)
 					object["size"]["y"]
 				}
 			);
+			//e->GetComponent<BicubicSurface>()->surfDetailOffset 
+			e->GetComponent<BicubicSurface>()->surfDetailOffset = ptchs[0]["samples"]["x"] - 8;
 		}
 			break;
 		case GEOMETRY_TYPE::bezierSurfaceC2:
@@ -344,6 +346,7 @@ SaveResult load(CadApplication& app, const char* filepath)
 					object["size"]["y"]
 				}
 			);
+			e->GetComponent<BicubicSurface>()->surfDetailOffset = ptchs[0]["samples"]["x"] - 8;
 		}
 			break;
 		case GEOMETRY_TYPE::gregoryPatch:
@@ -378,7 +381,7 @@ SaveResult savePath(const float* path, int count, const char* filepath)
 			f << "N" << i / 3 + 1 << "G01";
 			f << "X" << std::fixed << std::setw(5) << std::setprecision(3) << 75*(path[i + 0] * 2 - 1);
 			f << "Y" << std::fixed << std::setw(5) << std::setprecision(3) << 75*(path[i + 1] * 2 - 1);
-			f << "Z" << std::fixed << std::setw(5) << std::setprecision(3) << (50-16)*path[i + 2] + 16;
+			f << "Z" << std::fixed << std::setw(5) << std::setprecision(3) << (50-16) * path[i + 2] + 16;
 			f << "\n";
 		}
 	}

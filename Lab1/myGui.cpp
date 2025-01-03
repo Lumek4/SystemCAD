@@ -453,13 +453,18 @@ bool MyGui::SceneCursorWidget(SceneCursor* sc)
 		sc->screen.y = size.y / 2;
 
 	ImGui::PopItemWidth();
-	if (ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left) && !ImGui::GetIO().WantCaptureMouse)
+	if (!ImGui::GetIO().WantCaptureMouse && ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left))
 	{
 		auto cur = ImGui::GetMousePos();
 		sc->screen.x = cur.x; sc->screen.y = size.y - cur.y;
 		xchanged = ychanged = true;
 	}
 	bool wchanged = ImGui::DragFloat3("World", &sc->world.x, 0.01f);
+	if (!ImGui::GetIO().WantCaptureKeyboard && ImGui::IsKeyPressed(ImGuiKey_Space))
+	{
+		sc->world = -Camera::mainCamera->GetOffset();
+		wchanged = true;
+	}
 	ImGui::SameLine();
 	if (ImGui::Button("0"))
 	{
@@ -715,12 +720,13 @@ void MyGui::ShowExactPopup()
 	ImGui::OpenPopup("Exact Processing", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonLeft);
 }
 
-void MyGui::ExactPopup(float& detail, bool& create)
+void MyGui::ExactPopup(float& detail, float& pathStep, bool& create)
 {
 	if (!ImGui::BeginPopup("Exact Processing"))
 		return;
 	ImGui::Text("Exact Processing");
 	ImGui::SliderFloat("Detail", &detail, 0.01f, 20.0f, "%.2f", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
+	ImGui::SliderFloat("PathStep", &pathStep, 0.001f, 0.5f, "%.3f", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
 	
 	if ((create = ImGui::Button("Process")))
 	{

@@ -143,7 +143,18 @@ inline XMFLOAT3 PathPoint(XMFLOAT3 p)
 }
 inline XMFLOAT3 FreePoint(XMFLOAT3 p, float lift)
 {
-	return { p.x / 54 + 0.5f, p.y / 54 + 0.5f, 0.5f + lift };
+	return { p.x / 54 + 0.5f, p.y / 54 + 0.5f, uWTouH(wToU(lift)) };
+}
+inline float GetBBRiseHeight(const std::vector<BoundingBox>& bbs, int k)
+{
+	if (k == -1)
+	{
+		float maxh = 0;
+		for (int i = 0; i < bbs.size(); i++)
+			maxh = std::fmaxf(XMVectorGetZ(bbs[i].hi), maxh);
+		return maxh;
+	}
+	return XMVectorGetZ(bbs[k].hi);
 }
 
 void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::XMFLOAT3>& path)
@@ -158,6 +169,7 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 	int base = -1;
 	std::vector<std::vector<std::vector<XMFLOAT2>>> shapes;
 	std::vector<std::vector<bool>> loops;
+	std::vector<BoundingBox> boundingBoxes;
 	for(int i = 0; i<set.size(); i++)
 	{
 		auto* s = set[i]->GetComponent<BicubicSurface>();
@@ -192,11 +204,20 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 		}
 	}
 	for (int i = 0; i < surf_inf.size(); i++)
+	{
 		surf.push_back({ &surf_inf[i] });
+		boundingBoxes.push_back(surf[i].GetBB());
+	}
 	for (int i = 0; i < toru_inf.size(); i++)
+	{
 		toru.push_back({ &toru_inf[i] });
+		boundingBoxes.push_back(toru[i].GetBB());
+	}
 	for (int i = 0; i < segm_inf.size(); i++)
+	{
 		segm.push_back({ &segm_inf[i] });
+		boundingBoxes.push_back(segm[i].GetBB());
+	}
 	std::vector<XMFLOAT3> pts;
 	std::vector<XMFLOAT2> uva, uvb;
 
@@ -294,8 +315,8 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 			path.push_back(PathPoint(p));
 		}*/
 	std::vector<std::vector<XMFLOAT2>> outline(shapes.size() + 2);
-	//for (int k = 0; k < shapes.size() + 2; k++)
-	for (int k = 8; k <= 11; k+=11-8)
+	for (int k = 0; k < shapes.size() + 2; k++)
+	//for (int k = 0; k <= 5; k++)
 	{
 		if (k == base)
 			continue;
@@ -349,8 +370,8 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 			int nextInd = (startingVert + 1) % my_shapes[startingShape].size();
 			if (vecmath::triArea(cursor2d,
 				my_shapes[startingShape][startingVert],
-				my_shapes[startingShape][nextInd]) > 0)
-				direction = 1;
+					my_shapes[startingShape][nextInd]) > 0)
+					direction = 1;
 		}
 		int shape_i = startingShape,
 			vert_i = startingVert;
@@ -373,15 +394,18 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 
 			outline[k].push_back(a1);
 			int nextInd = vert_i;
-			
+
 			if (a1.x == 0 || a1.y == 0 || a1.x == 1 || a1.y == 1)
 			{
 
 				int ud = (a1.x == 0) ? -1 : ((a1.x == 1) ? 1 : 0);
 				int lr = (a1.y == 0) ? 1 : ((a1.y == 1) ? -1 : 0);
 				if (shape_i != -1)
-					a1 = { a1.x + lr * precision * 0.1f, a1.y + ud * precision * 0.1f };
-				a2 = { a1.x + lr * precision * 0.1f, a1.y + ud * precision * 0.1f };
+				{
+					a1 = { a1.x + lr * precision * 0.05f, a1.y + ud * precision * 0.05f };
+					outline[k].push_back(a1);
+				}
+				a2 = { a1.x + lr * precision * 0.05f, a1.y + ud * precision * 0.05f };
 				shape_i = -1;
 				nextInd = vert_i = -1;
 				if (a2.x < 0 || a2.y < 0 || a2.x > 1 || a2.y > 1)
@@ -407,9 +431,9 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 			for (int i = 0; i < my_shapes.size(); i++)
 			{
 				if (i == shape_i) continue;
-				if (k<surf.size() &&
+				if (k < surf.size() &&
 					!vecmath::bb2d(bb_topleft[i], bb_btright[i],
-					a2))
+						a2))
 					continue;
 				for (int j = 0; j < my_shapes[i].size(); j++)
 				{
@@ -426,7 +450,7 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 					}
 					if (k < surf.size() &&
 						!vecmath::bb2d(my_shapes[i][j], my_shapes[i][jp1],
-						a1, a2))
+							a1, a2))
 						continue;
 					int dir = vecmath::segments2d(
 						my_shapes[i][j], my_shapes[i][jp1],
@@ -436,7 +460,7 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 					collided = true;
 					direction = -dir;
 					shape_i = i;
-					nextInd = j +(direction+1)/2;
+					nextInd = j + (direction + 1) / 2;
 					a2 = my_shapes[shape_i][nextInd];
 					break;
 				}
@@ -448,12 +472,73 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 		} while (shape_i != startingShape || vert_i != startingVert);
 
 	}
-	if(false)
+	float topRaiseHeight = GetBBRiseHeight(boundingBoxes, -1);
+	XMFLOAT3 p;
+	//if(false)
+	{ // p³etwy
+		for (int k = 0; k < 6; k++)
+		{
+			if (k == base)
+				continue;
+			bool firstDrop = true;
+			auto& bb = surf[k].GetBB();
+			float raiseHeight = GetBBRiseHeight(boundingBoxes, k);
+			float size = 0;
+			for (int i = 0; i < 3; i++)
+				size += bb.hi.m128_f32[i] - bb.lo.m128_f32[i];
+			int resolution = 0.2f * size / precision;
+			XMVECTOR pos, uvec, vvec;
+			auto& o = outline[k];
+			bool reverse = false;
+			bool inside_last = false;
+			int udiv = (k == 0) ? 3 : 1;
+			for (int u = 0; u < resolution/ udiv; u++)
+			{
+				inside_last = false;
+				int vdirection = (u % 2 == 0) ? 1 : -1;
+				int vstart = (u % 2 == 0) ? 0 : resolution-1;
+				int vend = (u % 2 == 0) ? resolution-1 : 0;
+				for (int v = vstart; v*vdirection <= vend*vdirection; v+= vdirection)
+				{
+					XMFLOAT2 uv = { (float)(reverse?v:u* udiv) / resolution, (float)(reverse ? u* udiv : v) / resolution };
+					bool inside = true;
+					for (int i = 0; i < outline[k].size(); i++)
+					{
+						int ip1 = (i + 1) % outline[k].size();
+						if (!vecmath::bb2d(middles[k], uv, outline[k][i], outline[k][ip1]))
+							continue;
+						if (vecmath::segments2d(middles[k], uv, outline[k][i], outline[k][ip1]))
+						{
+							inside = !inside;
+						}
+					}
+					if (inside)
+					{
+						surf[k].Point(uv, pos, uvec, vvec);
+						XMStoreFloat3(&p, pos);
+						if (firstDrop)
+						{
+							path.push_back(FreePoint(p, topRaiseHeight));
+							firstDrop = false;
+						}
+						else if (!inside_last)
+							path.push_back(FreePoint(p, raiseHeight));
+						path.push_back(PathPoint(p));
+					}
+					else if (inside_last)
+						path.push_back(FreePoint(p, raiseHeight));
+					inside_last = inside;
+				}
+			}
+			path.push_back(FreePoint(p, topRaiseHeight));
+		}
+	}
+	//if(false)
 	{ // oko
 		auto& outside = outline[6];
 		auto& inside = outline[10];
-		XMFLOAT3 p;
 		XMVECTOR pos, u, v;
+		bool firstDrop = true;
 		for (int i = 0; i <= 10; i++)
 		{
 			float t = (float)i / 10;
@@ -474,18 +559,22 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 					b = outside[outU];
 				toru[0].Point({ a.x * t + b.x * (1 - t), a.y * t + b.y * (1 - t) }, pos, u, v);
 				XMStoreFloat3(&p, pos);
+				if (firstDrop)
+				{
+					path.push_back(FreePoint(p, topRaiseHeight));
+					firstDrop = false;
+				}
 				path.push_back(PathPoint(p));
 			}
 		}
-		path.push_back(FreePoint(p, (float)6 / shapes.size()));
-	}if(false)
+		path.push_back(FreePoint(p, topRaiseHeight));
+	}//if(false)
 	{ // ogon
-		XMFLOAT3 p;
 		XMVECTOR pos, u, v;
 		auto& outside = outline[7];
 		toru[1].Point(outside[1340], pos, u, v);
 		XMStoreFloat3(&p, pos);
-		path.push_back(FreePoint(p, (float)7 / shapes.size()));
+		path.push_back(FreePoint(p, topRaiseHeight));
 		for (int i = 0; i <= 15; i++)
 		{
 			float t = (float)i / 30;
@@ -512,8 +601,8 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 				path.push_back(PathPoint(p));
 			}
 		}
-		path.push_back(FreePoint(p, (float)7 / shapes.size()));
-	}
+		path.push_back(FreePoint(p, topRaiseHeight));
+	}//if(false)
 	{ // head
 
 		auto& outside = outline[8];
@@ -523,19 +612,42 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 			center = { center.x + inside[i].x, center.y + inside[i].y};
 		center = { center.x / inside.size(), center.y / inside.size() };
 		std::reverse(inside.begin(), inside.end());
-		int in_start = 114, in_direction = 1;
-		int ou_start = 678, ou_direction = 1;
-		XMFLOAT3 p;
+		int in_start = 114;
+		int ou_start = 678;
+		{
+			float angle2 = std::atan2f(inside.back().y - center.y, inside.back().x - center.x);
+			for (int i = 0; i < inside.size(); i++)
+			{
+				float angle = std::atan2f(inside[i].y - center.y, inside[i].x - center.x);
+				if (std::fabsf(angle - angle2) > 3)
+				{
+					in_start = i;
+					break;
+				}
+				angle2 = angle;
+			}
+			angle2 = std::atan2f(outside.back().y - center.y, outside.back().x - center.x);
+			for (int i = 0; i < outside.size(); i++)
+			{
+				float angle = std::atan2f(outside[i].y - center.y, outside[i].x - center.x);
+				if (std::fabsf(angle - angle2) > 3)
+				{
+					ou_start = i;
+					break;
+				}
+				angle2 = angle;
+			}
+		}
 		XMVECTOR pos, u, v;
-
+		bool firstDrop = true;
 		for (int i = 0; i <= 20; i++)
 		{
 			float t = (float)i / 20;
-			int inU = 114;
-			int outU = 678;
-			int outU2 = 677;
+			int inU = in_start;
+			int outU = ou_start;
+			int outU2 = ou_start-1;
 			float outAngle2 = std::atan2f(outside[outU2].y - center.y, outside[outU2].x - center.x);
-			for (inU; inU != 113; inU = (inU + 1) % inside.size())
+			for (inU; inU != in_start-1; inU = (inU + 1) % inside.size())
 			{
 				float inAngle = std::atan2f(inside[inU].y - center.y, inside[inU].x - center.x);
 				float outAngle = std::atan2f(outside[outU].y - center.y, outside[outU].x - center.x);
@@ -555,16 +667,71 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 						b = inside[inU];
 					segm[0].Point({ a.x * t + b.x * (1 - t), a.y * t + b.y * (1 - t) }, pos, u, v);
 					XMStoreFloat3(&p, pos);
+					if (firstDrop)
+					{
+						path.push_back(FreePoint(p, topRaiseHeight));
+						firstDrop = false;
+					}
 					path.push_back(PathPoint(p));
 				}
 			}
 		}
-		//path.push_back(FreePoint(p, (float)6 / shapes.size()));
+		path.push_back(FreePoint(p, topRaiseHeight));
+	}
+	{ // head2
+		auto& bb = segm[1].GetBB();
+		float raiseHeight = GetBBRiseHeight(boundingBoxes, 9);
+		float size = 0;
+		for (int i = 0; i < 3; i++)
+			size += bb.hi.m128_f32[i] - bb.lo.m128_f32[i];
+		int resolution = 0.2f * size / precision;
+		XMVECTOR pos, uvec, vvec;
+		bool firstDrop = true;
+		auto& o = outline[9];
+		bool inside_last = false;
+		for (int v = 0; v < resolution; v++)
+		{
+			inside_last = false;
+			int udirection = (v % 2 == 0) ? 1 : -1;
+			int ustart = (v % 2 == 0) ? 0 : resolution - 1;
+			int uend = (v % 2 == 0) ? resolution - 1 : 0;
+			for (int u = ustart; u * udirection <= uend * udirection; u += udirection)
+			{
+				XMFLOAT2 uv = { (float) u / resolution, (float) v / resolution };
+				bool inside = true;
+				for (int i = 0; i < o.size(); i++)
+				{
+					int ip1 = (i + 1) % o.size();
+					if (!vecmath::bb2d({0.5,0.01}, uv, o[i], o[ip1]))
+						continue;
+					if (vecmath::segments2d({ 0.5,0.01 }, uv, o[i], o[ip1]))
+					{
+						inside = !inside;
+					}
+				}
+				if (inside)
+				{
+					segm[1].Point(uv, pos, uvec, vvec);
+					XMStoreFloat3(&p, pos);
+					if (firstDrop)
+					{
+						path.push_back(FreePoint(p, topRaiseHeight));
+						firstDrop = false;
+					}
+					else if (!inside_last)
+						path.push_back(FreePoint(p, raiseHeight));
+					path.push_back(PathPoint(p));
+				}
+				else if (inside_last)
+					path.push_back(FreePoint(p, raiseHeight));
+				inside_last = inside;
+			}
+		}
+		path.push_back(FreePoint(p, topRaiseHeight));
 	}
 	for(int k = 0; k<outline.size(); k++)
 		for (int i = 0; i < outline[k].size(); i++)
 		{
-			XMFLOAT3 p;
 			XMVECTOR pos, u, v;
 			int kk = (k == shapes.size()) ? 6 : ((k == shapes.size() + 1) ? 8 : k);
 			if (kk < surf.size())
@@ -575,11 +742,11 @@ void Paths::Exact(Entity::Selection& set, float precision, std::vector<DirectX::
 				segm[kk - surf.size() - toru.size()].Point(outline[k][i], pos, u, v);
 			XMStoreFloat3(&p, pos);
 			if (i == 0)
-				path.push_back(FreePoint(p, (float)k / shapes.size()));
+				path.push_back(FreePoint(p, topRaiseHeight));
 
 			path.push_back(PathPoint(p));
 			if (i == outline[k].size() - 1)
-				path.push_back(FreePoint(p, 0));
+				path.push_back(FreePoint(p, topRaiseHeight));
 		}
 #endif
 }

@@ -209,55 +209,51 @@ void Paths::OutlineSet(Entity::Selection& set, Entity* plane, XMFLOAT3 cursor,
 		vert_i = nextInd;
 	}while(shape_i != startingShape || vert_i != startingVert);
 
-	//XMFLOAT2 uv = { 0, 0 };
-	//bool moving = true; bool inside = false, was_inside = false;
-	//bool backwards = false;
-	//int it = 0;
-	////if (k == 1)
-	////	precision *= 0.5f;
-	//while (moving)
-	//{
-	//	inside = true;
 
-	//	bool moving = true;
-	//	while (moving)
-	//	{
-	//		if (!was_inside && inside)
-	//			fill.push_back({NAN, NAN});
-	//		was_inside = inside;
-	//		if (inside)
-	//			fill.push_back(uv);
-	//		float nextu = uv.x + (backwards ? -1 : 1) * precision;
-	//		if ((!backwards && nextu > 1) ||
-	//			(backwards && nextu < 0))
-	//		{
-	//			uv.x = backwards ? 0 : 1;
-	//			break;
-	//		}
-	//		for (int j = 0; j < outline.size(); j++)
-	//		{
-	//			int jp1 = (j + 1) % outline.size();
-	//			auto& b1 = outline[j];
-	//			auto& b2 = outline[jp1];
-	//			if (fabsf(b1.x - b2.x) > 1 || fabsf(b1.y - b2.y) > 1)
-	//				continue;
-
-	//			if (fminf(b1.y, b2.y) <= uv.y && uv.y <= fmaxf(b1.y, b2.y))
-	//				if (vecmath::segments2d(uv, { nextu, uv.y }, b1, b2))
-	//				{
-	//					inside = !inside; break;
-	//				}
-	//		}
-	//		if (was_inside && !inside)
-	//			fill.push_back({ NAN, NAN });
-
-	//		uv.x = nextu;
-	//		it++;
-	//	}
-	//	uv.y += precision;
-	//	if (uv.y > 1)
-	//		break;
-	//	backwards = !backwards;
-	//}
+	bool firstDrop = true;
+	int resolution = 0.2f * size / precision;
+	XMVECTOR pos, uvec, vvec;
+	bool reverse = false;
+	bool inside_last = false;
+	int udiv = (k == 0) ? 3 : 1;
+	for (int u = 0; u < resolution / udiv; u++)
+	{
+		inside_last = false;
+		int vdirection = (u % 2 == 0) ? 1 : -1;
+		int vstart = (u % 2 == 0) ? 0 : resolution - 1;
+		int vend = (u % 2 == 0) ? resolution - 1 : 0;
+		for (int v = vstart; v * vdirection <= vend * vdirection; v += vdirection)
+		{
+			XMFLOAT2 uv = { (float)(reverse ? v : u * udiv) / resolution, (float)(reverse ? u * udiv : v) / resolution };
+			bool inside = true;
+			for (int i = 0; i < outline[k].size(); i++)
+			{
+				int ip1 = (i + 1) % outline[k].size();
+				if (!vecmath::bb2d({0,0}, uv, outline[k][i], outline[k][ip1]))
+					continue;
+				if (vecmath::segments2d({0,0}, uv, outline[k][i], outline[k][ip1]))
+				{
+					inside = !inside;
+				}
+			}
+			if (inside)
+			{
+				surf[k].Point(uv, pos, uvec, vvec);
+				XMStoreFloat3(&p, pos);
+				if (firstDrop)
+				{
+					path.push_back(FreePoint(p, topRaiseHeight));
+					firstDrop = false;
+				}
+				else if (!inside_last)
+					path.push_back(FreePoint(p, raiseHeight));
+				path.push_back(PathPoint(p));
+			}
+			else if (inside_last)
+				path.push_back(FreePoint(p, raiseHeight));
+			inside_last = inside;
+		}
+	}
+	path.push_back(FreePoint(p, topRaiseHeight));
 	return;
 }
